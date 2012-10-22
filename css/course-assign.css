@@ -1,0 +1,2050 @@
+.container-aasign {
+    width: 960px;
+    margin: 0 auto;
+    position: relative;
+}
+
+#course_assign {
+    position: absolute;
+    top: -18px;
+    left: -10px;
+    padding: 20px 50px 25px;
+    border: 3px solid #34618e;
+    border-top: none;
+    width: 870px;
+    z-index: 11960;
+    background: #f2f2f2;
+    overflow: visible;
+    height: 610px;
+}
+
+#course_assign h2 {
+    font-size: 19px;
+    font-family: Helvetica, Arial, sans-serif;
+    font-weight: normal;
+    margin-bottom: 7px;
+}
+
+#course_assign .close {
+    position: absolute;
+    right: 50px;
+    top: 20px;
+    width: 28px;
+    height: 28px;
+    cursor: pointer;
+    background: url("images/close_assign.jpg") no-repeat;
+}
+
+#course_assign .description {
+    font-size: 13px;
+    color: #808080;
+    padding-bottom: 37px;
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+#course_assign .menu {
+    border-radius: 3px;
+    border: 1px solid #d7d7d7;
+    overflow: auto;
+    float: left;
+    margin: 0 0 18px;
+}
+
+#course_assign .menu li {
+    float: left;
+    padding: 5px 18px 0;
+    margin: 0;
+    background: url("images/cv-menu.jpg") repeat-x;
+    height: 25px;
+    border-right: 1px solid #d7d7d7;
+    font-size: 14px;
+}
+
+#course_assign .menu li a {
+    display: block;
+    overflow: auto;
+    float: left;
+}
+
+#course_assign .menu li.active {
+    background: #a2acb6;
+    color: #fff;
+    box-shadow: inset 0 0 5px #696f76;
+}
+
+#course_assign .menu li.active a {
+    color: #fff;
+    text-shadow: 0 1px 0 #999;
+}
+
+#course_assign .menu li.last {
+    border: none;
+}
+
+#course_assign h3 {
+    font-weight: bold;
+    font-size: 13px;
+    line-height: 13px;
+    font-family: Helvetica, Arial, sans-serif;
+    margin: 0;
+}
+
+#course_assign .groups {
+    width: 480px;
+    height: 365px;
+    background: #fff;
+    border: 1px solid #ececec;
+    padding: 15px;
+    box-shadow: inset 0 1px 1px #ddd;
+    float: left;
+}
+
+#course_assign .groups .group-menu h3 {
+    padding-left: 8px;
+    padding-bottom: 15px;
+    border-bottom: solid 1px #e5e5e5;
+    margin-bottom: 4px;
+}
+
+#course_assign .groups .group-menu {
+    width: 207px;
+    float: left;
+    margin-right: 20px;
+}
+
+#course_assign .groups .group-menu ul {
+    width: 185px;
+    padding: 0;
+    margin: 0;
+}
+
+#course_assign .groups .group-menu ul li {
+    font-size: 13px;
+    padding: 8px 8px 0;
+    line-height: 13px;
+    height: 22px;
+    background: none;
+}
+
+#course_assign .groups .group-menu ul li.active {
+    background: #e1ebf7;
+    border: 1px solid #d6e0eb;
+    height: 20px;
+}
+
+#course_assign .users {
+    width: 250px;
+    float: left;
+    position: relative;
+}
+
+#course_assign .users h3 {
+    padding-bottom: 15px;
+
+}
+
+#course_assign .users .user {
+    overflow: auto;
+    height: 36px;
+    background: url("images/bg/dashed.png") repeat-x top;
+    padding: 3px 0;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+#course_assign #selecting .users .user {
+    background: url("images/bg/dashed.png") repeat-x bottom;
+    padding:2px 0 6px;
+}
+
+#course_assign #selecting .users .user.addnew {
+    background: none;
+}
+
+#course_assign .user-group {
+    width: 240px;
+}
+
+#course_assign .users .user .ac_bg {
+    overflow: auto;
+    padding: 3px 0;
+}
+
+#course_assign .users .user .check {
+    float: left;
+    width: 16px;
+    height: 14px;
+    background: url("images/check_user.jpg") no-repeat left;
+    margin: 8px 11px 0 4px;
+}
+
+#course_assign .users .user img.avatar {
+    float: left;
+    display: block;
+    margin-right: 13px;
+    width: 28px;
+}
+
+#course_assign .users .user .info {
+    float: left;
+    width: 165px;
+    line-height: 14px;
+    padding-top: 2px;
+}
+
+#course_assign .groups .user-group {
+    display: none;
+}
+
+#course_assign .groups .user-group.active {
+    display: block;
+}
+
+#course_assign .users .user .info .name {
+    color: #000;
+}
+
+#course_assign .users .user .info .mail {
+    color: #7f7f7f;
+}
+
+#course_assign .users .user.active .ac_bg {
+    background: #ebf0f5;
+}
+
+#course_assign .users .user.active .check {
+    background: url("images/check_user.jpg") no-repeat right;
+}
+
+#course_assign .arrows {
+    float: left;
+    margin: 155px 15px 0;
+    width: 35px;
+}
+
+#course_assign .arrows .arr span {
+    width: 11px;
+    height: 10px;
+    display: block;
+    position: absolute;
+    left: 12px;
+    top: 11px;
+}
+
+#course_assign .arrows .arr {
+    background: url("images/arr_select_bg.jpg") no-repeat top;
+    width: 35px;
+    height: 35px;
+    display: block;
+    margin-bottom: 5px;
+    position: relative;
+}
+
+#course_assign .arrows .arr:hover {
+    background: url("images/arr_select_bg.jpg") no-repeat 0 -35px;
+}
+
+#course_assign .arrows .arr:active {
+    background: url("images/arr_select_bg.jpg") no-repeat bottom;
+}
+
+#course_assign .arrows .arr.select-user span {
+    background: url("images/arr_select_user.png") no-repeat top left;
+}
+
+#course_assign .arrows .arr.remove-user span {
+    background: url("images/arr_select_user.png") no-repeat top right;
+}
+
+#course_assign .selecting {
+    width: 255px;
+    height: 365px;
+    background: #fff;
+    border: 1px solid #ececec;
+    padding: 15px;
+    box-shadow: inset 0 1px 1px #ddd;
+    float: left;
+}
+
+#course_assign a.select-all {
+    float: right;
+    color: #0e67d2;
+    border-bottom: dotted 1px #0e67d2;
+    font-size: 12px;
+    line-height: 12px;
+}
+
+#course_assign input.search {
+    border: 1px solid #d2d2d2;
+    background: #fff;
+    display: block;
+    padding: 6px 10px;
+    margin-bottom: 8px;
+    width: 230px;
+}
+
+#course_assign  a.button-blue {
+    background: url("../images/blue_bg_button.jpg") repeat-x top;
+    border: 1px solid #4d5582;
+    text-shadow: 0 1px #38597c;
+    margin-right: 15px;
+}
+
+#course_assign  a.button-blue:hover {
+    background: url("../images/blue_bg_button.jpg") repeat-x bottom;
+}
+
+#course_assign  a.button-red {
+    background: url("../images/red_button_bg.jpg") repeat-x top;
+    border: 1px solid #c53d3c;
+    text-shadow: 0 1px #8b332d;
+}
+
+#course_assign  a.button-red.big {
+    padding-left: 38px;
+    padding-right: 38px;
+
+}
+
+#course_assign  a.button-red:hover {
+    background: url("../images/red_button_bg.jpg") repeat-x bottom;
+}
+
+#course_assign  a.button-gray {
+    background: url("images/but_gray.jpg") repeat-x top;
+    border: 1px solid #cacaca;
+    color: #9c9c9c;
+    text-shadow: none;
+    box-shadow: none;
+}
+
+#course_assign .buttons {
+    float: right;
+    margin-right: 3px;
+    margin-top: 20px;
+}
+
+#course_assign .group-menu .scroll {
+    height: 330px;
+}
+
+#course_assign .users .scroll {
+    height: 300px;
+}
+
+#course_assign .users .scroll .jspVerticalBar {
+    right: 0;
+}
+
+#course_assign .selecting .users .scroll {
+    height: 340px;
+}
+
+.parameters h3 {
+    font-size: 16px;
+    font-weight: bold;
+    padding-bottom: 17px;
+}
+
+.parameters {
+    width: 360px;
+    float: left;
+    height: 447px;
+}
+
+.parameters li {
+    background: url("images/bg/dashed.png") repeat-x top;
+    padding: 15px 0;
+    margin: 0;
+    font-size: 16px;
+    color: #000;
+    overflow: auto;
+    position: relative;
+}
+
+.parameters a.faq {
+    width: 17px;
+    height: 17px;
+    background: url("../images/ico_faq.png");
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.parameters li a.faq {
+    top: 17px;
+}
+
+.parameters .radio {
+    float: left;
+    width: auto;
+    height: auto;
+    font-size: 16px;
+    background: none;
+    clear: none;
+    display: block;
+}
+
+.parameters label {
+    font-size: 16px;
+    color: #000;
+    cursor: pointer;
+    float: left;
+    padding: 0 0 0 25px;
+    margin: 0 45px 0 0;
+    display: block;
+    line-height: 20px;
+}
+
+.parameters ul {
+    background: url("images/bg/dashed.png") repeat-x bottom;
+}
+
+.parameters .radio label {
+    background: url("images/radio.jpg") no-repeat 0 3px;
+}
+
+.parameters .radio label.active {
+    background: url("images/radio_active.jpg") no-repeat 0 3px;
+}
+
+.parameters .radio input, .parameters .option input {
+    visibility: hidden;
+    background: none;
+}
+
+.parameters .option {
+    overflow: auto;
+}
+
+.parameters .option label {
+    background: url("images/checkbox_par.jpg") no-repeat 0 3px;
+}
+
+.parameters .option label.active {
+    background: url("images/checkbox_par_active.jpg") no-repeat 0 3px;
+}
+
+#date-deadline, #time-deadline {
+    overflow: auto;
+    padding-left: 25px;
+    display: none;
+    margin-top: 8px;
+}
+
+#date-deadline input, #time-deadline input {
+    background: #fff;
+    border: 1px solid #bcbcbc;
+    padding: 10px 10px 9px;
+    width: 70px;
+    text-align: center;
+    display: block;
+    float: left;
+    box-shadow: inset 0 1px 1px #ddd;
+    float: left;
+}
+
+#date-deadline input.small, #time-deadline input.small {
+    width: 16px;
+    padding: 10px 7px 9px;
+}
+
+#date-deadline a.calendar {
+    float: left;
+    display: block;
+    background: url("images/ico_calendar.jpg") no-repeat;
+    width: 31px;
+    height: 31px;
+    margin: 3px 24px 0 9px;
+    opacity: 0.6;
+}
+
+#date-deadline span, #time-deadline span {
+    display: block;
+    margin: 10px 6px 0;
+    font-size: 16px;
+    color: #000;
+    float: left;
+}
+
+#date-deadline a.calendar:hover {
+    opacity: 1;
+}
+
+.parameters.post {
+    width: 450px;
+    margin-left: 50px;
+    position: relative;
+}
+
+.parameters li .edit-letter {
+    position: absolute;
+    right: 0;
+    display: none;
+    top: 15px;
+    padding-right: 15px;
+    background: url("images/drop-edit.jpg") no-repeat right;
+}
+
+.parameters li:hover .edit-letter {
+    display: block;
+}
+
+.parameters .letter {
+    background: #ececec url("images/letter_corner.jpg") no-repeat top right;
+    margin: 10px 0 0 0;
+    padding: 12px;
+    font-size: 12px;
+}
+
+.parameters .letter span {
+    color: #7c7c7c;
+}
+
+.parameters .letter .text a {
+    color: #0e67d2;
+}
+
+.parameters .letter .text a:hover {
+    text-decoration: underline;
+}
+
+.parameters .letter .text p {
+    margin-bottom: 13px;
+}
+
+.parameters .letter textarea {
+    display: block;
+    height: 35px;
+    padding: 8px;
+    font-size: 12px;
+    width: 403px;
+    overflow: hidden;
+    resize: none;
+}
+
+.parameters li .subletter {
+    background: #f9f9f9;
+    border: 1px solid #ececec;
+    border-radius: 2px;
+    padding: 11px;
+    font-size: 13px;
+}
+
+.parameters li .subletter .option {
+    overflow: visible;
+}
+
+.parameters .parameters.post li {
+    overflow: visible;
+}
+
+.parameters .parameters.post li .name {
+    cursor: pointer;
+}
+
+.parameters li .subletter label {
+    font-size: 13px;
+    margin-right: -10px;
+}
+
+.sbHolder {
+    border: 1px solid #d5d5d5;
+    height: 20px;
+    padding: 0 10px;
+    position: relative;
+    border-radius: 2px;
+    width: 80px;
+    background: #e2e2e2;
+    float: left;
+    margin-right: 5px;
+}
+
+.sbToggle {
+    background: url(images/bg/drop.png) no-repeat 8px 5px;
+    display: block;
+    height: 17px;
+    outline: none;
+    position: absolute;
+    right: 4px;
+    top: 4px;
+    width: 17px;
+    z-index: 100;
+}
+
+.sbSelector {
+    display: block;
+    height: 20px;
+    left: 0;
+    outline: none;
+    padding-top: 2px;
+    overflow: hidden;
+    position: absolute;
+    text-indent: 10px;
+    top: 2px;
+    line-height: 14px;
+    color: #000;
+    text-decoration: none;
+    width: 70px;
+    white-space: nowrap;
+
+}
+
+.sbOptions {
+    border: 1px solid #d5d5d5;
+    /*height: 150px;*/
+    padding: 0;
+    border-radius: 2px;
+    width: 100px;
+    background: #e2e2e2;
+    list-style: none;
+    left: -1px;
+    margin: 0;
+    position: absolute;
+    top: 17px;
+    font-size: 12px;
+    z-index: 1;
+    overflow-y: auto;
+    border-top: none;
+}
+
+.parameters .parameters .sbOptions {
+    background: #e2e2e2;
+}
+
+.parameters .sbOptions li {
+    background: #e2e2e2;
+    padding: 3px 5px 0 10px;
+    font-size: 12px;
+}
+
+.parameters .sbOptions li a {
+    color: #000;
+}
+
+.sbOptions a {
+    color: #2d5778;
+    text-decoration: none;
+}
+
+.parameters .action {
+    margin: 10px 0 -5px;
+    overflow: auto;
+    padding: 4px;
+}
+
+.parameters .action a.sendme {
+    font-size: 12px;
+    color: #000;
+    margin-top: 5px;
+    border-bottom: dotted 1px #919191;
+    line-height: 12px;
+}
+
+.parameters .action a.sendme:hover {
+    border: none;
+}
+
+.parameters .action a {
+    display: block;
+    float: right;
+
+    margin-left: 15px;
+}
+
+.parameters .action a.save {
+    background: url("images/save_button_bg.jpg") repeat-x top;
+    height: 14px;
+    line-height: 13px;
+    font-size: 12px;
+    padding: 4px 15px;
+    border: 1px solid #b7b7b7;
+    box-shadow: 0 1px 1px #bcbcbc;
+}
+
+.table-add a.save {
+    background: url("images/save_button_bg.jpg") repeat-x top;
+    height: 12px;
+    float: right;
+    font-size: 12px;
+    line-height: 13px;
+    font-size: 12px;
+    margin-top: 10px;
+    padding: 4px 15px;
+    border: 1px solid #b7b7b7;
+    box-shadow: 0 1px 1px #bcbcbc;
+}
+
+.parameters .textletter {
+    display: none;
+}
+
+#course_assign a.back {
+    float: left;
+    color: #0e67d2;
+    display: block;
+    margin-top: 30px;
+    font-size: 13px;
+    line-height: 13px;
+}
+
+#course_assign a.back span {
+    border-bottom: dotted 1px #0e67d2;
+}
+
+#course_assign a.back:hover span {
+    border: none;
+}
+
+#course_assign.test .parameters h3 {
+    font-size: 16px;
+}
+
+#course_assign.test #date-deadline, #time-deadline {
+    /*display: block;*/
+    float: left;
+    margin-top: -8px;
+    margin-bottom: -9px;
+    margin-left: -26px;
+}
+
+#course_assign.test .parameters {
+    width: 410px;
+    height: 470px;
+}
+
+#course_assign.test .parameters.post li {
+    overflow: visible;
+}
+
+#course_assign.test .parameters li {
+    padding: 14px 0 13px;
+}
+
+#course_assign.test .parameters .sbOptions li {
+    padding: 0 0 0 10px;
+}
+
+#course_assign.test .parameters label {
+    margin-right: 25px;
+}
+
+#course_assign.test .parameters input[type=checkbox] {
+    position: absolute;
+    top: -9999px;
+}
+
+#course_assign.test .parameters .option.dead {
+    float: left;
+}
+
+.parameters li .name {
+    cursor: pointer;
+}
+
+#course_assign.test .parameters .option.dead label {
+    margin-right: 20px;
+}
+
+#time-deadline {
+
+}
+
+#time-deadline span {
+    color: #616161;
+    font-size: 14px;
+}
+
+.parameters .inparr {
+    width: 72px;
+    height: 27px;
+    background: url("../images/bg_arr_input.jpg") repeat-x top;
+    float: left;
+    border-radius: 2px;
+    border: 1px solid #bcbcbc;
+    box-shadow: 0 0 3px #ccc;
+    position: relative;
+    margin-top: -4px;
+    margin-bottom: -5px;
+}
+
+.parameters .inparr span {
+    display: block;
+    height: 21px;
+    border-right: 1px solid #bcbcbc;
+    width: 51px;
+    line-height: 16px;
+    text-align: center;
+    color: #313131;
+    font-size: 16px;
+    padding-top: 4px;
+}
+
+.parameters .inparr span input {
+    border: none;
+    background: none;
+    font-size: 16px;
+    line-height: 16px;
+    color: #313131;
+    width: 29px;
+    padding: 0;
+    text-align: right;
+    margin: 0 -1px 0 0;
+}
+
+.parameters .inparr .up {
+    width: 20px;
+    height: 13px;
+    border-bottom: 1px solid #bcbcbc;
+    position: absolute;
+    box-shadow: 0 1px 0 #fff;
+    top: 0;
+    right: 0;
+    background: url("../images/arr_input.png") no-repeat top left;
+}
+
+.parameters .inparr .down {
+    width: 20px;
+    height: 13px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background: url("../images/arr_input.png") no-repeat top right;
+}
+
+.parameters .inparr .up:hover, .parameters .inparr .down:hover {
+    background-color: #fff;
+}
+
+.parameters .inparr .up:active, .parameters .inparr .down:active {
+    background-color: #4d4c4d;
+    box-shadow: inset 0 0 3px #000;
+    background-position: bottom left;
+}
+
+.parameters .inparr .down:active {
+    background-position: bottom right;
+}
+
+#course_assign.test .parameters.post {
+    margin-left: 35px;
+    margin-right: -25px;
+    width: 450px;
+}
+
+#course_assign.test {
+    height: 630px;
+}
+
+#course_assign.messages .groups .user-group {
+    display: block;
+    width: 395px;
+}
+
+#course_assign.messages .groups {
+    width: 395px;
+    height: 420px;
+    margin-top: 5px;
+}
+
+#course_assign.messages .users {
+    width: 395px;
+}
+
+#course_assign.messages input.search {
+    width: 374px;
+}
+
+#course_assign.messages .users .user .avatar {
+    width: 20px;
+}
+
+#course_assign.messages .users .user .info {
+    width: 320px;
+}
+
+#course_assign.messages .users .user .name {
+    width: 170px;
+    display: block;
+    float: left;
+    padding-top: 2px;
+}
+
+#course_assign.messages .users .user .mail {
+    display: block;
+    float: left;
+    padding-top: 2px;
+}
+
+#course_assign.messages .users .user .check {
+    margin-top: 3px;
+}
+
+#course_assign.messages .users .user {
+    height: 26px;
+    background-position: bottom;
+}
+
+#course_assign.messages .users .scroll {
+    height: 355px;
+    margin-top: 10px;
+}
+
+#course_assign.messages .textletter {
+    background: #ececec url("images/letter_corner.jpg") no-repeat top right;
+    float: left;
+    width: 375px;
+    padding: 15px 20px 20px;
+    margin: 7px 0 0 23px;
+}
+
+#course_assign.messages .textletter h3 {
+    margin-bottom: 15px;
+}
+
+#course_assign.messages .textletter textarea {
+    resize: none;
+    display: block;
+    width: 340px;
+    overflow: hidden;
+    height: 435px;
+    border: none;
+    border-radius: 2px;
+    padding: 10px 5px 0 10px;
+    background: none;
+}
+
+#course_assign.messages .textletter .scrolltext {
+    resize: none;
+    display: block;
+    overflow: hidden;
+    width: 360px;
+    height: 235px;
+    border: 1px solid #cbcbcb;
+    border-radius: 2px;
+    /*padding: 5px 5px 5px 10px;*/
+    background: #fff;
+}
+
+#course_assign.messages .buttons {
+    margin-top: -30px;
+}
+
+#course_assign.messages {
+    height: 515px;
+    padding: 20px 40px 0px;
+    border-radius: 0 0 3px 3px;
+}
+
+#course_assign .parameters .hide-settings a {
+    display: inline-block;
+    padding-left: 23px;
+    color: #33618f;
+    background: url("../images/ico_settings.jpg") no-repeat 0 3px;
+    padding-bottom: 14px;
+}
+
+#course_assign .parameters .hide-settings a span {
+    background: url("../images/dot_settings.jpg") repeat-x bottom;
+}
+
+#course_assign .parameters .hide-settings {
+    /*background: none;*/
+}
+
+#course_assign .parameters .hide-settings ul {
+    background: #dfe3e8;
+    margin: 0;
+    padding: 6px 0 25px 22px;
+    position: relative;
+    display: none;
+}
+
+#course_assign .parameters .hide-settings ul:after {
+    bottom: 100%;
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+}
+
+#course_assign .parameters .hide-settings ul:after {
+    border-bottom-color: #dfe3e8;
+    border-width: 10px;
+    left: 30%;
+    margin-left: -10px;
+}
+
+#course_assign .parameters .hide-settings ul li {
+    padding: 0;
+    background: none;
+    font-size: 12px;
+    line-height: 12px;
+    margin: 0;
+    font-family: Helvetica, sans-serif;
+}
+
+#course_assign .parameters .hide-settings label {
+    font-size: 12px;
+    line-height: 15px;
+}
+
+.parameters .hide-settings .option label {
+    background: url("../images/checkbox_par.png") no-repeat 0 0;
+}
+
+.parameters .hide-settings .option label.active {
+    background: url("../images/checkbox_par_active.png") no-repeat 0 0;
+}
+
+.parameters ul.nobg {
+    background: none;
+}
+
+#course_assign a.button-red, #course_assign a.button-gray {
+    padding: 6px 27px 10px;
+}
+
+.parameters em {
+    display: block;
+    float: left;
+    padding: 0 4px;
+}
+
+#course_assign.test .description {
+    padding-bottom: 45px;
+}
+
+#date-deadline input, #time-deadline input {
+    background: #eaeaea;
+}
+
+#course_assign.users .description {
+    padding-bottom: 25px;
+}
+
+#course_assign.users .actions {
+    height: 32px;
+}
+
+#course_assign.users .actions ul {
+    float: right;
+    margin-bottom: 10px;
+    display: none;
+}
+
+#course_assign.users .actions ul li {
+    float: left;
+    margin-left: 6px;
+    padding: 0;
+    list-style: none;
+    background: none;
+}
+
+#course_assign.users .actions ul li a {
+    display: block;
+    float: left;
+    padding: 4px 6px 0;
+    background: url("images/add_actions_but.jpg") repeat-x top;
+    height: 15px;
+    border: 1px solid #c9c9c9;
+    font-weight: bold;
+    color: #454545;
+    font-size: 11px;
+    line-height: 11px;
+    border-radius: 3px;
+}
+
+#course_assign.users .actions ul li a:hover {
+    background: url("images/add_actions_but.jpg") repeat-x bottom;
+}
+
+#course_assign.users .actions ul li a img {
+    /*width: auto;*/
+    /*height: auto;*/
+    float: left;
+    position: relative;
+    top: -1px;
+    margin-right: 4px;
+}
+
+.table-add {
+    height: 380px;
+}
+
+.table-add .scroll {
+    height: 340px;
+}
+
+.table-add .scroll.ex .jspPane {
+    padding-bottom: 265px !important;
+}
+
+.table-add .head {
+    height: 35px;
+    border-bottom: solid 1px #dbdbdb;
+    overflow: auto;
+}
+
+.table-add .th {
+    float: left;
+    padding-top: 8px;
+    margin-right: 20px;
+    color: #808080;
+}
+
+.table-add .th.selectall, .table-add .check {
+    background: url("images/checkbox_par.jpg") no-repeat 9px 8px;
+    width: 43px;
+    height: 27px;
+    margin-right: 0;
+    cursor: pointer;
+}
+
+.table-add .th.selectall.active, .table-add .check.active {
+    background: url("../images/checkbox_par_active.png") no-repeat 9px 8px;
+}
+
+.table-add .th.mail {
+    width: 300px;
+}
+
+.table-add .th.mail, .table-add .th.group {
+    width: 300px;
+
+}
+
+.table-add .th.status {
+    width: 125px;
+}
+
+.table-add .user {
+    height: 39px;
+    background: url("images/bg/dashed.png") repeat-x bottom;
+    padding: 1px 0;
+}
+
+.table-add .check {
+    float: left;
+    background: url("images/checkbox_par.jpg") no-repeat 9px 12px;
+}
+
+.table-add .ac_bg.active {
+    background: #e0e5ea;
+    height: 38px;
+
+}
+
+.table-add .ac_bg.active .check {
+    background: url("../images/checkbox_par_active.png") no-repeat 9px 12px;
+}
+
+.table-add .user .mail, .table-add .user .group {
+    width: 300px;
+    float: left;
+    padding-top: 4px;
+    margin-right: 20px;
+}
+
+.table-add .user .mail input {
+    width: 278px;
+    border-radius: 2px;
+    border: 1px solid #cccccc;
+    box-shadow: inset 0 1px #f1f1f1;
+    font-size: 14px;
+    color: #000;
+    padding: 0 10px;
+    height: 28px;
+}
+
+.table-add .user .status {
+    width: 125px;
+    float: left;
+    padding-top: 8px;
+}
+
+.table-add .user .status .sbHolder {
+    width: 115px;
+}
+
+.table-add .user .status .sbSelector {
+    width: 110px;
+}
+
+.table-add .user .status .sbOptions {
+    width: 135px;
+    z-index: 99000;
+}
+
+.table-add .user .status .sbOptions li {
+    padding-left: 10px;
+}
+
+.table-add .user .status .sbOptions li a {
+    color: #000;
+}
+
+.table-add .user.clear {
+    display: none;
+}
+
+/*select*/
+
+.select-group {
+    background: #fff;
+    float: left;
+    padding: 0 32px 0 10px;
+    height: 28px;
+    cursor: pointer;
+    width: 246px;
+    border-radius: 2px;
+    border: 1px solid #cccccc;
+    box-shadow: inset 0 1px #f1f1f1;
+    font-size: 14px;
+    position: relative;
+}
+
+.select-group .arrow {
+    width: 23px;
+    height: 24px;
+    position: absolute;
+    top: 2px;
+    right: 1px;
+    cursor: pointer;
+    background: url(images/arr_select.jpg) no-repeat;
+}
+
+.select-group p.select-group-text {
+    line-height: 28px;
+    margin-bottom: 0;
+}
+
+.select-group-list {
+    border: 1px solid #c9c9c9;
+    position: absolute;
+    width: 100%;
+    height: 262px;
+    left: -1px;
+    top: 28px;
+    background: #FFF;
+    font-size: 14px;
+    display: none;
+    cursor: default;
+    z-index: 9000;
+}
+
+.select-group-list input {
+    width: auto;
+    height: auto;
+    float: left;
+    margin: 4px 10px 0 0;
+}
+
+.select-group-list span {
+}
+
+.select-group-list ul {
+    margin: 0;
+}
+
+.select-group-list li {
+    clear: both;
+    padding: 0;
+}
+
+.select-group-list li label {
+    font-size: 14px;
+}
+
+.select-group-list li input.new_text {
+    border: 1px solid #CCC;
+    color: #565656;
+    height: 20px;
+    line-height: 16px;
+}
+
+.select-group-list .create {
+    margin: 10px;
+    border-bottom: 1px solid #CCC;
+    padding-bottom: 5px;
+}
+
+.select-group-list .white_btn {
+    background: url("images/bg/white_btn_bg.jpg") repeat-x scroll 0 0 #E9E9E9;
+    border: 1px solid #AFAFAF;
+    border-radius: 2px 2px 2px 2px;
+    box-shadow: 0 2px 2px #DBDBDF;
+    color: #000000;
+    display: block;
+    padding: 4px 16px 3px;
+    position: relative;
+    text-decoration: none;
+    float: left;
+    margin: 5px 0 0 10px;
+    behavior: url(PIE.htc);
+}
+
+/* scroll */
+
+.select-group-scroll {
+    height: 180px;
+}
+
+.select-group-cont {
+    padding: 0 10px;
+}
+
+.table-add .add-new {
+    display: block;
+    width: 278px;
+    color: #7e7e7e;
+    font-size: 14px;
+    padding: 7px 10px;
+    line-height: 14px;
+    margin-left: 43px;
+    border: 1px solid #c7c7c7;
+    margin-top: 6px;
+}
+
+.sendnoti {
+    background: url("../images/checkbox_par.png") no-repeat left;
+    padding: 0 0 0 20px;
+    float: left;
+    font-size: 16px;
+    color: #000;
+    margin-top: 23px;
+    cursor: pointer;
+}
+
+.sendnoti.active {
+    background: url("../images/checkbox_par_active.png") no-repeat left;
+}
+
+#upload_exel, #get_link {
+    padding: 70px 0 70px;
+    width: 510px;
+    margin: 0 auto;
+}
+
+#upload_exel h2, #get_link h2 {
+    font-family: Helvetica, sans-serif;
+    font-size: 24px;
+}
+
+#upload_exel p, #get_link p {
+    color: #000;
+    font-size: 14px;
+    line-height: 18px;
+    font-family: Helvetica, sans-serif;
+    margin-bottom: 30px;
+}
+
+#upload_exel .btn-download {
+    float: none;
+    margin: 0 auto 30px;
+}
+
+#upload_exel ul {
+    font-size: 12px;
+    color: #707070;
+}
+
+#upload_exel ul li {
+    background: url("images/marker.jpg") no-repeat left 4px;
+    line-height: 14px;
+    padding-bottom: 6px;
+    padding-left: 9px;
+}
+
+#upload_exel ul li a {
+    font-weight: bold;
+    color: #0f67d1;
+}
+
+.table-add .select-group p.select-group-text {
+    color: #000;
+}
+
+.table-add .select-group input[type=checkbox] {
+    width: 0;
+    height: 0;
+    position: absolute;
+    left: -90000px;
+}
+
+.table-add .select-group li .edit {
+    position: absolute;
+    background: url("images/bg/edit.png") no-repeat;
+    width: 23px;
+    height: 23px;
+    right: 10px;
+    border: none;
+    display: none;
+    z-index: 0;
+}
+
+.table-add .select-group li .del {
+    position: absolute;
+    background: #ecf1f6 url("images/bg/del3.png") no-repeat;
+    width: 23px;
+    height: 23px;
+    right: 10px;
+    border: none;
+    display: none;
+    z-index: 1;
+}
+
+.table-add .select-group label {
+    display: block;
+    padding: 2px 3px 3px 24px;
+    cursor: pointer;
+    font-size: 12px;
+    color: #000;
+    background: url("../images/checkbox_par.png") no-repeat 2px 4px;
+}
+
+.table-add .select-group label.active {
+    background: url("../images/checkbox_par_active.png") no-repeat 2px 4px;
+}
+
+.table-add .select-group label input {
+    display: inline-block;
+    float: none;
+    padding: 0;
+    margin: 0;
+}
+
+.table-add .select-group li {
+    padding: 1px;
+    margin-right: 10px;
+    position: relative;
+    height: 25px;
+}
+
+.table-add .select-group li:hover, .table-add .select-group li.active {
+    background: #ecf1f6;
+}
+
+.table-add .select-group li:hover .edit {
+    display: block;
+}
+
+.table-add .select-group-list .create a {
+    font-size: 12px;
+    color: #000;
+    font-weight: bold;
+}
+
+#get_link .table-add p {
+    margin-bottom: 0;
+    padding-top: 5px;
+}
+
+#get_link .table-add {
+    height: auto;
+    margin-bottom: 20px;
+}
+
+#get_link .table-add .select-group-scroll {
+    height: 110px;
+}
+
+#get_link .select-group-list {
+    height: 190px;
+}
+
+#get_link .table-add .user {
+    padding-bottom: 16px;
+}
+
+#get_link {
+    padding: 60px 0 60px;
+}
+
+#get_link .link {
+    overflow: auto;
+}
+
+#get_link .link span {
+    font-size: 11px;
+    color: #808080;
+    display: block;
+}
+
+#get_link .link .value {
+    color: #363636;
+    font-size: 14px;
+    line-height: 14px;
+    padding: 7px 14px;
+    float: left;
+    width: 375px;
+    background: #e7ecf1;
+}
+
+#get_link .link a.copy {
+    display: block;
+    float: right;
+    font-size: 10px;
+    font-weight: bold;
+    background: url("images/copy_but.jpg") repeat-x;
+    height: 18px;
+    width: 100px;
+    color: #727272;
+    border: 1px solid #c7c7c7;
+    text-align: center;
+    line-height: 10px;
+    padding-top: 8px;
+    border-radius: 2px;
+}
+
+#get_link  .table-add .user .group {
+    width: 352px;
+}
+
+#get_link  .table-add .th.group {
+    width: 352px;
+}
+
+#get_link  .table-add .th.status {
+    margin-right: 0;
+}
+
+#get_link .select-group {
+    width: 300px;
+}
+
+.table-add .user {
+    height: 40px;
+}
+
+#course_assign .left {
+    width: 508px;
+    float: left;
+
+}
+
+#course_assign .left #upload_exel {
+    width: 400px;
+    padding: 58px 0 58px;
+
+}
+
+#course_assign .left #upload_exel h2 {
+    text-align: center;
+}
+
+#course_assign .left #upload_exel p {
+    text-align: center;
+}
+
+#course_assign .left #upload_exel ul {
+    margin-left: 70px;
+}
+
+.send input {
+    width: 0;
+    position: absolute;
+    left: -90000px;
+}
+
+.send label {
+    font-size: 16px;
+    display: block;
+    background: url("../images/checkbox_par.png") no-repeat left;
+    padding-left: 26px;
+    margin-left: 10px;
+    margin-top: 16px;
+    cursor: pointer;
+    color: #000;
+}
+
+.send label.active {
+    background: url("../images/checkbox_par_active.png") no-repeat left;
+
+}
+
+#course_assign .selecting.exel {
+    height: 343px;
+}
+
+#course_assign .selecting.exel .send label {
+    float: left;
+    margin-top: 10px;
+    margin-left: 5px;
+
+}
+
+#course_assign .selecting.exel .send img {
+    margin-left: 10px;
+    margin-top: 12px;
+}
+
+#course_assign .left .selecting {
+    background: none;
+    border: 0;
+    border: none;
+    box-shadow: none;
+    border-radius: 0;
+    width: 472px;
+    padding: 0 15px;
+
+}
+
+#course_assign .left .users {
+    width: 475px;
+}
+
+#course_assign .left .users .user .check {
+    float: left;
+    width: 16px;
+    height: 14px;
+    background: url("../images/checkbox_par.png") no-repeat left;
+    margin: 8px 11px 0 4px;
+}
+
+#course_assign .left .users .user .check.oth{
+    display: none;
+}
+
+#course_assign .left .users .user {
+    width: 475px;
+    margin-left: -3px;
+}
+
+#course_assign .left .users .user .info {
+    width: 416px;
+}
+
+#course_assign .left .users .user .ac_bg {
+    padding-left: 10px;
+}
+
+#course_assign .left .users .user.first {
+    background: none;
+
+}
+
+#course_assign .left #selecting .users .user.pred {
+    background: none;
+    overflow: visible;
+    border-bottom: 1px solid #dbdbdb;
+    float: left;
+}
+
+#course_assign .left .users .user.pred .ac_bg {
+    overflow: visible;
+}
+
+#course_assign .left .users .user.pred .mail {
+    float: left;
+    font-size: 12px;
+    color: #808080;
+    width: 316px;
+}
+
+#course_assign .left .users .user.pred.active .ac_bg {
+    background: none;
+}
+
+#course_assign .left .users .user-group {
+    width: 472px;
+
+}
+
+#course_assign .left .users .user.active .check {
+    float: left;
+    width: 16px;
+    height: 14px;
+    background: url("../images/checkbox_par_active.png") no-repeat left;
+    margin: 8px 11px 0 4px;
+}
+
+#course_assign .left .users .user .mail {
+    font-size: 16px;
+    line-height: 26px;
+    color: #000;
+}
+
+#course_assign .left .users .user{
+    overflow: visible;
+}
+
+#course_assign .left .users .user .mail input{
+    width: 373px;
+    height: 28px;
+    padding: 0 10px;
+    border: 1px solid #d0d0d0;
+    color: #000;
+    font-size: 14px;
+}
+
+.mail button{
+    width: 394px;
+    height: 28px;
+    padding: 0 10px;
+    border: 1px solid #d0d0d0;
+    color: #7e7e7e;
+    font-size: 14px;
+    background: #f4f4f4;
+    text-align: left;
+    cursor: pointer;
+    margin-left: 31px;
+}
+
+.mail button:hover{
+    border: 1px solid #666;
+    background: #fbfbfb;
+}
+
+.cor {
+    width: 70px;
+    right: 24px;
+    top:7px;
+    display: block;
+    margin-right: -20px;
+    position: absolute;
+    padding: 4px 6px 0;
+    background: url("images/add_actions_but.jpg") repeat-x top;
+    height: 15px;
+    border: 1px solid #C9C9C9;
+    font-weight: bold;
+    color: #434343;
+    font-size: 11px;
+    line-height: 11px;
+    border-radius: 3px;
+    display: none;
+}
+
+.cor img {
+    margin-top: -2px;
+    float: left;
+    padding-right: 4px;
+}
+
+.cor:hover {
+    background: url("images/add_actions_but.jpg") repeat-x bottom;
+    color: #434343;
+
+}
+
+#course_assign .left .selecting.exel {
+    height: 364px;
+}
+
+#course_assign .left .selecting.exel .users .scroll {
+    height: 321px;
+}
+
+.sub {
+    background: url("images/white_cover2.png") repeat-x top;
+    height: 20px;
+    margin: -20px -5px 0 -15px;
+
+    position: relative;
+    z-index: 100;
+
+}
+
+#course_assign #selecto .mail {
+    white-space: nowrap;
+    width: 165px;
+    overflow: hidden;
+    display: block;
+    float: left;
+}
+
+#course_assign #selecto .scroll {
+    height: 325px;
+    margin-bottom: 10px;
+}
+
+
+#course_assign h2 a{
+    color: #0e67d2;
+}
+
+#course_assign h2 span{
+    color: #868686;
+    position: relative;
+    z-index: 11000;
+}
+
+#course_assign h2 span a{
+    border-bottom: 1px dotted #0e67d2;
+}
+
+#course_assign h2 span a:hover{
+    border: 0;
+    border: none;
+}
+
+#course_assign h2 span .pops{
+    position: absolute;
+    z-index: 10000;
+    left:-12px;
+    top:35px;
+    display: none;
+    width: 1000px;
+}
+#course_assign h2 span.sharing_folders .pops{
+    left:-18px;
+
+
+}
+
+#course_assign h2 span .pops .scroll{
+    height: 200px;
+}
+
+.arrow_box {
+	position: relative;
+	background: #f6f5e3;
+	border: 1px solid #d7d4aa;
+    border-radius: 5px;
+    box-shadow: 0 0 5px #dddddd;
+    padding: 5px 5px 5px 15px ;
+}
+.arrow_box:after, .arrow_box:before {
+	bottom: 100%;
+	border: solid transparent;
+	content: " ";
+	height: 0;
+	width: 0;
+	position: absolute;
+	pointer-events: none;
+}
+
+.arrow_box:after {
+	border-color: rgba(246, 245, 227, 0);
+	border-bottom-color: #f6f5e3;
+	border-width: 8px;
+	left: 30px;
+	margin-left: -9px;
+}
+.arrow_box:before {
+	border-color: rgba(215, 212, 170, 0);
+	border-bottom-color: #d7d4aa;
+	border-width: 9px;
+	left: 30px;
+	margin-left: -10px;
+}
+
+
+#course_assign h2 span .inner a{
+    font-size: 13px;
+    border: 0;
+    border:  none;
+}
+
+#course_assign h2 span .inner a:hover{
+    text-decoration: underline;
+}
+
+#course_assign h2 span .inner li{
+    padding:0 0 2px 0;
+    white-space: nowrap;
+    display: block;
+}
+
+
+#course_assign h2 span.sharing_folders li{
+    background: url("images/blue_folder_ico.png") no-repeat left;
+    padding-left: 21px;
+}
+
+#course_assign h2 span .inner ul{
+    margin-bottom: 0;
+    float: left;
+
+}
+
+
+#course_assign h2 span .cover{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+
+.user.empty {
+    display: none;
+}
+
+.spin.fix {
+    height: 290px !important;
+}
+
+.addnew.out {
+    margin: 0 0 0 8px;
+    overflow: auto;
+    display: none;
+}
+
+#selecting .jspPane {
+    left: 0 !important;
+}
+
+.pad {
+    height: 6px;
+    width: 300px;
+}
+
+#course_assign.sharing {
+    height: 555px;
+}
+
+#course_assign .parameters {
+    background: url("images/bg/dashed.png") repeat-x top;
+    float: none;
+    width: auto;
+    height: auto;
+}
+
+#course_assign .parameters .bot {
+    background: url("images/bg/dashed.png") repeat-x bottom;
+    height: 310px;
+    overflow: auto;
+    padding: 30px 0 0 0;
+}
+
+#course_assign .parameters.form .bot {
+    padding-top: 23px;
+}
+
+#course_assign .parameters .pars {
+    width: 435px;
+    float: left;
+}
+
+#course_assign .parameters .item {
+    overflow: auto;
+    padding-bottom: 22px;
+    font-family: Helvetica, sans-serif;
+    font-size: 14px;
+    color: #000;
+}
+
+#course_assign .parameters.form .item {
+    padding-bottom: 8px;
+}
+
+#course_assign .parameters label {
+    display: block;
+    float: left;
+    width: 130px;
+    text-align: right;
+    color: #878888;
+    font-size: 12px;
+    padding: 0;
+    line-height: 18px;
+    margin: 0;
+}
+
+#course_assign .parameters.form label {
+    padding-top: 7px;
+}
+
+#course_assign .parameters .parameter {
+    float: right;
+    width: 240px;
+    line-height: 18px;
+    padding-right: 45px;
+}
+
+#course_assign .parameters.form .parameter {
+    width: 294px;
+    padding-right: 0;
+}
+
+#course_assign .parameters .parameter input, #course_assign .parameters .parameter textarea {
+    width: 240px;
+    height: 30px;
+    font-size: 14px;
+    font-family: Helvetica, Arial, sans-serif;
+    color: #000;
+    padding: 0 8px;
+    border-radius: 2px;
+    border:1px solid #c8c8c8;
+    box-shadow: inset 0 1px 1px 0 #f5f5f5;
+    display: block;
+    position: relative;
+}
+
+#course_assign .parameters .parameter textarea {
+    height: 42px;
+    resize: none;
+    overflow: hidden;
+    padding-top: 6px;
+    line-height: 18px;
+}
+
+#course_assign .parameters.form .item.text {
+    /*padding-bottom: 6px;*/
+}
+
+#course_assign .parameters.form .bot {
+    padding-bottom: 7px;
+}
+
+#course_assign .parameters.form .item.text.last .parameter textarea {
+    height: 60px;
+}
+
+#course_assign.company {
+    height: 500px;
+}
+
+#fancybox-overlay {
+    z-index: 1000000 !important;
+}
+
+.fancybox-opened {
+    z-index: 2000000 !important;
+}
+
+#writepass {
+    width: 250px;
+    height: 200px;
+}
+
+#writepass.popup h4 {
+    margin-bottom: 16px;
+    padding-bottom: 20px;
+}
+
+#writepass.popup span {
+    margin-bottom: 20px;
+}
+
+.popup .pass input {
+    display: block;
+    width: 230px;
+    border-radius: 2px;
+    height: 28px;
+    padding: 0 10px;
+    margin: 0;
+    border:1px solid #c8c8c8;
+}
+
+.popup .pass {
+    position: relative;
+    margin-bottom: 26px;
+
+}
+
+
+.popup .show-pass{
+    position: absolute;
+    background: url("images/show_pass.jpg");
+    width: 21px;
+    height: 14px;
+    right: 10px;
+    top:8px;
+}
+
+#writepass.popup .button-red {
+    padding-left: 50px;
+    padding-right: 50px;
+}

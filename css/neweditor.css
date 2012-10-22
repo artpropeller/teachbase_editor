@@ -1,0 +1,898 @@
+.blank-cover {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 9000;
+}
+
+#scrollTest {
+    width: 207px;
+}
+
+.main-block {
+    margin-right: 225px;
+}
+
+.preview-block-cont {
+    width: 207px;
+}
+
+.scrollable .scrollwrap {
+    overflow: visible;
+}
+
+.create {
+    background: url("../images/new_list.jpg") no-repeat top;
+    width: 77px;
+    height: 21px;
+    padding-top: 2px;
+    color: #fff;
+    font-weight: bold;
+    text-decoration: none;
+    padding-left: 24px;
+    text-shadow: 0 1px 0 #000;
+    margin-top: 5px;
+}
+
+.create.active {
+    background: url("../images/new_list.jpg") no-repeat bottom;
+    color: #f2dada;
+}
+
+#tabs-1 ol li .background {
+    width: 120px;
+    height: 85px;
+}
+
+#tabs-1 {
+    width: 207px;
+}
+
+#tabs-1 ol li {
+    width: auto;
+    height: auto;
+    padding-left: 0;
+    padding-top: 0;
+}
+
+.preview-block .bg-dummy {
+    width: 207px;
+}
+
+#tabs-1 ol li .add-inset {
+    right: 35px;
+    top: 35px;
+}
+
+#tabs-1 ol li .item {
+    height: 96px;
+    padding-left: 42px;
+    padding-top: 10px;
+
+}
+
+#tabs-1 ol li .item.active {
+    background: url(../img/prev-background.png) repeat;
+    border-top: 1px solid #315273;
+    border-bottom: 1px solid white;
+}
+
+#tabs-1 ol li .screpa {
+    right: 46px;
+    top: -5px;
+}
+
+#tabs-1 ol li .copy, #tabs-1 ol li .del {
+    top: 60px;
+}
+
+#tabs-1 ol li::before {
+    content: '';
+}
+
+#tabs-1 ol li .item .count {
+    position: absolute;
+    top: 10px;
+    left: 28px;
+}
+
+#tabs-1 ol li .item.active .count {
+    color: #fff;
+}
+
+#tabs-1 ol li ol li .item {
+    padding-left: 57px;
+}
+
+#tabs-1 ol li ol li .item .count {
+    left: 43px;
+}
+
+#tabs-1 ol li ol li ol li .item {
+    padding-left: 72px;
+}
+
+#tabs-1 ol li ol li ol li .item .count {
+    left: 58px;
+}
+
+#tabs-1 ol li ol li ol li .item .add-inset {
+    background: url("../images/outset_last.png") no-repeat;
+    right: 5px;
+}
+
+#tabs-1 ol li ol li .item .add-inset {
+    background: url("../images/inset_m.png") no-repeat;
+    right: 20px;
+    height: 18px;
+    top: 42px;
+}
+
+#tabs-1 ol li ol li .item .add-outset {
+    background: url("../images/outset_m.png") no-repeat;
+    right: 22px;
+    height: 17px;
+    width: 17px;
+    position: absolute;
+    top: 25px;
+}
+
+#tabs-1 ol li ol {
+    display: none;
+}
+
+#tabs-1 .item .arr-set {
+    position: absolute;
+    top: 48px;
+    left: 29px;
+    background: url("../images/level_up_gray.jpg") no-repeat;
+    width: 5px;
+    height: 9px;
+    cursor: pointer;
+}
+
+#tabs-1 .item .arr-set.active {
+    background: url("../images/leve_down_gray.jpg") no-repeat;
+    width: 9px;
+    height: 5px;
+}
+
+#tabs-1 .item.active .arr-set {
+    background: url("../images/level_up_white.jpg") no-repeat;
+}
+
+#tabs-1 .item.active .arr-set.active {
+    background: url("../images/level_down_white.jpg") no-repeat;
+}
+
+#tabs-1 ol li ol li .item .arr-set {
+    left: 44px;
+}
+
+#contents {
+    margin: 0;
+    padding: 0;
+    width: 207px;
+}
+
+#contents li {
+    font-family: arial, sans-serif;
+    font-weight: bold;
+    font-size: 13px;
+    list-style: none;
+    cursor: pointer;
+    position: relative;
+
+}
+
+#contents li .item {
+    padding: 2px 0 2px 25px;
+}
+
+#contents li li .item {
+    padding-left: 38px;
+}
+
+#contents li li li .item {
+    padding-left: 53px;
+}
+
+#contents li li {
+    font-weight: normal;
+    font-size: 12px;
+
+}
+
+#contents .item.active {
+    background: url(../img/prev-background.png) repeat;
+    border-top: 1px solid #315273;
+    border-bottom: 1px solid white;
+    color: #fff;
+}
+
+#contents li .arr-set {
+    position: absolute;
+    top: 4px;
+    left: 15px;
+    background: url("../images/level_up_gray.jpg") no-repeat;
+    width: 5px;
+    height: 9px;
+    cursor: pointer;
+}
+
+#contents li .arr-set.active {
+    background: url("../images/leve_down_gray.jpg") no-repeat;
+    width: 9px;
+    height: 5px;
+    top: 7px;
+    left: 10px;
+}
+
+#contents li .item.active .arr-set {
+    background: url("../images/level_up_white.jpg") no-repeat;
+
+}
+
+#contents li .item.active .arr-set.active {
+    background: url("../images/level_down_white.jpg") no-repeat;
+    top: 7px;
+    left: 10px;
+}
+
+#contents li li .item .arr-set {
+    left: 29px;
+    top: 7px;
+}
+
+#contents li li .item.active .arr-set.active {
+    left: 24px;
+    top: 7px;
+}
+
+#contents li ul {
+    display: none;
+}
+
+.bookmarklet {
+    position: absolute;
+    background: url("../images/bookmarklet_mini.png") no-repeat top;
+    width: 26px;
+    height: 17px;
+    top: -3px;
+    cursor: pointer;
+    left: 13px;
+    z-index: 10000;
+}
+
+.bookmarklet.show {
+
+}
+
+.bookmarklet .del {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: url("../images/del_head.png");
+    top: 14px;
+    left: 7px;
+    display: none;
+}
+
+.bookmarklet.active:hover .del {
+    display: block;
+}
+
+#name-chapter {
+    width: 200px;
+    border: solid 1px #bfbfbf;
+    height: 24px;
+    font-size: 14px;
+    font-family: Helvetica, sans-serif;
+    font-weight: bold;
+    color: #000;
+    padding: 0 5px;
+    margin-left: 5px;
+    display: none;
+}
+
+#name-chapter-text {
+    display: none;
+    font-family: Helvetica, sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 0 11px;
+    color: #727272;
+}
+
+#tabs-1 ol li img {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+}
+
+.scrollable .scrollcontent {
+    overflow: visible;
+}
+
+.scrollable {
+    /*overflow: visible !important;*/
+}
+
+.main-block .m td {
+    border-right: 1px dashed #CFE4F4;
+    border-bottom: 1px dashed #CFE4F4;
+}
+
+.main-block .m td.i1, .main-block .m td.i3 {
+    border: none;
+}
+
+.main-block .m td.ii1 {
+    border-right: none;
+}
+
+.main-block .m td.ii2 {
+    border-bottom: none;
+}
+
+.main-block {
+    height: 457px;
+    margin: 50px auto;
+    padding: 50px;
+    width: 648px;
+    position: relative;
+    left: -75px;
+}
+
+.new-course {
+    top: 85px;
+    right: 15px;
+    z-index: 10000;
+}
+
+.new-course ul {
+    padding-bottom: 9px;
+}
+
+.new-course ul li.new-interview ul a {
+    background-image: url("../images/new-test-poll-icon.png");
+}
+
+.new-course ul li ul li a.new-test {
+    background-position: 0 0;
+}
+
+.new-course ul li ul li a.new-poll {
+    background-position: -74px 0;
+}
+
+.blacks {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    z-index: 1000000;
+}
+
+.choice-test.popup {
+    width: 790px;
+    height: 460px;
+    background: #f3f3f3;
+    padding: 20px;
+    overflow: auto;
+}
+
+.choice-test h3 {
+    font-size: 24px;
+    color: #000;
+    font-weight: normal;
+    font-family: Helvetica, sans-serif;
+    margin: 0;
+    padding: 0 0 18px 0;
+}
+
+.choice-test .categories {
+    float: left;
+    width: 180px;
+}
+
+.choice-test ul, .choice-test ul li {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-size: 12px;
+    font-family: Helvetica, sans-serif;
+    line-height: 16px;
+}
+
+.choice-test .categories li {
+    padding: 8px 4px 7px 15px;
+    border: solid 1px transparent;
+}
+
+.choice-test .categories li.head-cat {
+    font-weight: bold;
+    border-bottom: 1px solid #dcdcdc;
+    margin-bottom: -1px;
+}
+
+.choice-test .categories li a {
+    color: #000;
+    text-decoration: none;
+}
+
+.choice-test .categories li a:hover {
+    text-decoration: underline;
+}
+
+.choice-test .categories li.active {
+    background: #dee8f4;
+    box-shadow: 0 1px 0 0 #fff, inset 0 1px 0 0 #dee8f4;
+    border-color: #cad3dd #d3dde8 #d3dde8;
+}
+
+.choice-test .categories li.active a {
+    text-decoration: none;
+}
+
+.choice-test .test-items {
+    float: right;
+    width: 580px;
+    height: 360px;
+    padding: 10px 0 0 10px;
+    background: #fff;
+    border-radius: 3px;
+    border: 1px solid;
+    border-color: #dddddd #f3f3f3 #ededed;
+    box-shadow: 0 1px 0 0 #fff, inset 0 1px 0 0 #f5f5f5;
+}
+
+.choice-test .search {
+    background: url("../images/dashed.png") repeat-x bottom;
+    padding: 0 0 11px 0;
+    margin: 0 11px 0 0;
+}
+
+.choice-test .search input {
+    display: block;
+    border-radius: 3px;
+    padding: 0 10px;
+    height: 30px;
+    width: 547px;
+    border: 1px solid #d2d2d2;
+    box-shadow: inset 0 1px 0 0 #f5f5f5;
+}
+
+.test-list {
+    padding-right: 0;
+}
+
+.test-list .test {
+    padding: 1px 0 2px;
+    background: url("../images/dashed.png") repeat-x bottom;
+    overflow: auto;
+    margin-right: 11px;
+    cursor: pointer;
+}
+
+.test-list .test.active .ac {
+    background: #ebf0f4;
+    overflow: auto;
+}
+
+.test-list .choice {
+    float: left;
+    background: url("../images/radio-button.png") no-repeat left;
+    width: 14px;
+    height: 14px;
+    margin: 27px 20px 0;
+}
+
+.test-list .test.active .choice {
+    background-position:right;
+}
+
+.test-list .ico {
+    float: left;
+    width: 50px;
+    height: 50px;
+    margin: 6px 14px 6px 0;
+    background: url("../images/test_icon.png");
+}
+
+.test-list .info {
+    float: left;
+    width: 450px;
+    margin: 8px 0;
+    line-height: 18px;
+    font-family: Arial, sans-serif;
+    font-size: 15px;
+    color: #000;
+}
+
+.test-list .info .author {
+    font-size: 12px;
+}
+
+.test-list .info .stat {
+    font-style: italic;
+    color: #666666;
+    font-size: 12px;
+}
+
+.test-list .info .stat span {
+    display: inline;
+    padding: 0 11px;
+    font-weight: normal;
+}
+
+.test-list .scroll {
+    height: 315px;
+
+}
+
+.test-list .scroll:focus {
+    border: none;
+    outline: none;
+}
+
+.choice-test .buttons {
+    float: right;
+    margin-top: 17px;
+}
+
+.choice-test .buttons a {
+    text-decoration: none;
+    font-family: Helvetica, sans-serif;
+    line-height: 18px;
+
+}
+
+.test-view {
+    background: #efefef;
+    font-size: 10px;
+    font-family: Arial, sans-serif;
+    line-height: 12px;
+    /*width: 1200px !important;*/
+}
+
+.test-view .bookmarklet {
+    display: none;
+}
+
+.test-view .left {
+    width: 90px;
+    float: left;
+    text-align: left;
+    position: absolute;
+}
+
+.test-view .right {
+    width: 100%;
+    float: left;
+    position: relative;
+}
+
+.test-view .l {
+    position: relative;
+}
+
+.test-view .name {
+    font-size: 2em;
+    font-weight: bold;
+    line-height: 125%;
+    padding-left: 90px;
+}
+
+.test-view .test-head {
+    overflow: auto;
+    background: url("../images/dashed.png") repeat-x bottom;
+    height: 20%;
+    width: 100%;
+    position: relative;
+}
+
+.test-view .test-head .right {
+    width: auto;
+}
+
+.test-view .author {
+    font-size: 1.4em;
+    color: #666666;
+    padding-left: 90px;
+    line-height: 120%;
+    padding-bottom: 1.5%;
+}
+
+.test-view .stat {
+    padding-left: 90px;
+    font-style: italic;
+    font-size: 1.4em;
+    color: #666666;
+    line-height: 200%;
+    padding-bottom: 2%;
+}
+
+.test-view .stat span {
+    padding: 0 5px;
+    font-style: normal;
+
+}
+
+.test-view a.button-blue {
+    background: url("../images/blue_bg_button.jpg") repeat-x top;
+    border: 1px solid #4f5884;
+    padding: 9px 10px 9px 35px;
+    text-shadow: 0 1px #38597c;
+    color: #fff;
+    font-size: 12px;
+    font-family: Helvetica, sans-serif;
+    line-height: 12px;
+    font-weight: bold;
+    position: absolute;
+    right: 0;
+    top: 80%;
+    margin-top: -32px;
+    display: block;
+    border-radius: 2px;
+    text-decoration: none;
+    box-shadow: 1px 1px 1px 0 #aaa;
+}
+
+.test-view a.button-blue i {
+    position: absolute;
+    width: 23px;
+    line-height: 12px;
+    font-size: 12px;
+    height: 23px;
+    left: 6px;
+    top: 4px;
+    border: none !important;
+}
+
+.test-view a.button-blue i.view {
+    background: url("../images/view-test.png") no-repeat;
+}
+
+.test-view .test-settings {
+    height: 80%;
+}
+
+.test-view .test-settings .right {
+    height: 100%;
+}
+
+.test-view .test-settings .parameter {
+    height: 13%;
+    margin-left: 90px;
+    font-size: 1.4em;
+    background: url("../images/dashed.png") repeat-x bottom;
+    position: relative;
+    overflow: auto;
+    border-bottom: solid 1px transparent;
+}
+
+
+
+.test-view .test-settings .parameter label {
+    float: left;
+    cursor: pointer;
+    top:33%;
+    position: relative;
+    background: url("../images/checkbox_par.png") no-repeat left center;
+    padding: 2px 0 2px 30px;
+    display: block;
+}
+
+.test-view .test-settings .parameter label.active {
+    background: url("../images/checkbox_par_active.png") no-repeat left center;
+}
+
+.test-view #time-deadline {
+    margin: 0;
+    padding: 0 0 0 10px;
+    position: relative;
+    top:50%;
+    display: none;
+    margin-top: -19px;
+}
+
+.test-view #time-deadline span {
+    margin-top: 13px;
+    color: #616161;
+}
+
+.test-view #time-deadline input {
+    border-radius: 1px;
+    color: #616161;
+}
+
+#setbp {
+    float: left;
+    overflow: visible;
+    position: relative;
+    top:50%;
+    margin-top: -15px;
+    width: 200px;
+    margin-left: 12px;
+}
+
+#setbp .inparr {
+    width: 72px;
+    height: 27px;
+    background: url("../images/bg_arr_input.jpg") repeat-x top;
+    float: left;
+    border-radius: 2px;
+    border: 1px solid #bcbcbc;
+    box-shadow: 0 0 3px #ccc;
+    position: relative;
+}
+
+#setbp .inparr span {
+    display: block;
+    height: 21px;
+    border-right: 1px solid #bcbcbc;
+    width: 51px;
+    line-height: 16px;
+    text-align: center;
+    color: #313131;
+    font-size: 16px;
+    padding-top: 4px;
+}
+
+#setbp .inparr span input {
+    border: none;
+    background: none;
+    font-size: 16px;
+    line-height: 16px;
+    color: #313131;
+    width: 29px;
+    padding: 0;
+    text-align: right;
+    margin: 0 -1px 0 0;
+}
+
+#setbp .inparr .up {
+    width: 20px;
+    height: 13px;
+    border-bottom: 1px solid #bcbcbc;
+    position: absolute;
+    box-shadow: 0 1px 0 #fff;
+    top: 0;
+    right: 0;
+    background: url("../images/arr_input.png") no-repeat top left;
+}
+
+#setbp .inparr .down {
+    width: 20px;
+    height: 13px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background: url("../images/arr_input.png") no-repeat top right;
+}
+
+#setbp em {
+    float: left;
+    margin: 8px 5px 0;
+    display: block;
+    font-size: 14px;
+    line-height: 14px;
+}
+
+#setbp .inparr .up:hover, #setbp .inparr .down:hover {
+    background-color: #fff;
+}
+
+#setbp .inparr .up:active, #setbp .inparr .down:active {
+    background-color: #4d4c4d;
+    box-shadow: inset 0 0 3px #000;
+    background-position: bottom left;
+}
+
+#setbp .inparr .down:active {
+    background-position: bottom right;
+}
+
+.test-view .fullsettings {
+    background: url("../images/ico_settings.jpg") no-repeat left center;
+    font-size: 1.4em;
+    margin-left: 90px;
+    padding: 2px 0 2px 30px;
+    color: #33618f;
+    height: 13%;
+    position: relative;
+    cursor: pointer;
+}
+
+.test-view .fullsettings span {
+    background: url("../images/dot_settings.jpg") repeat-x bottom;
+    position: relative;
+    top:33%;
+}
+
+.test-view .fullsettings:hover span {
+    background: none;
+}
+
+.test-view .faq {
+    position: absolute;
+    right: 0;
+    top:50%;
+    background: url("../images/ico_faq.png") no-repeat;
+    height: 17px;
+    width: 17px;
+    margin-top: -9px;
+}
+
+.blockset {
+    display: none;
+    height: 48%;
+    background: #DFE3E8;
+    margin-left: 90px;
+    position: relative;
+}
+
+.blockset:after {
+    bottom: 100%;
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+}
+
+.blockset:after {
+    border-bottom-color: #dfe3e8;
+    border-width: 10px;
+    left: 20%;
+    margin-left: -10px;
+}
+
+.blockset .options {
+    position: relative;
+    top:22.5%;
+    left: 8%;
+    height: 55%;
+}
+
+.blockset .options, .blockset .options li  {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-family: Helvetica, sans-serif;
+
+}
+
+.blockset .options label {
+    font-size: 1.2em;
+    background: url("../images/checkbox_par.png") no-repeat left 45%;
+    padding-left: 22px;
+    cursor: pointer;
+}
+
+.blockset .options label.active {
+    background: url("../images/checkbox_par_active.png") no-repeat left center;
+}
+
+.blockset .options li {
+    height: 25%;
+}
+
+.edit-icon .buttons>li {
+    background: none;
+}
+
+.edit-icon .buttons li:hover {
+    background: url('../img/bg-course-edit-left-col-buttons.png') 0px -38px no-repeat;
+}
+
+.edit-icon .buttons .btn.table {
+    background: url("../images/paste_table.png") no-repeat top left;
+}
+
+.edit-icon .buttons .btn.table:hover {
+    background: url("../images/paste_table.png") no-repeat top right;
+}
+
+dropdown table
