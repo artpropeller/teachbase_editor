@@ -1,0 +1,628 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ru" lang="ru">
+<head>
+    <title></title>
+    <meta http-equiv="Content-Type" content="text/html; Charset=utf-8"/>
+    <link type="text/css" href="css/style.css" rel="stylesheet"/>
+    <script type='text/javascript' src="js/jquery-1.7.2.js"></script>
+    <!--<link rel="stylesheet" href="http://code.jquery.com/ui/1.9.0/themes/base/jquery-ui.css" />-->
+    <script src="http://code.jquery.com/ui/1.8.1/jquery-ui.js"></script>
+    <script type="text/javascript" src="js/jquery.fancybox.pack.js"></script>
+    <link type="text/css" rel="stylesheet" href="js/jquery.fancybox/jquery.fancybox.css"/>
+    <script src="js/jquery.mjs.nestedSortable.js"></script>
+    <script type='text/javascript' src="js/handmade.js"></script>
+    <!--<script type="text/javascript" src="js/typeface.js"></script>-->
+    <!--<script type="text/javascript" src="js/helvetica_neue_bold.typeface.js"></script>-->
+    <script type="text/javascript" src="js/jquery.event.drag-2.0.min.js"></script>
+    <script type="text/javascript" src="js/jquery.ba-resize.min.js"></script>
+    <script type="text/javascript" src="js/mousehold.js"></script>
+    <script type="text/javascript" src="js/jquery.mousewheel.js"></script>
+    <script type="text/javascript" src="js/aplweb.scrollbars.js"></script>
+    <script type="text/javascript" src="js/jquery-zoomer.js"></script>
+    <script type="text/javascript" src="js/scripts.js"></script>
+    <script type="text/javascript" src="js/am.js"></script>
+    <script type="text/javascript" src="js/left-col-dropdown.js"></script>
+    <script type="text/javascript" src="js/jquery.jscrollpane.min.js"></script>
+    <link type="text/css" href="js/jquery.jscrollpane/jquery.jscrollpane.css" rel="stylesheet" media="all"/>
+    <script type="text/javascript" src="js/editor.js"></script>
+    <title>Index</title>
+    <link type="text/css" href="css/neweditor.css" rel="stylesheet"/>
+    <link type="text/css" href="css/course-view.css" rel="stylesheet"/>
+    <link type="text/css" href="css/course-assign.css" rel="stylesheet"/>
+    <link type="text/css" href="css/scale.css" rel="stylesheet"/>
+</head>
+<body>
+
+
+<div class='head'>
+    <a href='#'><img src='img/logo.png' alt='íà ãëàâíóþ' class='logo'/></a>
+    <span class='slogan typeface-js'>Креативные методики в рекламе</span><!--slogan-->
+    <div class='right'>
+        <ul class="buttons-top">
+            <li class="text">Все изменения сохранены</li>
+            <li class="extra-margin"><a href="#" class="btn save"></a></li>
+            <li><a href="#" class="btn undo"></a></li>
+            <li class="extra-margin"><a href="#" class="btn redo disabled"></a></li>
+            <li><a href="#" class="btn question"></a></li>
+            <li><a href="#" class="btn monitor"></a></li>
+            <li><a href="#" class="btn exit"></a></li>
+        </ul>
+    </div>
+</div>
+<!--head-->
+
+<div class='edit-icon'>
+    <ul class="buttons">
+        <li class="dropdown">
+            <a href="#" class="btn img1"></a>
+            <ul>
+                <li><a href="#" class="btn img2"></a></li>
+                <li class="last"><a href="#" class="btn img3"></a></li>
+            </ul>
+        </li>
+        <li class="dropdown">
+            <a href="#" class="btn video"></a>
+            <ul>
+                <li><a href="#" class="btn audio"></a></li>
+                <li class="last"><a href="#" class="btn webcam"></a></li>
+            </ul>
+        </li>
+        <li><a href="#" class="btn diagram"></a></li>
+        <li><a href="#" class="btn table"></a></li>
+        <li><a href="#" class="btn tree"></a></li>
+        <li><a href="#" class="btn ppt"></a></li>
+        <li><a href="#" class="btn flash"></a></li>
+        <li class="dropdown vertical">
+            <a href="#" class="btn figures"></a>
+            <ul>
+                <li><a href="#" class="btn figures-arrow"></a></li>
+                <li><a href="#" class="btn figures-circle"></a></li>
+                <li><a href="#" class="btn figures-square"></a></li>
+                <li><a href="#" class="btn figures-triangle"></a></li>
+                <li class="last"><a href="#" class="btn figures-custom"></a></li>
+            </ul>
+        </li>
+    </ul>
+    <div id="slider-vertical"></div>
+    <span class='zoom'><input type="text" id="amount" class='typeface-js'/>%</span>
+</div>
+<!--edit-icon-->
+
+<a class="debug_button" href="#"></a>
+
+<div class='preview-block'>
+<div class="preview-block-cont">
+<div class="bg-dummy"></div>
+<a href='#' class="create">Новый лист</a>
+
+<ul class="switch-tabs">
+    <li class='f1 active'><a href="#tabs-1"><span class='alt2'></span></a></li>
+    <li class='f2'><a href="#tabs-2"><span class='alt1'></span></a></li>
+</ul>
+<a href='#' class='slide' id='vihod'><img src='img/slide-left.png' alt=''/></a>
+
+<div id="scrollTest">
+<div id="tabs">
+
+<div id="tabs-1" class="tabs">
+    <ol id="sortable">
+        <li>
+            <div class="item">
+                <div class="count">1</div>
+                <div class='background'></div>
+                <div class="draggable droppable">
+                    <div class='screpa'></div>
+                    <div class='hover'><a href='#'>
+                        <img src='images/new_thumb.jpg' alt='' class='p' ondrag="return false" ondragdrop="return false"
+                             ondragstart="return false"/></a>
+                        <div class='help-button'>
+                            <a href='#' class='add-inset'></a>
+                            <a href='/' class='copy'></a>
+                            <a href='#' class='del'></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="item test active">
+                <div class="count">1</div>
+                <div class='background'></div>
+                <div class="draggable droppable">
+                    <div class='hover'><a href='#'>
+                        <img src='images/test_preview.jpg' alt='' class='p' ondrag="return false" ondragdrop="return false"
+                             ondragstart="return false"/></a>
+                        <div class='help-button'>
+                            <a href='#' class='add-inset'></a>
+                            <a href='/' class='copy'></a>
+                            <a href='#' class='del'></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </li>
+
+        <li>
+            <div class="item">
+                <div class="count">2</div>
+                <div class="arr-set"></div>
+                <div class='background'></div>
+                <div class="draggable droppable">
+                    <div class='hover'><a href='#'>
+                        <img src='images/new_thumb.jpg' alt=''
+                             class='p' ondrag="return false"
+                             ondragdrop="return false"
+                             ondragstart="return false"/></a>
+
+                        <div class='help-button'>
+                            <a href='#' class='add-inset'></a>
+                            <a href='/' class='copy'></a>
+                            <a href='#' class='del'></a></div>
+                    </div>
+                </div>
+            </div>
+            <ol>
+                <li>
+                    <div class="item">
+                        <div class="count">3</div>
+                        <div class="arr-set"></div>
+                        <div class='background'></div>
+                        <div class="draggable droppable">
+                            <div class='hover'><a href='#'>
+                                <img src='images/new_thumb.jpg' alt='' class='p'
+                                     ondrag="return false"
+                                     ondragdrop="return false"
+                                     ondragstart="return false"/></a>
+
+                                <div class='help-button'>
+                                    <a href='#' class='add-outset'></a>
+                                    <a href='#' class='add-inset'></a>
+                                    <a href='/' class='copy'></a>
+                                    <a href='#' class='del'></a></div>
+                            </div>
+                        </div>
+                    </div>
+                    <ol>
+                        <li>
+                            <div class="item">
+                                <div class="count">4</div>
+                                <div class='background'></div>
+                                <div class="draggable droppable">
+                                    <div class='hover'><a href='#'>
+                                        <img src='images/new_thumb.jpg'
+                                             alt='' class='p'
+                                             ondrag="return false"
+                                             ondragdrop="return false"
+                                             ondragstart="return false"/></a>
+
+                                        <div class='help-button'>
+                                            <a href='#' class='add-inset'></a>
+                                            <a href='/' class='copy'></a>
+                                            <a href='#' class='del'></a></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="item">
+                                <div class="count">4</div>
+                                <div class='background'></div>
+                                <div class="draggable droppable">
+                                    <div class='hover'><a href='#'>
+                                        <img src='images/new_thumb.jpg'
+                                             alt='' class='p'
+                                             ondrag="return false"
+                                             ondragdrop="return false"
+                                             ondragstart="return false"/></a>
+
+                                        <div class='help-button'>
+                                            <a href='#' class='add-inset'></a>
+                                            <a href='/' class='copy'></a>
+                                            <a href='#' class='del'></a></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="item">
+                                <div class="count">4</div>
+                                <div class='background'></div>
+                                <div class="draggable droppable">
+                                    <div class='hover'><a href='#'>
+                                        <img src='images/new_thumb.jpg'
+                                             alt='' class='p'
+                                             ondrag="return false"
+                                             ondragdrop="return false"
+                                             ondragstart="return false"/></a>
+
+                                        <div class='help-button'>
+                                            <a href='#' class='add-inset'></a>
+                                            <a href='/' class='copy'></a>
+                                            <a href='#' class='del'></a></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ol>
+                </li>
+            </ol>
+        </li>
+        <li>
+            <div class="item">
+                <div class="count">5</div>
+                <div class='background'></div>
+                <div class="draggable droppable">
+                    <div class='hover'><a href='#'>
+                        <img src='images/new_thumb.jpg' alt=''
+                             class='p' ondrag="return false"
+                             ondragdrop="return false"
+                             ondragstart="return false"/></a>
+
+                        <div class='help-button'>
+                            <a href='#' class='add-inset'></a>
+                            <a href='/' class='copy'></a>
+                            <a href='#' class='del'></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="item">
+                <div class="count">6</div>
+                <div class='background'></div>
+                <div class="draggable droppable">
+                    <div class='hover'><a href='#'>
+                        <img src='images/new_thumb.jpg' alt=''
+                             class='p' ondrag="return false"
+                             ondragdrop="return false"
+                             ondragstart="return false"/></a>
+
+                        <div class='help-button'>
+
+                            <a href='#' class='add-inset'></a>
+                            <a href='/' class='copy'></a>
+                            <a href='#' class='del'></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </li>
+
+
+    </ol>
+</div>
+<!--tabs-1-->
+
+<div id="tabs-2" class="tabs">
+
+
+    <ul id="contents">
+        <li>
+            <div class="item">
+                <div class="arr-set"></div>
+                Вводная часть
+            </div>
+            <ul>
+                <li>
+                    <div class="item">Самый первый подраздел</div>
+                </li>
+                <li>
+                    <div class="item">Подраздел после самого п...</div>
+                </li>
+                <li>
+                    <div class="item">Подраздел с файлами</div>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <div class="item">Первый раздел</div>
+        </li>
+        <li>
+            <div class="item">
+                <div class="arr-set"></div>
+                Раздел номер три
+            </div>
+            <ul>
+                <li>
+                    <div class="item">Очередной подраздел</div>
+                </li>
+                <li>
+                    <div class="item">Подготовка к опросам и те...</div>
+                </li>
+                <li>
+                    <div class="item">
+                        <div class="arr-set"></div>
+                        Третий уровень вложенно...
+                    </div>
+                    <ul>
+                        <li>
+                            <div class="item">Текст третьего уровня</div>
+                        </li>
+                        <li>
+                            <div class="item">Еще подраздел</div>
+                        </li>
+                        <li>
+                            <div class="item">Завершающий подразд...</div>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <div class="item">Последний подраздел зде...</div>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <div class="item">Заключительная глава</div>
+        </li>
+        <li>
+            <div class="item">Послесловие</div>
+        </li>
+    </ul>
+
+
+</div>
+<!--tabs-2-->
+</div>
+<!--tabs-->
+</div>
+<!--scroll-->
+</div>
+</div>
+<!--preview-block-->
+
+
+<div class='main-block test-view scale40'>
+    <div class="bookmarklet"><a class="del" href="#"></a></div>
+    <div class='l l1'>
+        <table cellpadding='0' cellspacing='0' class='m'>
+            <tr>
+                <td class='i1'></td>
+                <td class="ii1">
+                    <input type="text" id="name-chapter" placeholder="Введите название раздела">
+
+                    <div id="name-chapter-text"></div>
+                    <!--<a href='#'><img src='img/i1.png' alt=''/></a>-->
+                </td>
+                <td class='i3'></td>
+            </tr>
+            <tr valign='top'>
+                <td class="ii2"></td>
+                <td></td>
+                <td class="ii1 ii2"><a href='#' title='ïðèêðåïèòü ôàéë'><img src='img/screpka.png' class='add'/></a>
+                </td>
+            </tr>
+            <tr valign='top'>
+                <td class='i1'></td>
+                <td class='page ii1 ii2'>1</td>
+                <td class='i3'></td>
+            </tr>
+        </table>
+    </div>
+    <div class='l l2' style="display: block;">
+        <div class="test-head">
+            <div class="left">
+                <img src="images/test-ico-big.png" alt="">
+            </div>
+            <div class="right">
+                <div class="info">
+                    <div class="name">Не слишком короткое название теста</div>
+                    <div class="author">Константин Константинопольский</div>
+                    <div class="stat"><strong>32</strong> вопроса <span>|</span> <strong>57</strong> баллов max</div>
+                </div>
+            </div>
+            <a href="#" class="button-blue"><i class="view"></i>Просмотр</a>
+        </div>
+        <div class="test-settings">
+        <div class="right">
+            <div class="parameter">
+                <label id="timetest">Ограничить время на выполнение:</label>
+                <div id="time-deadline">
+                    <input type="text" class="small" value="14">
+                    <span>ч.</span>
+                    <input type="text" class="small" value="00">
+                    <span>мин.</span>
+                </div>
+                <a class="faq" href="#"></a>
+            </div>
+            <div class="parameter">
+                <label>Установить проходной балл/процент</label>
+                <div id="setbp">
+                <div class='inparr'>
+                    <span><input maxlength="3" id="ball"  max='180' value="115" type="text"></span>
+
+                    <a href="#" class="up"></a>
+                    <a href="#" class="down"></a>
+
+                </div>
+                <em>/</em>
+                <div class='inparr'>
+                    <span><input maxlength="3" id="percent" max='100' value="60" type="text">%</span>
+
+                    <a href="#" class="up"></a>
+                    <a href="#" class="down"></a>
+
+                </div>
+                </div>
+                <a class="faq" href="#"></a>
+            </div>
+            <div class="parameter">
+                <label>Разрешить последовательное прохождение</label>
+                <a class="faq" href="#"></a>
+            </div>
+            <div class="fullsettings"><span>Дополнительные настройки</span></div>
+            <div class="blockset">
+                <ul class="options">
+                    <li><label>Предоставить возможность задавать вопросы специалисту при прохождении</label></li>
+                    <li><label>Показать слушателю результаты прохождения</label></li>
+                    <li><label>Отображать сообщение при парвильных ответах</label></li>
+                    <li><label>Разрешить просмотр ответов после завершения</label></li>
+                </ul>
+            </div>
+        </div>
+        </div>
+    </div>
+
+
+
+
+</div>
+<!--main-block-->
+
+
+<a href='#' id='vihod1'><img src='img/slide-left.png' alt=''/></a>
+
+<!--NEW COURSE-->
+<div class="new-course">
+    <ul>
+        <li class="new-page">
+            <i></i>
+            <a href="#">Страница</a>
+            <ul>
+                <li>
+                    <a class="new-page-01" href="#"></a>
+                    <a class="new-page-02" href="#"></a>
+                </li>
+                <li>
+                    <a class="new-page-03" href="#"></a>
+                    <a class="new-page-04" href="#"></a>
+                </li>
+                <li>
+                    <a class="new-page-05" href="#"></a>
+                    <a class="new-page-06" href="#"></a>
+                </li>
+                <li>
+                    <a class="new-page-07" href="#"></a>
+                    <a class="new-page-08" href="#"></a>
+                </li>
+            </ul>
+        </li>
+        <li class="new-interview">
+            <i></i>
+            <a href="#">Тест/опрос</a>
+            <ul>
+                <li>
+                    <a class="new-test" href="#choice-test"></a>
+                    <a class="new-poll" href="#"></a>
+                </li>
+            </ul>
+        </li>
+    </ul>
+</div>
+<!-- / NEW COURSE-->
+<div class="choice-test popup" id="choice-test">
+    <h3>Выберите тест</h3>
+
+    <div class="categories">
+        <ul>
+            <li class="head-cat">Разделы</li>
+            <li class="active"><a href="#" rel="all">Все разделы</a></li>
+            <li><a href="#" rel="1">Менеджмент</a></li>
+            <li><a href="#" rel="2">Маркетинг</a></li>
+            <li><a href="#" rel="3">Персонал</a></li>
+            <li><a href="#" rel="4">Реклама</a></li>
+            <li><a href="#" rel="5">Программирование</a></li>
+            <li><a href="#" rel="6">Медицина</a></li>
+        </ul>
+    </div>
+    <div class="test-items">
+        <div class="search">
+            <input type="text" placeholder="Поиск по тестам">
+        </div>
+        <div class="test-list">
+            <div class="scroll">
+                <div class="test" cat="1,2">
+                    <div class="ac">
+                        <div class="choice"></div>
+                        <div class="ico"></div>
+                        <div class="info">
+                            <div class="name">Обсуждаем экологию с Михаилом Тодоровским</div>
+                            <div class="author">Петр Селиванов</div>
+                            <div class="stat"><strong>65</strong> вопросов <span>|</span> <strong>65</strong> баллов max</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="test" cat="3,4">
+                    <div class="ac">
+                        <div class="choice"></div>
+                        <div class="ico"></div>
+                        <div class="info">
+                            <div class="name">Еще один тест</div>
+                            <div class="author">Петр Селиванов</div>
+                            <div class="stat"><strong>65</strong> вопросов <span>|</span> <strong>65</strong> баллов max</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="test" cat="5,6">
+                    <div class="ac">
+                        <div class="choice"></div>
+                        <div class="ico"></div>
+                        <div class="info">
+                            <div class="name">Веселые картинки. Часть 2</div>
+                            <div class="author">Петр Селиванов</div>
+                            <div class="stat"><strong>65</strong> вопросов <span>|</span> <strong>65</strong> баллов max</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="test" cat="7,8">
+                    <div class="ac">
+                        <div class="choice"></div>
+                        <div class="ico"></div>
+                        <div class="info">
+                            <div class="name">Еще один тест</div>
+                            <div class="author">Петр Селиванов</div>
+                            <div class="stat"><strong>65</strong> вопросов <span>|</span> <strong>65</strong> баллов max</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="test" cat="1,9">
+                    <div class="ac">
+                        <div class="choice"></div>
+                        <div class="ico"></div>
+                        <div class="info">
+                            <div class="name">Веселые картинки. Часть 2</div>
+                            <div class="author">Петр Селиванов</div>
+                            <div class="stat"><strong>65</strong> вопросов <span>|</span> <strong>65</strong> баллов max</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="test" cat="2">
+                    <div class="ac">
+                        <div class="choice"></div>
+                        <div class="ico"></div>
+                        <div class="info">
+                            <div class="name">Обсуждаем экологию с Михаилом Тодоровским</div>
+                            <div class="author">Петр Селиванов</div>
+                            <div class="stat"><strong>65</strong> вопросов <span>|</span> <strong>65</strong> баллов max</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="test" cat="3">
+                    <div class="ac">
+                        <div class="choice"></div>
+                        <div class="ico"></div>
+                        <div class="info">
+                            <div class="name">Обсуждаем экологию с Михаилом Тодоровским</div>
+                            <div class="author">Петр Селиванов</div>
+                            <div class="stat"><strong>65</strong> вопросов <span>|</span> <strong>65</strong> баллов max</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="clr"></div>
+    <div class="buttons">
+        <a href="#" class="button-red">Выбрать</a>
+        <a href="#" class="button-blue" onclick="$.fancybox().close();">Отмена</a>
+    </div>
+
+</div>
+
+</body>
+</html>
+
+
+
+	

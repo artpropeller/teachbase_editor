@@ -895,4 +895,17 @@
     background: url("../images/paste_table.png") no-repeat top right;
 }
 
-dropdown table
+.edit-icon .buttons li.dropdown.table:hover {
+    background: url('../img/bg-course-edit-left-col-buttons.png') 0px -38px no-repeat;
+}
+
+.insert-table {
+    position: absolute;
+    top:50%;
+    left: 50%;
+    background: #fff;
+    padding: 10px;
+    box-shadow: 0 0 2px 0 #333;
+    border:solid 1px #c4c4c4;
+    z-index: 100000;
+}
