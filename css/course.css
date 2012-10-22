@@ -1,0 +1,93 @@
+body {
+    background: #f6f6fb;
+}
+
+.preview-block {
+    background: #f6f6fb;
+    border: 0;
+}
+
+.preview-block .bg-dummy {
+    background: #f6f6fb;
+}
+
+.edit-icon {
+    display: none;
+}
+
+.main-block .m td {
+    border: 0;
+}
+
+.slide_menu {
+    background: url("../images/menu_arrow.png") no-repeat right;
+    width: 17px;
+    height: 17px;
+    display: block;
+    position: absolute;
+    right: 15px;
+    top: 62px;
+    z-index: 1000;
+}
+
+.slide_menu.active {
+    background: url("../images/menu_arrow.png") no-repeat left;
+
+}
+
+.next_ar {
+    background: url("../images/arrow_n_cont.png") no-repeat;
+    position: absolute;
+    top: 50%;
+    margin-top: -16px;
+    right: -50px;
+    z-index: 1000;
+    display: block;
+    width: 32px;
+    height: 32px;
+}
+
+.prev_ar {
+    background: url("../images/arrow_p_cont.png") no-repeat;
+    position: absolute;
+    top: 50%;
+    margin-top: -16px;
+    left: -50px;
+    z-index: 1000;
+    display: block;
+    width: 32px;
+    height: 32px;
+}
+
+#tabs-1.view ol li .item.active {
+    background: none;
+    border: none;
+    border: 0;
+}
+
+#tabs-1.view ol li .active img {
+    border: 1px solid #6c9bce;
+
+}
+
+#tabs-1.view .item.active .arr-set {
+    background: url("../images/level_up_gray.jpg") no-repeat;
+}
+
+#tabs-1.view .item.active .arr-set.active {
+    background: url("../images/leve_down_gray.jpg") no-repeat;
+}
+
+#contents.view li .item.active .arr-set.active {
+    background: url("../images/leve_down_gray.jpg") no-repeat;
+}
+
+#contents.view .item.active {
+    background: none;
+    border: 0;
+    color: #2a69a8;
+}
+
+#contents.view li .item.active .arr-set {
+    background: url("../images/level_up_gray.jpg") no-repeat;
+}
