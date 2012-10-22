@@ -899,13 +899,65 @@
     background: url('../img/bg-course-edit-left-col-buttons.png') 0px -38px no-repeat;
 }
 
+.edit-icon .buttons li.dropdown.table:hover .btn.table {
+    background: url("../images/paste_table.png") no-repeat top right;
+}
+
 .insert-table {
-    position: absolute;
-    top:50%;
-    left: 50%;
     background: #fff;
-    padding: 10px;
-    box-shadow: 0 0 2px 0 #333;
+    padding: 4px;
+    box-shadow: 0 0 2px 0 #ddd;
     border:solid 1px #c4c4c4;
     z-index: 100000;
+    border-radius: 2px;
+}
+
+.insert-table .cells_container {
+    width: 100px;
+    height: 100px;
+}
+
+.insert-table .cells {
+    width: 100%;
+    height: 100%;
+}
+
+.insert-table .unhighlight {
+    background: url("../images/cell_unhighlight.png");
+    width: 100px;
+    height: 100px;
+    z-index: 0;
+    position: relative;
+}
+
+.insert-table .highlight {
+    background: url("../images/cell_highlight.png");
+    z-index: 1;
+    position: absolute;
+}
+
+.insert-table .mouse {
+    width: 400px;
+    height: 400px;
+    position: absolute;
+    z-index: 2;
+}
+
+.insert-table .status {
+    text-align: center;
+    font-size: 12px;
+    line-height: 12px;
+    padding: 3px 0;
+    color: #999999;
+    font-family: Arial, sans-serif;
+}
+
+.dropdown.table ul {
+    width: auto !important;
+}
+
+.dropdown.table ul li, .dropdown.table ul li:hover {
+    width: auto !important;
+    background: none;
+    padding-left: 4px;
 }
