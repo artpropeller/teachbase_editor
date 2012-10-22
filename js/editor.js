@@ -363,5 +363,43 @@ $(function(){
 
 });
 
+//-------------------------------- begin -------------------------------------//
+// добавление таблиц
+
+$(function(){
+
+
+
+    $(".insert-table .mouse").mousemove(function(event) {
+        var hl = $('.insert-table .highlight');
+        var df = $('.insert-table .cells_container, .insert-table .unhighlight');
+        var height = Math.ceil(event.offsetY/20);
+        var width = Math.ceil(event.offsetX/20);
+        $('.insert-table .status .x').html(width);
+        $('.insert-table .status .y').html(height);
+        console.log(height);
+        hl.css({'width':width*20+'px','height':height*20+'px'});
+        if (height >= 4 && height <= 19) {
+            df.css({'height':(height+1)*20+'px'});
+        }
+        else {
+            if (height <= 5) {df.css({'height':(5*20)+'px'});}
+            if (height == 20) {df.css({'height':(20*20)+'px'});}
+        }
+        if (width >= 4 && width <= 19) {
+            df.css({'width':(width+1)*20+'px'});
+        }
+        else {
+            if (width <= 5) {df.css({'width':(5*20)+'px'});}
+            if (width == 20) {df.css({'width':(20*20)+'px'});}
+        }
+    });
+
+    $(".insert-table .mouse").click(function(){
+        alert("Размер: "+$('.insert-table .status .x').html()+' x ' + $('.insert-table .status .y').html());
+    });
+
+});
+
 
 //-------------------------------- end -------------------------------------//
