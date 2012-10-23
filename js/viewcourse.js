@@ -9,6 +9,9 @@
 // скрытие панели привью
 
 $(function(){
-
+    $('.slide_menu').click(function(){
+        $('.preview-block-cont').toggle(0);
+        $(this).toggleClass('active')
+    });
 });
 //-------------------------------- end -------------------------------------//

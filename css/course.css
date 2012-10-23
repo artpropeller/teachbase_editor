@@ -91,3 +91,11 @@ body {
 #contents.view li .item.active .arr-set {
     background: url("../images/level_up_gray.jpg") no-repeat;
 }
+
+.preview-block {
+    width: 207px;
+}
+
+#tabs-1.view ol li .item.active .count {
+    color: #555;
+}
