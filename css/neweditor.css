@@ -937,8 +937,8 @@
 }
 
 .insert-table .mouse {
-    width: 400px;
-    height: 400px;
+    width: 200px;
+    height: 200px;
     position: absolute;
     z-index: 2;
 }
