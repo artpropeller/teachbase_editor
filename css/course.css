@@ -99,3 +99,102 @@ body {
 #tabs-1.view ol li .item.active .count {
     color: #555;
 }
+
+.arrows.green .next_ar{
+    background: url("../images/green_arrow.png") no-repeat  center center;
+    width: 150px;
+    height: 100%;
+    right: 0;
+    top:0;
+}
+
+
+.arrows.green .next_ar:hover{
+    background: #efefef url("../images/green_arrow.png") no-repeat  center center;
+}
+
+.main-block{
+    font-size: 10px;
+    line-height: 13px;
+}
+
+.main-block.course{
+    left:0;
+    margin: 12px auto;
+    padding: 0;
+    width: 748px;
+    height: 557px;
+    font-family: arial, sans-serif;
+}
+
+.cont{
+    overflow: hidden;
+    position: relative;
+    height: 100%;
+}
+
+.main-block.course .inner{
+    background: #919191 url("../images/zagib.jpg") no-repeat right top;
+    height:100%;
+}
+
+.main-block.course .sod{
+    height: 48.6%;
+    background: url("../images/dark_gradient.jpg") repeat-y;
+    position: relative;
+    top: 48.6%;
+    padding:2.35% 4.7% 0;
+}
+
+.main-block.course .blue{
+    font-size: 1.4em;
+    display: block;
+    color: #96e5ff;
+    line-height: 1.4em;
+    padding-bottom: 2%;
+}
+
+.main-block.course .inner h1{
+    color: #fff;
+    font-size: 2.6em;
+    font-weight: bold;
+    text-shadow: 4px 2px 6px #000;
+    padding-bottom: 0.5%;
+    line-height: 0.7em;
+
+
+
+}
+
+.main-block.course .date{
+    padding: 1.5%;
+    border:1px dashed #96e5ff;
+    background: url("../images/clock_ico.png") no-repeat 4% 50%;
+    height: 5%;
+    border-radius: 4px;
+    font-size: 1.6em;
+    color: #fff;
+    margin-bottom: 2%;
+    float: left;
+}
+
+.main-block.course .podpis{
+    color: #d3d3d4;
+    font-size: 1.4em;
+    display: block;
+    padding-bottom: 2.5%;
+}
+
+
+.main-block.course .date span{
+    display: block;
+    padding-left: 20px;
+}
+
+.main-block.course p{
+    width: 50%;
+    color: #d5d5d5;
+    font-size: 1.2em;
+    line-height: 1.6em;
+
+}

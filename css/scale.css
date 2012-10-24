@@ -1,46 +1,46 @@
-.main-block.test-view.scale10 {
+.main-block.scale10 {
     font-size: 11px;
     line-height: 13px;
     width: 713px;
     height: 502px;
 }
 
-.main-block.test-view.scale20 {
+.main-block.scale20 {
     font-size: 12px;
     line-height: 14px;
     width: 778px;
     height: 547px;
 }
 
-.main-block.test-view.scale30 {
+.main-block.scale30 {
     font-size: 13px;
     line-height: 15px;
     width: 843px;
     height: 592px;
 }
 
-.main-block.test-view.scale40 {
+.main-block.scale40 {
     font-size: 14px;
     line-height: 16px;
     width: 908px;
     height: 637px;
 }
 
-.main-block.test-view.scale50 {
+.main-block.scale50 {
     font-size: 15px;
     line-height: 17px;
     width: 973px;
     height: 682px;
 }
 
-.main-block.test-view.scale60 {
+.main-block.scale60 {
     font-size: 16px;
     line-height: 18px;
     width: 1038px;
     height: 727px;
 }
 
-.main-block.test-view.scale70 {
+.main-block.scale70 {
     font-size: 17px;
     line-height: 19px;
     width: 1103px;
@@ -48,26 +48,88 @@
 
 }
 
-.main-block.test-view.scale80 {
+.main-block.scale80 {
     font-size: 18px;
     line-height: 20px;
     width: 1168px;
     height: 817px;
 }
 
-.main-block.test-view.scale90 {
+.main-block.scale90 {
     font-size: 19px;
     line-height: 21px;
     width: 1233px;
     height: 862px;
 }
 
-.main-block.test-view.scale100 {
+.main-block.scale100 {
     font-size: 20px;
     line-height: 22px;
     width: 1298px;
     height: 907px;
 }
+
+.main-block.course.scale10 {
+    width: 813px;
+    height: 602px;
+}
+
+.main-block.course.scale20 {
+    width: 943px;
+    height: 692px;
+
+}
+
+.main-block.course.scale30 {
+    width: 878px;
+    height: 647px;
+
+}
+
+.main-block.course.scale40 {
+    width: 1008px;
+    height: 737px;
+
+}
+
+.main-block.course.scale50 {
+    width: 1073px;
+    height: 782px;
+}
+
+.main-block.course.scale60 {
+    width: 1138px;
+    height: 827px;
+
+}
+
+.main-block.course.scale70 {
+    width: 1203px;
+    height: 872px;
+
+}
+
+.main-block.course.scale80 {
+    width: 1268px;
+    height: 917px;
+
+}
+
+.main-block.course.scale90 {
+    width: 1333px;
+    height: 962px;
+
+}
+
+.main-block.course.scale100 {
+    width: 1398px;
+    height: 1007px;
+
+}
+
+
+
+
 
 
 
