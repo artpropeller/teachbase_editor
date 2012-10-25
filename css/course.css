@@ -198,6 +198,7 @@ body {
 .main-block.testfinal {
     background: #f4f4f4;
     left: 0;
+    margin-top: 12px;
 }
 
 .main-block .dash {
