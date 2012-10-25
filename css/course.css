@@ -100,26 +100,25 @@ body {
     color: #555;
 }
 
-.arrows.green .next_ar{
-    background: url("../images/green_arrow.png") no-repeat  center center;
+.arrows.green .next_ar {
+    background: url("../images/green_arrow.png") no-repeat center center;
     width: 150px;
     height: 100%;
     right: 0;
-    top:0;
+    top: 0;
 }
 
-
-.arrows.green .next_ar:hover{
-    background: #efefef url("../images/green_arrow.png") no-repeat  center center;
+.arrows.green .next_ar:hover {
+    background: #efefef url("../images/green_arrow.png") no-repeat center center;
 }
 
-.main-block{
+.main-block {
     font-size: 10px;
     line-height: 13px;
 }
 
-.main-block.course{
-    left:0;
+.main-block.course {
+    left: 0;
     margin: 12px auto;
     padding: 0;
     width: 748px;
@@ -127,26 +126,26 @@ body {
     font-family: arial, sans-serif;
 }
 
-.cont{
+.cont {
     overflow: hidden;
     position: relative;
     height: 100%;
 }
 
-.main-block.course .inner{
+.main-block.course .inner {
     background: #919191 url("../images/zagib.jpg") no-repeat right top;
-    height:100%;
+    height: 100%;
 }
 
-.main-block.course .sod{
+.main-block.course .sod {
     height: 48.1%;
     background: url("../images/dark_gradient.jpg") repeat-y;
     position: relative;
     top: 48.6%;
-    padding:2.35% 4.7% 0;
+    padding: 2.35% 4.7% 0;
 }
 
-.main-block.course .blue{
+.main-block.course .blue {
     font-size: 1.4em;
     display: block;
     color: #96e5ff;
@@ -154,7 +153,7 @@ body {
     padding-bottom: 2%;
 }
 
-.main-block.course .inner h1{
+.main-block.course .inner h1 {
     color: #fff;
     font-size: 2.6em;
     font-weight: bold;
@@ -162,13 +161,11 @@ body {
     padding-bottom: 0.5%;
     line-height: 0.7em;
 
-
-
 }
 
-.main-block.course .date{
+.main-block.course .date {
     padding: 1.5%;
-    border:1px dashed #96e5ff;
+    border: 1px dashed #96e5ff;
     background: url("../images/clock_ico.png") no-repeat 4% 50%;
     height: 5%;
     border-radius: 4px;
@@ -178,23 +175,148 @@ body {
     float: left;
 }
 
-.main-block.course .podpis{
+.main-block.course .podpis {
     color: #d3d3d4;
     font-size: 1.4em;
     display: block;
     padding-bottom: 2.5%;
 }
 
-
-.main-block.course .date span{
+.main-block.course .date span {
     display: block;
     padding-left: 20px;
 }
 
-.main-block.course p{
+.main-block.course p {
     width: 50%;
     color: #d5d5d5;
     font-size: 1.2em;
     line-height: 1.6em;
 
 }
+
+.main-block.testfinal {
+    background: #f4f4f4;
+    left: 0;
+}
+
+.main-block .dash {
+    background: url("../images/dashed.png") repeat-x top;
+    height: 100%;
+}
+
+.main-block .dash_l {
+    background: url("../images/dashed-v.png") repeat-y left;
+    height: 100%;
+}
+
+.main-block .dash_r {
+    background: url("../images/dashed-v.png") repeat-y right;
+    height: 100%;
+}
+
+.main-block .dash_b {
+    background: url("../images/dashed.png") repeat-x bottom;
+    height: 100%;
+
+}
+
+.main-block .tekst {
+    padding: 14% 0 14% 14%;
+    position: relative;
+    font-family: arial, sans-serif;
+}
+
+.main-block .tekst .left{
+    position: absolute;
+    width: 90px;
+    left: 14%;
+    text-align: left;
+}
+
+.main-block .tekst .right{
+    float:left;
+    padding-left: 110px;
+    padding-top: 5px;
+
+}
+
+.main-block .tekst .right .zag{
+    font-size: 1.4em;
+    color: #606060;
+    display: block;
+    padding-bottom: 8%;
+
+
+}
+
+.main-block .tekst .right h1{
+    color: #000;
+    font-size: 2.2em;
+    padding-bottom: 3%;
+    line-height: 1;
+    margin-bottom: 0;
+    font-weight: normal;
+}
+
+.main-block .tekst .right .podpis{
+    font-size: 1.4em;
+    color: #9d9d9d;
+    padding-bottom: 6%;
+}
+
+.main-block .tekst .right .date{
+    background: #e7ecf1 url("../images/clock_ico.png") no-repeat 5%;
+    display: block;
+    float: left;
+    padding: 2% 4% 2% 8%;
+    border-radius: 3px;
+    font-size: 1.2em;
+    color: #3e3e3e;
+    margin-bottom: 6%;
+
+
+}
+
+.main-block .tekst .right .rezult{
+    background: url("../images/dashed.png") repeat-x top;
+    overflow: auto;
+    font-size: 1.2em;
+    width: 80%;
+
+}
+
+.main-block .tekst .right .rezult .gray{
+    border-radius: 3px;
+    background: #e5e5e5;
+    display: block;
+}
+
+.main-block .tekst .right .rezult div{
+    padding: 2.5% 3.5%;
+    overflow: auto;
+}
+
+.main-block .tekst .right .rezult span{
+    display: block;
+    float: left;
+}
+
+.main-block .tekst .right .rezult strong{
+    float: right;
+    display: block;
+    text-align: left;
+    width: 30%;
+}
+
+.main-block .tekst .right .rezult .gr{
+    color: #3d9e41;
+}
+
+.main-block .tekst .right .rezult .err{
+    color: #c80000;
+}
+
+
+
+
