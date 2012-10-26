@@ -961,3 +961,49 @@
     background: none;
     padding-left: 4px;
 }
+
+.cont.views {
+    overflow: visible;
+    text-align: center;
+}
+
+.cont.views .main-block {
+    left: 0;
+    display: inline-block;
+    text-align: left;
+    margin: 22px 0;
+}
+
+.preview-block {
+    overflow: hidden;
+}
+
+.wrapper-area {
+    overflow: hidden;
+    position: relative;
+    display: inline-block;
+}
+
+.wrapper-area .main-block {
+    margin: 22px 10px;
+}
+
+.wrapper-area .shal {
+     position: absolute;
+     z-index: 9000;
+     background: url("../images/sha_l.png") repeat-y;
+     width: 63px;
+     height: 100%;
+    top:0;
+    left: 0;
+ }
+
+.wrapper-area .shar {
+    position: absolute;
+    z-index: 9000;
+    background: url("../images/sha_r.png") repeat-y;
+    width: 63px;
+    height: 100%;
+    top:0;
+    right: 0;
+}

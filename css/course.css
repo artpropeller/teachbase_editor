@@ -40,7 +40,7 @@ body {
     position: absolute;
     top: 50%;
     margin-top: -16px;
-    right: -50px;
+    right: 257px;
     z-index: 1000;
     display: block;
     width: 32px;
@@ -52,7 +52,7 @@ body {
     position: absolute;
     top: 50%;
     margin-top: -16px;
-    left: -50px;
+    left: 50px;
     z-index: 1000;
     display: block;
     width: 32px;

@@ -91,8 +91,10 @@
 
 <a class="debug_button" href="#"></a>
 
-<div class='preview-block'>
 <a href='#' class='slide_menu'></a>
+
+<div class='preview-block'>
+
 <div class="preview-block-cont">
 <div class="bg-dummy"></div>
 
@@ -109,7 +111,7 @@
 
 <div id="tabs-1" class="tabs view">
     <ol id="sortable" >
-        <li>
+        <li rel='l1'>
             <div class="item active">
                 <div class="count">1</div>
                 <div class='background'></div>
@@ -123,7 +125,7 @@
                 </div>
             </div>
         </li>
-        <li>
+        <li rel='l2'>
             <div class="item test">
                 <div class="count">1</div>
                 <div class='background'></div>
@@ -137,7 +139,7 @@
             </div>
         </li>
 
-        <li>
+        <li rel='l3'>
             <div class="item">
                 <div class="count">2</div>
                 <div class="arr-set"></div>
@@ -153,7 +155,7 @@
                 </div>
             </div>
             <ol>
-                <li>
+                <li rel='l4'>
                     <div class="item">
                         <div class="count">3</div>
                         <div class="arr-set"></div>
@@ -170,41 +172,7 @@
                         </div>
                     </div>
                     <ol>
-                        <li>
-                            <div class="item">
-                                <div class="count">4</div>
-                                <div class='background'></div>
-                                <div class="draggable droppable">
-                                    <div class='hover'><a href='#'>
-                                        <img src='images/new_thumb.jpg'
-                                             alt='' class='p'
-                                             ondrag="return false"
-                                             ondragdrop="return false"
-                                             ondragstart="return false"/></a>
-
-
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="item">
-                                <div class="count">4</div>
-                                <div class='background'></div>
-                                <div class="draggable droppable">
-                                    <div class='hover'><a href='#'>
-                                        <img src='images/new_thumb.jpg'
-                                             alt='' class='p'
-                                             ondrag="return false"
-                                             ondragdrop="return false"
-                                             ondragstart="return false"/></a>
-
-
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                        <li>
+                        <li rel='l5'>
                             <div class="item">
                                 <div class="count">4</div>
                                 <div class='background'></div>
@@ -225,7 +193,7 @@
                 </li>
             </ol>
         </li>
-        <li>
+        <li rel='l6'>
             <div class="item">
                 <div class="count">5</div>
                 <div class='background'></div>
@@ -243,28 +211,6 @@
 
 
         </li>
-        <li>
-            <div class="item">
-                <div class="count">6</div>
-                <div class='background'></div>
-                <div class="draggable droppable">
-                    <div class='hover'><a href='#'>
-                        <img src='images/new_thumb.jpg' alt=''
-                             class='p' ondrag="return false"
-                             ondragdrop="return false"
-                             ondragstart="return false"/></a>
-
-                        <div class='help-button'>
-
-                            <a href='#' class='add-inset'></a>
-                            <a href='/' class='copy'></a>
-                            <a href='#' class='del'></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </li>
-
 
     </ol>
 </div>
@@ -274,64 +220,36 @@
 
 
     <ul id="contents" class="view">
-        <li>
-            <div class="item">
-                <div class="arr-set"></div>
+        <li rel='l1'>
+            <div class="item active">
                 Вводная часть
             </div>
-            <ul>
-                <li>
-                    <div class="item">Самый первый подраздел</div>
-                </li>
-                <li>
-                    <div class="item">Подраздел после самого п...</div>
-                </li>
-                <li>
-                    <div class="item">Подраздел с файлами</div>
-                </li>
-            </ul>
         </li>
-        <li>
+        <li rel='l2'>
             <div class="item">Первый раздел</div>
         </li>
-        <li>
+        <li  rel='l3'>
             <div class="item">
                 <div class="arr-set"></div>
                 Раздел номер три
             </div>
             <ul>
-                <li>
-                    <div class="item">Очередной подраздел</div>
-                </li>
-                <li>
-                    <div class="item">Подготовка к опросам и те...</div>
-                </li>
-                <li>
+
+                <li rel='l4'>
                     <div class="item">
                         <div class="arr-set"></div>
                         Третий уровень вложенно...
                     </div>
                     <ul>
-                        <li>
+                        <li   rel='l5'>
                             <div class="item">Текст третьего уровня</div>
-                        </li>
-                        <li>
-                            <div class="item">Еще подраздел</div>
-                        </li>
-                        <li>
-                            <div class="item">Завершающий подразд...</div>
                         </li>
                     </ul>
                 </li>
-                <li>
-                    <div class="item">Последний подраздел зде...</div>
-                </li>
             </ul>
         </li>
-        <li>
-            <div class="item">Заключительная глава</div>
-        </li>
-        <li>
+
+        <li  rel='l6'>
             <div class="item">Послесловие</div>
         </li>
     </ul>
@@ -347,14 +265,13 @@
 </div>
 <!--preview-block-->
 
-
-<div class='main-block scale40'>
+<div class="cont views">
     <div class="arrows">
-        <a class="prev_ar" href="#"></a>
-        <a class="next_ar" href="#"></a>
+        <a class="prev_ar" id="prev_sl" href="#"></a>
+        <a class="next_ar" id="next_sl" href="#"></a>
     </div>
 
-
+<div class='main-block scale70'>
     <div class='l l1' style="display: block;">
         <table cellpadding='0' cellspacing='0' class='m'>
             <tr>
@@ -366,7 +283,7 @@
             </tr>
             <tr valign='top'>
                 <td class="ii2"></td>
-                <td></td>
+                <td>Слайд 1</td>
                 <td class="ii1 ii2">
                 </td>
             </tr>
@@ -440,161 +357,104 @@
         </div>
         </div>
     </div>
+    <div class='l l3'>
+        <table cellpadding='0' cellspacing='0' class='m'>
+            <tr>
+                <td class='i1'></td>
+                <td class="ii1">
+
+                </td>
+                <td class='i3'></td>
+            </tr>
+            <tr valign='top'>
+                <td class="ii2"></td>
+                <td>Слайд 3</td>
+                <td class="ii1 ii2">
+                </td>
+            </tr>
+            <tr valign='top'>
+                <td class='i1'></td>
+                <td class='page ii1 ii2'>3</td>
+                <td class='i3'></td>
+            </tr>
+        </table>
+    </div>
+    <div class='l l4'>
+        <table cellpadding='0' cellspacing='0' class='m'>
+            <tr>
+                <td class='i1'></td>
+                <td class="ii1">
+
+                </td>
+                <td class='i3'></td>
+            </tr>
+            <tr valign='top'>
+                <td class="ii2"></td>
+                <td>Слайд 4</td>
+                <td class="ii1 ii2">
+                </td>
+            </tr>
+            <tr valign='top'>
+                <td class='i1'></td>
+                <td class='page ii1 ii2'>3</td>
+                <td class='i3'></td>
+            </tr>
+        </table>
+    </div>
+    <div class='l l5'>
+        <table cellpadding='0' cellspacing='0' class='m'>
+            <tr>
+                <td class='i1'></td>
+                <td class="ii1">
+
+                </td>
+                <td class='i3'></td>
+            </tr>
+            <tr valign='top'>
+                <td class="ii2"></td>
+                <td>Слайд 5</td>
+                <td class="ii1 ii2">
+                </td>
+            </tr>
+            <tr valign='top'>
+                <td class='i1'></td>
+                <td class='page ii1 ii2'>3</td>
+                <td class='i3'></td>
+            </tr>
+        </table>
+    </div>
+    <div class='l l6'>
+        <table cellpadding='0' cellspacing='0' class='m'>
+            <tr>
+                <td class='i1'></td>
+                <td class="ii1">
+
+                </td>
+                <td class='i3'></td>
+            </tr>
+            <tr valign='top'>
+                <td class="ii2"></td>
+                <td>Слайд 6</td>
+                <td class="ii1 ii2">
+                </td>
+            </tr>
+            <tr valign='top'>
+                <td class='i1'></td>
+                <td class='page ii1 ii2'>3</td>
+                <td class='i3'></td>
+            </tr>
+        </table>
+    </div>
 
 
 
 
+</div>
 </div>
 <!--main-block-->
 
 
 
-<!--NEW COURSE-->
-<div class="new-course">
-    <ul>
-        <li class="new-page">
-            <i></i>
-            <a href="#">Страница</a>
-            <ul>
-                <li>
-                    <a class="new-page-01" href="#"></a>
-                    <a class="new-page-02" href="#"></a>
-                </li>
-                <li>
-                    <a class="new-page-03" href="#"></a>
-                    <a class="new-page-04" href="#"></a>
-                </li>
-                <li>
-                    <a class="new-page-05" href="#"></a>
-                    <a class="new-page-06" href="#"></a>
-                </li>
-                <li>
-                    <a class="new-page-07" href="#"></a>
-                    <a class="new-page-08" href="#"></a>
-                </li>
-            </ul>
-        </li>
-        <li class="new-interview">
-            <i></i>
-            <a href="#">Тест/опрос</a>
-            <ul>
-                <li>
-                    <a class="new-test" href="#choice-test"></a>
-                    <a class="new-poll" href="#"></a>
-                </li>
-            </ul>
-        </li>
-    </ul>
-</div>
-<!-- / NEW COURSE-->
-<div class="choice-test popup" id="choice-test">
-    <h3>Выберите тест</h3>
-
-    <div class="categories">
-        <ul>
-            <li class="head-cat">Разделы</li>
-            <li class="active"><a href="#" rel="all">Все разделы</a></li>
-            <li><a href="#" rel="1">Менеджмент</a></li>
-            <li><a href="#" rel="2">Маркетинг</a></li>
-            <li><a href="#" rel="3">Персонал</a></li>
-            <li><a href="#" rel="4">Реклама</a></li>
-            <li><a href="#" rel="5">Программирование</a></li>
-            <li><a href="#" rel="6">Медицина</a></li>
-        </ul>
-    </div>
-    <div class="test-items">
-        <div class="search">
-            <input type="text" placeholder="Поиск по тестам">
-        </div>
-        <div class="test-list">
-            <div class="scroll">
-                <div class="test" cat="1,2">
-                    <div class="ac">
-                        <div class="choice"></div>
-                        <div class="ico"></div>
-                        <div class="info">
-                            <div class="name">Обсуждаем экологию с Михаилом Тодоровским</div>
-                            <div class="author">Петр Селиванов</div>
-                            <div class="stat"><strong>65</strong> вопросов <span>|</span> <strong>65</strong> баллов max</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="test" cat="3,4">
-                    <div class="ac">
-                        <div class="choice"></div>
-                        <div class="ico"></div>
-                        <div class="info">
-                            <div class="name">Еще один тест</div>
-                            <div class="author">Петр Селиванов</div>
-                            <div class="stat"><strong>65</strong> вопросов <span>|</span> <strong>65</strong> баллов max</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="test" cat="5,6">
-                    <div class="ac">
-                        <div class="choice"></div>
-                        <div class="ico"></div>
-                        <div class="info">
-                            <div class="name">Веселые картинки. Часть 2</div>
-                            <div class="author">Петр Селиванов</div>
-                            <div class="stat"><strong>65</strong> вопросов <span>|</span> <strong>65</strong> баллов max</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="test" cat="7,8">
-                    <div class="ac">
-                        <div class="choice"></div>
-                        <div class="ico"></div>
-                        <div class="info">
-                            <div class="name">Еще один тест</div>
-                            <div class="author">Петр Селиванов</div>
-                            <div class="stat"><strong>65</strong> вопросов <span>|</span> <strong>65</strong> баллов max</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="test" cat="1,9">
-                    <div class="ac">
-                        <div class="choice"></div>
-                        <div class="ico"></div>
-                        <div class="info">
-                            <div class="name">Веселые картинки. Часть 2</div>
-                            <div class="author">Петр Селиванов</div>
-                            <div class="stat"><strong>65</strong> вопросов <span>|</span> <strong>65</strong> баллов max</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="test" cat="2">
-                    <div class="ac">
-                        <div class="choice"></div>
-                        <div class="ico"></div>
-                        <div class="info">
-                            <div class="name">Обсуждаем экологию с Михаилом Тодоровским</div>
-                            <div class="author">Петр Селиванов</div>
-                            <div class="stat"><strong>65</strong> вопросов <span>|</span> <strong>65</strong> баллов max</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="test" cat="3">
-                    <div class="ac">
-                        <div class="choice"></div>
-                        <div class="ico"></div>
-                        <div class="info">
-                            <div class="name">Обсуждаем экологию с Михаилом Тодоровским</div>
-                            <div class="author">Петр Селиванов</div>
-                            <div class="stat"><strong>65</strong> вопросов <span>|</span> <strong>65</strong> баллов max</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="clr"></div>
-    <div class="buttons">
-        <a href="#" class="button-red">Выбрать</a>
-        <a href="#" class="button-blue" onclick="$.fancybox().close();">Отмена</a>
-    </div>
-
-</div>
 
 </body>
 </html>
