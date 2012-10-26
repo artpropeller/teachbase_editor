@@ -73,7 +73,7 @@ body {
 .prev_ar {
     position: absolute;
     margin-top: -16px;
-    left: 50px;
+    left: 5px;
     z-index: 1000;
     display: block;
     width: 120px;

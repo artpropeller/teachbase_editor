@@ -16,7 +16,7 @@ $(function () {
         }
         else {
             $('.preview-block').animate({width:207}, 500);
-            $('.next_ar').animate({right:257}, 500);
+            $('.next_ar').animate({right:207}, 500);
         }
         $(this).toggleClass('active')
     });
