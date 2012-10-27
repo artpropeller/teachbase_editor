@@ -451,9 +451,14 @@ $(function () {
 
 
     //установка высоты картинки привью видео
-    $('.videoblock').each(function () {
-        $(this).find('.video').css({'height':$(this).height() - ($(this).find('.header').height()+$(this).find('.description').height())});
-    });
+
+
+    $('.videoblock img').one('load',function () {
+        var vid = $(this).parents('.videoblock');
+        vid.find('.video').css({'height':vid.height() - (vid.find('.header').height() + vid.find('.description').height())});
+    }).each(function () {
+            if (this.complete) $(this).load();
+        });
 
     //активация редактирования видеоблока
     $('.videoblock').click(function () {
@@ -462,9 +467,9 @@ $(function () {
             var body = $('body');
             body.prepend('<div class="wrap-video"></div>');
             body.addClass('no-select');
-            $(this).css('height',($(this).find('.video').height() + 80) + 'px');
-            $(this).find('.header').css('height','30px');
-            $(this).find('.description').css('height','50px');
+            $(this).css('height', ($(this).find('.video').height() + 80) + 'px');
+            $(this).find('.header').css('height', '30px');
+            $(this).find('.description').css('height', '50px');
             var name = $(this).find('.header .name');
             if (name.html()) {
                 name.hide(0);
@@ -481,8 +486,8 @@ $(function () {
             else {
                 desc.prev().prev().show(0);
             }
-            $('.videoblock input:visible,.videoblock textarea:visible').each(function(){
-               $(this).prev().hide(0);
+            $('.videoblock input:visible,.videoblock textarea:visible').each(function () {
+                $(this).prev().hide(0);
             });
             $(this).resizable({
                 maxHeight:383,
@@ -498,32 +503,32 @@ $(function () {
     });
 
     //отключение редактирования видеоблока
-    $('.wrap-video').live('click', function(){
+    $('.wrap-video').live('click', function () {
         var item = $('.videoblock');
         var name = item.find('.header input');
         name.hide(0);
         name.next().html(name.val());
-        if (name.val()){
+        if (name.val()) {
             name.next().show(0);
         }
         else {
             name.prev().hide(0);
             name.next().hide(0);
-            item.find('.header').css('height','6px');
-            item.css('height',(item.height() - 24) + 'px');
+            item.find('.header').css('height', '6px');
+            item.css('height', (item.height() - 24) + 'px');
         }
         var desc = item.find('textarea');
         desc.hide(0);
         desc.next().html(desc.val());
         console.log(desc.val());
-        if (desc.val()){
+        if (desc.val()) {
             desc.next().show(0);
         }
         else {
             desc.prev().hide(0);
             desc.next().hide(0);
-            desc.find('.description').css('height','0');
-            item.css('height',(item.height() - 43) + 'px');
+            desc.find('.description').css('height', '0');
+            item.css('height', (item.height() - 43) + 'px');
         }
         item.removeClass('active');
         $('body').removeClass('no-select');
