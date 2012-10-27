@@ -1082,7 +1082,7 @@
 }
 
 .videoblock .video {
-    /*height: 100%;*/
+    height: 100%;
     /*margin-bottom: -160px;*/
     padding: 0 6px;
     position: relative;
