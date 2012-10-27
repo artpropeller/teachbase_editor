@@ -6,7 +6,7 @@
     <meta http-equiv="Content-Type" content="text/html; Charset=utf-8"/>
     <link type="text/css" href="css/style.css" rel="stylesheet"/>
     <script type='text/javascript' src="js/jquery-1.7.2.js"></script>
-    <!--<link rel="stylesheet" href="http://code.jquery.com/ui/1.9.0/themes/base/jquery-ui.css" />-->
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.9.0/themes/base/jquery-ui.css" />
     <script src="http://code.jquery.com/ui/1.8.1/jquery-ui.js"></script>
     <script type="text/javascript" src="js/jquery.fancybox.pack.js"></script>
     <link type="text/css" rel="stylesheet" href="js/jquery.fancybox/jquery.fancybox.css"/>
@@ -123,7 +123,7 @@
 <div id="tabs-1" class="tabs">
     <ol id="sortable">
         <li>
-            <div class="item">
+            <div class="item active">
                 <div class="count">1</div>
                 <div class='background'></div>
                 <div class="draggable droppable">
@@ -141,7 +141,7 @@
             </div>
         </li>
         <li>
-            <div class="item test active">
+            <div class="item test">
                 <div class="count">1</div>
                 <div class='background'></div>
                 <div class="draggable droppable">
@@ -388,9 +388,9 @@
 <!--preview-block-->
 
 
-<div class='main-block test-view'>
+<div class='main-block scale40'>
     <div class="bookmarklet"><a class="del" href="#"></a></div>
-    <div class='l l1'>
+    <div class='l l1' style="display: block;">
         <table cellpadding='0' cellspacing='0' class='m'>
             <tr>
                 <td class='i1'></td>
@@ -398,13 +398,33 @@
                     <input type="text" id="name-chapter" placeholder="Введите название раздела">
 
                     <div id="name-chapter-text"></div>
-                    <!--<a href='#'><img src='img/i1.png' alt=''/></a>-->
                 </td>
                 <td class='i3'></td>
             </tr>
             <tr valign='top'>
                 <td class="ii2"></td>
-                <td></td>
+                <td>
+
+
+
+                    <div class="videoblock">
+                        <div class="del"></div>
+                        <div class="header">
+                            <div class="placeholder">Введите название видеоролика</div>
+                            <input class="edit-name" type="text" size="22" maxlength="23">
+                            <div class="name"></div>
+                        </div>
+                        <div class="video">
+                            <img src="images/vid_example.jpg"  alt="">
+                            <div class="play"></div>
+                        </div>
+                        <div class="description">
+                            <div class="placeholder">Введите описание ролика</div>
+                            <textarea name="edit-desc"></textarea>
+                            <div class="desc"></div>
+                        </div>
+                    </div>
+                </td>
                 <td class="ii1 ii2"><a href='#' title='ïðèêðåïèòü ôàéë'><img src='img/screpka.png' class='add'/></a>
                 </td>
             </tr>
@@ -415,7 +435,7 @@
             </tr>
         </table>
     </div>
-    <div class='l l2' style="display: block;">
+    <div class='l l2' >
         <div class="test-head">
             <div class="left">
                 <img src="images/test-ico-big.png" alt="">
