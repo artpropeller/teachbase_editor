@@ -1108,13 +1108,15 @@
 
 .videoblock .description .desc {
     margin: 2px -2px 0 0;
+    overflow: hidden;
+    height: 41px;
 }
 
 .videoblock .description textarea {
     resize: none;
     display: none;
     width: 100%;
-    height: 41px;
+    height: 20px;
     border: 1px solid #bfbfbf;
     text-align: center;
     background: #fafafa;

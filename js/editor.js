@@ -441,6 +441,10 @@ $(function () {
     $('.videoblock .placeholder').click(function () {
         $(this).hide(0);
         $(this).next().show();
+        $('.videoblock textarea').autoResize({
+            animate:false,
+            extraSpace:0,
+        });
         $(this).next().focus();
     });
 
@@ -482,6 +486,10 @@ $(function () {
             if (desc.html()) {
                 desc.hide(0);
                 desc.prev().show(0).html(desc.text());
+                $('.videoblock textarea').autoResize({
+                    animate:false,
+                    extraSpace:0,
+                });
             }
             else {
                 desc.prev().prev().show(0);
@@ -489,11 +497,15 @@ $(function () {
             $('.videoblock input:visible,.videoblock textarea:visible').each(function () {
                 $(this).prev().hide(0);
             });
+
+
+
             $(this).resizable({
-                maxHeight:383,
-                maxWidth:453,
+                maxHeight: $('.main-block').height()-30,
+                maxWidth: ($('.main-block').height()-30)*1.12,
                 minHeight:218,
                 minWidth:245,
+                aspectRatio: 245/218,
                 resize:function (e, el) {
                     var ar = $(el.originalElement);
                     ar.find('.video').css({'height':el.size['height'] - 80});
@@ -517,10 +529,10 @@ $(function () {
             item.find('.header').css('height', '6px');
             item.css('height', (item.height() - 24) + 'px');
         }
+        item.find('textarea:eq(0)').remove();
         var desc = item.find('textarea');
         desc.hide(0);
         desc.next().html(desc.val());
-        console.log(desc.val());
         if (desc.val()) {
             desc.next().show(0);
         }
@@ -534,6 +546,8 @@ $(function () {
         $('body').removeClass('no-select');
         $(this).remove();
     });
+
+
 });
 
 
