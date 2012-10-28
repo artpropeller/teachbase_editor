@@ -441,11 +441,11 @@ $(function () {
     $('.videoblock .placeholder').click(function () {
         $(this).hide(0);
         $(this).next().show();
-        $('.videoblock textarea').autoResize({
-            animate:false,
-            extraSpace:0,
-        });
         $(this).next().focus();
+        $('.videoblock textarea').autosize({
+            append:''
+        });
+
     });
 
     //удаление видео
@@ -486,10 +486,13 @@ $(function () {
             if (desc.html()) {
                 desc.hide(0);
                 desc.prev().show(0).html(desc.text());
-                $('.videoblock textarea').autoResize({
-                    animate:false,
-                    extraSpace:0,
-                });
+//                if ($(this).find('textarea').size() == 1) {
+//                    $('.videoblock textarea').autoResize({
+//                        animate:false,
+//                        extraSpace:0
+//                    });
+//                }
+
             }
             else {
                 desc.prev().prev().show(0);
@@ -529,7 +532,9 @@ $(function () {
             item.find('.header').css('height', '6px');
             item.css('height', (item.height() - 24) + 'px');
         }
-        item.find('textarea:eq(0)').remove();
+//        if (item.find('textarea').size()>1) {
+//            item.find('textarea:eq(0)').remove();
+//        }
         var desc = item.find('textarea');
         desc.hide(0);
         desc.next().html(desc.val());
