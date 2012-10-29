@@ -555,5 +555,13 @@ $(function () {
 
 });
 
+function textCounter(textarea, counterID, maxLen) {
+    cnt = document.getElementById(counterID);
+    if (textarea.value.length > maxLen) {
+        textarea.value = textarea.value.substring(0, maxLen);
+    }
+//    cnt.innerHTML = maxLen - textarea.value.length;
+}
+
 
 //-------------------------------- end -------------------------------------//

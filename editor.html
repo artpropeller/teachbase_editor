@@ -421,7 +421,7 @@
                         </div>
                         <div class="description">
                             <div class="placeholder">Введите описание ролика</div>
-                            <textarea name="edit-desc"></textarea>
+                            <textarea onkeyup="textCounter(this,'count_display',75);" onBlur="textCounter(this,'count_display',75);" name="edit-desc"></textarea>
                             <div class="desc"></div>
                         </div>
                     </div>
