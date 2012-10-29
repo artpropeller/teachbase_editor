@@ -506,8 +506,8 @@ $(function () {
             $(this).resizable({
                 maxHeight: $('.main-block').height()-30,
                 maxWidth: ($('.main-block').width()-30),
-                minHeight:218,
-                minWidth:245,
+                minHeight:190,
+                minWidth:225,
                 aspectRatio: 20/16,
                 resize:function (e, el) {
                     var ar = $(el.originalElement);
