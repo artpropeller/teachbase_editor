@@ -508,7 +508,7 @@ $(function () {
                 maxWidth: ($('.main-block').width()-30),
                 minHeight:218,
                 minWidth:245,
-                aspectRatio: 16/12,
+                aspectRatio: 20/16,
                 resize:function (e, el) {
                     var ar = $(el.originalElement);
                     ar.find('.video').css({'height':el.size['height'] - 80});
