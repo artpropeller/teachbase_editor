@@ -505,10 +505,10 @@ $(function () {
 
             $(this).resizable({
                 maxHeight: $('.main-block').height()-30,
-                maxWidth: ($('.main-block').height()-30)*1.12,
+                maxWidth: ($('.main-block').width()-30),
                 minHeight:218,
                 minWidth:245,
-                aspectRatio: 245/218,
+                aspectRatio: 16/12,
                 resize:function (e, el) {
                     var ar = $(el.originalElement);
                     ar.find('.video').css({'height':el.size['height'] - 80});
