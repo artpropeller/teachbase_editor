@@ -457,12 +457,12 @@ $(function () {
     //установка высоты картинки привью видео
 
 
-    $('.videoblock img').one('load',function () {
-        var vid = $(this).parents('.videoblock');
-        vid.find('.video').css({'height':vid.height() - (vid.find('.header').height() + vid.find('.description').height())});
-    }).each(function () {
-            if (this.complete) $(this).load();
-        });
+//    $('.videoblock img').one('load',function () {
+//        var vid = $(this).parents('.videoblock');
+//        vid.find('img').css({'height':vid.height() - (vid.find('.header').height() + vid.find('.description').height())});
+//    }).each(function () {
+//            if (this.complete) $(this).load();
+//        });
 
     //активация редактирования видеоблока
     $('.videoblock').click(function () {
@@ -500,20 +500,30 @@ $(function () {
             $('.videoblock input:visible,.videoblock textarea:visible').each(function () {
                 $(this).prev().hide(0);
             });
+            var img = $(this).find('img');
+            var img_h = img.height();
+            var img_w = img.width();
+            img.css({'width':'auto','height':'auto'});
+
+
 
 
 
             $(this).resizable({
                 maxHeight: $('.main-block').height()-30,
                 maxWidth: ($('.main-block').width()-30),
-                minHeight:190,
-                minWidth:225,
-                aspectRatio: 20/16,
+                minHeight:240,
+                minWidth:230,
+                aspectRatio: true,
                 resize:function (e, el) {
                     var ar = $(el.originalElement);
-                    ar.find('.video').css({'height':el.size['height'] - 80});
+                    var nh = ((ar.find('.header').width()-12) * img.height())/img.width();
+                    console.log(nh);
+                    ar.find('img').css({'height':nh, 'width':ar.find('.header').width()-12});
+                    $(el.element).css('height',80+nh);
                 }
             });
+            img.css({'height':img_h, 'width':img_w});
         }
     });
 
