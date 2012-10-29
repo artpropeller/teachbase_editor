@@ -1111,6 +1111,10 @@
     margin: 2px -2px 0 0;
     overflow: hidden;
     height: 41px;
+    vertical-align: middle;
+    border:none;
+    text-align: center;
+
 }
 
 .videoblock .description textarea {
