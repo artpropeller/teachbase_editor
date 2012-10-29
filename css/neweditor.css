@@ -1136,6 +1136,7 @@
     background: url("../images/play_video.png") no-repeat;
     width: 78px;
     height: 77px;
+    cursor: pointer;
     top:50%;
     left: 50%;
     margin: -39px 0 0 -39px;
@@ -1172,4 +1173,8 @@
 
 .ui-resizable-e {
     display: none !important;
+}
+
+.ui-icon-gripsmall-diagonal-se {
+    background: none !important;
 }
