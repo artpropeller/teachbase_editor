@@ -13,10 +13,14 @@ $(function () {
         if (!$(this).is('.active')) {
             $('.preview-block').animate({width:0}, 500);
             $('.next_ar').animate({right:2}, 500);
+            $('.next_ar,.prev_ar').addClass('wide');
+            $('body').addClass('hidepanel');
         }
         else {
             $('.preview-block').animate({width:207}, 500);
             $('.next_ar').animate({right:207}, 500);
+            $('.next_ar,.prev_ar').removeClass('wide');
+            $('body').removeClass('hidepanel');
         }
         $(this).toggleClass('active');
     });
@@ -30,7 +34,7 @@ $(function(){
         if( $(this).attr('is_second_click' ))
         {
             $(this).children('.arr-set').removeClass('active');
-            $(this).parent().children('ol').toggle(0);
+            $(this).parent().children('ol:visible').toggle(0);
         }
     });
 });
