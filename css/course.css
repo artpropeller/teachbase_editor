@@ -1,5 +1,7 @@
 body {
     background: #f6f6fb;
+    min-width: 1120px;
+
 }
 
 .preview-block {
@@ -43,6 +45,7 @@ body {
     width: 120px;
     height: 100%;
     position: absolute;
+
 }
 
 .next_ar span {
@@ -130,6 +133,11 @@ body {
 
 #tabs-1.view ol li .item.active .count {
     color: #555;
+}
+
+.arrows {
+
+
 }
 
 .arrows.green .next_ar {
@@ -386,4 +394,14 @@ body {
     background: url("../images/bug_letter.png") no-repeat;
 }
 
+.wrapbutton {
+
+    position: relative;
+}
+
+@media (max-width:1260px) {
+    .next_ar, .next_ar span, .prev_ar, .prev_ar span {
+        width: 70px;
+    }
+}
 
