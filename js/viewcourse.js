@@ -30,7 +30,7 @@ $(function(){
         if( $(this).attr('is_second_click' ))
         {
             $(this).children('.arr-set').removeClass('active');
-            $(this).parent().children('ol:visible').hide(0);
+            $(this).parent().children('ol').toggle(0);
         }
     });
 });
