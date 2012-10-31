@@ -22,14 +22,18 @@ $(function () {
     });
 });
 
-//$(function(){
-//    $('#tabs-1 .item.active').live('click',function(){
-//        if ($(this).find('.wide')) {
-//            $(this).removeClass('wide');
-//            $(this).parent().children('ol:visible').hide(0);
-//        }
-//    });
-//});
+
+
+$(function(){
+    $('#tabs-1 .item').click(function(){
+        $(this).attr('is_second_click', !$(this).attr('is_second_click'));
+        if( $(this).attr('is_second_click' ))
+        {
+            $(this).children('.arr-set').removeClass('active');
+            $(this).parent().children('ol:visible').hide(0);
+        }
+    });
+});
 
 
 //-------------------------------- begin -------------------------------------//
