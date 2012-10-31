@@ -41,7 +41,7 @@ $(function () {
 //-------------------------------- begin -------------------------------------//
 // перетаскивание слайдов (поддержка многоуровневости)
 $(function () {
-    $('#sortable').nestedSortable({
+    $('#sortable.editor').nestedSortable({
         handle:'div',
         items:'li',
         toleranceElement:'> div'
