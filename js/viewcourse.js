@@ -12,15 +12,24 @@ $(function () {
     $('.slide_menu').click(function () {
         if (!$(this).is('.active')) {
             $('.preview-block').animate({width:0}, 500);
-            $('.next_ar').animate({right:50}, 500);
+            $('.next_ar').animate({right:2}, 500);
         }
         else {
             $('.preview-block').animate({width:207}, 500);
             $('.next_ar').animate({right:207}, 500);
         }
-        $(this).toggleClass('active')
+        $(this).toggleClass('active');
     });
 });
+
+//$(function(){
+//    $('#tabs-1 .item.active').live('click',function(){
+//        if ($(this).find('.wide')) {
+//            $(this).removeClass('wide');
+//            $(this).parent().children('ol:visible').hide(0);
+//        }
+//    });
+//});
 
 
 //-------------------------------- begin -------------------------------------//
@@ -66,7 +75,7 @@ $(function () {
                 next = next.clone();
                 next.css({'position':'relative', 'left':0});
                 wrap.remove();
-                $('.cont').append(next);
+                $('.wrapbutton').append(next);
                 timeanimate = false;
             });
             return false;
@@ -107,7 +116,7 @@ $(function () {
                 next = next.clone();
                 next.css({'position':'relative', 'left':0});
                 wrap.remove();
-                $('.cont').append(next);
+                $('.wrapbutton').append(next);
                 timeanimate = false;
             });
             return false;

@@ -27,7 +27,7 @@ body {
     position: absolute;
     right: 15px;
     top: 62px;
-    z-index: 1000;
+    z-index: 44000;
 }
 
 .slide_menu.active {
@@ -375,6 +375,15 @@ body {
     color: #fff;
 }
 
+.wrapbutton {
+    position: relative;
+}
 
+.wrapbutton .debug_button {
+    z-index: 4000;
+    top: 100%;
+    margin-top: -54px;
+    background: url("../images/bug_letter.png") no-repeat;
+}
 
 
