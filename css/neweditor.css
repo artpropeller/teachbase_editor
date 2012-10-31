@@ -18,7 +18,7 @@
 }
 
 .scrollable .scrollwrap {
-    overflow: visible;
+    /*overflow: visible;*/
 }
 
 .create {
@@ -310,7 +310,7 @@
 }
 
 .scrollable .scrollcontent {
-    overflow: visible;
+    /*overflow: visible;*/
 }
 
 .scrollable {
