@@ -4,11 +4,13 @@
 
 body {
     min-width: 1000px;
+    min-height: 590px;
 }
 
 #work-area {
     position: relative;
     font-family:Helvetica, Arial, sans-serif;
+    overflow: hidden;
 }
 
 #work-area ul, #work-area li {
@@ -192,7 +194,7 @@ body {
 }
 
 #empty-front {
-    padding: 17px 48px;
+    padding: 17px 48px 0;
 }
 
 .choose-file {
@@ -263,4 +265,296 @@ body {
 .choose-file p {
     line-height: 20px;
     color: #797979;
+}
+
+ul#listing li {
+    cursor: pointer;
+    padding: 8px 0;
+    border-bottom: 1px solid transparent;
+}
+
+ul#listing li.active {
+    background: url("../img/prev-background.png");
+    box-shadow: inset 0 1px 2px rgba(0,0,0,0.4);
+    border-color: #fff;
+}
+
+ul#listing li .num {
+    float: left;
+    font-weight: bold;
+    font-size: 10px;
+    color: #76767e;
+    line-height: 10px;
+    float: left;
+    width: 15px;
+    margin-left: 12px;
+}
+
+ul#listing li.active .num {
+    color: #fff;
+}
+
+ul#listing li .page {
+    border:1px solid #cccbcb;
+    width: 119px;
+    height: 83px;
+    margin-left: 27px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+    position: relative;
+}
+
+ul#listing li .page .remove {
+    background: url("../images/remove-page.jpg") no-repeat;
+    position: absolute;
+    left: 4px;
+    bottom: 4px;
+    width: 19px;
+    height: 19px;
+    box-shadow: 0 0 2px rgba(0,0,0,0.2);
+    display: none;
+}
+
+ul#listing li:hover .page .remove {
+    display: block;
+}
+
+ul#listing li .page .file {
+    position: absolute;
+    background: url("../images/attached.png") no-repeat;
+    right: 3px;
+    top: -8px;
+    width: 15px;
+    height: 23px;
+}
+
+
+.scroll {
+    height: 300px;
+    overflow: hidden;
+}
+
+#pages-panel .jspTrack {
+    margin: 0;
+}
+
+#pages-panel .jspDragTop {
+    background: none;
+    top:0;
+}
+
+#pages-panel .jspDragBottom {
+    bottom: 0;
+    background: none;
+}
+
+#pages-panel .scroll:hover .jspDrag {
+    background: #9a9aa4;
+    margin: 0;
+    border-radius: 4px;
+    opacity: 0.8;
+
+}
+
+#pages-panel .jspVerticalBar {
+    width: 5px;
+    right: 4px;
+}
+
+#toolbar {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 45px;
+    height: 100%;
+}
+
+
+#toolbar .ico, #toolbar .ico span {
+    width: 42px;
+    height: 40px;
+    background: url("../images/toolbar_sprite.png") no-repeat -500px;
+    position: relative;
+    display: block;
+    cursor: pointer;
+}
+
+#toolbar .ico .del {
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    right: 0;
+    top: 0;
+    display: none;
+}
+
+#toolbar .ico:hover .del {
+    display: block;
+}
+
+#toolbar .attachments {
+    padding-top: 8px;
+}
+
+#toolbar .audio span {
+    background-position: left 6px;
+}
+
+#toolbar .audio:hover {
+    background-position: -44px -106px;
+}
+
+#toolbar .audio.active span {
+    background-position: -43px 7px;
+}
+
+#toolbar .audio.active:hover {
+    background-position: -40px -40px;
+}
+
+#toolbar .div {
+    border-top:1px solid #e4e4e4;
+    height: 0;
+    line-height: 0;
+    margin: 2px 0 0 5px;
+    width: 30px;
+}
+
+#toolbar .file {
+    margin-bottom: -10px;
+}
+
+#toolbar .file span {
+    background-position: left -37px;
+}
+
+#toolbar .file:hover {
+    background-position: -43px -112px;
+}
+
+#toolbar .docs:hover {
+    background-position: -40px -40px;
+}
+
+#toolbar .doc span {
+    background-position: left -68px;
+}
+
+#toolbar .pdf span {
+    background-position: left -106px;
+}
+
+#toolbar .ppt span {
+    background-position: left -144px;
+}
+
+#toolbar .img span {
+    background-position: left -182px;
+}
+
+#toolbar .bottom {
+    position: absolute;
+    bottom: 17px;
+    width: 45px;
+}
+
+#toolbar .buttons {
+    margin-bottom: 10px;
+}
+
+#toolbar .buttons a {
+    background: url("../images/toolbar_buts.png") no-repeat;
+    width: 28px;
+    display: block;
+    height: 27px;
+    margin-left: 8px;
+}
+
+#toolbar .buttons a.width {
+    background-position: 0 0;
+}
+
+#toolbar .buttons a.width:hover {
+    background-position: -28px 0;
+}
+
+#toolbar .buttons a.wide {
+    background-position: 0 -27px;
+}
+
+#toolbar .buttons a.wide:hover {
+    background-position: -28px -27px;
+}
+
+.zoomer {
+    margin:0 0 10px 8px;
+}
+
+#zoom.ui-slider {
+    border-radius: 0;
+    -moz-border-radius: 0;
+    -webkit-border-radius: 0;
+    -khtml-border-radius: 0;
+    width: 0;
+    border-color: #d7d7d7;
+    height: 85px;
+    margin:-4px 0 -6px 13px;
+}
+
+#zoom .ui-slider-handle {
+    width: 16px;
+    height: 16px;
+    background:transparent url("../images/zoom-handle.png");
+    border-radius: 0;
+    -moz-border-radius: 0;
+    -webkit-border-radius: 0;
+    -khtml-border-radius: 0;
+    border: 0;
+    outline: 0;
+    cursor: pointer;
+    left: -8px;
+    /*margin: 10px 0;*/
+    margin-bottom: -.6em;
+}
+
+#zoom-add {
+    background: url("../images/zoom-plus.png") no-repeat left;
+    display: block;
+    width: 28px;
+    height: 39px;
+}
+
+#zoom-add:hover {
+    background-position: right;
+}
+
+#zoom-minus {
+    background: url("../images/zoom-minus.png") no-repeat left;
+    display: block;
+    width: 28px;
+    height: 39px;
+}
+
+#zoom-minus:hover {
+    background-position: right;
+}
+
+.bugger {
+    background: url("../images/bugger.jpg") no-repeat;
+    width: 40px;
+    height: 34px;
+    display: block;
+    position: relative;
+    float:right;
+}
+
+#page {
+    background: #fff;
+    border:1px solid #d3d3d3;
+    height: 300px;
+    box-shadow: 0 0 5px rgba(0,0,0,0.2);
+}
+
+#page img {
+    width: 100%;
+    height: 100%;
 }
