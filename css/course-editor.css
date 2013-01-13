@@ -90,7 +90,12 @@ body {
 }
 
 #pages-panel .upload .choice.noactive:hover {
-    opacity: 1;
+    background: url("../images/upload-bg.jpg") repeat-x top;
+
+}
+
+#pages-panel .upload .choice.noactive:hover a {
+    cursor: default;
 }
 
 #pages-panel .upload .choice.noactive.active {

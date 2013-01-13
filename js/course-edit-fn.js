@@ -96,7 +96,6 @@ function resizeWorkArea(anim) {
 
     if (h_page+17 < wrapper.find('.scroll').height()) wrapper.find('.jspPane').css('left',0);
 
-    console.log(h_page, wrapper.find('.scroll').height());
 
     animate ? page.animate(options, 500, function(){wrapper.find('.scroll').data('jsp').reinitialise()}) : page.css(options);
 
@@ -193,7 +192,7 @@ $(function () {
 
     $('#hide-pages').click(togglePagesPanel);
 
-    $('#pages-panel .upload .choice>a').click(choiceUploadFile);
+    $('#pages-panel .upload .choice:not(".noactive")>a').click(choiceUploadFile);
 
     $('.clicker').live('click', function () {
         hideChoiceUpload();
@@ -210,16 +209,13 @@ $(function () {
 
     listing.sortable({
         axis:"y",
-        revert: 300,
-        scroll: true,
-        'placeholder':'marker',
-        'start':function(ev, ui) {
+        placeholder:'marker',
+        start:function(ev, ui) {
             $('.marker+li').css('border-top-width', '102px !important');
         },
-        'stop':function(ev, ui) {
+        stop:function(ev, ui) {
             next = ui.item.next();
             next.css({'-moz-transition':'none', '-webkit-transition':'none', 'transition':'none'});
-            console.log(next);
             setTimeout(next.css.bind(next, {'-moz-transition':'border-top-width 0.3s ease-in', '-webkit-transition':'border-top-width 0.3s ease-in', 'transition':'border-top-width 0.3s ease-in'}));
             reCountPages();
         }
