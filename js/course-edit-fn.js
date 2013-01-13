@@ -110,7 +110,12 @@ function togglePagesPanel() {
     $('#empty-front').animate({'margin-left':sw.attr('class') == 'active' ? 176 : 0}, speed);
     var ml = parseInt($('#wrapper-page').css('margin-left').split('px')[0]);
     var deli = $('#page').width() < $('#wrapper-page').width() ? 2 : 1;
-    $('#wrapper-page').animate({'margin-left':sw.attr('class') == 'active' ? ml + 176/deli : ml - 176/deli}, speed, function(){$('#wrapper-page').find('.scroll').data('jsp').reinitialise()});
+    $('#wrapper-page').animate({'margin-left':sw.attr('class') == 'active' ? ml + 176/deli : ml - 176/deli}, speed,
+        function(){
+            if ($('#page').width() > $('#wrapper-page').width()) {
+                $('#wrapper-page').find('.scroll').data('jsp').reinitialise()
+            }
+        });
 
 }
 
