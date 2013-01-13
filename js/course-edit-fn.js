@@ -1,10 +1,10 @@
 var clicker = '<div class="clicker"></div>';
 
 
-function nod(a,b) {
+function nod(a, b) {
     var c = a;
-    for (c = a; c>0; c--){
-        if (a%c == 0 && b%c == 0) return c;
+    for (c = a; c > 0; c--) {
+        if (a % c == 0 && b % c == 0) return c;
     }
     return c
 }
@@ -30,7 +30,7 @@ function resizeWorkArea(anim, width) {
     var ratioX = 10, //соотношение сторон листа изначально 10x7
         ratioY = 7,
         animate = anim ? true : false,
-        margin = 17, //минимальный отступ от краев
+        margin = 12, //минимальный отступ от краев
         p = (sw ? 176 : 0) + margin,
         scale = $('#zoom').slider('value'),
         empty = (body.width() - p - 45 - margin / 2), //доступное пространство
@@ -38,21 +38,20 @@ function resizeWorkArea(anim, width) {
         wrapper = $('#wrapper-page');
 
     wrapper.css({
-        'height': h_body - margin*2,
-        'margin-left': p,
-        'margin-top': margin,
-        'margin-right': 45 + margin
+        'height':h_body - margin * 2,
+        'margin-left':p,
+        'margin-top':margin,
+        'margin-right':45 + margin
 //        'width': (body.width() - p - 45 - margin*3)+'px',
     });
-
 
 
     wrapper.find('.scroll').jScrollPane({
         autoReinitialise:false,
         verticalGutter:0,
         horizontalGutter:0,
-        hideFocus: true,
-            autoReinitialiseDelay:1
+        hideFocus:true,
+        autoReinitialiseDelay:1
     });
 
     empty = wrapper.width();
@@ -71,7 +70,7 @@ function resizeWorkArea(anim, width) {
 
     //вычисляем максимально возможную высоту и ширину
 
-    var h_page = wrapper.height()-5,
+    var h_page = wrapper.height() - 17,
         w_page = pageWidth(h_page);
 
     while (w_page > empty) {
@@ -80,11 +79,11 @@ function resizeWorkArea(anim, width) {
     }
 
     h_page = h_page * scale;
-    w_page = (w_page-10) * scale;
+    w_page = (w_page - 10) * scale;
 
     if (width) {
-        w_page = empty-10;
-        h_page = (w_page/(orientation == 'gorizontal' ? ratioX : ratioY))*(orientation == 'gorizontal' ? ratioY : ratioX);
+        w_page = empty - 10;
+        h_page = (w_page / (orientation == 'gorizontal' ? ratioX : ratioY)) * (orientation == 'gorizontal' ? ratioY : ratioX);
     }
 
 
@@ -96,13 +95,30 @@ function resizeWorkArea(anim, width) {
         'height':h_page + 'px',
 //        'margin-left':(((body.width() - p - w_page - margin / 2 - 45) / 2) + p) + 'px',
         'margin-left':'auto',
-        'margin-top': h_page < wrapper.height() ? ((wrapper.height() - h_page) / 2 ) + 'px' : 0
+        'margin-bottom':'7px',
+        'margin-top':h_page < wrapper.height() ? ((wrapper.height() - h_page) / 2 ) + 'px' : 0
     };
 
-    if (h_page+17 < wrapper.find('.scroll').height()) wrapper.find('.jspPane').css('left',0);
 
 
-    animate ? page.animate(options, 500, function(){wrapper.find('.scroll').data('jsp').reinitialise()}) : page.css(options);
+    if (h_page + 17 < wrapper.find('.scroll').height()) {
+        wrapper.find('.jspPane').css('left', 0);
+    }
+    else {
+        $.extend(options, {
+                'margin-top':'7px'}
+        );
+    }
+
+
+
+    $.extend(options,{'left': w_page > wrapper.width() ? '7px' : '0'});
+        console.log(options);
+
+
+    animate ? page.animate(options, 500, function () {
+        wrapper.find('.scroll').data('jsp').reinitialise()
+    }) : page.css(options);
 
 }
 
@@ -114,10 +130,10 @@ function togglePagesPanel() {
     $('#pages-panel').animate({left:sw.attr('class') == 'active' ? 0 : -176}, speed);
     $('#empty-front').animate({'margin-left':sw.attr('class') == 'active' ? 176 : 0}, speed);
     var ml = parseInt($('#wrapper-page').css('margin-left').split('px')[0]);
-    var deli = $('#page').width()+176 < $('#wrapper-page').width() ? 2 : 1;
-    $('#wrapper-page').animate({'margin-left':sw.attr('class') == 'active' ? ml + 176/deli : ml - 176/deli}, speed,
-        function(){
-            if ($('#page').width()+176 > $('#wrapper-page').width()) {
+    var deli = $('#page').width() + 176 < $('#wrapper-page').width() ? 2 : 1;
+    $('#wrapper-page').animate({'margin-left':sw.attr('class') == 'active' ? ml + 176 / deli : ml - 176 / deli}, speed,
+        function () {
+            if ($('#page').width() + 176 > $('#wrapper-page').width()) {
                 $('#wrapper-page').find('.scroll').data('jsp').reinitialise()
             }
         });
@@ -220,16 +236,16 @@ $(function () {
         axis:"y",
         placeholder:'marker',
 
-        stop:function(ev, ui) {
+        stop:function (ev, ui) {
 //            next = ui.item.next();
 //            next.css({'-moz-transition':'none', '-webkit-transition':'none', 'transition':'none'});
 //            setTimeout(next.css.bind(next, {'-moz-transition':'border-top-width 0.3s ease-in', '-webkit-transition':'border-top-width 0.3s ease-in', 'transition':'border-top-width 0.3s ease-in'}));
             reCountPages();
         },
-        start: function (e,ui){        // new lines to
+        start:function (e, ui) {        // new lines to
             $(ui.placeholder).slideUp(); // remove popping
-        },                             // effect on start
-        change: function (e,ui){
+        }, // effect on start
+        change:function (e, ui) {
             $(ui.placeholder).hide().slideDown();
         }
     });
@@ -244,11 +260,11 @@ $(function () {
 
     $('#listing li').click(selectPage);
 
-    $('#toolbar .buttons .wide').click(function(){
+    $('#toolbar .buttons .wide').click(function () {
         $('#zoom').slider('value', 1);
     });
 
-    $('#toolbar .buttons .width').click(function(){
+    $('#toolbar .buttons .width').click(function () {
         resizeWorkArea(true, true);
     });
 

@@ -560,7 +560,8 @@ ul#listing li .page .file {
     background: #fff;
     border:1px solid #d3d3d3;
     height: 300px;
-    box-shadow: 0 0 5px rgba(0,0,0,0.2);
+    box-shadow: 0 0 7px rgba(0,0,0,0.2);
+    position: relative;
 }
 
 #wrapper-page {
