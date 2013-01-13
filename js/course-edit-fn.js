@@ -9,7 +9,7 @@ function nod(a,b) {
     return c
 }
 
-function resizeWorkArea(anim) {
+function resizeWorkArea(anim, width) {
     var area = $('#work-area'),
         sw = $('#hide-pages').attr('class') == 'active' ? true : false,
         body = $('body'),
@@ -81,6 +81,11 @@ function resizeWorkArea(anim) {
 
     h_page = h_page * scale;
     w_page = (w_page-10) * scale;
+
+    if (width) {
+        w_page = empty-10;
+        h_page = (w_page/(orientation == 'gorizontal' ? ratioX : ratioY))*(orientation == 'gorizontal' ? ratioY : ratioX);
+    }
 
 
     //добавляем свойства к странице и ставим ее посередине
@@ -214,15 +219,18 @@ $(function () {
     listing.sortable({
         axis:"y",
         placeholder:'marker',
-        start:function(ev, ui) {
-//            alert(1);
-//            $('.marker').css('height', '0 !important');
-        },
+
         stop:function(ev, ui) {
-            next = ui.item.next();
-            next.css({'-moz-transition':'none', '-webkit-transition':'none', 'transition':'none'});
-            setTimeout(next.css.bind(next, {'-moz-transition':'border-top-width 0.3s ease-in', '-webkit-transition':'border-top-width 0.3s ease-in', 'transition':'border-top-width 0.3s ease-in'}));
+//            next = ui.item.next();
+//            next.css({'-moz-transition':'none', '-webkit-transition':'none', 'transition':'none'});
+//            setTimeout(next.css.bind(next, {'-moz-transition':'border-top-width 0.3s ease-in', '-webkit-transition':'border-top-width 0.3s ease-in', 'transition':'border-top-width 0.3s ease-in'}));
             reCountPages();
+        },
+        start: function (e,ui){        // new lines to
+            $(ui.placeholder).slideUp(); // remove popping
+        },                             // effect on start
+        change: function (e,ui){
+            $(ui.placeholder).hide().slideDown();
         }
     });
     listing.disableSelection();
@@ -235,6 +243,14 @@ $(function () {
     });
 
     $('#listing li').click(selectPage);
+
+    $('#toolbar .buttons .wide').click(function(){
+        $('#zoom').slider('value', 1);
+    });
+
+    $('#toolbar .buttons .width').click(function(){
+        resizeWorkArea(true, true);
+    });
 
 
 });
