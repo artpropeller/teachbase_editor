@@ -34,7 +34,28 @@ function resizeWorkArea(anim) {
         p = (sw ? 176 : 0) + margin,
         scale = $('#zoom').slider('value'),
         empty = (body.width() - p - 45 - margin / 2), //доступное пространство
-        orientation = page.hasClass('vertical') ? 'vertical' : 'gorizontal';
+        orientation = page.hasClass('vertical') ? 'vertical' : 'gorizontal',
+        wrapper = $('#wrapper-page');
+
+    wrapper.css({
+        'height': h_body - margin*2,
+        'margin-left': p,
+        'margin-top': margin,
+        'margin-right': 45 + margin
+//        'width': (body.width() - p - 45 - margin*3)+'px',
+    });
+
+
+
+    wrapper.find('.scroll').jScrollPane({
+        autoReinitialise:false,
+        verticalGutter:0,
+        horizontalGutter:0,
+        hideFocus: true,
+            autoReinitialiseDelay:1
+    });
+
+    empty = wrapper.width();
 
     function pageWidth(h) {
         return (h / (orientation == 'gorizontal' ? ratioY : ratioX)) * (orientation == 'gorizontal' ? ratioX : ratioY);
@@ -50,7 +71,7 @@ function resizeWorkArea(anim) {
 
     //вычисляем максимально возможную высоту и ширину
 
-    var h_page = h_body - margin * 2,
+    var h_page = wrapper.height()-5,
         w_page = pageWidth(h_page);
 
     while (w_page > empty) {
@@ -64,14 +85,20 @@ function resizeWorkArea(anim) {
 
     //добавляем свойства к странице и ставим ее посередине
     var options = {
-        'margin-right':(45 + margin / 2) + 'px',
+//        'margin-right':(45 + margin / 2) + 'px',
+        'margin-right':'auto',
         'width':w_page + 'px',
         'height':h_page + 'px',
-        'margin-left':(((body.width() - p - w_page - margin / 2 - 45) / 2) + p) + 'px',
-        'margin-top':((h_body - margin * 2 - h_page) / 2 + margin) + 'px'
+//        'margin-left':(((body.width() - p - w_page - margin / 2 - 45) / 2) + p) + 'px',
+        'margin-left':'auto',
+        'margin-top': h_page < wrapper.height() ? ((wrapper.height() - h_page) / 2 ) + 'px' : 0
     };
 
-    animate ? page.animate(options, 500) : page.css(options);
+    if (h_page+17 < wrapper.find('.scroll').height()) wrapper.find('.jspPane').css('left',0);
+
+    console.log(h_page, wrapper.find('.scroll').height());
+
+    animate ? page.animate(options, 500, function(){wrapper.find('.scroll').data('jsp').reinitialise()}) : page.css(options);
 
 }
 
@@ -79,12 +106,13 @@ function resizeWorkArea(anim) {
 function togglePagesPanel() {
     var sw = $('#hide-pages'),
         speed = 750;
-
     sw.toggleClass('active');
     $('#pages-panel').animate({left:sw.attr('class') == 'active' ? 0 : -176}, speed);
     $('#empty-front').animate({'margin-left':sw.attr('class') == 'active' ? 176 : 0}, speed);
-    var ml = parseInt($('#page').css('margin-left').split('px')[0]);
-    $('#page').animate({'margin-left':sw.attr('class') == 'active' ? ml + 176 / 2 : ml - 176 / 2}, speed);
+    var ml = parseInt($('#wrapper-page').css('margin-left').split('px')[0]);
+    var deli = $('#page').width() < $('#wrapper-page').width() ? 2 : 1;
+    $('#wrapper-page').animate({'margin-left':sw.attr('class') == 'active' ? ml + 176/deli : ml - 176/deli}, speed, function(){$('#wrapper-page').find('.scroll').data('jsp').reinitialise()});
+
 }
 
 function choiceUploadFile() {
@@ -127,6 +155,7 @@ function selectPage() {
             $('#page').removeClass('vertical');
         }
         resizeWorkArea(false);
+        $('#wrapper-page').find('.scroll').data('jsp').reinitialise();
     }
 }
 
@@ -143,18 +172,18 @@ $(function () {
         range:'min',
         min:0.1,
         step:0.05,
-        max:1,
-        value:0.55,
+        max:2,
+        value:1,
         change:function () {
             resizeWorkArea(true)
         }
     });
 
     $('#zoom-add').click(function () {
-        zoomSetValue(0.1)
+        zoomSetValue(0.20)
     });
     $('#zoom-minus').click(function () {
-        zoomSetValue(-0.1)
+        zoomSetValue(-0.20)
     });
 
     resizeWorkArea(false);
@@ -181,7 +210,19 @@ $(function () {
 
     listing.sortable({
         axis:"y",
-        stop:reCountPages
+        revert: 300,
+        scroll: true,
+        'placeholder':'marker',
+        'start':function(ev, ui) {
+            $('.marker+li').css('border-top-width', '102px !important');
+        },
+        'stop':function(ev, ui) {
+            next = ui.item.next();
+            next.css({'-moz-transition':'none', '-webkit-transition':'none', 'transition':'none'});
+            console.log(next);
+            setTimeout(next.css.bind(next, {'-moz-transition':'border-top-width 0.3s ease-in', '-webkit-transition':'border-top-width 0.3s ease-in', 'transition':'border-top-width 0.3s ease-in'}));
+            reCountPages();
+        }
     });
     listing.disableSelection();
 
