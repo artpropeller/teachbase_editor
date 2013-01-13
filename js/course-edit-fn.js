@@ -80,7 +80,7 @@ function resizeWorkArea(anim) {
     }
 
     h_page = h_page * scale;
-    w_page = w_page * scale;
+    w_page = (w_page-10) * scale;
 
 
     //добавляем свойства к странице и ставим ее посередине
@@ -109,14 +109,13 @@ function togglePagesPanel() {
     $('#pages-panel').animate({left:sw.attr('class') == 'active' ? 0 : -176}, speed);
     $('#empty-front').animate({'margin-left':sw.attr('class') == 'active' ? 176 : 0}, speed);
     var ml = parseInt($('#wrapper-page').css('margin-left').split('px')[0]);
-    var deli = $('#page').width() < $('#wrapper-page').width() ? 2 : 1;
+    var deli = $('#page').width()+176 < $('#wrapper-page').width() ? 2 : 1;
     $('#wrapper-page').animate({'margin-left':sw.attr('class') == 'active' ? ml + 176/deli : ml - 176/deli}, speed,
         function(){
-            if ($('#page').width() > $('#wrapper-page').width()) {
+            if ($('#page').width()+176 > $('#wrapper-page').width()) {
                 $('#wrapper-page').find('.scroll').data('jsp').reinitialise()
             }
         });
-
 }
 
 function choiceUploadFile() {
@@ -216,7 +215,8 @@ $(function () {
         axis:"y",
         placeholder:'marker',
         start:function(ev, ui) {
-            $('.marker+li').css('border-top-width', '102px !important');
+//            alert(1);
+//            $('.marker').css('height', '0 !important');
         },
         stop:function(ev, ui) {
             next = ui.item.next();
