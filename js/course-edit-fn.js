@@ -41,7 +41,6 @@ function resizeWorkArea(anim, width) {
         scale = 1;
     }
 
-    console.log(anim);
 
 
 
