@@ -228,8 +228,10 @@ $(function(){
     });
 
     $('#zoom-add').click(function () {
+        if ($('#zoom').slider('option','max') != $('#zoom').slider('value')) {
         zoomSetValue(0.20);
         resizeWorkArea(true)
+        }
     });
     $('#zoom-minus').click(function () {
         zoomSetValue(-0.20);
