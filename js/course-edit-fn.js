@@ -41,6 +41,8 @@ function resizeWorkArea(anim, width) {
         scale = 1;
     }
 
+    console.log(anim);
+
 
 
     wrapper.css({
@@ -134,6 +136,7 @@ function resizeWorkArea(anim, width) {
         if (width && width==1) {
             $('#zoom').slider('value',1);
         }
+
     }) : page.css(options);
 
 
@@ -219,16 +222,18 @@ $(function(){
         step:0.05,
         max:2,
         value:1,
-        change:function () {
+        stop:function () {
             resizeWorkArea(true)
         }
     });
 
     $('#zoom-add').click(function () {
-        zoomSetValue(0.20)
+        zoomSetValue(0.20);
+        resizeWorkArea(true)
     });
     $('#zoom-minus').click(function () {
-        zoomSetValue(-0.20)
+        zoomSetValue(-0.20);
+        resizeWorkArea(true)
     });
 
     resizeWorkArea(false);
@@ -292,7 +297,12 @@ $(function(){
     });
 
     $('#toolbar .buttons .width').click(function () {
+        $('#wrapper-page').find('.scroll').data('jsp').scrollTo(0,0);
         resizeWorkArea(true, 2);
+    });
+
+    $('#toolbar .ico .del').click(function(){
+        $(this).parents('.ico').remove();
     });
 
 });
