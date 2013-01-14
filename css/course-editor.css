@@ -600,9 +600,15 @@ ul#listing li .page .file {
 /**/
 /*#listing li { -moz-transition:border-top-width 0.3s ease-in; -webkit-transition:border-top-width 0.3s ease-in; border-top:0px solid rgba(0,0,0,0); }*/
 #listing li.marker {
-    height: 102px;
-    padding: 0;
-    border-color: transparent !important;
+    /*height: 102px;*/
+    /*padding: 0;*/
+    /*background: #000;*/
+    /*border-color: transparent !important;*/
+    width: 116px;
+    height: 66px;
+    border: 2px dashed #d0d093;
+    /*float: left;*/
+    margin: 8px 0 8px 27px;
 }
 
 /*#listing li.active {*/

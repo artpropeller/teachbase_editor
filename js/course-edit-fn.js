@@ -272,13 +272,13 @@ $(function(){
 //            next.css({'-moz-transition':'none', '-webkit-transition':'none', 'transition':'none'});
 //            setTimeout(next.css.bind(next, {'-moz-transition':'border-top-width 0.3s ease-in', '-webkit-transition':'border-top-width 0.3s ease-in', 'transition':'border-top-width 0.3s ease-in'}));
             reCountPages();
-        },
-        start:function (e, ui) {        // new lines to
-            $(ui.placeholder).slideUp(); // remove popping
-        }, // effect on start
-        change:function (e, ui) {
-            $(ui.placeholder).hide().slideDown();
         }
+//        start:function (e, ui) {        // new lines to
+//            $(ui.placeholder).slideUp(); // remove popping
+//        }, // effect on start
+//        change:function (e, ui) {
+//            $(ui.placeholder).hide().slideDown();
+//        }
     });
     listing.disableSelection();
 
