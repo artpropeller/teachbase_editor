@@ -4,15 +4,12 @@
 <head>
     <title></title>
     <meta http-equiv="Content-Type" content="text/html; Charset=utf-8"/>
-    <link rel="stylesheet" href="http://code.jquery.com/ui/1.9.2/themes/base/jquery-ui.css"/>
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.8.1/themes/base/jquery-ui.css"/>
     <link type="text/css" href="js/jquery.jscrollpane/jquery.jscrollpane.css" rel="stylesheet"/>
+    <link type="text/css" href="js/jScrollPane.css" rel="stylesheet"/>
     <link type="text/css" href="css/style.css" rel="stylesheet"/>
     <link type="text/css" href="css/course-editor.css" rel="stylesheet"/>
-    <script type='text/javascript' src="js/jquery-1.7.2.js"></script>
-    <script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
-    <script src='js/jquery.jscrollpane.min.js'></script>
-    <script src='js/jquery.mousewheel-3.0.6.pack.js'></script>
-    <script type='text/javascript' src="js/course-edit-fn.js"></script>
+
     <title>Index</title>
 </head>
 <body>
@@ -217,7 +214,24 @@
 
 </div>
 
+<script type='text/javascript' src="js/jquery-1.7.2.js"></script>
+<script src="http://code.jquery.com/ui/1.8.1/jquery-ui.js"></script>
+<script src='js/jquery.jscrollpane.min.js'></script>
+<script src='js/jquery.mousewheel-3.0.6.pack.js'></script>
+<script type='text/javascript' src="js/course-edit-fn.js"></script>
+<script type="text/javascript" src="js/jquery-1.3.2.js"></script>
+<script type="text/javascript" src="js/jScrollPane.js"></script>
+<script type="text/javascript">
 
+    $('#pages-panel .scroll').jScrollPane({
+        autoReinitialise:true,
+        autoReinitialiseDelay:10
+    }).bind('scroll', function(e) {
+                $('#listing', this).sortable('refreshPositions');
+            }
+    );
+
+</script>
 </body>
 </html>
 

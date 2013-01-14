@@ -24,7 +24,7 @@ function resizeWorkArea(anim, width) {
 
     front.height(h_body - 17 * 2).css('margin-left', (sw ? 176 : 0) + 'px');
 
-    panel.find('.scroll').height(panel.height() - 60);
+    panel.find('.scroll').height(panel.height() - 63);
 
 //    параметры рабочего листа
     var ratioX = 10, //соотношение сторон листа изначально 10x7
@@ -79,11 +79,15 @@ function resizeWorkArea(anim, width) {
     }
 
     h_page = h_page * scale;
+
+    var base = (w_page - 10);
+
     w_page = (w_page - 10) * scale;
 
     if (width) {
         w_page = empty - 10;
         h_page = (w_page / (orientation == 'gorizontal' ? ratioX : ratioY)) * (orientation == 'gorizontal' ? ratioY : ratioX);
+        $('#zoom').slider('value',w_page/base);
     }
 
 
@@ -113,7 +117,6 @@ function resizeWorkArea(anim, width) {
 
 
     $.extend(options,{'left': w_page > wrapper.width() ? '7px' : '0'});
-        console.log(options);
 
 
     animate ? page.animate(options, 500, function () {
@@ -161,14 +164,14 @@ function reCountPages() {
     });
 }
 
-function removePage() {
-    $(this).parents('li').remove();
-    reCountPages();
+function removePage(event) {
+    $(this).parents('li').slideUp(500, function(){$(this).remove(); reCountPages();});
+
 }
 
-function selectPage() {
+function selectPage(event) {
     var th = $(this);
-    if (!th.is('.active')) {
+    if (!th.is('.active') && !$(event.originalEvent.srcElement).is('.remove')) {
         $('#listing li').removeClass('active');
         th.addClass('active');
         $('#page img').attr('src', th.attr('rel'));
@@ -189,7 +192,7 @@ function zoomSetValue(val) {
 }
 
 
-$(function () {
+$(function(){
 
     $('#zoom').slider({
         orientation:'vertical',
@@ -226,7 +229,7 @@ $(function () {
     $('#pages-panel .upload li a').click(hideChoiceUpload);
 
 
-    $('ul#listing li .page img').bind('dragstart', function (event) {
+    $('li .page img').bind('dragstart', function (event) {
         event.preventDefault();
     });
 
@@ -234,7 +237,12 @@ $(function () {
 
     listing.sortable({
         axis:"y",
+//        appendTo: '#pages-panel',
         placeholder:'marker',
+//        helper: 'clone',
+        scrollSensitivity: 0,
+        scrollSpeed: 400,
+        scroll: true,
 
         stop:function (ev, ui) {
 //            next = ui.item.next();
@@ -267,6 +275,5 @@ $(function () {
     $('#toolbar .buttons .width').click(function () {
         resizeWorkArea(true, true);
     });
-
 
 });
