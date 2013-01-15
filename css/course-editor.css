@@ -665,3 +665,268 @@ ul#listing li .page .file {
 #wrapper-page:hover .jspHorizontalBar .jspTrack {
     display: block;
 }
+
+
+.popup {
+    padding: 30px;
+    z-index: 9000;
+    background: #f2f2f2;
+    border: 3px solid #305c88;
+    overflow: visible;
+    display: none;
+    font-family: "Helvetica Neue", Helvetica, Arial;
+}
+
+.fancybox-lock .fancybox-overlay {
+    overflow-y: auto;
+}
+
+.fancybox-close {
+    background: url("../images/close_ico.png") no-repeat;
+    width: 28px;
+    height: 28px;
+    top:-11px;
+    right: -11px;
+}
+
+.popup h3 {
+    font-size: 22px;
+    color: #000;
+    margin: 0;
+    font-weight: normal;
+    padding: 0 0 20px;
+    line-height: 22px;
+}
+
+#audio-record {
+    width: 400px;
+}
+
+#audio-record .slide {
+    position: relative;
+    margin-bottom: 25px;
+}
+
+#audio-record .slide img {
+    box-shadow: 0 0 7px rgba(0, 0, 0, 0.2);
+    border: 1px solid #d3d3d3;
+}
+
+#audio-record .slide .counter {
+    position: absolute;
+    top:50%;
+    left: 50%;
+    margin: -64px 0 0 -64px;
+    color: #fff;
+    background: url("../images/counter_bg.png");
+    width: 128px;
+    height: 111px;
+    font-size: 94px;
+    line-height: 94px;
+    font-weight: bold;
+    text-align: center;
+    padding-top: 17px;
+    display: none;
+}
+
+#audio-record a#rec-button {
+    background: url("../images/audio-rec.jpg") repeat-x top;
+    height: 30px;
+    border-radius: 2px;
+    width: 97px;
+    line-height: 30px;
+    display: block;
+    float: left;
+    border:1px solid #be3a3a;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+    color: #fff;
+    text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.5);
+    text-decoration: none;
+    font-weight: bold;
+
+}
+
+#audio-record a#rec-button:hover {
+    background: url("../images/audio-rec.jpg") repeat-x bottom;
+}
+
+#audio-record a#rec-button.stop, #audio-record a#rec-button.save {
+    background: url("../images/audio-rec2.jpg") repeat-x top;
+    border-color: #a2b53b;
+    text-align: center;
+}
+
+#audio-record a#rec-button.stop:hover, #audio-record a#rec-button.save:hover {
+    background: url("../images/audio-rec2.jpg") repeat-x bottom;
+}
+
+#audio-record a#rec-button i {
+    display: block;
+    position: relative;
+    background: url("../images/white_mic.png") no-repeat;
+    width: 15px;
+    height: 20px;
+    float: left;
+    top:5px;
+    margin: 0 7px 0 9px;
+}
+
+#audio-record .timer {
+    color: #000;
+    width: 70px;
+    float: left;
+    font-size: 24px;
+    line-height: 24px;
+    font-weight: bold;
+    margin: 5px 0 0 12px;
+}
+
+#audio-record .help {
+    font-size: 12px;
+    color: #707070;
+    font-style: italic;
+    float: right;
+    padding-top: 6px;
+}
+
+#audio-record .play {
+    background: url("../images/play-stop-bg.png") no-repeat;
+    width: 32px;
+    height: 32px;
+    float: left;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+    margin-right: 9px;
+    position: relative;
+    cursor: pointer;
+    display: none;
+}
+
+#audio-record .play i {
+    position: absolute;
+    background: url("../images/audio-pause.png") no-repeat;
+    width: 15px;
+    height: 15px;
+    top:9px;
+    left: 8px;
+}
+
+#audio-record .play.pause i {
+    background: url("../images/audio-play.png") no-repeat;
+    left: 9px;
+}
+
+#audio-record .timeline {
+    width: 210px;
+    height: 32px;
+    float: left;
+    overflow: hidden;
+    position: relative;
+    background: #b4b4b4;
+    margin-right: 9px;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2);
+    border-radius: 2px;
+    display: none;
+}
+
+#audio-record .timeline .time {
+    color: #fff;
+    float: left;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    width: 100%;
+    position: absolute;
+    top:0;
+    left: 0;
+    height: 32px;
+    line-height: 32px;
+    overflow: hidden;
+    text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.5);
+}
+
+#audio-record .timeline .line {
+    background: #7b9ec3;
+    height: 32px;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+#audio-record .timeline::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: '';
+    width: 100%;
+    height: 32px;
+    box-shadow: 0 0 0 3px  #f2f2f2;
+    border-radius: 3px;
+}
+
+#audio-record .del-audio {
+    display: none;
+    width: 32px;
+    height: 32px;
+    float: left;
+    margin-right: 9px;
+    background: url("../images/del_audio.png") no-repeat top;
+}
+
+#audio-record .del-audio:hover {
+    background-position: bottom;
+}
+
+#audio-record .saveline {
+    height: 32px;
+    position: relative;
+    background: #b5b5b5;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2);
+    border-radius: 2px;
+    overflow: hidden;
+    display: none;
+}
+
+#audio-record .saveline .label {
+    position: absolute;
+    color: #fff;
+    font-size: 12px;
+    font-weight: bold;
+    position: absolute;
+    top:0;
+    left: 95px;
+    line-height: 32px;
+    text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.5);
+}
+
+#audio-record .saveline .percent {
+    color: #fff;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    width: 100%;
+    position: absolute;
+    top:0;
+    left: 0;
+    height: 32px;
+    line-height: 32px;
+    text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.5);
+}
+
+#audio-record .saveline .line {
+    background: #8e8e8e;
+    height: 32px;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+#audio-record .saveline::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: '';
+    width: 100%;
+    height: 32px;
+    box-shadow: 0 0 0 3px  #f2f2f2;
+    border-radius: 3px;
+}
+
+.fancybox-overlay {
+    background: rgba(58, 108, 158, 0.5);
+}

@@ -37,11 +37,9 @@ function resizeWorkArea(anim, width) {
         orientation = page.hasClass('vertical') ? 'vertical' : 'gorizontal',
         wrapper = $('#wrapper-page');
 
-    if (width && width==1) {
+    if (width && width == 1) {
         scale = 1;
     }
-
-
 
 
     wrapper.css({
@@ -91,10 +89,10 @@ function resizeWorkArea(anim, width) {
 
     w_page = (w_page - 10) * scale;
 
-    if (width && width==2) {
+    if (width && width == 2) {
         w_page = empty - 10;
         h_page = (w_page / (orientation == 'gorizontal' ? ratioX : ratioY)) * (orientation == 'gorizontal' ? ratioY : ratioX);
-        $('#zoom').slider('value',w_page/base);
+        $('#zoom').slider('value', w_page / base);
         page.addClass('wide');
     }
     else {
@@ -115,7 +113,6 @@ function resizeWorkArea(anim, width) {
     };
 
 
-
     if (h_page + 17 < wrapper.find('.scroll').height()) {
         wrapper.find('.jspPane').css('left', 0);
     }
@@ -126,18 +123,16 @@ function resizeWorkArea(anim, width) {
     }
 
 
-
-    $.extend(options,{'left': w_page > wrapper.width() ? '7px' : '0'});
+    $.extend(options, {'left':w_page > wrapper.width() ? '7px' : '0'});
 
 
     animate ? page.animate(options, 500, function () {
         wrapper.find('.scroll').data('jsp').reinitialise();
-        if (width && width==1) {
-            $('#zoom').slider('value',1);
+        if (width && width == 1) {
+            $('#zoom').slider('value', 1);
         }
 
     }) : page.css(options);
-
 
 
 }
@@ -157,7 +152,7 @@ function togglePagesPanel() {
                 $('#wrapper-page').find('.scroll').data('jsp').reinitialise()
             }
             if ($('#page').hasClass('wide')) {
-                resizeWorkArea(true,2);
+                resizeWorkArea(true, 2);
             }
         });
 }
@@ -185,7 +180,10 @@ function reCountPages() {
 }
 
 function removePage(event) {
-    $(this).parents('li').slideUp(500, function(){$(this).remove(); reCountPages();});
+    $(this).parents('li').slideUp(500, function () {
+        $(this).remove();
+        reCountPages();
+    });
 
 }
 
@@ -212,7 +210,7 @@ function zoomSetValue(val) {
 }
 
 
-$(function(){
+$(function () {
 
     $('#zoom').slider({
         orientation:'vertical',
@@ -227,9 +225,9 @@ $(function(){
     });
 
     $('#zoom-add').click(function () {
-        if ($('#zoom').slider('option','max') != $('#zoom').slider('value')) {
-        zoomSetValue(0.20);
-        resizeWorkArea(true)
+        if ($('#zoom').slider('option', 'max') != $('#zoom').slider('value')) {
+            zoomSetValue(0.20);
+            resizeWorkArea(true)
         }
     });
     $('#zoom-minus').click(function () {
@@ -264,9 +262,9 @@ $(function(){
 //        appendTo: '#pages-panel',
         placeholder:'marker',
 //        helper: 'clone',
-        scrollSensitivity: 0,
-        scrollSpeed: 400,
-        scroll: true,
+        scrollSensitivity:0,
+        scrollSpeed:400,
+        scroll:true,
 
         stop:function (ev, ui) {
 //            next = ui.item.next();
@@ -293,17 +291,167 @@ $(function(){
     $('#listing li').click(selectPage);
 
     $('#toolbar .buttons .wide').click(function () {
-        $('#wrapper-page').find('.scroll').data('jsp').scrollTo(0,0);
+        $('#wrapper-page').find('.scroll').data('jsp').scrollTo(0, 0);
         resizeWorkArea(true, 1);
     });
 
     $('#toolbar .buttons .width').click(function () {
-        $('#wrapper-page').find('.scroll').data('jsp').scrollTo(0,0);
+        $('#wrapper-page').find('.scroll').data('jsp').scrollTo(0, 0);
         resizeWorkArea(true, 2);
     });
 
-    $('#toolbar .ico .del').click(function(){
+    $('#toolbar .ico .del').click(function () {
         $(this).parents('.ico').remove();
     });
 
+    $('.ico.audio').click(function(){
+        $.fancybox($('#audio-record'), {
+            margin:0,
+            padding:0,
+            scrollOutside:false,
+            fitToView:false,
+            minHeight:0
+        });
+    });
+
+
+
+
+});
+
+//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+//добавление аудио
+
+var audioTime = 0;
+var timeInterval;
+
+function getTimeRec(t) {
+    var m = t / 60 | 0;
+    var s = t % 60;
+    if (s < 10) s = '0' + s;
+    return '0' + m + ':' + s;
+}
+
+function parseTimeRec(t) {
+    var s = t.split(':');
+    return parseInt(s[0] * 60) + parseInt(s[1]);
+}
+
+function startAudioRecord() {
+    var t = 0;
+    $('#audio-record #rec-button').removeClass('rec').addClass('stop').html('Остановить');
+    var c = $('#audio-record .counter');
+    var time = $('#audio-record .timer');
+    c.text(3).fadeIn(150, function () {
+        timeInterval = setInterval(function () {
+            t = parseInt(c.text()) - 1;
+            if (t == 0) {
+                clearInterval(timeInterval);
+                c.hide(0);
+                time.text('00:00');
+                timeInterval = setInterval(function () {
+                    audioTime++;
+                    if (audioTime == 60) {
+                        stopAudioRecord();
+                    }
+                    time.text(getTimeRec(audioTime));
+                }, 1000);
+            }
+            c.text(t);
+        }, 1000);
+    });
+
+}
+
+function stopAudioRecord() {
+    clearInterval(timeInterval);
+    $('#audio-record #rec-button').removeClass('stop').addClass('save').html('Сохранить');
+    $('#audio-record .help, #audio-record .timer').hide(0);
+    $('#audio-record .play, #audio-record .timeline, #audio-record .del-audio').show(0);
+    var tl = $('#audio-record .timeline');
+    tl.find('.time').text('00:00 / ' + getTimeRec(audioTime));
+    tl.find('.line').width(0);
+}
+
+function startAudio() {
+    var c = $('#audio-record .timeline .time'),
+        t = c.text().split(' / '),
+        ct = parseTimeRec(t[0]);
+    if (ct == audioTime) {
+        ct = 0;
+        c.text('00:00' + ' / ' + t[1]);
+        $('#audio-record .timeline .line').css('width', 0);
+    }
+    timeInterval = setInterval(function () {
+        ct++;
+        c.text(getTimeRec(ct) + ' / ' + t[1]);
+        $('#audio-record .timeline .line').css('width', ct / audioTime * 100 + '%');
+        if (ct == audioTime) {
+            clearInterval(timeInterval);
+            $('#audio-record .play').addClass('pause');
+        }
+    }, 1000);
+}
+
+function setDefaultAudio() {
+    var a = $('#audio-record');
+    a.find('.help, .timer, #rec-button').show(0);
+    a.find('.play, .timeline, .saveline, .del-audio').hide(0);
+    a.find('#rec-button').removeClass('save').removeClass('stop').addClass('rec').html('<i></i>Записать');
+    a.find('.timer').html('00:00');
+    audioTime = 0;
+    clearInterval(timeInterval);
+    return false;
+}
+
+function saveAudio() {
+    var a = $('#audio-record');
+    a.find('.play, .timeline, .saveline, .del-audio, #rec-button').hide(0);
+    var s = a.find('.saveline'),
+        i = 0;
+    s.show(0);
+    s.find('.line').width(0);
+    s.find('.percent').text(0);
+    timeInterval = setInterval(function () {
+        i++;
+        s.find('.percent').text(i + '%');
+        s.find('.line').css('width', i + '%');
+        if (i == 100) {
+            clearInterval(timeInterval);
+            $.fancybox.close(true);
+            setDefaultAudio();
+        }
+    }, 25)
+}
+
+$(function () {
+    $('#audio-record #rec-button').click(function () {
+        var t = $(this);
+        var cls = t.attr('class');
+
+        switch (cls) {
+            case 'rec':
+                startAudioRecord();
+                break;
+            case 'stop':
+                if (parseTimeRec($('#audio-record .timer').text()) > 0) stopAudioRecord();
+                break;
+            case 'save':
+                saveAudio();
+                break;
+        }
+        return false;
+    });
+
+    $('#audio-record .play').click(function () {
+        if ($(this).hasClass('pause')) {
+            startAudio();
+            $(this).removeClass('pause');
+        }
+        else {
+            clearInterval(timeInterval);
+            $(this).addClass('pause');
+        }
+    });
+    $('#audio-record .del-audio').click(setDefaultAudio);
 });
