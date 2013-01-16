@@ -300,19 +300,15 @@ $(function () {
         resizeWorkArea(true, 2);
     });
 
-    $('#toolbar .ico .del').click(function () {
+    $('#toolbar .ico:not(".audio") .del').click(function () {
         $(this).parents('.ico').remove();
     });
 
-    $('.ico.audio').click(function(){
-        $.fancybox($('#audio-record'), {
-            margin:0,
-            padding:0,
-            scrollOutside:false,
-            fitToView:false,
-            minHeight:0
-        });
+    $('#toolbar .ico.audio .del').click(function () {
+        $(this).parents('.ico').removeClass('active');
     });
+
+
 
 
 
@@ -420,6 +416,8 @@ function saveAudio() {
             clearInterval(timeInterval);
             $.fancybox.close(true);
             setDefaultAudio();
+
+            $('#toolbar .ico.audio').addClass('active');
         }
     }, 25)
 }
@@ -454,4 +452,17 @@ $(function () {
         }
     });
     $('#audio-record .del-audio').click(setDefaultAudio);
+
+
+    $('.ico.audio').click(function(event){
+        if (!$(this).hasClass('active') && !$(event.originalEvent.srcElement).is('.del')) {
+        $.fancybox($('#audio-record'), {
+            margin:0,
+            padding:0,
+            scrollOutside:false,
+            fitToView:false,
+            minHeight:0
+        });}
+    });
+
 });
