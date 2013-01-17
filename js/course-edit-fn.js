@@ -762,3 +762,15 @@ $(function () {
     });
 
 });
+
+//меню выбора видео
+
+$(function(){
+   $('#add_video .menu li a').click(function(){
+       $('#add_video .menu li').removeClass('active');
+       $(this).parent().addClass('active');
+       $('#add_video .hide').hide(0);
+       $('#add_video '+$(this).attr('href')).show(0);
+       return false;
+   });
+});
