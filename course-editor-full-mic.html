@@ -49,7 +49,7 @@
                 <ul>
                     <li><a class="u-doc" href="#">Документ</a></li>
                     <li><a class="u-video" href="#">Видео</a></li>
-                    <li><a class="u-test" href="#">Тест</a></li>
+                    <li><a class="u-test" href="#choice-test">Тест</a></li>
                 </ul>
             </div>
         </div>
@@ -72,10 +72,10 @@
                         <div class="file"></div>
                     </div>
                 </li>
-                <li rel="images/big_page.jpg">
+                <li rel="images/big_page.jpg" class="test-view">
                     <div class="num">3</div>
                     <div class="page">
-                        <img src="images/page3-s.jpg" alt="">
+                        <img src="images/test_preview.jpg" width="119" height="83" alt="">
 
                         <div class="remove"></div>
                         <div class="file"></div>
@@ -240,6 +240,185 @@
 
 </div>
 
+
+<div id="template-test" style="display: none;">
+    <div class="test-page">
+        <div class="test-head">
+            <div class="left">
+                <img src="images/test-ico-big.png" alt="">
+            </div>
+            <div class="right">
+                <div class="info">
+                    <div class="name">Не слишком короткое название теста</div>
+                    <div class="author">Константин Константинопольский</div>
+                    <div class="stat"><strong>32</strong> вопроса <span>|</span> <strong>57</strong> баллов max</div>
+                </div>
+            </div>
+            <a href="#" class="button-blue"><i class="view"></i>Просмотр</a>
+        </div>
+        <div class="test-settings">
+            <div class="right">
+                <div class="parameter">
+                    <label id="timetest">Ограничить время на выполнение:</label>
+                    <div id="time-deadline">
+                        <input type="text" class="small" value="14">
+                        <span>ч.</span>
+                        <input type="text" class="small" value="00">
+                        <span>мин.</span>
+                    </div>
+                    <a class="faq" href="#"></a>
+                </div>
+                <div class="parameter">
+                    <label>Установить проходной балл/процент</label>
+                    <div id="setbp">
+                        <div class='inparr'>
+                            <span><input maxlength="3" id="ball"  max='180' value="115" type="text"></span>
+
+                            <a href="#" class="up"></a>
+                            <a href="#" class="down"></a>
+
+                        </div>
+                        <em>/</em>
+                        <div class='inparr'>
+                            <span><input maxlength="3" id="percent" max='100' value="60" type="text">%</span>
+
+                            <a href="#" class="up"></a>
+                            <a href="#" class="down"></a>
+
+                        </div>
+                    </div>
+                    <a class="faq" href="#"></a>
+                </div>
+                <div class="parameter">
+                    <label>Разрешить последовательное прохождение</label>
+                    <a class="faq" href="#"></a>
+                </div>
+                <div class="fullsettings"><span>Дополнительные настройки</span></div>
+                <div class="blockset">
+                    <ul class="options">
+                        <li><label>Предоставить возможность задавать вопросы специалисту при прохождении</label></li>
+                        <li><label>Показать слушателю результаты прохождения</label></li>
+                        <li><label>Отображать сообщение при парвильных ответах</label></li>
+                        <li><label>Разрешить просмотр ответов после завершения</label></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="template-page" style="display: none;">
+    <img src="" alt="">
+</div>
+
+<div class="choice-test popup" id="choice-test" style="display: none;">
+    <h3>Выберите тест</h3>
+
+    <div class="categories">
+        <ul>
+            <li class="head-cat">Разделы</li>
+            <li class="active"><a href="#" rel="all">Все разделы</a></li>
+            <li><a href="#" rel="1">Менеджмент</a></li>
+            <li><a href="#" rel="2">Маркетинг</a></li>
+            <li><a href="#" rel="3">Персонал</a></li>
+            <li><a href="#" rel="4">Реклама</a></li>
+            <li><a href="#" rel="5">Программирование</a></li>
+            <li><a href="#" rel="6">Медицина</a></li>
+        </ul>
+    </div>
+    <div class="test-items">
+        <div class="search">
+            <input type="text" placeholder="Поиск по тестам">
+        </div>
+        <div class="test-list">
+            <div class="scroll">
+                <div class="test" cat="1,2">
+                    <div class="ac">
+                        <div class="choice"></div>
+                        <div class="ico"></div>
+                        <div class="info">
+                            <div class="name">Обсуждаем экологию с Михаилом Тодоровским</div>
+                            <div class="author">Петр Селиванов</div>
+                            <div class="stat"><strong>65</strong> вопросов <span>|</span> <strong>65</strong> баллов max</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="test" cat="3,4">
+                    <div class="ac">
+                        <div class="choice"></div>
+                        <div class="ico"></div>
+                        <div class="info">
+                            <div class="name">Еще один тест</div>
+                            <div class="author">Петр Селиванов</div>
+                            <div class="stat"><strong>65</strong> вопросов <span>|</span> <strong>65</strong> баллов max</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="test" cat="5,6">
+                    <div class="ac">
+                        <div class="choice"></div>
+                        <div class="ico"></div>
+                        <div class="info">
+                            <div class="name">Веселые картинки. Часть 2</div>
+                            <div class="author">Петр Селиванов</div>
+                            <div class="stat"><strong>65</strong> вопросов <span>|</span> <strong>65</strong> баллов max</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="test" cat="7,8">
+                    <div class="ac">
+                        <div class="choice"></div>
+                        <div class="ico"></div>
+                        <div class="info">
+                            <div class="name">Еще один тест</div>
+                            <div class="author">Петр Селиванов</div>
+                            <div class="stat"><strong>65</strong> вопросов <span>|</span> <strong>65</strong> баллов max</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="test" cat="1,9">
+                    <div class="ac">
+                        <div class="choice"></div>
+                        <div class="ico"></div>
+                        <div class="info">
+                            <div class="name">Веселые картинки. Часть 2</div>
+                            <div class="author">Петр Селиванов</div>
+                            <div class="stat"><strong>65</strong> вопросов <span>|</span> <strong>65</strong> баллов max</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="test" cat="2">
+                    <div class="ac">
+                        <div class="choice"></div>
+                        <div class="ico"></div>
+                        <div class="info">
+                            <div class="name">Обсуждаем экологию с Михаилом Тодоровским</div>
+                            <div class="author">Петр Селиванов</div>
+                            <div class="stat"><strong>65</strong> вопросов <span>|</span> <strong>65</strong> баллов max</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="test" cat="3">
+                    <div class="ac">
+                        <div class="choice"></div>
+                        <div class="ico"></div>
+                        <div class="info">
+                            <div class="name">Обсуждаем экологию с Михаилом Тодоровским</div>
+                            <div class="author">Петр Селиванов</div>
+                            <div class="stat"><strong>65</strong> вопросов <span>|</span> <strong>65</strong> баллов max</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="clr"></div>
+    <div class="buttons">
+        <a href="#" class="button-red">Выбрать</a>
+        <a href="#" class="button-blue" onclick="$.fancybox().close();">Отмена</a>
+    </div>
+
+</div>
 
 </body>
 </html>

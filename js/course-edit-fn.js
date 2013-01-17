@@ -35,9 +35,10 @@ function resizeWorkArea(anim, width) {
         scale = $('#zoom').slider('value'),
         empty = (body.width() - p - 45 - margin / 2), //доступное пространство
         orientation = page.hasClass('vertical') ? 'vertical' : 'gorizontal',
+        test = page.hasClass('test-view') ? true : false,
         wrapper = $('#wrapper-page');
 
-    if (width && width == 1) {
+    if (width && width == 1 || test) {
         scale = 1;
     }
 
@@ -135,6 +136,17 @@ function resizeWorkArea(anim, width) {
     }) : page.css(options);
 
 
+    var tools = $('#toolbar');
+
+    if (test) {
+        page.find('.test-page').css('margin-top', ((h_page-470)/2) + 'px');
+        tools.find('.ico:not(.audio,.file), .zoomer, .buttons').hide(0);
+    }
+    else {
+        tools.find('.ico:not(.audio,.file), .zoomer, .buttons').show(0);
+    }
+
+
 }
 
 
@@ -188,17 +200,24 @@ function removePage(event) {
 }
 
 function selectPage(event) {
-    var th = $(this);
+    var th = $(this),
+        cl = th.attr('class');
     if (!th.is('.active') && !$(event.originalEvent.srcElement).is('.remove')) {
+        $('#page').attr("class", cl);
         $('#listing li').removeClass('active');
         th.addClass('active');
-        $('#page img').attr('src', th.attr('rel'));
-        if (th.hasClass('vertical')) {
-            $('#page').addClass('vertical');
+        $('#page').addClass(cl);
+        console.log(cl);
+        switch (cl) {
+            case 'test-view':
+                $('#page').html($('#template-test').html());
+                break;
+            default:
+                $('#page').html($('#template-page').html());
+                $('#page img').attr('src', th.attr('rel'));
+                break;
         }
-        else {
-            $('#page').removeClass('vertical');
-        }
+
         resizeWorkArea(false);
         $('#wrapper-page').find('.scroll').data('jsp').reinitialise();
     }
@@ -248,7 +267,7 @@ $(function () {
         hideChoiceUpload();
     });
 
-    $('#pages-panel .upload li a').click(hideChoiceUpload);
+//    $('#pages-panel .upload li a').click(hideChoiceUpload);
 
 
     $('li .page img').bind('dragstart', function (event) {
@@ -464,5 +483,240 @@ $(function () {
             minHeight:0
         });}
     });
+
+});
+
+
+$(function(){
+    var p = location.pathname;
+    $('.items a').each(function(){
+        if ($(this).attr('href') == p){$(this).parents('.items').addClass('active'); $(this).parents('.top_menus').addClass('active')};
+    });
+    if ($('.items a').size() > 5) {
+        $('#wood').css('background', 'url(/themes/kraftman/images/wood_bgs2.png) no-repeat top');
+        $('.textinmain').css('padding-top', '460px');
+        var s = $('.items a[href='+$('.items.active').attr('rel')+']');
+        s.parents('.items').addClass('active');
+        s.parents('.top_menus').addClass('active');
+    }
+});
+
+
+
+//-------------------------------- begin -------------------------------------//
+// просмотр теста
+
+$(function () {
+    $('.test-view label').live("click",
+        function () {
+            $(this).toggleClass('active');
+            if ($(this).is('#timetest')) {
+                if ($(this).is('.active')) {
+                    $('#time-deadline').show();
+                }
+                else {
+                    $('#time-deadline').hide();
+                }
+            }
+        }
+    );
+
+    //баллы проценты
+
+    $('#setbp .inparr .up').live("click",function () {
+        var inp = $(this).parent().find('input');
+        var val = parseInt(inp.val()) + 1;
+        if (val <= parseInt(inp.attr('max'))) {
+            inp.val(parseInt(inp.val()) + 1);
+        }
+        if ($(this).parent().find('input').is('#percent')) {
+            changeBall();
+        } else {
+            changePercent();
+        }
+        return false;
+    });
+
+    $('#setbp .inparr input').live("change",function () {
+        if (parseInt($(this).val()) > parseInt($(this).attr('max'))) {
+            $(this).val($(this).attr('max'));
+        }
+    });
+
+    $('#setbp #percent').live('change keyup', function () {
+        if (!$(this).val()) {
+            $(this).val('0');
+        }
+        changeBall();
+    });
+
+    $('#setbp #ball').live('change keyup', function () {
+        if (!$(this).val()) {
+            $(this).val('0');
+        }
+        changePercent();
+    });
+
+    function changeBall() {
+        var i = parseFloat($('#ball').attr('max')) / 100;
+        if (i) {
+            $('#ball').val(parseInt(i * parseInt($('#percent').val())));
+        }
+        else {
+            $('#ball').val(0);
+        }
+    }
+
+    function changePercent() {
+        var i = parseFloat($('#ball').val() / $('#ball').attr('max')) * 100;
+        if (i) {
+            $('#percent').val(parseInt(i));
+        }
+        else {
+            $('#percent').val(0);
+        }
+    }
+
+    $('#setbp .inparr input').live("keyup",function (e) {
+        if (parseInt($(this).val()) > parseInt($(this).attr('max'))) {
+            $(this).val($(this).attr('max'));
+        }
+        if ($(this).is('#percent')) {
+            changeBall();
+        } else {
+            changePercent();
+        }
+    });
+
+    $('#setbp .inparr input').live("keydown",function (event) {
+        console.log(event);
+        if (event.keyCode == 46 || event.keyCode == 8 || event.keyCode == 9 || event.keyCode == 27 || event.keyCode == 13 ||
+            // Allow: Ctrl+A
+            (event.keyCode == 65 && event.ctrlKey === true) ||
+            // Allow: home, end, left, right
+            (event.keyCode >= 35 && event.keyCode <= 39)) {
+            // let it happen, don't do anything
+            return;
+        }
+        else {
+            // Ensure that it is a number and stop the keypress
+            if (event.shiftKey || (event.keyCode < 48 || event.keyCode > 57) && (event.keyCode < 96 || event.keyCode > 105 )) {
+                event.preventDefault();
+            }
+        }
+    });
+
+    $('#setbp .inparr .down').live("click",function () {
+        $(this).parent().find('input').val(parseInt($(this).parent().find('input').val()) - 1);
+        if ($(this).parent().find('input').is('#percent')) {
+            changeBall();
+        } else {
+            changePercent();
+        }
+        return false;
+
+    });
+
+
+    $('.fullsettings').live("click",function () {
+        $('.blockset').toggle(0);
+    });
+
+
+});
+//-------------------------------- end -------------------------------------//
+
+
+
+//-------------------------------- begin -------------------------------------//
+// добавление теста в курс
+
+
+$(function () {
+    // показываем окно выбора
+    $('a.u-test').fancybox({
+        margin:0,
+        padding:0,
+        scrollOutside:false,
+        fitToView:false,
+        minHeight:0,
+        beforeShow:hideChoiceUpload,
+        afterShow:function () {
+
+            // скролл тестов
+            $('.test-list .scroll').jScrollPane();
+        }
+    });
+
+    // выделение активного
+    $('.test-list .test').click(function () {
+        if ($(this).is('.active')) {
+            $(this).removeClass('active');
+        }
+        else {
+            $('.test-list .test').removeClass('active');
+            $(this).addClass('active');
+        }
+    });
+
+    // переключение категорий
+    $('.choice-test .categories li a').click(function () {
+        $('.choice-test .categories li').removeClass('active');
+        $(this).parent().addClass('active');
+        showTestCat();
+        checkSearch(false);
+        return false;
+    });
+
+    //показать тесты выбранной категории
+    function showTestCat() {
+        var cat = $('.choice-test .categories li.active a').attr('rel');
+        var tests = $('.test-list .test');
+        if (cat == 'all') {
+            tests.show(0);
+        }
+        else {
+            tests.hide(0);
+            tests.each(function () {
+                var cats = $(this).attr('cat').split(',');
+                if ($.inArray(cat, cats) + 1) {
+                    $(this).show(0);
+                }
+            });
+        }
+    }
+
+
+//    проверка запроса поиска на соответствие списка
+    function checkSearch(t) {
+        var text;
+        if (t) {
+            text = t;
+        }
+        else {
+            text = $('.test-items .search input').val();
+        }
+        if (text) {
+            $('.test-list .test:visible').each(function () {
+                if ($(this).find('.name').text().toLowerCase().indexOf(text.toLowerCase()) + 1 == 0) {
+                    $(this).hide();
+                }
+            });
+        }
+        $('.test-list .scroll').jScrollPane();
+    }
+
+//живой поиск
+    $('.test-items .search input').keydown(function (event) {
+        var text;
+        setTimeout(function () {
+            text = $('.test-items .search input').val();
+        }, 50);
+        setTimeout(function () {
+            showTestCat();
+            checkSearch(text);
+        }, 150);
+    });
+
 
 });

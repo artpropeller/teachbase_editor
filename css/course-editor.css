@@ -322,7 +322,7 @@ ul#listing li .page .remove {
     bottom: 4px;
     width: 19px;
     height: 19px;
-    box-shadow: 14px -14px 25px 10px rgba(255, 255, 255, 0.8);
+    box-shadow: 5px -5px 25px 10px rgba(255, 255, 255, 0.8);
     display: none;
 }
 
@@ -579,6 +579,11 @@ ul#listing li .page .file {
 #page img {
     width: 100%;
     height: 100%;
+}
+
+#page.test-view img {
+    width: auto;
+    height: auto;
 }
 
 #listing .ui-state-highlight {
@@ -929,4 +934,609 @@ ul#listing li .page .file {
 
 .fancybox-overlay {
     background: rgba(58, 108, 158, 0.5);
+}
+
+
+/*просмотр теста*/
+
+
+#page.test-view {
+    background: #efefef;
+    font-size: 10px;
+    font-family: Arial, sans-serif;
+    line-height: 12px;
+    /*width: 1200px !important;*/
+}
+
+.test-view .bookmarklet {
+    display: none;
+}
+
+.test-view .left {
+    width: 90px;
+    float: left;
+    text-align: left;
+    position: absolute;
+}
+
+.test-view .right {
+    width: 100%;
+    float: left;
+    position: relative;
+}
+
+.test-view .l {
+    position: relative;
+}
+
+.test-view .name {
+    font-size: 2em;
+    font-weight: bold;
+    line-height: 125%;
+    padding-left: 90px;
+}
+
+.test-view .test-head {
+    overflow: auto;
+    background: url("../images/dashed.png") repeat-x bottom;
+    height: 20%;
+    width: 100%;
+    position: relative;
+}
+
+.test-view .test-head .right {
+    width: auto;
+}
+
+.test-view .author {
+    font-size: 1.4em;
+    color: #666666;
+    padding-left: 90px;
+    line-height: 120%;
+    padding-bottom: 1.5%;
+}
+
+.test-view .stat {
+    padding-left: 90px;
+    font-style: italic;
+    font-size: 1.4em;
+    color: #666666;
+    line-height: 200%;
+    padding-bottom: 2%;
+}
+
+.test-view .stat span {
+    padding: 0 5px;
+    font-style: normal;
+
+}
+
+.test-view a.button-blue {
+    background: url("../images/blue_bg_button.jpg") repeat-x top;
+    border: 1px solid #4f5884;
+    padding: 9px 10px 9px 35px;
+    text-shadow: 0 1px #38597c;
+    color: #fff;
+    font-size: 12px;
+    font-family: Helvetica, sans-serif;
+    line-height: 12px;
+    font-weight: bold;
+    position: absolute;
+    right: 0;
+    top: 80%;
+    margin-top: -32px;
+    display: block;
+    border-radius: 2px;
+    text-decoration: none;
+    box-shadow: 1px 1px 1px 0 #aaa;
+}
+
+.test-view a.button-blue i {
+    position: absolute;
+    width: 23px;
+    line-height: 12px;
+    font-size: 12px;
+    height: 23px;
+    left: 6px;
+    top: 4px;
+    border: none !important;
+}
+
+.test-view a.button-blue i.view {
+    background: url("../images/view-test.png") no-repeat;
+}
+
+.test-view .test-settings {
+    height: 80%;
+}
+
+.test-view .test-settings .right {
+    height: 100%;
+}
+
+.test-view .test-settings .parameter {
+    height: 13%;
+    margin-left: 90px;
+    font-size: 1.4em;
+    background: url("../images/dashed.png") repeat-x bottom;
+    position: relative;
+    overflow: auto;
+    border-bottom: solid 1px transparent;
+}
+
+
+
+.test-view .test-settings .parameter label {
+    float: left;
+    cursor: pointer;
+    top:33%;
+    position: relative;
+    background: url("../images/checkbox_par.png") no-repeat left center;
+    padding: 2px 0 2px 30px;
+    display: block;
+}
+
+.test-view .test-settings .parameter label.active {
+    background: url("../images/checkbox_par_active.png") no-repeat left center;
+}
+
+
+
+#setbp {
+    float: left;
+    overflow: visible;
+    position: relative;
+    top:50%;
+    margin-top: -15px;
+    width: 200px;
+    margin-left: 12px;
+}
+
+#setbp .inparr {
+    width: 72px;
+    height: 27px;
+    background: url("../images/bg_arr_input.jpg") repeat-x top;
+    float: left;
+    border-radius: 2px;
+    border: 1px solid #bcbcbc;
+    box-shadow: 0 0 3px #ccc;
+    position: relative;
+}
+
+#setbp .inparr span {
+    display: block;
+    height: 21px;
+    border-right: 1px solid #bcbcbc;
+    width: 51px;
+    line-height: 16px;
+    text-align: center;
+    color: #313131;
+    font-size: 16px;
+    padding-top: 4px;
+}
+
+#setbp .inparr span input {
+    border: none;
+    background: none;
+    font-size: 16px;
+    line-height: 16px;
+    color: #313131;
+    width: 29px;
+    padding: 0;
+    text-align: right;
+    margin: 0 -1px 0 0;
+}
+
+#setbp .inparr .up {
+    width: 20px;
+    height: 13px;
+    border-bottom: 1px solid #bcbcbc;
+    position: absolute;
+    box-shadow: 0 1px 0 #fff;
+    top: 0;
+    right: 0;
+    background: url("../images/arr_input.png") no-repeat top left;
+}
+
+#setbp .inparr .down {
+    width: 20px;
+    height: 13px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background: url("../images/arr_input.png") no-repeat top right;
+}
+
+#setbp em {
+    float: left;
+    margin: 8px 5px 0;
+    display: block;
+    font-size: 14px;
+    line-height: 14px;
+}
+
+#setbp .inparr .up:hover, #setbp .inparr .down:hover {
+    background-color: #fff;
+}
+
+#setbp .inparr .up:active, #setbp .inparr .down:active {
+    background-color: #4d4c4d;
+    box-shadow: inset 0 0 3px #000;
+    background-position: bottom left;
+}
+
+#setbp .inparr .down:active {
+    background-position: bottom right;
+}
+
+.test-view .fullsettings {
+    background: url("../images/ico_settings.jpg") no-repeat left center;
+    font-size: 1.4em;
+    margin-left: 90px;
+    padding: 2px 0 2px 30px;
+    color: #33618f;
+    height: 13%;
+    position: relative;
+    cursor: pointer;
+}
+
+.test-view .fullsettings span {
+    background: url("../images/dot_settings.jpg") repeat-x bottom;
+    position: relative;
+    top:33%;
+}
+
+.test-view .fullsettings:hover span {
+    background: none;
+}
+
+.test-view .faq {
+    position: absolute;
+    right: 0;
+    top:50%;
+    background: url("../images/ico_faq.png") no-repeat;
+    height: 17px;
+    width: 17px;
+    margin-top: -9px;
+}
+
+.blockset {
+    display: none;
+    height: 40%;
+    background: #DFE3E8;
+    margin-left: 90px;
+    position: relative;
+}
+
+.blockset:after {
+    bottom: 100%;
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+}
+
+.blockset:after {
+    border-bottom-color: #dfe3e8;
+    border-width: 10px;
+    left: 20%;
+    margin-left: -10px;
+}
+
+.blockset .options {
+    position: relative;
+    top:22.5%;
+    left: 8%;
+    height: 55%;
+}
+
+.blockset .options, .blockset .options li  {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-family: Helvetica, sans-serif;
+
+}
+
+.blockset .options label {
+    font-size: 1.2em;
+    background: url("../images/checkbox_par.png") no-repeat left 45%;
+    padding-left: 22px;
+    cursor: pointer;
+}
+
+.blockset .options label.active {
+    background: url("../images/checkbox_par_active.png") no-repeat left center;
+}
+
+.blockset .options li {
+    height: 25%;
+}
+
+.test-page {
+    width: 690px;
+    height: 470px;
+    margin: 0 auto;
+}
+
+#time-deadline {
+    overflow: auto;
+    padding-left: 25px;
+    display: none;
+    margin-top: 8px;
+}
+
+#time-deadline input {
+    background: #fff;
+    border: 1px solid #bcbcbc;
+    padding: 10px 10px 9px;
+    width: 70px;
+    text-align: center;
+    display: block;
+    float: left;
+    box-shadow: inset 0 1px 1px #ddd;
+    float: left;
+}
+
+#time-deadline input.small {
+    width: 16px;
+    padding: 10px 7px 9px;
+}
+
+.test-view #time-deadline {
+    margin: 0;
+    padding: 0 0 0 10px;
+    position: relative;
+    top:50%;
+    display: none;
+    margin-top: -19px;
+}
+
+#time-deadline span {
+    display: block;
+    margin: 10px 6px 0;
+    font-size: 16px;
+    color: #000;
+    float: left;
+}
+
+#time-deadline input {
+    background: #eaeaea;
+}
+
+#time-deadline {
+    /*display: block;*/
+    float: left;
+    margin-top: -8px;
+    margin-bottom: -9px;
+    margin-left: -26px;
+}
+
+.test-view #time-deadline span {
+    margin-top: 13px;
+    color: #616161;
+}
+
+.test-view #time-deadline input {
+    border-radius: 1px;
+    color: #616161;
+}
+
+
+.choice-test.popup {
+    width: 790px;
+    height: 462px;
+    background: #f3f3f3;
+    padding: 20px;
+    overflow: auto;
+}
+
+.choice-test h3 {
+    font-size: 24px;
+    color: #000;
+    font-weight: normal;
+    font-family: Helvetica, sans-serif;
+    margin: 0;
+    padding: 0 0 18px 0;
+}
+
+.choice-test .categories {
+    float: left;
+    width: 180px;
+}
+
+.choice-test ul, .choice-test ul li {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-size: 12px;
+    font-family: Helvetica, sans-serif;
+    line-height: 16px;
+}
+
+.choice-test .categories li {
+    padding: 8px 4px 7px 15px;
+    border: solid 1px transparent;
+}
+
+.choice-test .categories li.head-cat {
+    font-weight: bold;
+    border-bottom: 1px solid #dcdcdc;
+    margin-bottom: -1px;
+}
+
+.choice-test .categories li a {
+    color: #000;
+    text-decoration: none;
+}
+
+.choice-test .categories li a:hover {
+    text-decoration: underline;
+}
+
+.choice-test .categories li.active {
+    background: #dee8f4;
+    box-shadow: 0 1px 0 0 #fff, inset 0 1px 0 0 #dee8f4;
+    border-color: #cad3dd #d3dde8 #d3dde8;
+}
+
+.choice-test .categories li.active a {
+    text-decoration: none;
+}
+
+.choice-test .test-items {
+    float: right;
+    width: 580px;
+    height: 360px;
+    padding: 10px 0 0 10px;
+    background: #fff;
+    border-radius: 3px;
+    border: 1px solid;
+    border-color: #dddddd #f3f3f3 #ededed;
+    box-shadow: 0 1px 0 0 #fff, inset 0 1px 0 0 #f5f5f5;
+}
+
+.choice-test .search {
+    background: url("../images/dashed.png") repeat-x bottom;
+    padding: 0 0 11px 0;
+    margin: 0 11px 0 0;
+}
+
+.choice-test .search input {
+    display: block;
+    border-radius: 3px;
+    padding: 0 10px;
+    height: 30px;
+    width: 547px;
+    border: 1px solid #d2d2d2;
+    box-shadow: inset 0 1px 0 0 #f5f5f5;
+}
+
+.test-list {
+    padding-right: 0;
+}
+
+.test-list .test {
+    padding: 1px 0 2px;
+    background: url("../images/dashed.png") repeat-x bottom;
+    overflow: auto;
+    margin-right: 11px;
+    cursor: pointer;
+}
+
+.test-list .test.active .ac {
+    background: #ebf0f4;
+    overflow: auto;
+}
+
+.test-list .choice {
+    float: left;
+    background: url("../images/radio-button.png") no-repeat left;
+    width: 14px;
+    height: 14px;
+    margin: 27px 20px 0;
+}
+
+.test-list .test.active .choice {
+    background-position:right;
+}
+
+.test-list .ico {
+    float: left;
+    width: 50px;
+    height: 50px;
+    margin: 6px 14px 6px 0;
+    background: url("../images/test_icon.png");
+}
+
+.test-list .info {
+    float: left;
+    width: 450px;
+    margin: 8px 0;
+    line-height: 18px;
+    font-family: Arial, sans-serif;
+    font-size: 15px;
+    color: #000;
+}
+
+.test-list .info .author {
+    font-size: 12px;
+}
+
+.test-list .info .stat {
+    font-style: italic;
+    color: #666666;
+    font-size: 12px;
+}
+
+.test-list .info .stat span {
+    display: inline;
+    padding: 0 11px;
+    font-weight: normal;
+}
+
+.test-list .scroll {
+    height: 315px;
+
+}
+
+.test-list .scroll:focus {
+    border: none;
+    outline: none;
+}
+
+.choice-test .buttons {
+    float: right;
+    margin-top: 17px;
+}
+
+.choice-test .buttons a {
+    text-decoration: none;
+    font-family: Helvetica, sans-serif;
+    line-height: 18px;
+
+}
+
+
+.popup .buttons a.button-red {
+    background: url("../images/red_button_bg.jpg") repeat-x top;
+    height: 14px;
+    border-radius: 3px;
+    border: 1px solid #ab3434;
+    box-shadow: 0 0 3px #aaa;
+    display: inline-block;
+    padding: 6px 25px 10px;
+    color: #fff;
+    font-size: 13px;
+    font-weight: bold;
+    text-shadow: 0 1px 0 #487a15;
+    margin-right: 5px;
+
+}
+
+.popup .buttons a.button-red:hover {
+    background: url("../images/red_button_bg.jpg") repeat-x bottom;
+
+}
+
+.popup .buttons a.button-blue {
+    background: url("../images/blue_bg_button.jpg") repeat-x top;
+    border: 1px solid #4f5884;
+    text-shadow: 0 1px #38597c;
+    position: relative;
+    padding: 6px 35px 10px;
+    border-radius: 3px;
+    color: #fff;
+    font-size: 13px;
+    font-weight: bold;
+    height: 14px;
+    display: inline-block;
+    box-shadow: 0 0 3px #aaa;
+
+}
+
+.popup .buttons a.button-blue:hover {
+    background: url("../images/blue_bg_button.jpg") repeat-x bottom;
 }
