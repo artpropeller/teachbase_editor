@@ -13,7 +13,7 @@ body {
     overflow: auto;
 }
 
-#work-area ul, #work-area li {
+#work-area ul, #work-area li, .popup ul, .popup li {
     padding: 0;
     margin: 0;
     list-style: none;
@@ -342,7 +342,7 @@ ul#listing li .page .file {
 .scroll {
     height: 300px;
     overflow: auto;
-    position:relative;
+    position: relative;
 }
 
 #pages-panel .jspTrack {
@@ -671,7 +671,6 @@ ul#listing li .page .file {
     display: block;
 }
 
-
 .popup {
     padding: 30px;
     z-index: 9000;
@@ -690,7 +689,7 @@ ul#listing li .page .file {
     background: url("../images/close_ico.png") no-repeat;
     width: 28px;
     height: 28px;
-    top:-11px;
+    top: -11px;
     right: -11px;
 }
 
@@ -719,7 +718,7 @@ ul#listing li .page .file {
 
 #audio-record .slide .counter {
     position: absolute;
-    top:50%;
+    top: 50%;
     left: 50%;
     margin: -64px 0 0 -64px;
     color: #fff;
@@ -742,7 +741,7 @@ ul#listing li .page .file {
     line-height: 30px;
     display: block;
     float: left;
-    border:1px solid #be3a3a;
+    border: 1px solid #be3a3a;
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
     color: #fff;
     text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.5);
@@ -772,7 +771,7 @@ ul#listing li .page .file {
     width: 15px;
     height: 20px;
     float: left;
-    top:5px;
+    top: 5px;
     margin: 0 7px 0 9px;
 }
 
@@ -811,7 +810,7 @@ ul#listing li .page .file {
     background: url("../images/audio-pause.png") no-repeat;
     width: 15px;
     height: 15px;
-    top:9px;
+    top: 9px;
     left: 8px;
 }
 
@@ -841,7 +840,7 @@ ul#listing li .page .file {
     text-align: center;
     width: 100%;
     position: absolute;
-    top:0;
+    top: 0;
     left: 0;
     height: 32px;
     line-height: 32px;
@@ -862,7 +861,7 @@ ul#listing li .page .file {
     content: '';
     width: 100%;
     height: 32px;
-    box-shadow: 0 0 0 3px  #f2f2f2;
+    box-shadow: 0 0 0 3px #f2f2f2;
     border-radius: 3px;
 }
 
@@ -895,7 +894,7 @@ ul#listing li .page .file {
     font-size: 12px;
     font-weight: bold;
     position: absolute;
-    top:0;
+    top: 0;
     left: 95px;
     line-height: 32px;
     text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.5);
@@ -908,7 +907,7 @@ ul#listing li .page .file {
     text-align: center;
     width: 100%;
     position: absolute;
-    top:0;
+    top: 0;
     left: 0;
     height: 32px;
     line-height: 32px;
@@ -928,7 +927,7 @@ ul#listing li .page .file {
     content: '';
     width: 100%;
     height: 32px;
-    box-shadow: 0 0 0 3px  #f2f2f2;
+    box-shadow: 0 0 0 3px #f2f2f2;
     border-radius: 3px;
 }
 
@@ -936,9 +935,7 @@ ul#listing li .page .file {
     background: rgba(58, 108, 158, 0.5);
 }
 
-
 /*просмотр теста*/
-
 
 #page.test-view {
     background: #efefef;
@@ -1064,12 +1061,10 @@ ul#listing li .page .file {
     border-bottom: solid 1px transparent;
 }
 
-
-
 .test-view .test-settings .parameter label {
     float: left;
     cursor: pointer;
-    top:33%;
+    top: 33%;
     position: relative;
     background: url("../images/checkbox_par.png") no-repeat left center;
     padding: 2px 0 2px 30px;
@@ -1080,13 +1075,11 @@ ul#listing li .page .file {
     background: url("../images/checkbox_par_active.png") no-repeat left center;
 }
 
-
-
 #setbp {
     float: left;
     overflow: visible;
     position: relative;
-    top:50%;
+    top: 50%;
     margin-top: -15px;
     width: 200px;
     margin-left: 12px;
@@ -1183,7 +1176,7 @@ ul#listing li .page .file {
 .test-view .fullsettings span {
     background: url("../images/dot_settings.jpg") repeat-x bottom;
     position: relative;
-    top:33%;
+    top: 33%;
 }
 
 .test-view .fullsettings:hover span {
@@ -1193,7 +1186,7 @@ ul#listing li .page .file {
 .test-view .faq {
     position: absolute;
     right: 0;
-    top:50%;
+    top: 50%;
     background: url("../images/ico_faq.png") no-repeat;
     height: 17px;
     width: 17px;
@@ -1227,12 +1220,12 @@ ul#listing li .page .file {
 
 .blockset .options {
     position: relative;
-    top:22.5%;
+    top: 22.5%;
     left: 8%;
     height: 55%;
 }
 
-.blockset .options, .blockset .options li  {
+.blockset .options, .blockset .options li {
     list-style: none;
     padding: 0;
     margin: 0;
@@ -1289,7 +1282,7 @@ ul#listing li .page .file {
     margin: 0;
     padding: 0 0 0 10px;
     position: relative;
-    top:50%;
+    top: 50%;
     display: none;
     margin-top: -19px;
 }
@@ -1323,7 +1316,6 @@ ul#listing li .page .file {
     border-radius: 1px;
     color: #616161;
 }
-
 
 .choice-test.popup {
     width: 790px;
@@ -1440,7 +1432,7 @@ ul#listing li .page .file {
 }
 
 .test-list .test.active .choice {
-    background-position:right;
+    background-position: right;
 }
 
 .test-list .ico {
@@ -1499,7 +1491,6 @@ ul#listing li .page .file {
 
 }
 
-
 .popup .buttons a.button-red {
     background: url("../images/red_button_bg.jpg") repeat-x top;
     height: 14px;
@@ -1540,3 +1531,126 @@ ul#listing li .page .file {
 .popup .buttons a.button-blue:hover {
     background: url("../images/blue_bg_button.jpg") repeat-x bottom;
 }
+
+.popup .menu {
+    border-radius: 3px;
+    border: 1px solid #d7d7d7;
+    float: left;
+    margin: 0 0 28px;
+
+}
+
+.popup .menu li {
+    float: left;
+    padding: 5px 18px 0;
+    margin: 0;
+    background: url("../images/cv-menu.jpg") repeat-x;
+    height: 25px;
+    border-right: 1px solid #d7d7d7;
+    font-size: 14px;
+}
+
+.popup .menu li a {
+    display: block;
+    overflow: auto;
+    float: left;
+    color: #000;
+    font-size: 13px;
+    text-decoration: none;
+}
+
+.popup .menu li.active {
+    background: #a2acb6;
+    color: #fff;
+    box-shadow: inset 0 0 5px #696f76;
+}
+
+.popup .menu li.active a {
+    color: #fff;
+    text-shadow: 0 1px 0 #999;
+}
+
+.popup .menu li.last {
+    border: none;
+}
+
+.popup .flange {
+    width: 766px;
+    height: 250px;
+    text-align: center;
+    border: 1px solid #dddddd;
+    padding-top: 116px;
+}
+
+.popup .btn-download {
+    display: block;
+    width: 105px;
+    height: 41px;
+    padding: 0 0 0 55px;
+    background: url(../images/btn-download.png) no-repeat 0 0;
+    text-decoration: none;
+    color: #fff;
+    text-shadow: 0 1px 0 #902e2c;
+    line-height: 36px;
+    font-weight: 700;
+    font-size: 14px;
+    margin: 0 auto;
+}
+
+.popup .btn-download:hover {
+    background-position: 0 -41px;
+    color: #fff;
+}
+
+.popup .btn-download span {
+    text-align: left;
+    display: block;
+}
+
+.popup .flange .black {
+    font-size: 18px;
+    color: #000;
+    display: block;
+    margin-bottom: 15px;
+
+}
+
+.popup .flange p {
+    font-size: 14px;
+    color: #565656;
+    margin-bottom: 20px;
+}
+
+.popup .button-blue {
+    background: url("../images/blue_bg_button.jpg") repeat-x top;
+    border: 1px solid #4d5582;
+    text-shadow: 0 1px #38597c;
+    margin-right: 15px;
+    color: #fff;
+    width: 124px;
+    height: 30px;
+    border-radius: 2px;
+    cursor: pointer;
+    font-size: 13px;
+    box-shadow: 0 0 3px #aaa;
+}
+
+.popup .button-blue:hover {
+    background: url("../images/blue_bg_button.jpg") repeat-x bottom;
+
+}
+
+.popup .search_form input[type=text]{
+    width: 206px;
+    height: 30px;
+    background: #fff url("../images/ico_search.jpg") no-repeat 5px 10px;
+    border: 1px solid #d1d1d1;
+    border-radius: 2px;
+    margin-right: 8px;
+    padding: 0 15px;
+}
+.popup .hide{
+    display: none;
+}
+
+

@@ -139,7 +139,7 @@ function resizeWorkArea(anim, width) {
     var tools = $('#toolbar');
 
     if (test) {
-        page.find('.test-page').css('margin-top', ((h_page-470)/2) + 'px');
+        page.find('.test-page').css('margin-top', ((h_page - 470) / 2) + 'px');
         tools.find('.ico:not(.audio,.file), .zoomer, .buttons').hide(0);
     }
     else {
@@ -328,10 +328,6 @@ $(function () {
     });
 
 
-
-
-
-
 });
 
 //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -473,34 +469,38 @@ $(function () {
     $('#audio-record .del-audio').click(setDefaultAudio);
 
 
-    $('.ico.audio').click(function(event){
+    $('.ico.audio').click(function (event) {
         if (!$(this).hasClass('active') && !$(event.originalEvent.srcElement).is('.del')) {
-        $.fancybox($('#audio-record'), {
-            margin:0,
-            padding:0,
-            scrollOutside:false,
-            fitToView:false,
-            minHeight:0
-        });}
+            $.fancybox($('#audio-record'), {
+                margin:0,
+                padding:0,
+                scrollOutside:false,
+                fitToView:false,
+                minHeight:0
+            });
+        }
     });
 
 });
 
 
-$(function(){
+$(function () {
     var p = location.pathname;
-    $('.items a').each(function(){
-        if ($(this).attr('href') == p){$(this).parents('.items').addClass('active'); $(this).parents('.top_menus').addClass('active')};
+    $('.items a').each(function () {
+        if ($(this).attr('href') == p) {
+            $(this).parents('.items').addClass('active');
+            $(this).parents('.top_menus').addClass('active')
+        }
+        ;
     });
     if ($('.items a').size() > 5) {
         $('#wood').css('background', 'url(/themes/kraftman/images/wood_bgs2.png) no-repeat top');
         $('.textinmain').css('padding-top', '460px');
-        var s = $('.items a[href='+$('.items.active').attr('rel')+']');
+        var s = $('.items a[href=' + $('.items.active').attr('rel') + ']');
         s.parents('.items').addClass('active');
         s.parents('.top_menus').addClass('active');
     }
 });
-
 
 
 //-------------------------------- begin -------------------------------------//
@@ -523,7 +523,7 @@ $(function () {
 
     //баллы проценты
 
-    $('#setbp .inparr .up').live("click",function () {
+    $('#setbp .inparr .up').live("click", function () {
         var inp = $(this).parent().find('input');
         var val = parseInt(inp.val()) + 1;
         if (val <= parseInt(inp.attr('max'))) {
@@ -537,7 +537,7 @@ $(function () {
         return false;
     });
 
-    $('#setbp .inparr input').live("change",function () {
+    $('#setbp .inparr input').live("change", function () {
         if (parseInt($(this).val()) > parseInt($(this).attr('max'))) {
             $(this).val($(this).attr('max'));
         }
@@ -577,7 +577,7 @@ $(function () {
         }
     }
 
-    $('#setbp .inparr input').live("keyup",function (e) {
+    $('#setbp .inparr input').live("keyup", function (e) {
         if (parseInt($(this).val()) > parseInt($(this).attr('max'))) {
             $(this).val($(this).attr('max'));
         }
@@ -588,7 +588,7 @@ $(function () {
         }
     });
 
-    $('#setbp .inparr input').live("keydown",function (event) {
+    $('#setbp .inparr input').live("keydown", function (event) {
         console.log(event);
         if (event.keyCode == 46 || event.keyCode == 8 || event.keyCode == 9 || event.keyCode == 27 || event.keyCode == 13 ||
             // Allow: Ctrl+A
@@ -606,7 +606,7 @@ $(function () {
         }
     });
 
-    $('#setbp .inparr .down').live("click",function () {
+    $('#setbp .inparr .down').live("click", function () {
         $(this).parent().find('input').val(parseInt($(this).parent().find('input').val()) - 1);
         if ($(this).parent().find('input').is('#percent')) {
             changeBall();
@@ -618,7 +618,7 @@ $(function () {
     });
 
 
-    $('.fullsettings').live("click",function () {
+    $('.fullsettings').live("click", function () {
         $('.blockset').toggle(0);
     });
 
@@ -718,5 +718,17 @@ $(function () {
         }, 150);
     });
 
+
+});
+
+
+$(function () {
+    $('.fancy').fancybox({
+        margin:0,
+        padding:0,
+        scrollOutside:false,
+        fitToView:false,
+        minHeight:0
+    });
 
 });

@@ -19,6 +19,51 @@
 </head>
 <body>
 
+<div id="add_video" class="popup">
+    <h3>Вставить видео</h3>
+
+    <ul class="menu">
+        <li><a href="#">Из компьютера</a></li>
+        <li class="active"><a href="#">Из библиотеки</a></li>
+        <li><a href="#">Записать с вебкамеры</a></li>
+        <li><a href="#">Из You Tube</a></li>
+    </ul>
+    <div class="clr"></div>
+
+
+    <div class="flange">
+        <div class="hide">
+
+            <span class="black">В библиотеке пока нет видеороликов</span>
+
+
+            <p>Для того чтобы загрузить видео<br>
+                со своего компьютера в библиотеку, нажмите кнопку:</p>
+
+            <a class="btn-download" href="#"><span>Загрузить</span></a>
+
+        </div>
+
+        <div class="hide">
+
+            <span class="black">Какие ролики вам нужны?</span>
+
+
+            <p>Введите ключевые слова в форму поиска и нажмите кнопку «искать»:</p>
+
+            <div class="search_form">
+                <input type="text">
+                <input class="button-blue" type="button" value="Искать">
+
+            </div>
+        </div>
+
+
+    </div>
+
+
+</div>
+
 
 <div class='head'>
     <a href='#'><img src='images/logotb.png' width="153" height="43" alt='TeachBase' class='logo'/></a>
@@ -72,6 +117,7 @@
                             <div class="file u-doc">
                                 <div class="inner">
                                     <a href="#">Загрузите документ</a>
+
                                     <p>Поддерживаются файлы
                                         MS Word и PowerPoint,
                                         а также Adobe PDF</p>
@@ -79,7 +125,8 @@
                             </div>
                             <div class="file u-video">
                                 <div class="inner">
-                                    <a href="#">Вставьте видео</a>
+                                    <a class="fancy" href="#add_video">Вставьте видео</a>
+
                                     <p>Загрузите из компьютера,
                                         ссылку на YouTube или
                                         запишите на веб-камеру</p>
@@ -88,6 +135,7 @@
                             <div class="file u-test last">
                                 <div class="inner">
                                     <a href="#">Добавьте тест</a>
+
                                     <p>Выберите тест из вашей
                                         библиотеки материалов</p>
                                 </div>
@@ -99,7 +147,6 @@
             </div>
         </div>
     </div>
-
 
 
 </div>
