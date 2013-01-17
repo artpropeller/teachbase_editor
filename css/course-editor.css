@@ -24,6 +24,7 @@ body {
     position: absolute;
     top: 0;
     left: 0;
+    z-index: 10;
     width: 175px;
     background: #ececfc;
     border-right: 1px solid #e0e0ec;
@@ -1168,15 +1169,19 @@ ul#listing li .page .file {
     margin-left: 90px;
     padding: 2px 0 2px 30px;
     color: #33618f;
-    height: 13%;
+    height: 16px;
     position: relative;
+    margin-top: 20px;
+    margin-bottom: 10px;
     cursor: pointer;
+    zoom:0;
 }
 
 .test-view .fullsettings span {
     background: url("../images/dot_settings.jpg") repeat-x bottom;
     position: relative;
-    top: 33%;
+    /*top: 33%;*/
+    zoom:0;
 }
 
 .test-view .fullsettings:hover span {
@@ -1621,7 +1626,7 @@ ul#listing li .page .file {
     margin-bottom: 20px;
 }
 
-.popup .button-blue {
+#add_video.popup .button-blue {
     background: url("../images/blue_bg_button.jpg") repeat-x top;
     border: 1px solid #4d5582;
     text-shadow: 0 1px #38597c;
@@ -1635,7 +1640,7 @@ ul#listing li .page .file {
     box-shadow: 0 0 3px #aaa;
 }
 
-.popup .button-blue:hover {
+#add_video.popup .button-blue:hover {
     background: url("../images/blue_bg_button.jpg") repeat-x bottom;
 
 }
@@ -1654,3 +1659,29 @@ ul#listing li .page .file {
 }
 
 
+.test-list .jspTrack {
+    margin: 0;
+}
+
+.test-list .jspDragTop {
+    background: none;
+    top: 0;
+}
+
+.test-list .jspDragBottom {
+    bottom: 0;
+    background: none;
+}
+
+.test-list .scroll:hover .jspDrag {
+    background: #9a9aa4;
+    margin: 0;
+    border-radius: 4px;
+    opacity: 0.8;
+
+}
+
+.test-list .jspVerticalBar {
+    width: 5px;
+    right: 4px;
+}

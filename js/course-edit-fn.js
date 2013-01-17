@@ -152,17 +152,17 @@ function resizeWorkArea(anim, width) {
 
 function togglePagesPanel() {
     var sw = $('#hide-pages'),
-        speed = 750;
+        speed = 750,
+        ri = $('#page').width() > $('#wrapper-page').width() ? true : false;
     sw.toggleClass('active');
     $('#pages-panel').animate({left:sw.attr('class') == 'active' ? 0 : -176}, speed);
     $('#empty-front').animate({'margin-left':sw.attr('class') == 'active' ? 176 : 0}, speed);
     var ml = parseInt($('#wrapper-page').css('margin-left').split('px')[0]);
-    var deli = $('#page').width() + 176 < $('#wrapper-page').width() ? 2 : 1;
+    var deli = $('#page').width() + 176 < $('#work-area').width()-(57)  ? 2 : 1;
+    if ($('#page').hasClass('wide')) deli = 1;
     $('#wrapper-page').animate({'margin-left':sw.attr('class') == 'active' ? ml + 176 / deli : ml - 176 / deli}, speed,
         function () {
-            if ($('#page').width() + 176 > $('#wrapper-page').width()) {
-                $('#wrapper-page').find('.scroll').data('jsp').reinitialise()
-            }
+            if (ri) $('#wrapper-page').find('.scroll').data('jsp').reinitialise();
             if ($('#page').hasClass('wide')) {
                 resizeWorkArea(true, 2);
             }
@@ -192,7 +192,19 @@ function reCountPages() {
 }
 
 function removePage(event) {
-    $(this).parents('li').slideUp(500, function () {
+    var t = $(this),
+        l = $(this).parents('li');
+    l.slideUp(500, function () {
+        if (l.hasClass('active')) {
+            if (l.prev().is('li')) {
+                selectAfterDelete(l.prev());
+            }
+            else {
+                if (l.next().is('li')) {
+                    selectAfterDelete(l.next());
+                }
+            }
+        }
         $(this).remove();
         reCountPages();
     });
@@ -207,7 +219,6 @@ function selectPage(event) {
         $('#listing li').removeClass('active');
         th.addClass('active');
         $('#page').addClass(cl);
-        console.log(cl);
         switch (cl) {
             case 'test-view':
                 $('#page').html($('#template-test').html());
@@ -221,6 +232,26 @@ function selectPage(event) {
         resizeWorkArea(false);
         $('#wrapper-page').find('.scroll').data('jsp').reinitialise();
     }
+}
+
+function selectAfterDelete(li) {
+    var cl = li.attr('class');
+        $('#page').attr("class", cl);
+        $('#listing li').removeClass('active');
+        li.addClass('active');
+        $('#page').addClass(cl);
+        switch (cl) {
+            case 'test-view':
+                $('#page').html($('#template-test').html());
+                break;
+            default:
+                $('#page').html($('#template-page').html());
+                $('#page img').attr('src', li.attr('rel'));
+                break;
+        }
+
+        resizeWorkArea(false);
+        $('#wrapper-page').find('.scroll').data('jsp').reinitialise();
 }
 
 function zoomSetValue(val) {
@@ -589,7 +620,6 @@ $(function () {
     });
 
     $('#setbp .inparr input').live("keydown", function (event) {
-        console.log(event);
         if (event.keyCode == 46 || event.keyCode == 8 || event.keyCode == 9 || event.keyCode == 27 || event.keyCode == 13 ||
             // Allow: Ctrl+A
             (event.keyCode == 65 && event.ctrlKey === true) ||
