@@ -193,28 +193,34 @@ function reCountPages() {
 
 function removePage(event) {
     var t = $(this),
-        l = $(this).parents('li');
-    l.slideUp(500, function () {
-        if (l.hasClass('active')) {
-            if (l.prev().is('li')) {
-                selectAfterDelete(l.prev());
-            }
-            else {
-                if (l.next().is('li')) {
-                    selectAfterDelete(l.next());
-                }
-            }
-        }
-        $(this).remove();
-        reCountPages();
-    });
+        l = $(this).parents('li')[0];
+    console.log(l);
+    $(l).find('.page').append($('#template-delete').html());
 
+    if ($(l).hasClass('active')) {
+        var items = $('ul#listing li:not(".remove")'),
+            pos = $.inArray(l, items);
+        if (pos > 0) {
+            selectAfterDelete($(items[pos-1]));
+        }
+        else {
+            selectAfterDelete($(items[pos+1]));
+        }
+
+    }
+    $(l).addClass('remove');
+
+}
+
+function restorePage(li){
+    li.find('.overlay').remove();
+    li.removeClass('remove');
 }
 
 function selectPage(event) {
     var th = $(this),
         cl = th.attr('class');
-    if (!th.is('.active') && !$(event.originalEvent.srcElement).is('.remove')) {
+    if (!th.is('.active') && !th.is('.remove') && !$(event.originalEvent.srcElement).is('.remove')) {
         $('#page').attr("class", cl);
         $('#listing li').removeClass('active');
         th.addClass('active');
@@ -299,6 +305,9 @@ $(function () {
     });
 
 //    $('#pages-panel .upload li a').click(hideChoiceUpload);
+
+    $('.page .overlay a').live('click', function(){restorePage($(this).parents('li'))});
+    $('.page .overlay .close').live('click', function(){$(this).parents('li').slideUp(300, function(){$(this).remove()})});
 
 
     $('li .page img').bind('dragstart', function (event) {
