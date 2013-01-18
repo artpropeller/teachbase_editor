@@ -200,7 +200,6 @@ function reCountPages() {
 function removePage(event) {
     var t = $(this),
         l = $(this).parents('li')[0];
-    console.log(l);
     $(l).find('.page').append($('#template-delete').html());
 
     if ($(l).hasClass('active')) {
@@ -224,6 +223,7 @@ function restorePage(li){
 }
 
 function selectPage(event) {
+    $('#page').attr("class", '');
     var th = $(this),
         cl = th.attr('class');
     if (!th.is('.active') && !th.is('.remove') && !$(event.originalEvent.srcElement).is('.remove')) {
@@ -250,6 +250,7 @@ function selectPage(event) {
 }
 
 function selectAfterDelete(li) {
+    $('#page').attr("class", '');
     var cl = li.attr('class');
         $('#page').attr("class", cl);
         $('#listing li').removeClass('active');
