@@ -1029,6 +1029,10 @@ ul#listing li .page .file {
     box-shadow: 1px 1px 1px 0 #aaa;
 }
 
+.test-view a.button-blue:hover {
+    background: url("../images/blue_bg_button.jpg") repeat-x bottom;
+}
+
 .test-view a.button-blue i {
     position: absolute;
     width: 23px;
