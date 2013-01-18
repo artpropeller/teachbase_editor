@@ -36,6 +36,7 @@ function resizeWorkArea(anim, width) {
         empty = (body.width() - p - 45 - margin / 2), //доступное пространство
         orientation = page.hasClass('vertical') ? 'vertical' : 'gorizontal',
         test = page.hasClass('test-view') ? true : false,
+        video = page.hasClass('video-view') ? true : false,
         wrapper = $('#wrapper-page');
 
     if (width && width == 1 || test) {
@@ -100,6 +101,11 @@ function resizeWorkArea(anim, width) {
         page.removeClass('wide');
     }
 
+    if (video) {
+        w_page = parseInt(page.find('.sizer').css('width').split('px')[0]);
+        h_page = parseInt(page.find('.sizer').css('height').split('px')[0]);
+    }
+
 
     //добавляем свойства к странице и ставим ее посередине
     var options = {
@@ -138,7 +144,7 @@ function resizeWorkArea(anim, width) {
 
     var tools = $('#toolbar');
 
-    if (test) {
+    if (test || video) {
         page.find('.test-page').css('margin-top', ((h_page - 470) / 2) + 'px');
         tools.find('.ico:not(.audio,.file), .zoomer, .buttons').hide(0);
     }
@@ -229,6 +235,9 @@ function selectPage(event) {
             case 'test-view':
                 $('#page').html($('#template-test').html());
                 break;
+            case 'video-view':
+                $('#page').html($('#template-video').html());
+                break;
             default:
                 $('#page').html($('#template-page').html());
                 $('#page img').attr('src', th.attr('rel'));
@@ -249,6 +258,9 @@ function selectAfterDelete(li) {
         switch (cl) {
             case 'test-view':
                 $('#page').html($('#template-test').html());
+                break;
+            case 'video-view':
+                $('#page').html($('#template-video').html());
                 break;
             default:
                 $('#page').html($('#template-page').html());
@@ -307,7 +319,7 @@ $(function () {
 //    $('#pages-panel .upload li a').click(hideChoiceUpload);
 
     $('.page .overlay a').live('click', function(){restorePage($(this).parents('li'))});
-    $('.page .overlay .close').live('click', function(){$(this).parents('li').slideUp(300, function(){$(this).remove()})});
+    $('.page .overlay .close').live('click', function(){$(this).parents('li').slideUp(300, function(){$(this).remove(); reCountPages();})});
 
 
     $('li .page img').bind('dragstart', function (event) {
