@@ -1739,7 +1739,7 @@ ul#listing li .page .overlay a:hover {
     border: 1px solid #d1d1d1;
     border-radius: 2px;
     margin-right: 8px;
-    padding: 0 15px;
+    padding: 0 10px 0 20px;
 }
 .popup .hide{
     display: none;
