@@ -7,6 +7,13 @@ body {
     min-height: 590px;
 }
 
+.rfl {
+    float: right;
+}
+.lfl{
+    float: left;
+}
+
 #work-area {
     position: relative;
     font-family: Helvetica, Arial, sans-serif;
@@ -345,10 +352,9 @@ ul#listing li:hover .page .remove {
     display: block;
 }
 
-
 ul#listing li .attachments {
     position: absolute;
-    top:8px;
+    top: 8px;
     right: 6px;
 }
 
@@ -385,11 +391,11 @@ ul#listing li .page .overlay {
     position: absolute;
     width: 119px;
     height: 69px;
-    top:-1px;
+    top: -1px;
     left: -1px;
     z-index: 50;
     background: #ddddef;
-    border:1px solid #ddddef;
+    border: 1px solid #ddddef;
     color: #7d7da8;
     font-size: 12px;
     padding-top: 15px;
@@ -1261,14 +1267,14 @@ ul#listing li .page .overlay a:hover {
     margin-top: 20px;
     margin-bottom: 10px;
     cursor: pointer;
-    zoom:0;
+    zoom: 0;
 }
 
 .test-view .fullsettings span {
     background: url("../images/dot_settings.jpg") repeat-x bottom;
     position: relative;
     /*top: 33%;*/
-    zoom:0;
+    zoom: 0;
 }
 
 .test-view .fullsettings:hover span {
@@ -1732,7 +1738,7 @@ ul#listing li .page .overlay a:hover {
 
 }
 
-.popup .search_form input[type=text]{
+.popup .search_form input[type=text] {
     width: 206px;
     height: 30px;
     background: #fff url("../images/ico_search.jpg") no-repeat 5px 10px;
@@ -1741,26 +1747,26 @@ ul#listing li .page .overlay a:hover {
     margin-right: 8px;
     padding: 0 10px 0 20px;
 }
-.popup .hide{
+
+.popup .hide {
     display: none;
 }
 
-
-.test-list .jspTrack {
+.popup .jspTrack {
     margin: 0;
 }
 
-.test-list .jspDragTop {
+.popup .jspDragTop {
     background: none;
     top: 0;
 }
 
-.test-list .jspDragBottom {
+.popup .jspDragBottom {
     bottom: 0;
     background: none;
 }
 
-.test-list .scroll:hover .jspDrag {
+.popup .scroll:hover .jspDrag {
     background: #9a9aa4;
     margin: 0;
     border-radius: 4px;
@@ -1768,14 +1774,14 @@ ul#listing li .page .overlay a:hover {
 
 }
 
-.test-list .jspVerticalBar {
+.popup .jspVerticalBar {
     width: 5px;
     right: 4px;
 }
 
-#page.video-view  {
+#page.video-view {
     box-shadow: 0 0 12px rgba(0, 0, 0, 0.5);
-    border:0;
+    border: 0;
 }
 
 .video-view .play {
@@ -1783,7 +1789,7 @@ ul#listing li .page .overlay a:hover {
     background: url("../images/video-play.png") no-repeat top;
     width: 78px;
     height: 78px;
-    top:50%;
+    top: 50%;
     left: 50%;
     margin: -39px 0 0 -39px;
     cursor: pointer;
@@ -1792,3 +1798,174 @@ ul#listing li .page .overlay a:hover {
 .video-view .play:hover {
     background-position: 0 -81px;
 }
+
+.uploader {
+    width: 240px;
+    height: 7px;
+    background: #e2e2e2;
+    border: 1px solid #c2c2c2;
+    border-radius: 8px;
+    margin: 0 auto;
+    padding: 2px;
+    box-shadow: inset 1px 2px 2px #dcdcdc;
+    margin-bottom: 20px;
+}
+
+.uploader.blue .progress {
+    background: #356799;
+    border-radius: 5px;
+    width: 50%;
+    max-width: 99%;
+    float: left;
+    -webkit-animation: progress 1s 1 forwards;
+    -moz-animation: progress 1s 1 forwards;
+    -ms-animation: progress 1s 1 forwards;
+    animation: progress 1s 1 forwards;
+    height: 5px;
+    border: 1px solid #646464;
+    box-shadow: inset 0 0 1px #cddfef;
+}
+
+.uploader.green .progress {
+    background: #28cb00;
+    border-radius: 5px;
+    width: 50%;
+    max-width: 99%;
+    float: left;
+    -webkit-animation: progress 1s 1 forwards;
+    -moz-animation: progress 1s 1 forwards;
+    -ms-animation: progress 1s 1 forwards;
+    animation: progress 1s 1 forwards;
+    height: 5px;
+    border: 1px solid #23b100;
+    box-shadow: inset 0 0 1px #cddfef;
+    margin-bottom: 20px;
+
+}
+
+.pbaranim {
+    background: url("../images/animate2.gif") repeat-x;
+    width: 100%;
+    overflow: hidden;
+    -moz-opacity: 0.2;
+    -khtml-opacity: 0.2;
+    opacity: 0.2;
+    -ms-filter: progid: DXImageTransform . Microsoft . Alpha(Opacity = 20);
+    filter: progid:DXImageTransform.Microsoft.Alpha(opacity = 20);
+    filter: alpha(opacity = 20);
+    height: 5px;
+}
+
+
+.popup .inner {
+    width: 767px;
+}
+
+.select_all {
+    display: block;
+    text-decoration: none;
+    border-bottom: 1px dotted #0e67d2;
+    color: #0e67d2;
+
+}
+
+.select_all:hover {
+    border: 0;
+}
+
+.check {
+    background: url("../images/checkbox_par.png") no-repeat;
+    width: 16px;
+    height: 14px;
+    position: absolute;
+    top: -7px;
+    right: -8px;
+}
+
+.check.active {
+    background: url("../images/checkbox_par_active.png") no-repeat;
+}
+
+.popup .file {
+    position: relative;
+    padding: 16px 20px;
+    border: 1px solid #d7d7d7;
+    margin-right: 38px;
+    margin-bottom: 20px;
+}
+
+
+.popup .file.active{
+    border: 3px solid #6a9cd1;
+    padding: 14px 18px;
+
+}
+
+.popup .file img {
+    border: 1px solid #cccbcb;
+}
+
+.popup .file .img{
+    position: relative;
+
+}
+.popup .file.last{
+    margin-right: 0;
+}
+
+#add_document .scroll{
+    height: 360px;
+    width: 790px !important;
+    outline: none;
+    padding-bottom: 45px;
+}
+
+.popup .cont{
+    position: relative;
+}
+
+.shad{
+    position: absolute;
+    background: url("../images/shad_bg.png") repeat-x top;
+    z-index: 100;
+    width: 790px;
+    height: 60px;
+    bottom: -30px;
+    left:-30px;
+    padding-top: 40px;
+    padding-left: 30px;
+    padding-right: 30px;
+
+}
+
+
+.popup .shad .buttons .button-blue{
+    text-decoration: none;
+    width: 124px;
+    padding: 0;
+    height: 25px;
+    text-align: center;
+    padding-top: 5px;
+    margin-right: 10px;
+}
+
+.popup .shad .buttons span a{
+    text-decoration: none;
+    border-bottom:  1px dotted #0e67d2;
+    color: #0e67d2;
+}
+.popup .shad .buttons span a:hover{
+    border: 0;
+}
+.popup .shad p{
+    color: #6e6e6e;
+}
+
+#add_document.popup .buttons a.button-red{
+    text-decoration: none;
+    width: 124px;
+    padding: 5px 0 0;
+    height: 25px;
+    margin-top: 45px;
+}
+
