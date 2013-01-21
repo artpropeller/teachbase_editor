@@ -151,7 +151,6 @@ function resizeWorkArea(anim, width) {
         tools.find('.ico:not(.audio,.file), .zoomer, .buttons').show(0);
     }
 
-    console.log($('#page').attr('class'));
 
 
 }
@@ -224,7 +223,7 @@ function restorePage(li) {
 }
 
 function selectPage(event) {
-    if (!$(event.originalEvent.srcElement).is('.remove')) $('#page').attr("class", '');
+    if (!$(event.originalEvent.srcElement).is('.remove') && !$(this).hasClass('remove')) $('#page').attr("class", '');
     var th = $(this),
         cl = th.attr('class');
     if (!th.is('.active') && !th.is('.remove') && !$(event.originalEvent.srcElement).is('.remove')) {
