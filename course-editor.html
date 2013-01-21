@@ -31,7 +31,7 @@
     <div class="clr"></div>
 
 
-    <div class="flange" style="display: none;">
+    <div class="flange">
         <div class="hide" style="display: block;" id="library">
 
             <span class="black">В библиотеке пока нет видеороликов</span>
@@ -75,7 +75,7 @@
 
 <div class="clr"></div>
 <div class="flange">
-    <div class="hide" id="load_doc">
+    <div id="load_doc">
 
         <span class="black">Загрузите документ с вашего компьютера</span>
 
@@ -87,23 +87,22 @@
 
     </div>
 
-    <div class="hide">
-        <p><strong style="color: #000;">Document4upload.doc</strong> загружается</p>
+    <div class="hide" id="step2">
+        <p class="doc-name"><strong>Document4upload.doc</strong> загружается</p>
 
-        <div class="uploader green">
+        <div class="uploader">
             <div class="progress">
-                <div class="pbaranim">
-                </div>
+                <div class="pbaranim"></div>
             </div>
 
 
         </div>
-        <p>Ваш документ обрабатывается. <br>
+        <p class="hide process">Ваш документ обрабатывается. <br>
             Это может занять несколько минут</p>
     </div>
 
-    <div class="hide" style="display: block;">
-        <p>Вставляем страницы в курс: <strong style="color: #000;">3 из 84</strong></p>
+    <div class="hide" id="step4" >
+        <p>Вставляем страницы в курс: <strong><span class="cur">3</span> из <span class="total">84</span></strong></p>
 
         <div class="uploader blue">
             <div class="progress">
@@ -114,14 +113,14 @@
 
         </div>
         <div class="buttons">
-            <a class="button-red" href="#">Отмена</a>
+            <a class="button-red cancel-set" href="#">Отмена</a>
         </div>
 
     </div>
 
 
 </div>
-<div class="cont hide">
+<div class="cont hide" id="step3">
 
     <div class="scroll">
         <div class="inner">
@@ -287,9 +286,9 @@
     </div>
     <div class="shad">
         <div class="buttons lfl">
-            <a class="button-blue" href="#">Продолжить</a> <span>или <a href="#">отменить</a></span>
+            <a class="button-blue settocourse" href="#">Продолжить</a> <span>или <a href="#" id="cancel-doc">отменить</a></span>
         </div>
-        <p class="rfl">Выбраны 86 страниц из 123</p>
+        <p class="rfl choices">Выбраны <span class="select">86</span> страниц из <span class="total">123</span></p>
     </div>
 </div>
 
@@ -347,7 +346,7 @@
                         <div class="choose-file">
                             <div class="file u-doc">
                                 <div class="inner">
-                                    <a class="fancy" id="addd" href="#add_document">Загрузите документ</a>
+                                    <a class="fancy" href="#add_document">Загрузите документ</a>
 
                                     <p>Поддерживаются файлы
                                         MS Word и PowerPoint,
@@ -381,13 +380,7 @@
 
 
 </div>
-<script type="text/javascript">
-    $(function () {
-        $('#addd').click();
-        $('.scroll').jScrollPane();
-    });
 
-</script>
 
 </body>
 </html>

@@ -1811,31 +1811,29 @@ ul#listing li .page .overlay a:hover {
     margin-bottom: 20px;
 }
 
-.uploader.blue .progress {
+.uploader .progress {
     background: #356799;
     border-radius: 5px;
-    width: 50%;
+    width: 0;
     max-width: 99%;
     float: left;
-    -webkit-animation: progress 1s 1 forwards;
-    -moz-animation: progress 1s 1 forwards;
-    -ms-animation: progress 1s 1 forwards;
-    animation: progress 1s 1 forwards;
+
     height: 5px;
     border: 1px solid #646464;
     box-shadow: inset 0 0 1px #cddfef;
 }
 
+.uploader.green {
+    margin-top: 40px;
+}
+
 .uploader.green .progress {
     background: #28cb00;
     border-radius: 5px;
-    width: 50%;
+    width: 0;
     max-width: 99%;
     float: left;
-    -webkit-animation: progress 1s 1 forwards;
-    -moz-animation: progress 1s 1 forwards;
-    -ms-animation: progress 1s 1 forwards;
-    animation: progress 1s 1 forwards;
+
     height: 5px;
     border: 1px solid #23b100;
     box-shadow: inset 0 0 1px #cddfef;
@@ -1866,6 +1864,7 @@ ul#listing li .page .overlay a:hover {
     text-decoration: none;
     border-bottom: 1px dotted #0e67d2;
     color: #0e67d2;
+    line-height: 12px;
 
 }
 
@@ -1873,7 +1872,7 @@ ul#listing li .page .overlay a:hover {
     border: 0;
 }
 
-.check {
+.popup .file .check {
     background: url("../images/checkbox_par.png") no-repeat;
     width: 16px;
     height: 14px;
@@ -1882,7 +1881,7 @@ ul#listing li .page .overlay a:hover {
     right: -8px;
 }
 
-.check.active {
+.popup .file.active .check {
     background: url("../images/checkbox_par_active.png") no-repeat;
 }
 
@@ -1892,6 +1891,7 @@ ul#listing li .page .overlay a:hover {
     border: 1px solid #d7d7d7;
     margin-right: 38px;
     margin-bottom: 20px;
+    cursor: pointer;
 }
 
 
@@ -1914,23 +1914,28 @@ ul#listing li .page .overlay a:hover {
 }
 
 #add_document .scroll{
-    height: 360px;
+    height: 328px;
     width: 790px !important;
     outline: none;
-    padding-bottom: 45px;
+
+}
+
+#add_document .scroll .inner {
+
 }
 
 .popup .cont{
     position: relative;
+    padding-bottom: 40px;
 }
 
 .shad{
     position: absolute;
     background: url("../images/shad_bg.png") repeat-x top;
     z-index: 100;
-    width: 790px;
-    height: 60px;
-    bottom: -30px;
+    width: 737px;
+    height: 50px;
+    bottom: -25px;
     left:-30px;
     padding-top: 40px;
     padding-left: 30px;
@@ -1967,5 +1972,22 @@ ul#listing li .page .overlay a:hover {
     padding: 5px 0 0;
     height: 25px;
     margin-top: 45px;
+    margin-right: 0;
 }
 
+#add_document .files {
+    padding-bottom: 0px;
+    overflow: auto;
+}
+
+#step4 strong {
+    color: #000;
+}
+
+#step4 strong span {
+    font-weight: bold;
+}
+
+.doc-name strong {
+    color: #000;
+}

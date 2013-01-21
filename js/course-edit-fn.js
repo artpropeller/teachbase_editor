@@ -801,3 +801,143 @@ $(function () {
         return false;
     });
 });
+
+
+//закачка документов
+
+function showStep1() {
+    $('#step2, #step3, #step4, #add_document .cont, #add_document .select_all').fadeOut(0, function(){
+        $('#add_document .flange').fadeIn(100, function(){
+            $('#load_doc').fadeIn(100);
+        });
+    });
+    return false;
+}
+
+
+function showStep2() {
+    $('#step2 .doc-name').show(0);
+    $('#step2 .process').hide(0);
+    $('#step2 .uploader').removeClass('green').find('.progress').width(0);
+    $('#load_doc').fadeOut(350, function(){
+        $('#step2').fadeIn(300, progressUpload);
+    });
+
+    return false;
+}
+
+function showStep3(){
+    clearInterval(timeUpload);
+    $('#add_document .flange').fadeOut(300, function(){
+        $('#add_document .select_all').show(0);
+        reCountSlides();
+        $('#add_document .cont').fadeIn(300);
+    });
+}
+
+function showStep4(){
+    $('#step4 .uploader').find('.progress').width(0);
+    $('#step2, #step3, #add_document .select_all').hide(0);
+    $('#add_document .cont').fadeOut(300, function(){
+        $('#add_document .flange').fadeIn(100, function(){
+            $('#step4').fadeIn(200, progressPaste);
+        });
+    });
+    return false;
+}
+
+var timeUpload;
+
+function progressUpload() {
+    var i = 0;
+    timeUpload = setInterval(function(){
+        i++;
+        if (i == 100) {
+            clearInterval(timeUpload);
+            $('#step2 .doc-name').hide(0);
+            $('#step2 .process').fadeIn(100);
+            $('#step2 .uploader').addClass('green');
+            setTimeout(showStep3, 1000);
+
+        }
+        $('#step2 .progress').css({'width': i+'%'});
+    },25);
+}
+
+function progressPaste() {
+    var i = 0,
+        total = parseInt($('#step4 .total').text());
+    timeUpload = setInterval(function(){
+        i++;
+        $('#step4 .cur').text(i);
+        if (i == total) {
+            clearInterval(timeUpload);
+            $.fancybox.close(true);
+            showStep1();
+        }
+        $('#step4 .progress').css({'width': (i/total)*100+'%'});
+    },325);
+}
+
+
+function reCountSlides() {
+    $('#add_document .choices .select').text($('#add_document .file.active').size());
+    $('#add_document .choices .total').text($('#add_document .file').size());
+    $('#step4 .total').text($('#add_document .file.active').size());
+    $('#step4 .cur').text(0);
+    checkSelectSlides();
+}
+
+function deselectSlides() {
+    $('#add_document .file.active').removeClass('active');
+    reCountSlides();
+}
+
+function selectSlides() {
+    $('#add_document .file').addClass('active');
+    reCountSlides();
+}
+
+function checkSelectSlides(){
+    if ($('#add_document .file.active').size() != $('#add_document .file').size()) {
+        $('#add_document .select_all').text('выделить все');
+    }
+    else {
+        $('#add_document .select_all').text('снять выделение');
+    }
+}
+
+$(function(){
+    $('#load_doc .btn-download').click(showStep2);
+    $('#add_document .file').click(function(){
+        $(this).toggleClass('active');
+        reCountSlides();
+
+    });
+
+    $('#add_document .select_all').click(function(){
+        if ($(this).text() == 'снять выделение') {
+            deselectSlides();
+        }
+        else {
+            selectSlides();
+        }
+        return false;
+    });
+
+
+    $('#cancel-doc').click(showStep1);
+
+    $('.cancel-set').click(showStep3);
+
+    $('.settocourse').click(showStep4);
+
+
+
+
+    $('#add_document .scroll').jScrollPane({
+        autoReinitialise:true,
+        autoReinitialiseDelay:25
+    });
+
+});
