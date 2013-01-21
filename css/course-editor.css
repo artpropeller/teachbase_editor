@@ -1723,7 +1723,6 @@ ul#listing li .page .overlay a:hover {
     background: url("../images/blue_bg_button.jpg") repeat-x top;
     border: 1px solid #4d5582;
     text-shadow: 0 1px #38597c;
-    margin-right: 15px;
     color: #fff;
     width: 124px;
     height: 30px;
@@ -1731,6 +1730,7 @@ ul#listing li .page .overlay a:hover {
     cursor: pointer;
     font-size: 13px;
     box-shadow: 0 0 3px #aaa;
+    margin: 0 15px 0 0;
 }
 
 #add_video.popup .button-blue:hover {
@@ -1744,8 +1744,8 @@ ul#listing li .page .overlay a:hover {
     background: #fff url("../images/ico_search.jpg") no-repeat 5px 10px;
     border: 1px solid #d1d1d1;
     border-radius: 2px;
-    margin-right: 8px;
     padding: 0 10px 0 20px;
+    margin: 0 8px 0 0;
 }
 
 .popup .hide {

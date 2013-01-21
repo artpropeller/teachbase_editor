@@ -1,3 +1,7 @@
 .choice-test .search input {
     line-height: 30px;
 }
+
+.popup .search_form input[type=text] {
+    line-height: 28px;
+}
