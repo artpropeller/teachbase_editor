@@ -223,7 +223,7 @@ function restorePage(li) {
 }
 
 function selectPage(event) {
-    if (!$(event.originalEvent.srcElement).is('.remove') && !$(this).hasClass('remove')) $('#page').attr("class", '');
+    if (!$(event.originalEvent.srcElement).is('.remove') && !$(this).hasClass('remove') && !$(this).hasClass('active')) $('#page').attr("class", '');
     var th = $(this),
         cl = th.attr('class');
     if (!th.is('.active') && !th.is('.remove') && !$(event.originalEvent.srcElement).is('.remove')) {
