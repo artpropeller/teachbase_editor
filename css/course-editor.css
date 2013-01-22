@@ -1916,6 +1916,9 @@ ul#listing li .page .overlay a:hover {
 
 .popup .file .img{
     position: relative;
+    background: #cccbcb;
+    text-align: center;
+    width: 119px;
 
 }
 .popup .file.last{
