@@ -23,45 +23,478 @@
 <body>
 
 <div id="add_video" class="popup">
-    <h3>Вставить видео</h3>
+<h3>Вставить видео</h3>
 
-    <ul class="menu">
-        <li><a href="#from-computer">Из компьютера</a></li>
-        <li class="active"><a href="#library">Из библиотеки</a></li>
-        <li><a href="#record-video">Записать с вебкамеры</a></li>
-        <li class="last"><a href="#youtube">Из You Tube</a></li>
-    </ul>
-    <div class="clr"></div>
-
-
-    <div class="flange">
-        <div class="hide" style="display: block;" id="library">
-
-            <span class="black">В библиотеке пока нет видеороликов</span>
+<ul class="menu">
+    <li><a href="#from-computer">Из компьютера</a></li>
+    <li class="active"><a href="#library">Из библиотеки</a></li>
+    <li><a href="#record-video">Записать с вебкамеры</a></li>
+    <li class="last"><a href="#youtube">Из You Tube</a></li>
+</ul>
+<div class="clr"></div>
 
 
-            <p>Для того чтобы загрузить видео<br>
-                со своего компьютера в библиотеку, нажмите кнопку:</p>
+<div class="flange hide">
+    <!--Video from Library-->
+    <div class="hide" style="display: none;" id="library">
 
-            <a class="btn-download" href="#"><span>Загрузить</span></a>
+        <span class="black">В библиотеке пока нет видеороликов</span>
+
+
+        <p>Для того чтобы загрузить видео<br>
+            со своего компьютера в библиотеку, нажмите кнопку:</p>
+
+        <a class="btn-download" href="#"><span>Загрузить</span></a>
+
+    </div>
+
+    <!--Video from YouTube-->
+
+    <div class="hide" id="youtube">
+
+        <span class="black">Какие ролики вам нужны?</span>
+
+
+        <p>Введите ключевые слова в форму поиска и нажмите кнопку «искать»:</p>
+
+        <div class="search_form">
+            <input type="text"><input class="button-blue" type="button" value="Искать">
 
         </div>
+    </div>
 
-        <div class="hide" id="youtube">
+    <!--Video from PC without drag&drop step1-->
 
-            <span class="black">Какие ролики вам нужны?</span>
+    <div class="hide" id="video-from-pc" style="display: none;">
+        <span class="black">Загрузите видео с вашего компьютера</span>
+
+        <p>Нажмите кнопку «Загрузить» и выберите в откроющемся окне<br>
+            ролик одного из поддерживаемых форматов (avi, mpg или mov)</p>
+        <a class="btn-download" href="#"><span>Загрузить</span></a>
 
 
-            <p>Введите ключевые слова в форму поиска и нажмите кнопку «искать»:</p>
+    </div>
 
-            <div class="search_form">
-                <input type="text"><input class="button-blue" type="button" value="Искать">
+    <!--Video from PC with drag&drop step2-->
 
+    <div class="hide" id="video-from-pc-drag" style="display: none;">
+        <span class="black">Перетащите видеоролик сюда</span>
+
+        <p>или нажмите кнопку</p>
+        <a class="btn-download" href="#"><span>Загрузить</span></a>
+
+
+    </div>
+    <!--Video from PC with drag&drop step3-->
+
+    <div class="hide" style="display: none;" id="video-from-pc-step3">
+        <div class="img">
+            <div class="play">
+
+            </div>
+            <img src="images/video-thumb.jpg" width="173" height="112" alt="">
+        </div>
+        <strong>super-movie.mov</strong>
+
+        <a class="button-blue" href="#">Вставить</a>
+    </div>
+
+    <!--Video from PC with drag&drop step4-->
+    <div class="hide" id="video-from-pc-step4" style="display: none;">
+        <p><strong style="color: #000;">super-movie.mov</strong> загружается</p>
+
+        <div class="uploader blue">
+            <div class="progress" style="width: 50%;">
+                <div class="pbaranim">
+
+                </div>
             </div>
         </div>
 
 
     </div>
+
+    <!--Video from Camera -->
+    <div class="hide" style="display: block;" id="video-from-camera-step1">
+
+        <div class="camera">
+            <div class="frame">
+                <img src="images/camera_video_img.jpg" width="419" height="266" alt="">
+            </div>
+            <div class="start_video">
+
+            </div>
+        </div>
+        <div class="buttons">
+            <a class="button-red" href="#">Сохранить видео</a>
+            <a class="button-gray" href="#">Перезаписать</a>
+        </div>
+    </div>
+
+
+</div>
+
+<!--Video from Library -->
+<div class="cont" style="display: none;" id="video-from-library">
+    <div class="left lfl">
+        <ul>
+            <li class="active"><span><a href="#">Последний курс</a></span>
+                <ul>
+                    <li class="active"><a href="#">Идеи и драфты</a></li>
+                    <li><a href="#">Идеи и драфты</a></li>
+                </ul>
+
+            </li>
+            <li><span><a href="#">Иллюстрации по теме</a></span></li>
+            <li><span><a href="#">Полезное</a></span></li>
+        </ul>
+
+
+    </div>
+    <div class="right rfl">
+        <div class="scroll">
+            <div class="inner">
+                <div class="video active lfl">
+                    <div class="img">
+                        <img src="images/vid1.jpg" width="115" height="76" alt="">
+
+
+                        <div class="play_but"></div>
+                        <div class="time">12:09</div>
+
+                    </div>
+
+                    <div class="name">
+                        Дэвид Хэй - Дерек<br>
+                        Чисора - Нокаут
+
+                    </div>
+                </div>
+                <div class="video lfl">
+                    <div class="img">
+                        <img src="images/vid2.jpg" width="115" height="76" alt="">
+
+
+                        <div class="play_but"></div>
+                        <div class="time">12:09</div>
+
+                    </div>
+
+                    <div class="name">
+                        Дэвид Хэй - Дерек<br>
+                        Чисора - Нокаут
+
+                    </div>
+                </div>
+                <div class="video last lfl">
+                    <div class="img">
+                        <img src="images/vid3.jpg" width="115" height="76" alt="">
+
+
+                        <div class="play_but"></div>
+                        <div class="time">12:09</div>
+
+                    </div>
+
+                    <div class="name">
+                        Дэвид Хэй - Дерек<br>
+                        Чисора - Нокаут
+
+                    </div>
+                </div>
+                <div class="video lfl">
+                    <div class="img">
+                        <img src="images/vid4.jpg" width="115" height="76" alt="">
+
+
+                        <div class="play_but"></div>
+                        <div class="time">12:09</div>
+
+                    </div>
+
+                    <div class="name">
+                        Дэвид Хэй - Дерек<br>
+                        Чисора - Нокаут
+
+                    </div>
+                </div>
+                <div class="video lfl">
+                    <div class="img">
+                        <img src="images/vid5.jpg" width="115" height="76" alt="">
+
+
+                        <div class="play_but"></div>
+                        <div class="time">12:09</div>
+
+                    </div>
+
+                    <div class="name">
+                        Дэвид Хэй - Дерек<br>
+                        Чисора - Нокаут
+
+                    </div>
+                </div>
+                <div class="video last lfl">
+                    <div class="img">
+                        <img src="images/vid6.jpg" width="115" height="76" alt="">
+
+
+                        <div class="play_but"></div>
+                        <div class="time">12:09</div>
+
+                    </div>
+
+                    <div class="name">
+                        Дэвид Хэй - Дерек<br>
+                        Чисора - Нокаут
+
+                    </div>
+                </div>
+                <div class="video lfl">
+                    <div class="img">
+                        <img src="images/vid7.jpg" width="115" height="76" alt="">
+
+
+                        <div class="play_but"></div>
+                        <div class="time">12:09</div>
+
+                    </div>
+
+                    <div class="name">
+                        Дэвид Хэй - Дерек<br>
+                        Чисора - Нокаут
+
+                    </div>
+                </div>
+                <div class="video lfl">
+                    <div class="img">
+                        <img src="images/vid8.jpg" width="115" height="76" alt="">
+
+
+                        <div class="play_but"></div>
+                        <div class="time">12:09</div>
+
+                    </div>
+
+                    <div class="name">
+                        Дэвид Хэй - Дерек<br>
+                        Чисора - Нокаут
+
+                    </div>
+                </div>
+                <div class="video last lfl">
+                    <div class="img">
+                        <img src="images/vid9.jpg" width="115" height="76" alt="">
+
+
+                        <div class="play_but"></div>
+                        <div class="time">12:09</div>
+
+                    </div>
+
+                    <div class="name">
+                        Дэвид Хэй - Дерек<br>
+                        Чисора - Нокаут
+
+                    </div>
+                </div>
+
+            </div>
+            <div class="clr"></div>
+        </div>
+    </div>
+    <div class="clr"></div>
+    <div class="shad">
+        <div class="buttons lfl">
+            <a class="button-blue settocourse" href="#">Выбрать</a> <span>или <a href="#"
+                                                                                 id="cancel">отменить</a></span>
+        </div>
+
+    </div>
+
+</div>
+
+<!--Video from YouTube-->
+
+<div class="cont" id="video-from-youtube">
+    <div class="search_form">
+        <input type="text" value="businessman"><input class="button-blue" type="button" value="Искать">
+
+    </div>
+    <div class="inner">
+        <div class="video active lfl">
+            <div class="img">
+                <img src="images/vid1.jpg" width="115" height="76" alt="">
+
+
+                <div class="play_but"></div>
+                <div class="time">12:09</div>
+
+            </div>
+
+            <div class="name">
+                Дэвид Хэй - Дерек<br>
+                Чисора - Нокаут
+
+            </div>
+        </div>
+        <div class="video lfl">
+            <div class="img">
+                <img src="images/vid2.jpg" width="115" height="76" alt="">
+
+
+                <div class="play_but"></div>
+                <div class="time">12:09</div>
+
+            </div>
+
+            <div class="name">
+                Дэвид Хэй - Дерек<br>
+                Чисора - Нокаут
+
+            </div>
+        </div>
+        <div class="video lfl">
+            <div class="img">
+                <img src="images/vid3.jpg" width="115" height="76" alt="">
+
+
+                <div class="play_but"></div>
+                <div class="time">12:09</div>
+
+            </div>
+
+            <div class="name">
+                Дэвид Хэй - Дерек<br>
+                Чисора - Нокаут
+
+            </div>
+        </div>
+        <div class="video lfl">
+            <div class="img">
+                <img src="images/vid4.jpg" width="115" height="76" alt="">
+
+
+                <div class="play_but"></div>
+                <div class="time">12:09</div>
+
+            </div>
+
+            <div class="name">
+                Дэвид Хэй - Дерек<br>
+                Чисора - Нокаут
+
+            </div>
+        </div>
+        <div class="video last lfl">
+            <div class="img">
+                <img src="images/vid5.jpg" width="115" height="76" alt="">
+
+
+                <div class="play_but"></div>
+                <div class="time">12:09</div>
+
+            </div>
+
+            <div class="name">
+                Дэвид Хэй - Дерек<br>
+                Чисора - Нокаут
+
+            </div>
+        </div>
+        <div class="video lfl">
+            <div class="img">
+                <img src="images/vid6.jpg" width="115" height="76" alt="">
+
+
+                <div class="play_but"></div>
+                <div class="time">12:09</div>
+
+            </div>
+
+            <div class="name">
+                Дэвид Хэй - Дерек<br>
+                Чисора - Нокаут
+
+            </div>
+        </div>
+        <div class="video lfl">
+            <div class="img">
+                <img src="images/vid7.jpg" width="115" height="76" alt="">
+
+
+                <div class="play_but"></div>
+                <div class="time">12:09</div>
+
+            </div>
+
+            <div class="name">
+                Дэвид Хэй - Дерек<br>
+                Чисора - Нокаут
+
+            </div>
+        </div>
+        <div class="video lfl">
+            <div class="img">
+                <img src="images/vid8.jpg" width="115" height="76" alt="">
+
+
+                <div class="play_but"></div>
+                <div class="time">12:09</div>
+
+            </div>
+
+            <div class="name">
+                Дэвид Хэй - Дерек<br>
+                Чисора - Нокаут
+
+            </div>
+        </div>
+        <div class="video lfl">
+            <div class="img">
+                <img src="images/vid9.jpg" width="115" height="76" alt="">
+
+
+                <div class="play_but"></div>
+                <div class="time">12:09</div>
+
+            </div>
+
+            <div class="name">
+                Дэвид Хэй - Дерек<br>
+                Чисора - Нокаут
+
+            </div>
+        </div>
+        <div class="video last lfl">
+            <div class="img">
+                <img src="images/vid9.jpg" width="115" height="76" alt="">
+
+
+                <div class="play_but"></div>
+                <div class="time">12:09</div>
+
+            </div>
+
+            <div class="name">
+                Дэвид Хэй - Дерек<br>
+                Чисора - Нокаут
+
+            </div>
+        </div>
+
+    </div>
+    <div class="clr"></div>
+
+
+    <div class="buttons">
+        <a class="button-blue settocourse lfl" href="#">Выбрать</a> <span class="lfl">или <a href="#"
+                                                                                             id="cancel_but">отменить</a></span>
+        <a class="button-gray rfl" href="#">Показать еще</a>
+    </div>
+
+
+</div>
 
 
 </div>
@@ -77,6 +510,7 @@
 
 <div class="clr"></div>
 <div class="flange">
+    <!--Step1-->
     <div id="load_doc">
 
         <span class="black">Загрузите документ с вашего компьютера</span>
@@ -88,6 +522,8 @@
         <a class="btn-download" href="#"><span>Загрузить</span></a>
 
     </div>
+
+    <!--Step2-->
 
     <div class="hide" id="step2">
         <p class="doc-name"><strong>Document4upload.doc</strong> загружается</p>
@@ -102,8 +538,9 @@
         <p class="hide process">Ваш документ обрабатывается. <br>
             Это может занять несколько минут</p>
     </div>
+    <!--Step4-->
 
-    <div class="hide" id="step4" >
+    <div class="hide" id="step4">
         <p>Вставляем страницы в курс: <strong><span class="cur">3</span> из <span class="total">84</span></strong></p>
 
         <div class="uploader blue">
@@ -122,6 +559,7 @@
 
 
 </div>
+<!--Step3-->
 <div class="cont hide" id="step3">
 
     <div class="scroll">
@@ -209,6 +647,7 @@
                 <div class="file active lfl">
                     <div class="img">
                         <img src="images/file1.jpg" width="119" height="83" alt="">
+
                         <div class="check active"></div>
                     </div>
 
@@ -287,7 +726,8 @@
     </div>
     <div class="shad">
         <div class="buttons lfl">
-            <a class="button-blue settocourse" href="#">Продолжить</a> <span>или <a href="#" id="cancel-doc">отменить</a></span>
+            <a class="button-blue settocourse" href="#">Продолжить</a> <span>или <a href="#"
+                                                                                    id="cancel-doc">отменить</a></span>
         </div>
         <p class="rfl choices">Выбраны <span class="select">86</span> страниц из <span class="total">123</span></p>
     </div>
@@ -356,7 +796,7 @@
                             </div>
                             <div class="file u-video">
                                 <div class="inner">
-                                    <a class="fancy" href="#add_video">Вставьте видео</a>
+                                    <a class="fancy" id="vid" href="#add_video">Вставьте видео</a>
 
                                     <p>Загрузите из компьютера,
                                         ссылку на YouTube или
@@ -381,6 +821,18 @@
 
 
 </div>
+<script type="text/javascript">
+    $(function () {
+        $('#vid').click();
+        $('.scroll').jScrollPane(
+                {
+                    autoReinitialise:true,
+                    autoReinitialiseDelay:25
+                }
+        );
+
+    });
+</script>
 
 
 </body>
