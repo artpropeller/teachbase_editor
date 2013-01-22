@@ -1748,6 +1748,9 @@ ul#listing li .page .overlay a:hover {
     border-radius: 2px;
     padding: 0 10px 0 20px;
     margin: 0 8px 0 0;
+    font-size: 19px;
+    font-family: arial, sans-serif;
+    color: #000;
 }
 
 .popup .hide {
@@ -2215,7 +2218,7 @@ ul#listing li .page .overlay a:hover {
 
 #video-from-library.cont .scroll {
     outline: none;
-    height: 354px;
+    height: 328px;
 
 }
 
@@ -2223,17 +2226,34 @@ ul#listing li .page .overlay a:hover {
     width: 505px;
 }
 
+#video-from-library .left>ul li {
+    position: relative;
+}
+
 #video-from-library .left>ul>li span {
-    background: url("../images/gray_arr_normal.png") no-repeat 5px 14px;
     padding: 8px 0 8px 16px;
     display: block;
+    border: 1px solid transparent;
 
+}
+
+#video-from-library .left>ul>li em {
+    position: absolute;
+    display: block;
+    height: 36px;
+    width: 16px;
+    cursor: pointer;
+    background: url("../images/gray_arr_normal.png") no-repeat 7px 16px;
+}
+
+#video-from-library .left>ul>li em.trail {
+    background: url("../images/gray_arr_active.png") no-repeat 7px 16px;
 }
 
 #video-from-library .left>ul>li.active span {
     border: 1px solid #d3dde8;
     box-shadow: 0 1px 1px #fff, 0 1px 1px #cad3dd;
-    background: #dee8f4 url("../images/gray_arr_active.png") no-repeat 5px 14px;
+    background: #dee8f4;
 }
 
 #video-from-library .left>ul>li a {
@@ -2248,7 +2268,13 @@ ul#listing li .page .overlay a:hover {
 #video-from-library .left>ul>li li {
     background: none;
     padding: 8px 8px 8px 27px;
+    border: 1px solid transparent;
 
+
+}
+
+#video-from-library .left>ul>li ul {
+    display: none;
 }
 
 #video-from-library .left>ul>li li.active {
@@ -2258,13 +2284,18 @@ ul#listing li .page .overlay a:hover {
 }
 
 #video-from-library .left>ul>li ul {
-    padding-top: 5px;
+    padding-top: 0;
 }
 
-#video-from-library .left>ul li.active a {
+#video-from-library .left li.active>span a {
     background: url("../images/ico_folder_sec_level.png") no-repeat left;
     padding-left: 23px;
 
+}
+
+#video-from-library .left li li.active a {
+    background: url("../images/ico_folder_sec_level.png") no-repeat left;
+    padding-left: 23px;
 }
 
 #video-from-youtube{
@@ -2293,9 +2324,10 @@ ul#listing li .page .overlay a:hover {
     color: #727272;
     font-size: 13px;
     padding-top: 5px;
+    margin-right: 15px;
 }
 #video-from-youtube .buttons .button-gray:hover{
-    background: #f1f1f1;
+    background: #ddd;
 }
 #video-from-youtube .buttons .button-blue{
     width: 140px;
@@ -2322,11 +2354,11 @@ ul#listing li .page .overlay a:hover {
     border: 0;
 }
 #video-from-youtube .search_form{
-    margin-bottom: 20px;
+    margin-bottom:15px;
 }
 
 #video-from-youtube .video{
-    margin-right: 18px;
+    margin-right: 14px;
     margin-bottom: 15px;
 }
 .popup #video-from-youtube .inner{
@@ -2344,8 +2376,14 @@ ul#listing li .page .overlay a:hover {
     color: #000;
 }
 
+#video-from-library .shad {
+    bottom: -30px;
+}
 
 
+.popup #video-from-youtube.cont {
+    padding-bottom: 22px;
+}
 
 
 

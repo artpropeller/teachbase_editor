@@ -186,7 +186,7 @@ function choiceUploadFile() {
 function hideChoiceUpload() {
     var up = $('#pages-panel .upload');
     up.find('.choice').removeClass('active');
-    up.find('ul').slideToggle(200);
+    up.find('ul').slideUp(200);
     $('.clicker').remove();
     return false
 }
@@ -785,22 +785,17 @@ $(function () {
         padding:0,
         scrollOutside:false,
         fitToView:false,
-        minHeight:0
+        minHeight:0,
+        beforeShow: function(){
+            hideChoiceUpload();
+            showDefaultVideoScreen();
+            showStep1();
+        }
     });
 
 });
 
-//меню выбора видео
 
-$(function () {
-    $('#add_video .menu li a').click(function () {
-        $('#add_video .menu li').removeClass('active');
-        $(this).parent().addClass('active');
-        $('#add_video .hide').hide(0);
-        $('#add_video ' + $(this).attr('href')).show(0);
-        return false;
-    });
-});
 
 
 //закачка документов
@@ -939,6 +934,115 @@ $(function(){
     $('#add_document .scroll').jScrollPane({
         autoReinitialise:true,
         autoReinitialiseDelay:25
+    });
+
+});
+
+
+
+//меню выбора видео
+
+$(function () {
+    $('#add_video .menu li a').click(function () {
+        $('#add_video .menu li').removeClass('active');
+        $(this).parent().addClass('active');
+        $('#add_video .flange').show(0);
+        $('#add_video .hide').hide(0);
+        $('#add_video ' + $(this).attr('href')).show(0);
+        return false;
+    });
+});
+
+
+//добавляем видео
+
+function showDefaultVideoScreen(){
+    $('#add_video .hide').hide(0);
+    $('#add_video .flange, #video-from-pc').show(0);
+    $('#add_video .menu li').removeClass('active').first().addClass('active');
+    $('#video-from-pc-step4 .progress').width(0);
+}
+
+function showUploadForComputer() {
+    $('#video-from-pc-step4 .progress').width(0);
+    var i = 0;
+    $('#video-from-pc, #video-from-pc-drag').hide(0);
+        $('#video-from-pc-step4').fadeIn(300, function(){
+            timeUpload = setInterval(function(){
+                i++;
+                if (i == 100) {
+                    clearInterval(timeUpload);
+                    $('#video-from-pc-step4').hide(0, function(){
+                        $('#video-from-pc-step3').fadeIn(300);
+                    });
+                }
+                $('#video-from-pc-step4 .progress').css('width', i+'%');
+            }, 40);
+        });
+    return false;
+}
+
+
+function showLibrary(){
+    $('#add_video .hide,#add_video .flange ').hide(0);
+    $('#video-from-library').show(0);
+    return false;
+}
+
+
+function showYouTube(){
+    $('#add_video .hide,#add_video .flange ').hide(0);
+    $('#video-from-youtube').show(0);
+}
+
+$(function(){
+    $('#video-from-pc .btn-download, #video-from-pc-drag .btn-download').click(showUploadForComputer);
+
+    $('#video-from-pc-step3 .button-blue ,#video-from-youtube .settocourse,#video-from-youtube #cancel_but, #video-from-library .shad a').click(function(){$.fancybox.close(true); return false;});
+
+    $('#library .btn-download').click(showLibrary);
+
+
+    $('#video-from-library .left ul a').click(function(){
+        if (!$($(this).parents('li')[0]).hasClass('active')) {
+            $('#video-from-library .left li').removeClass('active');
+            $($(this).parents('li')[0]).addClass('active');
+        }
+    });
+
+    $('#video-from-library .left li em').click(function(){
+        if (!$(this).hasClass('trail')) {
+            $(this).addClass('trail');
+            !$(this).parents('li').find('ul').slideDown(200);
+        }
+        else {
+            $(this).removeClass('trail');
+            !$(this).parents('li').find('ul').slideUp(200);
+        }
+    });
+
+
+    $('#video-from-library .video').click(function(){
+        if (!$(this).hasClass('active')) {
+            $('#video-from-library .video').removeClass('active');
+            $(this).addClass('active');
+        }
+    });
+
+
+    $('#video-from-youtube .video').click(function(){
+        if (!$(this).hasClass('active')) {
+            $('#video-from-youtube .video').removeClass('active');
+            $(this).addClass('active');
+        }
+    });
+
+    $('#youtube .button-blue').click(function(){
+        if ($('#search-key').val()) {
+            $('#search-key2').val($('#search-key').val());
+            showYouTube();
+        }
+        return false;
     });
 
 });
