@@ -1845,13 +1845,22 @@ ul#listing li .page .overlay a:hover {
     background: url("../images/animate2.gif") repeat-x;
     width: 100%;
     overflow: hidden;
-    -moz-opacity: 0.2;
-    -khtml-opacity: 0.2;
-    opacity: 0.2;
-    -ms-filter: progid: DXImageTransform . Microsoft . Alpha(Opacity = 20);
-    filter: progid:DXImageTransform.Microsoft.Alpha(opacity = 20);
-    filter: alpha(opacity = 20);
+    -moz-opacity: 0.4;
+    -khtml-opacity: 0.4;
+    opacity: 0.4;
+    -ms-filter: progid: DXImageTransform . Microsoft . Alpha(Opacity = 40);
+    filter: progid:DXImageTransform.Microsoft.Alpha(opacity = 4);
+    filter: alpha(opacity = 40);
     height: 5px;
+}
+
+.uploader.green .pbaranim {
+    -moz-opacity: 0.6;
+    -khtml-opacity: 0.6;
+    opacity: 0.6;
+    -ms-filter: progid: DXImageTransform . Microsoft . Alpha(Opacity = 60);
+    filter: progid:DXImageTransform.Microsoft.Alpha(opacity = 6);
+    filter: alpha(opacity = 60);
 }
 
 
@@ -1865,7 +1874,7 @@ ul#listing li .page .overlay a:hover {
     border-bottom: 1px dotted #0e67d2;
     color: #0e67d2;
     line-height: 12px;
-
+    margin-top: 13px;
 }
 
 .select_all:hover {
@@ -1933,13 +1942,12 @@ ul#listing li .page .overlay a:hover {
     position: absolute;
     background: url("../images/shad_bg.png") repeat-x top;
     z-index: 100;
-    width: 737px;
+    width: 767px;
     height: 50px;
     bottom: -25px;
     left:-30px;
     padding-top: 40px;
     padding-left: 30px;
-    padding-right: 30px;
 
 }
 

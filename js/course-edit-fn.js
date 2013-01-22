@@ -836,13 +836,14 @@ function showStep3(){
 }
 
 function showStep4(){
+    if ($('#add_document .file.active').size()) {
     $('#step4 .uploader').find('.progress').width(0);
     $('#step2, #step3, #add_document .select_all').hide(0);
     $('#add_document .cont').fadeOut(300, function(){
         $('#add_document .flange').fadeIn(100, function(){
             $('#step4').fadeIn(200, progressPaste);
         });
-    });
+    });}
     return false;
 }
 
