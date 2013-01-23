@@ -1047,7 +1047,7 @@ $(function(){
     });
 
     $('#show-more-youtube').click(function(){
-        $('#video-from-youtube .inner').prepend( $('#video-from-youtube .video').clone().removeClass('active'));
+        $('#video-from-youtube .inner').prepend( $('#video-from-youtube .video').clone().removeClass('active').removeClass('last_row'));
         return false;
     });
 

@@ -1680,6 +1680,7 @@ ul#listing li .page .overlay a:hover {
     text-align: center;
     border: 1px solid #dddddd;
     padding-top: 116px;
+    font-family: 'Helvetica Neue', sans-serif;
 }
 
 .popup .btn-download {
@@ -1727,12 +1728,22 @@ ul#listing li .page .overlay a:hover {
     text-shadow: 0 1px #38597c;
     color: #fff;
     width: 124px;
-    height: 30px;
+    height: 25px;
     border-radius: 2px;
     cursor: pointer;
     font-size: 13px;
     box-shadow: 0 0 3px #aaa;
     margin: 0 15px 0 0;
+    display: block;
+    text-decoration: none;
+    padding-top: 5px;
+    text-align: center;
+
+}
+
+#add_video.popup #youtube input.button-blue, #add_video.popup #video-from-youtube input.button-blue {
+    line-height: 31px;
+
 }
 
 #add_video.popup .button-blue:hover {
@@ -1751,6 +1762,10 @@ ul#listing li .page .overlay a:hover {
     font-size: 19px;
     font-family: arial, sans-serif;
     color: #000;
+    line-height: 27px;
+    display: block;
+    float: left;
+
 }
 
 .popup .hide {
@@ -1822,7 +1837,6 @@ ul#listing li .page .overlay a:hover {
     width: 0;
     max-width: 99%;
     float: left;
-
     height: 5px;
     border: 1px solid #646464;
     box-shadow: inset 0 0 1px #cddfef;
@@ -2009,7 +2023,7 @@ ul#listing li .page .overlay a:hover {
 }
 
 #video-from-pc .black {
-    font-size: 20px;
+    font-size: 18px;
 
 }
 
@@ -2097,7 +2111,7 @@ ul#listing li .page .overlay a:hover {
     height: 128px;
     top: 50%;
     margin-top: -64px;
-    margin-left: -64px;
+    margin-left: -58px;
     left: 50%;
     cursor: pointer;
 
@@ -2110,11 +2124,11 @@ ul#listing li .page .overlay a:hover {
     text-shadow: 1px 1px 1px #808080;
     box-shadow: 1px 1px 2px #d6d6d6;
     position: relative;
-    padding: 6px 0 10px;
+    padding: 7px 0 10px;
     border-radius: 1px;
     font-size: 13px;
     font-weight: bold;
-    height: 18px;
+    height: 17px;
     display: inline-block;
     text-decoration: none;
     width: 170px;
@@ -2130,10 +2144,10 @@ ul#listing li .page .overlay a:hover {
 .popup #video-from-camera-step1 .buttons a.button-red {
     display: inline-block;
     background: url("../images/red_bg_button.jpg") repeat-x;
-    height: 18px;
+    height: 17px;
     width: 170px;
     border-radius: 1px;
-    padding: 6px 0 10px;
+    padding: 7px 0 10px;
     margin-right: 12px;
     text-shadow: 1px 1px 1px #952f2c;
     box-shadow: inset 0 -1px 0 #aa3434;
@@ -2157,6 +2171,10 @@ ul#listing li .page .overlay a:hover {
 
 .video.last {
     margin-right: 0;
+}
+
+.video.last_row{
+    margin-bottom: 0;
 }
 
 .video .name {
@@ -2218,7 +2236,7 @@ ul#listing li .page .overlay a:hover {
 
 #video-from-library.cont .scroll {
     outline: none;
-    height: 328px;
+    height: 368px;
 
 }
 
@@ -2270,7 +2288,6 @@ ul#listing li .page .overlay a:hover {
     padding: 8px 8px 8px 27px;
     border: 1px solid transparent;
 
-
 }
 
 #video-from-library .left>ul>li ul {
@@ -2298,29 +2315,30 @@ ul#listing li .page .overlay a:hover {
     padding-left: 23px;
 }
 
-#video-from-youtube{
+#video-from-youtube {
     width: 787px;
 }
-#video-from-youtube .buttons span{
+
+#video-from-youtube .buttons span {
     display: block;
     padding-top: 6px;
 
 }
 
-#video-from-youtube .shad{
+#video-from-youtube .shad {
     width: 787px;
     height: 60px;
-    background-position:  top;
-    bottom:  -10px;
+    background-position: top;
+    bottom: -10px;
     padding-top: 10px;
     z-index: 1;
 }
 
-#video-from-youtube .buttons .button-gray{
+#video-from-youtube .buttons .button-gray {
     display: block;
     background: url("../images/light_gray_but.jpg") repeat-x;
     height: 25px;
-    border:1px solid #c3c3c3;
+    border: 1px solid #c3c3c3;
     border-radius: 2px;
     width: 140px;
     text-align: center;
@@ -2331,13 +2349,15 @@ ul#listing li .page .overlay a:hover {
     padding-top: 5px;
     margin-right: 15px;
 }
-#video-from-youtube .buttons .button-gray:hover{
+
+#video-from-youtube .buttons .button-gray:hover {
     background: #ddd;
 }
-#video-from-youtube .buttons .button-blue{
+
+#video-from-youtube .buttons .button-blue {
     width: 140px;
     height: 25px;
-    padding:  0;
+    padding: 0;
     padding-top: 5px;
     text-decoration: none;
     display: block;
@@ -2345,38 +2365,43 @@ ul#listing li .page .overlay a:hover {
 
 }
 
-#video-from-youtube  .buttons{
+#video-from-youtube  .buttons {
     padding-top: 0;
     margin-top: 28px;
 }
 
-#video-from-youtube .buttons span a{
+#video-from-youtube .buttons span a {
     color: #0e67d2;
     text-decoration: none;
-    border-bottom:  1px dotted #0e67d2;
+    border-bottom: 1px dotted #0e67d2;
 }
 
-#video-from-youtube .buttons span a:hover{
+#video-from-youtube .buttons span a:hover {
     border: 0;
 }
-#video-from-youtube .search_form{
-    margin-bottom:15px;
+
+#video-from-youtube .search_form {
+    margin-bottom: 15px;
 }
 
-#video-from-youtube .video{
+#video-from-youtube .video {
     margin-right: 14px;
     margin-bottom: 15px;
 }
-.popup #video-from-youtube .inner{
+
+#video-from-youtube .video.last_row{
+    margin-bottom: 0;
+}
+
+.popup #video-from-youtube .inner {
     width: 787px;
 }
 
-
-#video-from-youtube .video.last{
-    margin-right:  0;
+#video-from-youtube .video.last {
+    margin-right: 0;
 }
 
-#video-from-youtube .search_form input[type=text]{
+#video-from-youtube .search_form input[type=text] {
     font-size: 19px;
     font-family: arial, sans-serif;
     color: #000;
@@ -2384,24 +2409,68 @@ ul#listing li .page .overlay a:hover {
 
 #video-from-library .shad {
     bottom: -30px;
+    height: 50px;
+    background-position: top;
+    padding-top: 0;
+
 }
 
+#video-from-library .shad .buttons {
+    margin-top: -10px;
+}
 
 .popup #video-from-youtube.cont {
     padding-bottom: 22px;
 }
 
-#video-from-youtube .jspDrag{
+#video-from-youtube .jspDrag {
     z-index: 101;
 }
 
-#video-from-youtube .inner{
+#video-from-youtube .inner {
+    margin-bottom: 0;
+}
+
+#video-from-youtube .scroll {
+    outline: none;
+    height: 289px;
     margin-bottom: 10px;
 }
-#video-from-youtube .scroll{
-    outline: none;
-    height: 304px;
+
+#video-from-pc-step4 .uploader {
+    margin-top: 25px;
 }
+
+#video-from-pc-step3 {
+    margin-top: -12px;
+}
+
+.popup #video-from-library.cont {
+    padding-bottom: 0;
+}
+
+.popup #youtube .search_form {
+    padding-left: 193px;
+}
+
+.popup .search_form {
+    overflow: auto;
+}
+
+#video-from-pc-step4 .uploader .progress {
+    background: #1d3c5f;
+}
+
+#video-from-pc-step4 .uploader .pbaranim {
+    -moz-opacity: 0.3;
+    -khtml-opacity: 0.3;
+    opacity: 0.3;
+    -ms-filter: progid: DXImageTransform . Microsoft . Alpha(Opacity = 30);
+    filter: progid:DXImageTransform.Microsoft.Alpha(opacity = 30);
+    filter: alpha(opacity = 30);
+
+}
+
 
 
 

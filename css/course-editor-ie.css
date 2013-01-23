@@ -4,4 +4,17 @@
 
 .popup .search_form input[type=text] {
     line-height: 30px;
+    display: block;
+    float: left;
 }
+
+body.fancybox-lock {
+    overflow: visible !important;
+    margin-right: auto !important;
+}
+
+
+
+
+
+
