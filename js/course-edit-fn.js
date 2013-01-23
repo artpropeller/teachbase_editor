@@ -949,6 +949,7 @@ $(function () {
         $('#add_video .flange').show(0);
         $('#add_video .hide').hide(0);
         $('#add_video ' + $(this).attr('href')).show(0);
+        clearInterval(timeUpload);
         return false;
     });
 });
@@ -1030,7 +1031,7 @@ $(function(){
     });
 
 
-    $('#video-from-youtube .video').click(function(){
+    $('#video-from-youtube .video').live('click', function(){
         if (!$(this).hasClass('active')) {
             $('#video-from-youtube .video').removeClass('active');
             $(this).addClass('active');
@@ -1042,6 +1043,11 @@ $(function(){
             $('#search-key2').val($('#search-key').val());
             showYouTube();
         }
+        return false;
+    });
+
+    $('#show-more-youtube').click(function(){
+        $('#video-from-youtube .inner').prepend( $('#video-from-youtube .video').clone().removeClass('active'));
         return false;
     });
 
