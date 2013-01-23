@@ -2400,6 +2400,7 @@ ul#listing li .page .overlay a:hover {
 }
 #video-from-youtube .scroll{
     outline: none;
+    height: 304px;
 }
 
 
