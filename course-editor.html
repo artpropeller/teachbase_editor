@@ -840,6 +840,20 @@
                 }
         );
 
+        $('#video-from-youtube .scroll').bind(
+                'jsp-scroll-y',
+                function(event, scrollPositionY, isAtTop, isAtBottom)
+                {
+                    if (isAtBottom) {
+                        $('#video-from-youtube .shad').css('background', 'none');
+                    }
+                    else {
+                        $('#video-from-youtube .shad').css('background', 'url("images/shad_bg.png") repeat-x top');
+                    }
+
+                }
+        );
+
     });
 </script>
 

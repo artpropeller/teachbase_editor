@@ -2328,7 +2328,7 @@ ul#listing li .page .overlay a:hover {
 #video-from-youtube .shad {
     width: 787px;
     height: 60px;
-    background-position: top;
+    background:none;
     bottom: -10px;
     padding-top: 10px;
     z-index: 1;
