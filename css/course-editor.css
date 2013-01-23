@@ -2309,6 +2309,11 @@ ul#listing li .page .overlay a:hover {
 
 #video-from-youtube .shad{
     width: 787px;
+    height: 60px;
+    background-position:  top;
+    bottom:  -10px;
+    padding-top: 10px;
+    z-index: 1;
 }
 
 #video-from-youtube .buttons .button-gray{
@@ -2340,8 +2345,9 @@ ul#listing li .page .overlay a:hover {
 
 }
 
-#video-from-youtube .buttons{
-    padding-top: 5px;
+#video-from-youtube  .buttons{
+    padding-top: 0;
+    margin-top: 28px;
 }
 
 #video-from-youtube .buttons span a{
@@ -2384,6 +2390,20 @@ ul#listing li .page .overlay a:hover {
 .popup #video-from-youtube.cont {
     padding-bottom: 22px;
 }
+
+#video-from-youtube .jspDrag{
+    z-index: 101;
+}
+
+#video-from-youtube .inner{
+    margin-bottom: 10px;
+}
+#video-from-youtube .scroll{
+    outline: none;
+}
+
+
+
 
 
 
