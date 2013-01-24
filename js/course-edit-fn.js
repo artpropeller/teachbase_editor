@@ -1014,11 +1014,11 @@ $(function(){
     $('#video-from-library .left li em').click(function(){
         if (!$(this).hasClass('trail')) {
             $(this).addClass('trail');
-            !$(this).parents('li').find('ul').slideDown(200);
+            !$(this).parents('li').find('>ul').slideDown(200);
         }
         else {
             $(this).removeClass('trail');
-            !$(this).parents('li').find('ul').slideUp(200);
+            !$(this).parents('li').first().find('>ul').slideUp(200);
         }
     });
 

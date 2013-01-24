@@ -2244,18 +2244,18 @@ ul#listing li .page .overlay a:hover {
     width: 505px;
 }
 
-#video-from-library .left>ul li {
+#video-from-library .left ul li {
     position: relative;
 }
 
-#video-from-library .left>ul>li span {
+#video-from-library .left ul>li span {
     padding: 8px 0 8px 16px;
     display: block;
     border: 1px solid transparent;
 
 }
 
-#video-from-library .left>ul>li em {
+#video-from-library .left ul>li em {
     position: absolute;
     display: block;
     height: 36px;
@@ -2264,17 +2264,17 @@ ul#listing li .page .overlay a:hover {
     background: url("../images/gray_arr_normal.png") no-repeat 7px 16px;
 }
 
-#video-from-library .left>ul>li em.trail {
+#video-from-library .left ul>li em.trail {
     background: url("../images/gray_arr_active.png") no-repeat 7px 16px;
 }
 
-#video-from-library .left>ul>li.active span {
-    border: 1px solid #d3dde8;
-    box-shadow: 0 1px 1px #fff, 0 1px 1px #cad3dd;
-    background: #dee8f4;
-}
+/*#video-from-library .left>ul>li.active span {*/
+    /*border: 1px solid #d3dde8;*/
+    /*box-shadow: 0 1px 1px #fff, 0 1px 1px #cad3dd;*/
+    /*background: #dee8f4;*/
+/*}*/
 
-#video-from-library .left>ul>li a {
+#video-from-library .left ul>li a {
     background: url("../images/ico_folder_first_level.png") no-repeat left;
     padding-left: 23px;
     text-decoration: none;
@@ -2283,34 +2283,30 @@ ul#listing li .page .overlay a:hover {
 
 }
 
-#video-from-library .left>ul>li li {
+#video-from-library .left ul>li li {
     background: none;
-    padding: 8px 8px 8px 27px;
+    /*padding: 8px 8px 8px 27px;*/
     border: 1px solid transparent;
 
 }
 
-#video-from-library .left>ul>li ul {
+#video-from-library .left ul>li ul {
     display: none;
+    margin:0 0 0 15px;
 }
 
-#video-from-library .left>ul>li li.active {
+#video-from-library .left li.active>span {
     background: #dee8f4;
     border: 1px solid #d3dde8;
     box-shadow: 0 1px 1px #fff, 0 1px 1px #cad3dd;
 }
 
-#video-from-library .left>ul>li ul {
+#video-from-library .left ul>li ul {
     padding-top: 0;
 }
 
-#video-from-library .left li.active>span a {
-    background: url("../images/ico_folder_sec_level.png") no-repeat left;
-    padding-left: 23px;
 
-}
-
-#video-from-library .left li li.active a {
+#video-from-library .left li.active>span>a {
     background: url("../images/ico_folder_sec_level.png") no-repeat left;
     padding-left: 23px;
 }
@@ -2471,7 +2467,19 @@ ul#listing li .page .overlay a:hover {
 
 }
 
+#video-from-library.cont .left .scroll {
+    height: 330px !important;
+}
 
+#add_video.popup .shad .buttons .button-blue {
+    float: left;
+}
+
+#add_video.popup .shad span {
+    display: block;
+    padding-top: 6px;
+    float: left;
+}
 
 
 
