@@ -2557,7 +2557,15 @@ ul#listing li .page .overlay a:hover {
     left: 9px;
 }
 
+.buttons-top a.btn.mail {
+    background: url("../images/top-btn-letter.png") no-repeat top;
+    margin-top: 4px;
+    margin-right: 3px;
+}
 
+.buttons-top a.btn.mail:hover {
+    background-position: 1px -40px;
+}
 
 
 
