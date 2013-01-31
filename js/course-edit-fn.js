@@ -1,4 +1,5 @@
-var clicker = '<div class="clicker"></div>';
+var clicker = '<div class="clicker"></div>',
+    viewCourse = true;
 
 
 function nod(a, b) {
@@ -8,6 +9,16 @@ function nod(a, b) {
     }
     return c
 }
+
+function showArrows(){
+    var sw = $('#hide-pages').attr('class') == 'active' ? true : false;
+    var work =  $('#work-area').width() - 186 - 69;
+    if (!sw) work = work + 186;
+    $('#prev').width((work/100)*25);
+    $('#next').width((work/100)*75);
+}
+
+
 
 function resizeWorkArea(anim, width) {
     var area = $('#work-area'),
@@ -43,6 +54,34 @@ function resizeWorkArea(anim, width) {
         scale = 1;
     }
 
+
+//    соотношение сторон в зависимости от разрешения экрана
+//    if (!test && !video) {
+//        imgs = wrapper.find('img');
+//
+//
+//        imgs.load(function(){
+//            // удаляем атрибуты width и height
+//            $(this).css({'width':'auto','height':'auto'});
+//
+//            // получаем заветные цифры
+//            var width  = $(this).width();
+//            var height = $(this).height();
+//            nods = nod(width, height);
+//            ratioX = width / nods;
+//            console.log(ratioX);
+//            ratioY = height / nods;
+//            console.log(ratioX, ratioY, nods);
+////            wrapper.find('img').css({'width':'100%','height':'100%'});
+//        });
+//
+//    var w_wind = imgs.offsetWidth,
+//        h_wind = imgs.offsetHeight,
+//        nods = nod(w_wind, h_wind);
+//    }
+//
+//    console.log(ratioX, ratioY, nods);
+
     wrapper.css({
         'height':h_body - margin * 2,
         'margin-left':p,
@@ -66,13 +105,7 @@ function resizeWorkArea(anim, width) {
         return (h / (orientation == 'gorizontal' ? ratioY : ratioX)) * (orientation == 'gorizontal' ? ratioX : ratioY);
     }
 
-//соотношение сторон в зависимости от разрешения экрана
-//    var w_wind = screen.width,
-//        h_wind = screen.height,
-//        nods = nod(w_wind, h_wind);
-//    console.log(w_wind, h_wind, nods);
-//    ratioX = w_wind / nods;
-//    ratioY = h_wind / nods;
+
 
     //вычисляем максимально возможную высоту и ширину
 
@@ -163,6 +196,7 @@ function togglePagesPanel() {
     sw.toggleClass('active');
     $('#pages-panel').animate({left:sw.attr('class') == 'active' ? 0 : -176}, speed);
     $('#empty-front').animate({'margin-left':sw.attr('class') == 'active' ? 176 : 0}, speed);
+    $('#prev').animate({'left':sw.attr('class') == 'active' ? 186 : 10}, speed, showArrows);
     var ml = parseInt($('#wrapper-page').css('margin-left').split('px')[0]);
     var deli = $('#page').width() + 176 < $('#work-area').width() - (57) ? 2 : 1;
     if ($('#page').hasClass('wide')) deli = 1;
@@ -243,6 +277,8 @@ function selectPage(event) {
                 break;
         }
 
+
+
         resizeWorkArea(false);
         $('#wrapper-page').find('.scroll').data('jsp').reinitialise();
     }
@@ -278,6 +314,8 @@ function zoomSetValue(val) {
 
 
 $(function () {
+
+    showArrows();
 
     $('#zoom').slider({
         orientation:'vertical',
