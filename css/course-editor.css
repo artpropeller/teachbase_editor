@@ -337,6 +337,10 @@ ul#listing li:hover .page:after {
     display: block;
 }
 
+ul#listing.see li:hover .page:after {
+    background: none;
+}
+
 ul#listing li .page .remove {
     background: url("../images/remove-page.jpg") no-repeat;
     position: absolute;
@@ -381,6 +385,8 @@ ul#listing li .attachments .attach.file {
 ul#listing li.active .attachments .attach.file {
     background-position: bottom right;
 }
+
+
 
 ul#listing li.video-view .page {
     background: url("../images/video-view.png") no-repeat -1px -1px;
@@ -535,6 +541,10 @@ ul#listing li .page .overlay a:hover {
 
 #toolbar .docs:hover {
     background-position: -40px -40px;
+}
+
+#toolbar .attachments.see .docs:hover {
+    background: none;
 }
 
 #toolbar .doc span {
@@ -732,12 +742,12 @@ ul#listing li .page .overlay a:hover {
     background: none;
 }
 
-#wrapper-page  .scroll:hover .jspDrag {
+#wrapper-page  .scroll:hover .jspDrag, #wrapper-page .scroll .jspDrag.active {
     background: #9a9aa4;
     margin: 0;
     border-radius: 4px;
     opacity: 0.8;
-
+    display: block !important;
 }
 
 #wrapper-page .jspVerticalBar {
@@ -759,7 +769,7 @@ ul#listing li .page .overlay a:hover {
 }
 
 #wrapper-page:hover .jspHorizontalBar .jspTrack {
-    display: block;
+    display: block !important;
 }
 
 .popup {
@@ -2485,14 +2495,14 @@ ul#listing li .page .overlay a:hover {
     position: absolute;
     background: #000;
     width: 140px;
-    top:0;
-    height: 90%;
+    top:4%;
+    height: 92%;
     z-index: 10000;
     cursor: pointer;
 }
 
 #prev {
-    left: 186px;
+    left: 206px;
     background: url("../images/prev-sl.png") no-repeat left center;
 }
 
@@ -2501,7 +2511,7 @@ ul#listing li .page .overlay a:hover {
 }
 
 #next {
-    right: 69px;
+    right: 72px;
     background: url("../images/next-sl.png") no-repeat right center;
 }
 
@@ -2509,8 +2519,43 @@ ul#listing li .page .overlay a:hover {
     background: url("../images/next-sl-hover.png") no-repeat right center;
 }
 
+#tooltip{
+    position:absolute;
+    border:1px solid #ccc68a;
+    background:#f5f1c5;
+    padding:3px 4px;
+    display:none;
+    width: 127px;
+    z-index: 999999999999;
+    color: #5e5923;
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 12.5px;
+    box-shadow: 0 0 13px #a9a9a9;
+}
 
 
+#toolbar .play {
+    background: url("../images/play-stop-bg.png") no-repeat;
+    width: 32px;
+    height: 32px;
+    margin: 4px 0 6px 3px;
+    position: relative;
+    cursor: pointer;
+}
+
+#toolbar .play i {
+    position: absolute;
+    background: url("../images/audio-pause.png") no-repeat;
+    width: 15px;
+    height: 15px;
+    top: 9px;
+    left: 8px;
+}
+
+#toolbar .play.pause i {
+    background: url("../images/audio-play.png") no-repeat;
+    left: 9px;
+}
 
 
 

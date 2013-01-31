@@ -12,11 +12,22 @@ function nod(a, b) {
 
 function showArrows(){
     var sw = $('#hide-pages').attr('class') == 'active' ? true : false;
-    var work =  $('#work-area').width() - 186 - 69;
-    if (!sw) work = work + 186;
+    var work =  $('#work-area').width() - 206 - 72;
+    if (!sw) work = work + 206;
     $('#prev').width((work/100)*25);
     $('#next').width((work/100)*75);
 }
+
+function nextSlide(){
+    var li = $('#listing li.active').next();
+    if (li.is('li')) selectAfterDelete(li);
+}
+
+function prevSlide(){
+    var li = $('#listing li.active').prev();
+    if (li.is('li')) selectAfterDelete(li);
+}
+
 
 
 
@@ -196,7 +207,7 @@ function togglePagesPanel() {
     sw.toggleClass('active');
     $('#pages-panel').animate({left:sw.attr('class') == 'active' ? 0 : -176}, speed);
     $('#empty-front').animate({'margin-left':sw.attr('class') == 'active' ? 176 : 0}, speed);
-    $('#prev').animate({'left':sw.attr('class') == 'active' ? 186 : 10}, speed, showArrows);
+    $('#prev').animate({'left':sw.attr('class') == 'active' ? 206 : 10}, speed, showArrows);
     var ml = parseInt($('#wrapper-page').css('margin-left').split('px')[0]);
     var deli = $('#page').width() + 176 < $('#work-area').width() - (57) ? 2 : 1;
     if ($('#page').hasClass('wide')) deli = 1;
@@ -371,7 +382,7 @@ $(function () {
     });
 
     var listing = $('#listing');
-
+    if (!viewCourse) {
     listing.sortable({
         axis:"y",
 //        appendTo: '#pages-panel',
@@ -395,6 +406,8 @@ $(function () {
 //        }
     });
     listing.disableSelection();
+
+    }
 
     listing.find('.remove').click(removePage);
 
@@ -1089,4 +1102,49 @@ $(function(){
         return false;
     });
 
+});
+
+this.tooltip = function(){
+    /* CONFIG */
+    xOffset = -23;
+    yOffset = -135;
+    // these 2 variable determine popup's distance from the cursor
+    // you might want to adjust to get the right result
+    /* END CONFIG */
+    $(".tooltip").hover(function(e){
+            this.t = $(this).attr('title');
+            $("body").append("<p id='tooltip'>"+ this.t +"</p>");
+            $("#tooltip")
+                .css("top",(e.pageY - xOffset) + "px")
+                .css("left",(e.pageX + yOffset) + "px")
+                .fadeIn("fast");
+        },
+        function(){
+            $("#tooltip").remove();
+        });
+    $(".tooltip").mousemove(function(e){
+        $("#tooltip")
+            .css("top",(e.pageY - xOffset) + "px")
+            .css("left",(e.pageX + yOffset) + "px");
+    });
+};
+
+
+
+$(function (){
+    $('#toolbar .play').click(function(){
+        $(this).toggleClass('pause');
+    });
+    tooltip();
+    $('#prev, #next').hover(function(){
+            $('#wrapper-page .scroll .jspDrag').addClass('active');
+            $('#wrapper-page .jspHorizontalBar .jspTrack').show(0)();
+        },
+        function(){
+            $('#wrapper-page .scroll .jspDrag').removeClass('active');
+            $('#wrapper-page .jspHorizontalBar .jspTrack').hide(0)();
+        });
+
+    $('#next').click(nextSlide);
+    $('#prev').click(prevSlide);
 });
