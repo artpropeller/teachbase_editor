@@ -44,7 +44,6 @@ $(function () {
             $('#prev').removeClass('hover')
         }
     }).click(function(e){
-            console.log($(e.originalEvent.srcElement).parents('.video-view'));
             if ($(e.originalEvent.srcElement).parents('.video-view').size() == 0) {
             if (inRange(hoverNext, e.pageX)) {
                 nextSlide();
@@ -58,12 +57,14 @@ $(function () {
 
 function nextSlide() {
     var li = $('#listing li.active').next();
-    if (li.is('li')) selectAfterDelete(li);
+    if (li.is('li')) {selectAfterDelete(li); $('#pages-panel .scroll').data('jsp').scrollToElement(li);}
+
 }
 
 function prevSlide() {
     var li = $('#listing li.active').prev();
-    if (li.is('li')) selectAfterDelete(li);
+    if (li.is('li')) {selectAfterDelete(li); $('#pages-panel .scroll').data('jsp').scrollToElement(li);}
+
 }
 
 
