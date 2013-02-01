@@ -2495,10 +2495,11 @@ ul#listing li .page .overlay a:hover {
     position: absolute;
     background: #000;
     width: 140px;
-    top:4%;
-    height: 92%;
+    top:48%;
     z-index: 10000;
     cursor: pointer;
+    height: 50px;
+    margin-top: -25px;
 }
 
 #prev {
@@ -2506,7 +2507,7 @@ ul#listing li .page .overlay a:hover {
     background: url("../images/prev-sl.png") no-repeat left center;
 }
 
-#prev:hover {
+#prev:hover, #prev.hover {
     background: url("../images/prev-sl-hover.png") no-repeat left center;
 }
 
@@ -2515,7 +2516,7 @@ ul#listing li .page .overlay a:hover {
     background: url("../images/next-sl.png") no-repeat right center;
 }
 
-#next:hover {
+#next:hover, #next.hover {
     background: url("../images/next-sl-hover.png") no-repeat right center;
 }
 
