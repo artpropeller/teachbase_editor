@@ -11,11 +11,14 @@ function nod(a, b) {
 }
 
 function showArrows(){
-    var sw = $('#hide-pages').attr('class') == 'active' ? true : false;
+    var sw = $('#hide-pages').attr('class') == 'active' ? true : false,
+        page = $('#page').width();
     var work =  $('#work-area').width() - 206 - 72;
-    if (!sw) work = work + 206;
-    $('#prev').width((work/100)*25);
-    $('#next').width((work/100)*75);
+    if (!sw) work = work + 156;
+    var empty = (work - page)/2;
+    $('#prev').width((page/100)*25 + empty);
+    $('#next').width((page/100)*75 + empty);
+    console.log(empty);
 }
 
 function nextSlide(){
@@ -66,7 +69,7 @@ function resizeWorkArea(anim, width) {
     }
 
 
-//    соотношение сторон в зависимости от разрешения экрана
+//    соотношение сторон в зависимости от картинки
 //    if (!test && !video) {
 //        imgs = wrapper.find('img');
 //
@@ -80,7 +83,6 @@ function resizeWorkArea(anim, width) {
 //            var height = $(this).height();
 //            nods = nod(width, height);
 //            ratioX = width / nods;
-//            console.log(ratioX);
 //            ratioY = height / nods;
 //            console.log(ratioX, ratioY, nods);
 ////            wrapper.find('img').css({'width':'100%','height':'100%'});
@@ -91,7 +93,6 @@ function resizeWorkArea(anim, width) {
 //        nods = nod(w_wind, h_wind);
 //    }
 //
-//    console.log(ratioX, ratioY, nods);
 
     wrapper.css({
         'height':h_body - margin * 2,
@@ -178,12 +179,14 @@ function resizeWorkArea(anim, width) {
 
     animate ? page.animate(options, 500, function () {
         wrapper.find('.scroll').data('jsp').reinitialise();
+        showArrows();
         if (width && width == 1) {
             $('#zoom').slider('value', 1);
         }
 
     }) : page.css(options);
 
+    if (!animate) showArrows();
 
     var tools = $('#toolbar');
 
@@ -207,7 +210,7 @@ function togglePagesPanel() {
     sw.toggleClass('active');
     $('#pages-panel').animate({left:sw.attr('class') == 'active' ? 0 : -176}, speed);
     $('#empty-front').animate({'margin-left':sw.attr('class') == 'active' ? 176 : 0}, speed);
-    $('#prev').animate({'left':sw.attr('class') == 'active' ? 206 : 10}, speed, showArrows);
+    $('#prev').animate({'left':sw.attr('class') == 'active' ? 206 : 65}, speed, showArrows);
     var ml = parseInt($('#wrapper-page').css('margin-left').split('px')[0]);
     var deli = $('#page').width() + 176 < $('#work-area').width() - (57) ? 2 : 1;
     if ($('#page').hasClass('wide')) deli = 1;
@@ -326,8 +329,6 @@ function zoomSetValue(val) {
 
 $(function () {
 
-    showArrows();
-
     $('#zoom').slider({
         orientation:'vertical',
         range:'min',
@@ -353,7 +354,7 @@ $(function () {
 
     resizeWorkArea(false);
     $(window).resize(function () {
-        resizeWorkArea(false)
+        resizeWorkArea(false);
     });
 
     $('#hide-pages').click(togglePagesPanel);
@@ -1112,7 +1113,7 @@ this.tooltip = function(){
     // you might want to adjust to get the right result
     /* END CONFIG */
     $(".tooltip").hover(function(e){
-            this.t = $(this).attr('title');
+            this.t = $(this).attr('alt');
             $("body").append("<p id='tooltip'>"+ this.t +"</p>");
             $("#tooltip")
                 .css("top",(e.pageY - xOffset) + "px")
@@ -1137,12 +1138,12 @@ $(function (){
     });
     tooltip();
     $('#prev, #next').hover(function(){
-            $('#wrapper-page .scroll .jspDrag').addClass('active');
-            $('#wrapper-page .jspHorizontalBar .jspTrack').show(0)();
+            if ($('#wrapper-page').find('.jspVerticalBar')) $('#wrapper-page .scroll .jspDrag').addClass('active');
+            if ($('#wrapper-page').find('.jspHorizontalBar')) $('#wrapper-page .jspHorizontalBar .jspTrack').show(0);
         },
         function(){
-            $('#wrapper-page .scroll .jspDrag').removeClass('active');
-            $('#wrapper-page .jspHorizontalBar .jspTrack').hide(0)();
+            if ($('#wrapper-page').find('.jspVerticalBar')) $('#wrapper-page .scroll .jspDrag').removeClass('active');
+            if ($('#wrapper-page').find('.jspHorizontalBar')) $('#wrapper-page .jspHorizontalBar .jspTrack').hide(0);
         });
 
     $('#next').click(nextSlide);
