@@ -26,7 +26,8 @@ function showArrows() {
     hoverNext[0] = hoverNext[1] - (page / 100) * 75 - empty;
     hoverPrev[0] = sw ? 206 : 65;
     hoverPrev[1] = hoverPrev[0] + (page / 100) * 25 + empty;
-
+    $('#listing li:first').is('.active') ? $('#prev').fadeOut(100) : $('#prev').show(0);
+    $('#listing li:last').is('.active') ? $('#next').hide(0) : $('#next').show(0);
 }
 
 $(function () {
@@ -62,6 +63,7 @@ function nextSlide() {
 }
 
 function prevSlide() {
+
     var li = $('#listing li.active').prev();
     if (li.is('li')) {selectAfterDelete(li); $('#pages-panel .scroll').data('jsp').scrollToElement(li);}
 
@@ -1166,15 +1168,5 @@ $(function () {
         $(this).toggleClass('pause');
     });
     tooltip();
-    $('#prev, #next').hover(function () {
-            if ($('#wrapper-page').find('.jspVerticalBar')) $('#wrapper-page .scroll .jspDrag').addClass('active');
-            if ($('#wrapper-page').find('.jspHorizontalBar')) $('#wrapper-page .jspHorizontalBar .jspTrack').show(0);
-        },
-        function () {
-            if ($('#wrapper-page').find('.jspVerticalBar')) $('#wrapper-page .scroll .jspDrag').removeClass('active');
-            if ($('#wrapper-page').find('.jspHorizontalBar')) $('#wrapper-page .jspHorizontalBar .jspTrack').hide(0);
-        });
 
-//    $('#next').click(nextSlide);
-//    $('#prev').click(prevSlide);
 });
