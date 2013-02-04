@@ -59,9 +59,11 @@ $(function () {
 function showLoader(){
     $('#page').hide(0, function(){
         $('#loader').show(0);
+        $('#toolbar').animate({opacity:0.5}, 0);
         timeInterval = setTimeout(function(){
             $('#page').show(0);
             $('#loader').hide(0);
+            $('#toolbar').animate({opacity:1}, 0);
             resizeWorkArea(false);
             timeInterval = false;
         }, 1000);
