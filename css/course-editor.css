@@ -2619,3 +2619,9 @@ ul#listing li .page .overlay a:hover {
     z-index: 1000;
     display: none;
 }
+
+#toolbar.noactive {
+    opacity: 0.5;
+    filter:progid:DXImageTransform.Microsoft.Alpha(opacity=50);
+    filter: alpha(opacity=50);
+}

@@ -59,11 +59,11 @@ $(function () {
 function showLoader(){
     $('#page').hide(0, function(){
         $('#loader').show(0);
-        $('#toolbar').animate({opacity:0.5}, 0);
+        $('#toolbar').addClass('noactive');
         timeInterval = setTimeout(function(){
             $('#page').show(0);
             $('#loader').hide(0);
-            $('#toolbar').animate({opacity:1}, 0);
+            $('#toolbar').removeClass('noactive');
             resizeWorkArea(false);
             timeInterval = false;
         }, 1000);
@@ -260,6 +260,7 @@ function togglePagesPanel() {
         ri = $('#page').width() > $('#wrapper-page').width() ? true : false;
     sw.toggleClass('active');
     $('#pages-panel').animate({left:sw.attr('class') == 'active' ? 0 : -176}, speed);
+    $('#loader').animate({'marginLeft':sw.attr('class') == 'active' ? '+=80px' : '-=80px'}, speed);
     $('#empty-front').animate({'margin-left':sw.attr('class') == 'active' ? 176 : 0}, speed);
     $('#prev').animate({'left':sw.attr('class') == 'active' ? 206 : 65}, speed, showArrows);
     var ml = parseInt($('#wrapper-page').css('margin-left').split('px')[0]);
@@ -467,6 +468,7 @@ $(function () {
 
     $('#pages-panel .scroll').jScrollPane({
         autoReinitialise:true,
+        hideFocus:1,
         autoReinitialiseDelay:10
     });
 
