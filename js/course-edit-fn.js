@@ -56,17 +56,32 @@ $(function () {
 
 });
 
+function showLoader(){
+    $('#page').hide(0, function(){
+        $('#loader').show(0);
+        timeInterval = setTimeout(function(){
+            $('#page').show(0);
+            $('#loader').hide(0);
+            resizeWorkArea(false);
+            timeInterval = false;
+        }, 1000);
+    });
+}
+
 function nextSlide() {
+    if (!timeInterval) {
     var li = $('#listing li.active').next();
     if (li.is('li')) {selectAfterDelete(li); $('#pages-panel .scroll').data('jsp').scrollToElement(li);}
-
+        showLoader();
+    }
 }
 
 function prevSlide() {
-
+    if (!timeInterval) {
     var li = $('#listing li.active').prev();
     if (li.is('li')) {selectAfterDelete(li); $('#pages-panel .scroll').data('jsp').scrollToElement(li);}
-
+        showLoader();
+    }
 }
 
 
@@ -305,6 +320,9 @@ function restorePage(li) {
 }
 
 function selectPage(event) {
+    if (!timeInterval) {
+        showLoader();
+    }
     if (!$(event.originalEvent.srcElement).is('.remove') && !$(this).hasClass('remove') && !$(this).hasClass('active')) $('#page').attr("class", '');
     var th = $(this),
         cl = th.attr('class');
