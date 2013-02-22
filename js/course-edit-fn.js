@@ -115,6 +115,8 @@ function resizeWorkArea(anim, width) {
         orientation = page.hasClass('vertical') ? 'vertical' : 'gorizontal',
         test = page.hasClass('test-view') ? true : false,
         video = page.hasClass('video-view') ? true : false,
+        begin = page.hasClass('begin-view') ? true : false,
+        end = page.hasClass('end-view') ? true : false,
         wrapper = $('#wrapper-page');
 
     if (width && width == 1 || test) {
@@ -122,30 +124,7 @@ function resizeWorkArea(anim, width) {
     }
 
 
-//    соотношение сторон в зависимости от картинки
-//    if (!test && !video) {
-//        imgs = wrapper.find('img');
-//
-//
-//        imgs.load(function(){
-//            // удаляем атрибуты width и height
-//            $(this).css({'width':'auto','height':'auto'});
-//
-//            // получаем заветные цифры
-//            var width  = $(this).width();
-//            var height = $(this).height();
-//            nods = nod(width, height);
-//            ratioX = width / nods;
-//            ratioY = height / nods;
-//            console.log(ratioX, ratioY, nods);
-////            wrapper.find('img').css({'width':'100%','height':'100%'});
-//        });
-//
-//    var w_wind = imgs.offsetWidth,
-//        h_wind = imgs.offsetHeight,
-//        nods = nod(w_wind, h_wind);
-//    }
-//
+
 
     wrapper.css({
         'height':h_body - margin * 2,
@@ -242,8 +221,8 @@ function resizeWorkArea(anim, width) {
 
     var tools = $('#toolbar');
 
-    if (test || video) {
-        page.find('.test-page').css('margin-top', ((h_page - 470) / 2) + 'px');
+    if (test || video || begin || end) {
+        page.find('.test-page, .begin-page, .end-page').css('margin-top', ((h_page - 470) / 2) + 'px');
         tools.find('.ico:not(.audio,.file), .zoomer, .buttons').hide(0);
     }
     else {
@@ -337,6 +316,12 @@ function selectPage(event) {
             case 'test-view':
                 $('#page').html($('#template-test').html());
                 break;
+            case 'begin-view':
+                $('#page').html($('#template-begin').html());
+                break;
+            case 'end-view':
+                $('#page').html($('#template-end').html());
+                break;
             case 'video-view':
                 $('#page').html($('#template-video').html());
                 break;
@@ -364,6 +349,12 @@ function selectAfterDelete(li) {
             break;
         case 'video-view':
             $('#page').html($('#template-video').html());
+            break;
+        case 'begin-view':
+            $('#page').html($('#template-begin').html());
+            break;
+        case 'end-view':
+            $('#page').html($('#template-end').html());
             break;
         default:
             $('#page').html($('#template-page').html());

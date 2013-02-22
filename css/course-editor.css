@@ -2625,3 +2625,149 @@ ul#listing li .page .overlay a:hover {
     filter:progid:DXImageTransform.Microsoft.Alpha(opacity=50);
     filter: alpha(opacity=50);
 }
+
+
+/*начало курса*/
+
+#page.begin-view {
+    background: url("../images/bg-start-end.png");
+}
+
+#page.begin-view .corner {
+    position: absolute;
+    top:0;
+    right: 0;
+    background: url("../images/corner-begin.png") no-repeat;
+    width: 88px;
+    height: 88px;
+}
+
+#page .begin-page {
+    width: 690px;
+    height: 470px;
+    color: #000;
+    margin: 0 auto;
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+#page .begin-page .name {
+    line-height: 70px;
+    text-transform: uppercase;
+    font-size: 62px;
+    font-weight: bold;
+    background: -webkit-linear-gradient(#3f3f3f, #000);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    padding-left: 10px;
+    margin-bottom: 30px;
+    
+}
+
+#page .begin-page .author {
+    font-size: 24px;
+    padding-left: 12px;
+    margin-bottom: 30px;
+}
+
+#page .begin-page .time {
+    font-size: 18px;
+    float: left;
+    border:2px solid #cdcdcd;
+    color: #7d7d7d;
+    border-radius: 3px;
+    padding: 10px 10px 10px 50px;
+    margin-bottom: 30px;
+    background: url("../images/time-course.png") no-repeat 10px 6px;
+}
+
+#page .begin-page .time strong {
+    background: -webkit-linear-gradient(#3f3f3f, #000);
+    -webkit-background-clip: text;
+    color: #000;
+    -webkit-text-fill-color: transparent;
+}
+
+#page .begin-page p {
+    font-size: 14px;
+    line-height: 18px;
+    padding-left: 10px;
+}
+
+
+/*конец курса*/
+
+#page.end-view {
+    background: url("../images/bg-start-end.png");
+}
+
+
+#page .end-page {
+    width: 445px;
+    height: 370px;
+    padding-top: 100px;
+    color: #000;
+    margin: 0 auto;
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+#page .end-page .name {
+    line-height: 24px;
+    font-size: 24px;
+    font-weight: bold;
+    padding-left: 10px;
+    margin-bottom: 12px;
+
+}
+
+#page .end-page .author {
+    font-size: 16px;
+    padding-left: 12px;
+    margin-bottom: 30px;
+    color: #2c2c2c;
+}
+
+#page .end-page .time {
+    font-size: 12px;
+    float: left;
+    border:2px solid #de4940;
+    color: #3f3f3f;
+    border-radius: 3px;
+    padding: 10px 10px 10px 50px;
+    margin-bottom: 30px;
+    background: url("../images/time-course.png") no-repeat 10px 6px;
+}
+
+#page.end-view .message {
+    background: #878787;
+    font-weight: bold;
+    color: #fff;
+    margin-bottom: 20px;
+    font-size: 12px;
+    padding: 3px 10px;
+    float: left;
+    line-height: 12px;
+}
+
+#page.end-view .bottom {
+    background: url("../images/dashed.png") repeat-x top;
+    padding: 18px 10px 0;
+    color: #222;
+    font-size: 12px;
+    line-height: 12px;
+}
+
+#page.end-view .bottom span {
+    padding: 0 10px;
+    font-weight: bold;
+}
+
+#page.end-view .bottom a {
+    color: #006edf;
+    font-weight: bold;
+    text-decoration: none;
+    background: url("../images/dot_settings.jpg") repeat-x bottom;
+}
+
+#page.end-view .bottom a:hover {
+    background: none;
+}

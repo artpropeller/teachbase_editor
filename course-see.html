@@ -61,7 +61,7 @@
         </div>
         <div class="scroll">
             <ul id="listing" class="see">
-                <li class="active" rel="images/big_page.jpg">
+                <li class="active begin-view" rel="images/big_page.jpg">
                     <div class="num">1</div>
                     <div class="page">
                         <img src="images/page1-s.jpg" alt="">
@@ -101,7 +101,7 @@
                         <div class="attach audio"></div>
                     </div>
                 </li>
-                <li rel="images/big_page_vert.jpg" class="vertical">
+                <li rel="images/big_page_vert.jpg" class="end-view">
                     <div class="num">5</div>
                     <div class="page">
                         <img src="images/page5-s.jpg" alt="">
@@ -203,8 +203,17 @@
     </div>
     <div id="wrapper-page">
         <div class="scroll">
-            <div id="page">
-                <img src="images/big_page.jpg" alt="">
+            <div id="page" class="begin-view">
+                <div class="corner"></div>
+                <div class="begin-page">
+                    <div class="name">однозначный катарсис</div>
+                    <div class="author">Станислав Михайлов</div>
+                    <div class="time">период завершения: <strong>12.01.13—24.03.12</strong></div>
+                    <div class="clear"></div>
+                    <p>Процессуальное изменение случайно. Развивая эту тему, форшлаг образует мнимотакт, что отчасти объясняет такое количество кавер-версий. Панладовая система диссонирует целотоновый сет, и здесь мы видим ту самую каноническую секвенцию
+                        с разнонаправленным шагом отдельных звеньев. </p>
+
+                </div>
 
 
             </div>
@@ -318,6 +327,33 @@
 
 <div id="template-page" style="display: none;">
     <img src="" alt="">
+</div>
+
+
+<div id="template-begin" style="display: none;">
+    <div class="corner"></div>
+    <div class="begin-page">
+        <div class="name">однозначный катарсис</div>
+        <div class="author">Станислав Михайлов</div>
+        <div class="time">период завершения: <strong>12.01.13—24.03.12</strong></div>
+        <div class="clear"></div>
+        <p>Процессуальное изменение случайно. Развивая эту тему, форшлаг образует мнимотакт, что отчасти объясняет такое количество кавер-версий. Панладовая система диссонирует целотоновый сет, и здесь мы видим ту самую каноническую секвенцию
+            с разнонаправленным шагом отдельных звеньев. </p>
+    </div>
+</div>
+
+<div id="template-end" style="display: none;">
+    <div class="end-page">
+        <div class="message">вы завершили курс</div>
+        <div class="clr"></div>
+        <div class="name">Однозначный катарсис</div>
+        <div class="author">Станислав Михайлов</div>
+        <div class="time">дата завершения: <strong>27 сентября</strong></div>
+        <div class="clr"></div>
+        <div class="bottom">
+            Затрачено времени: <strong>00:23:45</strong>  <span>|</span> <a href="#">посмотреть результаты</a>
+        </div>
+    </div>
 </div>
 
 <div class="choice-test popup" id="choice-test" style="display: none;">
