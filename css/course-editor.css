@@ -2659,14 +2659,14 @@ ul#listing li .page .overlay a:hover {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     padding-left: 10px;
-    margin-bottom: 30px;
+    margin-bottom: 21px;
     
 }
 
 #page .begin-page .author {
     font-size: 24px;
     padding-left: 12px;
-    margin-bottom: 30px;
+    margin-bottom: 34px;
 }
 
 #page .begin-page .time {
@@ -2690,7 +2690,7 @@ ul#listing li .page .overlay a:hover {
 #page .begin-page p {
     font-size: 14px;
     line-height: 18px;
-    padding-left: 10px;
+    padding-left: 12px;
 }
 
 
@@ -2770,4 +2770,28 @@ ul#listing li .page .overlay a:hover {
 
 #page.end-view .bottom a:hover {
     background: none;
+}
+
+@media all and (-webkit-min-device-pixel-ratio:10000),not all and (-webkit-min-device-pixel-ratio:0) {
+    #page .begin-page .name {
+        background:none;
+
+    }
+
+
+    #page .begin-page .time strong {
+        background:none;
+    }
+}
+
+@media (min-resolution: .001dpcm) {
+
+    _:-o-prefocus, #page .begin-page .name {
+        background:none;
+    }
+
+
+    _:-o-prefocus, #page .begin-page .time strong {
+        background:none;
+    }
 }
