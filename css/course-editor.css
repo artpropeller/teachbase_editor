@@ -540,7 +540,53 @@ ul#listing li .page .overlay a:hover {
 }
 
 #toolbar .docs:hover {
+
     background-position: -40px -40px;
+}
+
+#toolbar .docs:hover ul {
+    display: block;
+}
+
+
+#toolbar .docs {
+    position: relative;
+}
+
+#toolbar .docs ul {
+    padding: 5px 0;
+    position: absolute;
+    width: 120px;
+    z-index: 100000;
+    left: -122px;
+    background: #f1f1f1;
+    top:10px;
+    border:1px solid #c4c4c4;
+    display: none;
+}
+
+#toolbar .docs ul a {
+    color: #424242;
+    text-decoration: none;
+    font-size: 13px;
+    padding-left: 20px;
+}
+
+#toolbar .docs ul li {
+    line-height: 16px;
+    padding: 3px 0 3px 10px;
+}
+
+#toolbar .docs ul a.view-doc{
+    background: url("../images/view-doc.png") no-repeat left center;
+}
+
+#toolbar .docs ul a.down-doc{
+    background: url("../images/down-doc.png") no-repeat left center;
+}
+
+#toolbar .docs ul li:hover {
+    background: #e4e4e4;
 }
 
 #toolbar .attachments.see .docs:hover {
