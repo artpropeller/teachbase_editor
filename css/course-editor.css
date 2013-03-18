@@ -2772,6 +2772,63 @@ ul#listing li .page .overlay a:hover {
     background: none;
 }
 
+
+#page.contents-view {
+    background: #ffffff;
+}
+
+#page.contents-view .head-contents {
+    font-size: 24px;
+    font-weight: bold;
+    color: #535353;
+    margin: 40px 35px 0;
+    background: url("../images/dashed.png") repeat-x bottom;
+    padding-bottom: 15px;
+}
+
+#page.contents-view .full-contents {
+    width: 470px !important;
+    height: 300px;
+    margin: 0 auto;
+    position: relative;
+}
+
+#page.contents-view .full-contents .jspDrag {
+    display: none !important;
+}
+
+#page.contents-view .full-contents:hover .jspDrag {
+    display: block !important;
+}
+
+#page.contents-view .full-contents li {
+    line-height: 18px;
+    margin-bottom: 7px;
+    padding-left: 55px;
+    position: relative;
+}
+
+#page.contents-view .full-contents a {
+    color: #006fe1;
+    font-size: 14px;
+    position: relative;
+    text-decoration: none;
+}
+
+#page.contents-view .full-contents a span {
+    position: absolute;
+    text-align: right;
+    width: 25px;
+    top:-1px;
+    left: -55px;
+    color: #727272;
+    display: block;
+}
+
+#page.contents-view .full-contents a:hover {
+    background: url("../images/dot_settings.jpg") repeat-x bottom;
+}
+
 @media all and (-webkit-min-device-pixel-ratio:10000),not all and (-webkit-min-device-pixel-ratio:0) {
     #page .begin-page .name {
         background:none;

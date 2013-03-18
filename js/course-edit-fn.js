@@ -117,6 +117,7 @@ function resizeWorkArea(anim, width) {
         video = page.hasClass('video-view') ? true : false,
         begin = page.hasClass('begin-view') ? true : false,
         end = page.hasClass('end-view') ? true : false,
+        contents = page.hasClass('contents-view') ? true : false,
         wrapper = $('#wrapper-page');
 
     if (width && width == 1 || test) {
@@ -221,8 +222,13 @@ function resizeWorkArea(anim, width) {
 
     var tools = $('#toolbar');
 
-    if (test || video || begin || end) {
+    if (test || video || begin || end || contents) {
         page.find('.test-page, .begin-page, .end-page').css('margin-top', ((h_page - 470) / 2) + 'px');
+        $('.full-contents').css({'margin-top': ((h_page - 375) / 2) + 'px', 'height':'300px'});
+        $('#page .full-contents').jScrollPane({
+            autoReinitialise:true,
+            autoReinitialiseDelay: 100
+        });
         tools.find('.ico:not(.audio,.file), .zoomer, .buttons').hide(0);
     }
     else {
@@ -325,6 +331,9 @@ function selectPage(event) {
             case 'video-view':
                 $('#page').html($('#template-video').html());
                 break;
+            case 'contents-view':
+                $('#page').html($('#template-contents').html());
+                break;
             default:
                 $('#page').html($('#template-page').html());
                 $('#page img').attr('src', th.attr('rel'));
@@ -355,6 +364,9 @@ function selectAfterDelete(li) {
             break;
         case 'end-view':
             $('#page').html($('#template-end').html());
+            break;
+        case 'contents-view':
+            $('#page').html($('#template-contents').html());
             break;
         default:
             $('#page').html($('#template-page').html());
@@ -1183,3 +1195,5 @@ $(function () {
     tooltip();
 
 });
+
+
