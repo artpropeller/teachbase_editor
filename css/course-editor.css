@@ -357,6 +357,15 @@ ul#listing li:hover .page .remove {
     display: block;
 }
 
+ul#listing li .book {
+    position: absolute;
+    left: 8px;
+    top:20px;
+    background: url("../images/mini-book.png") no-repeat;
+    width: 19px;
+    height: 13px;
+}
+
 ul#listing li .attachments {
     position: absolute;
     top: 8px;
@@ -747,15 +756,7 @@ ul#listing li .page .overlay a:hover {
     background: url("../img/prev-background.png");
 }
 
-/*#listing li { display:block; position:relative;  z-index:1; }*/
-/*#listing li:after {  display:block; position:absolute; height:100%; width:100%; top:0px; left:0px; content:' '; z-index:-1; }*/
-/**/
-/*#listing li { -moz-transition:border-top-width 0.3s ease-in; -webkit-transition:border-top-width 0.3s ease-in; border-top:0px solid rgba(0,0,0,0); }*/
 #listing li.marker {
-    /*height: 102px;*/
-    /*padding: 0;*/
-    /*background: #000;*/
-    /*border-color: transparent !important;*/
     width: 116px;
     height: 66px;
     border: 2px dashed #c2c2d4;
@@ -763,11 +764,6 @@ ul#listing li .page .overlay a:hover {
     margin: 8px 0 8px 27px;
 }
 
-/*#listing li.active {*/
-/*border-top-color: transparent;*/
-/*}*/
-
-/*.marker+li {border-top-width:101px !important; border-top-color: transparent;}*/
 
 .jspVerticalBar .jspCa, .jspHorizontalBar .jspCap {
     width: 0;
@@ -2875,6 +2871,111 @@ ul#listing li .page .overlay a:hover {
     background: url("../images/dot_settings.jpg") repeat-x bottom;
 }
 
+#pages-panel .bookmarklet {
+    position: absolute;
+    right: -13px;
+    background: url("../images/book-hide.png") no-repeat;
+    width: 16px;
+    height: 29px;
+    top:17px;
+    cursor: pointer;
+}
+
+#pages-panel .bookmarklet .title {
+    position: absolute;
+    white-space: nowrap;
+    height: 22px;
+    position: absolute;
+    left: 35px;
+    top:-2px;
+    display: none;
+    background: url("../images/title-middle.png") repeat-x;
+    border-radius: 2px;
+    font-weight: bold;
+    color: #675f06;
+    font-size: 13px;
+    line-height: 13px;
+    padding: 8px 10px 0;
+    box-shadow: 0 0 6px #e4e4e4;
+}
+
+#pages-panel .bookmarklet .title i.begin {
+    position: absolute;
+    display: block;
+    background: url("../images/title-arr.png") no-repeat;
+    width: 12px;
+    height: 30px;
+    top:0px;
+    left: -12px;
+}
+
+#pages-panel .bookmarklet .title i.end {
+    position: absolute;
+    display: block;
+    background: url("../images/title-arr-back.png") no-repeat;
+    width: 8px;
+    height: 30px;
+    top: 0px;
+    right: -8px;
+}
+
+#edit-title {
+    width: 470px;
+}
+
+#edit-title h3 {
+    padding-bottom: 20px;
+    background: url("../images/dashed.png") repeat-x bottom;
+    margin-bottom: 15px;
+}
+
+#edit-title .change-title {
+    margin-bottom: 30px;
+}
+
+#edit-title .buttons {
+    float: right;
+    margin-bottom: -10px;
+}
+
+#edit-title .buttons a {
+    border-radius: 2px;
+    text-decoration: none;
+}
+
+#edit-title .buttons a.button-blue {
+    padding-left: 45px;
+    padding-right: 45px;
+}
+
+#edit-title .buttons a.button-red {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+#edit-title label {
+    display: block;
+    font-size: 13px;
+    margin-bottom: 5px;
+}
+
+#edit-title input {
+    height: 30px;
+    padding: 0 10px;
+    width: 448px;
+    font-size: 16px;
+    color: #000;
+    line-height: 1.2;
+    border:1px solid #ccc;
+    border-radius: 2px;
+}
+
+#pages-panel .bookmarklet:hover, #pages-panel .bookmarklet.active {
+    background: url("../images/book-pen.png") no-repeat;
+    width: 28px;
+    right: -25px;
+}
+
 @media all and (-webkit-min-device-pixel-ratio:10000),not all and (-webkit-min-device-pixel-ratio:0) {
     #page .begin-page .name {
         background:none;
@@ -2898,3 +2999,4 @@ ul#listing li .page .overlay a:hover {
         background:none;
     }
 }
+

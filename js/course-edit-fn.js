@@ -31,7 +31,7 @@ function showArrows() {
 }
 
 $(function () {
-    $('#work-area').bind('mousemove', function (e) {
+    $('#work-area:not(".noswitch")').bind('mousemove', function (e) {
         if (inRange(hoverNext, e.pageX)) {
             $('#next').addClass('hover')
         }
@@ -340,7 +340,7 @@ function selectPage(event) {
                 break;
         }
 
-
+        changeTitleSlide();
         resizeWorkArea(false);
         $('#wrapper-page').find('.scroll').data('jsp').reinitialise();
     }
@@ -373,7 +373,7 @@ function selectAfterDelete(li) {
             $('#page img').attr('src', li.attr('rel'));
             break;
     }
-
+    changeTitleSlide();
     resizeWorkArea(false);
     $('#wrapper-page').find('.scroll').data('jsp').reinitialise();
 }
@@ -1197,3 +1197,68 @@ $(function () {
 });
 
 
+//bookmarklet
+
+
+$(function(){
+    $('.bookmarklet').hover(function(){
+        if ($(this).find('.title span').text()) {
+            $(this).find('.title').fadeIn(150);
+        }
+    }, function(){
+        $(this).find('.title').fadeOut(150);
+    });
+
+
+    //диалог редактирования
+    $('.bookmarklet').click(function(){
+        $.fancybox('#edit-title',{
+            margin:0,
+            padding:0,
+            scrollOutside:false,
+            fitToView:false,
+            minHeight:0,
+            beforeShow:changeTitleSlide,
+            afterClose:changeTitleSlide
+        });
+    });
+
+    $('#edit-title .button-red').live('click', deleteTitle);
+    $('#edit-title .button-blue').live('click', setTitle);
+
+});
+
+
+function changeTitleSlide() {
+    var popup = $('#edit-title');
+    if ($('#pages-panel li.active').find('.book').size()) {
+        $('.bookmarklet .title span').text($('#pages-panel li.active').find('.book').attr('title'));
+        popup.find('h3').text('Редактирование оглавления');
+        popup.find('label').text('Измените название текущего раздела:');
+        popup.find('input').val($('#pages-panel li.active').find('.book').attr('title'));
+        popup.find('.button-red').show(0);
+    }
+    else {
+        $('.bookmarklet .title span').text('');
+        popup.find('h3').text('Новый раздел');
+        popup.find('label').text('Введите название раздела:');
+        popup.find('input').val('');
+        popup.find('.button-red').hide(0);
+    }
+}
+
+function deleteTitle() {
+    $('#pages-panel li.active .book').remove();
+    $.fancybox.close();
+    return false;
+}
+
+function setTitle(){
+    if ($('#edit-title input').val()) {
+    $('#pages-panel li.active .page').after('<div class="book" title="'+$('#edit-title input').val()+'"></div>');}
+    else {
+        deleteTitle();
+    }
+    $.fancybox.close();
+    return false;
+}

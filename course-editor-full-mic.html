@@ -40,9 +40,14 @@
 <!--head-->
 
 
-<div id="work-area">
-
+<div id="work-area" class="noswitch">
+    <div id="loader">
+        <div class="progress">
+            <div class="pbaranim"></div>
+        </div>
+    </div>
     <div id="pages-panel">
+        <div class="bookmarklet"><div class="title"><i class="begin"></i><span>Тут красуется название раздела</span><i class="end"></i></div></div>
         <div id="hide-pages" class="active"></div>
 
         <div class="upload">
@@ -64,6 +69,7 @@
                         <img src="images/page1-s.jpg" alt="">
                         <div class="remove"></div>
                     </div>
+                    <div class="book" title="Тут красуется название раздела"></div>
                     <div class="attachments">
                         <div class="attach file"></div>
                     </div>
@@ -87,6 +93,7 @@
 
                         <div class="remove"></div>
                     </div>
+                    <div class="book" title="Третий раздел"></div>
                     <div class="attachments">
                         <div class="attach audio"></div>
                     </div>
@@ -339,6 +346,20 @@
 
 <div id="template-page" style="display: none;">
     <img src="" alt="">
+</div>
+
+<div id="edit-title" class="popup">
+    <h3>Новый раздел</h3>
+    <div class="change-title">
+        <label>Введите название раздела:</label>
+        <input type="text"/>
+    </div>
+    <div class="buttons">
+    <a href="#" class="button-red">Удалить раздел</a>
+    <a href="#" class="button-blue">ОК</a>
+
+    </div>
+    <div class="clear"></div>
 </div>
 
 <div class="choice-test popup" id="choice-test" style="display: none;">
