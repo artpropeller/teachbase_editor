@@ -2884,7 +2884,8 @@ ul#listing li .page .overlay a:hover {
 #pages-panel .bookmarklet .title {
     position: absolute;
     white-space: nowrap;
-    height: 22px;
+    height: 30px;
+    line-height: 28px;
     position: absolute;
     left: 35px;
     top:-2px;
@@ -2894,8 +2895,7 @@ ul#listing li .page .overlay a:hover {
     font-weight: bold;
     color: #675f06;
     font-size: 13px;
-    line-height: 13px;
-    padding: 8px 10px 0;
+    padding: 0 10px 0;
     box-shadow: 0 0 6px #e4e4e4;
 }
 
@@ -2941,11 +2941,15 @@ ul#listing li .page .overlay a:hover {
 #edit-title .buttons a {
     border-radius: 2px;
     text-decoration: none;
+    height: 16px;
+    padding-top: 4px;
 }
 
 #edit-title .buttons a.button-blue {
     padding-left: 45px;
     padding-right: 45px;
+    height: 15px;
+    padding-top: 5px;
 }
 
 #edit-title .buttons a.button-red {
