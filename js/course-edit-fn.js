@@ -1237,6 +1237,7 @@ function changeTitleSlide() {
         popup.find('label').text('Измените название текущего раздела:');
         popup.find('input').val($('#pages-panel li.active').find('.book').attr('title'));
         popup.find('.button-red').show(0);
+        $('.bookmarklet').addClass('active');
     }
     else {
         $('.bookmarklet .title span').text('');
@@ -1244,6 +1245,7 @@ function changeTitleSlide() {
         popup.find('label').text('Введите название раздела:');
         popup.find('input').val('');
         popup.find('.button-red').hide(0);
+        $('.bookmarklet').removeClass('active');
     }
 }
 

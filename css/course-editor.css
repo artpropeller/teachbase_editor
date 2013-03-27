@@ -2970,8 +2970,14 @@ ul#listing li .page .overlay a:hover {
     border-radius: 2px;
 }
 
-#pages-panel .bookmarklet:hover, #pages-panel .bookmarklet.active {
+#pages-panel .bookmarklet:hover, #pages-panel .bookmarklet.active:hover {
     background: url("../images/book-pen.png") no-repeat;
+    width: 28px;
+    right: -25px;
+}
+
+#pages-panel .bookmarklet.active {
+    background: url("../images/book-red.png") no-repeat;
     width: 28px;
     right: -25px;
 }
