@@ -1226,6 +1226,11 @@ $(function(){
     $('#edit-title .button-red').live('click', deleteTitle);
     $('#edit-title .button-blue').live('click', setTitle);
 
+    $('.title-hover').live('click', function(){
+        $('#pages-panel .bookmarklet .title').hide(0);
+        $(this).remove();
+    });
+
 });
 
 
@@ -1257,7 +1262,10 @@ function deleteTitle() {
 
 function setTitle(){
     if ($('#edit-title input').val()) {
-    $('#pages-panel li.active .page').after('<div class="book" title="'+$('#edit-title input').val()+'"></div>');}
+        $('#pages-panel li.active .page').after('<div class="book" title="'+$('#edit-title input').val()+'"></div>');
+        $('body').append('<div class="title-hover"></div>');
+        $('#pages-panel .bookmarklet .title').show(0);
+    }
     else {
         deleteTitle();
     }
