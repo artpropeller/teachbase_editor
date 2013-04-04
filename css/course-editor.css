@@ -19,6 +19,7 @@ body {
     position: relative;
     font-family: Helvetica, Arial, sans-serif;
     overflow: auto;
+    z-index: 5000;
 }
 
 #work-area ul, #work-area li, .popup ul, .popup li {

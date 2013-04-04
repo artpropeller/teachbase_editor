@@ -339,6 +339,8 @@ function selectPage(event) {
                 $('#page img').attr('src', th.attr('rel'));
                 break;
         }
+        $('.title-hover').remove();
+        $('#pages-panel .bookmarklet .title').hide(0);
 
         changeTitleSlide();
         resizeWorkArea(false);
@@ -373,6 +375,8 @@ function selectAfterDelete(li) {
             $('#page img').attr('src', li.attr('rel'));
             break;
     }
+    $('.title-hover').remove();
+    $('#pages-panel .bookmarklet .title').hide(0);
     changeTitleSlide();
     resizeWorkArea(false);
     $('#wrapper-page').find('.scroll').data('jsp').reinitialise();
@@ -1263,7 +1267,7 @@ function deleteTitle() {
 function setTitle(){
     if ($('#edit-title input').val()) {
         $('#pages-panel li.active .page').after('<div class="book" title="'+$('#edit-title input').val()+'"></div>');
-        $('body').append('<div class="title-hover"></div>');
+        $('body').prepend('<div class="title-hover"></div>');
         $('#pages-panel .bookmarklet .title').show(0);
     }
     else {
