@@ -5,6 +5,7 @@
 body {
     min-width: 1000px;
     min-height: 590px;
+    overflow-x: hidden;
 }
 
 .rfl {
@@ -2997,7 +2998,7 @@ ul#listing li .page .overlay a:hover {
 }
 
 .custom-page {
-    padding: 40px;
+    padding: 30px 40px;
 }
 
 .custom-page .head-page {
@@ -3069,7 +3070,7 @@ ul#listing li .page .overlay a:hover {
 
 .interactive {
     margin: 32px;
-    box-shadow: 0 0 32px #bdbdbd;
+    box-shadow: 0 0 32px #a3a3a3;
     position: relative;
 }
 
@@ -3086,7 +3087,7 @@ ul#listing li .page .overlay a:hover {
     position: absolute;
     z-index: 10;
     background: url("../images/interactive-blue.png");
-    border:3px dashed #007db7;
+    border:2px dashed #007db7;
     border-radius: 3px;
     cursor: pointer;
 }

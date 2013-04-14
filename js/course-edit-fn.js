@@ -1304,8 +1304,8 @@ function initSlide() {
         $('.hover-area').hide(0);
         $(this).show(0);
         $(this).parent().append('<div class="black-hover"></div>');
-        var l = (parseInt($(this).css('left').split('px')[0]) + 3)+'px';
-        var t = (parseInt($(this).css('top').split('px')[0]) + 3)+'px';
+        var l = (parseInt($(this).css('left').split('px')[0]) + 2)+'px';
+        var t = (parseInt($(this).css('top').split('px')[0]) + 2)+'px';
         $(this).css({
             'background': 'url('+$(this).parents('.interactive').find('img').attr('src')+') -'+l+ ' -' + t
         });
@@ -1316,7 +1316,7 @@ function initSlide() {
             'background': 'url(images/interactive-blue.png)'
         });
     });
-
+    var intervalHover;
 
     this.interactiveInfo = function () {
         /* CONFIG */
@@ -1327,11 +1327,14 @@ function initSlide() {
                 $("body").append("<div id='interactive-popup'>" + this.t + "</div>");
                 $("#interactive-popup")
                     .css("top", (e.pageY - xOffset) + "px")
-                    .css("left", (e.pageX + yOffset) + "px")
-                    .fadeIn("fast");
+                    .css("left", (e.pageX + yOffset) + "px");
+                    intervalHover = setTimeout(function(){
+                        $("#interactive-popup").fadeIn(600);
+                    }, 500);
             },
             function () {
                 $("#interactive-popup").remove();
+                clearTimeout(intervalHover);
             });
         $(".hover-area").mousemove(function (e) {
             $("#interactive-popup")
