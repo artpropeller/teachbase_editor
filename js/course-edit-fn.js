@@ -118,6 +118,7 @@ function resizeWorkArea(anim, width) {
         begin = page.hasClass('begin-view') ? true : false,
         end = page.hasClass('end-view') ? true : false,
         contents = page.hasClass('contents-view') ? true : false,
+        custom = page.hasClass('custom-view') ? true : false,
         wrapper = $('#wrapper-page');
 
     if (width && width == 1 || test) {
@@ -182,6 +183,12 @@ function resizeWorkArea(anim, width) {
         h_page = parseInt(page.find('.sizer').css('height').split('px')[0]);
     }
 
+    if (custom) {
+        var minsize = $('#page').attr('minsize').split('x');
+        if (w_page < parseInt(minsize[0])) w_page = parseInt(minsize[0]);
+        if (h_page < parseInt(minsize[1])) h_page = parseInt(minsize[1]);
+    }
+
 
     //добавляем свойства к странице и ставим ее посередине
     var options = {
@@ -222,7 +229,9 @@ function resizeWorkArea(anim, width) {
 
     var tools = $('#toolbar');
 
+
     if (test || video || begin || end || contents) {
+        $('#zoom').slider('value', 1);
         page.find('.test-page, .begin-page, .end-page').css('margin-top', ((h_page - 470) / 2) + 'px');
         $('.full-contents').css({'margin-top': ((h_page - 375) / 2) + 'px', 'height':'300px'});
         $('#page .full-contents').jScrollPane({
@@ -312,6 +321,7 @@ function selectPage(event) {
         showLoader();
     }
     if (!$(event.originalEvent.srcElement).is('.remove') && !$(this).hasClass('remove') && !$(this).hasClass('active')) $('#page').attr("class", '');
+    $('#page').attr('minsize','');
     var th = $(this),
         cl = th.attr('class');
     if (!th.is('.active') && !th.is('.remove') && !$(event.originalEvent.srcElement).is('.remove')) {
@@ -334,6 +344,11 @@ function selectPage(event) {
             case 'contents-view':
                 $('#page').html($('#template-contents').html());
                 break;
+            case 'custom-view':
+                $('#page').html($('#template-custom').html());
+                $('.custom-container').html($(th.attr('rel')).html());
+                $('#page').attr('minsize',$(th.attr('rel')).attr('minsize'));
+                break;
             default:
                 $('#page').html($('#template-page').html());
                 $('#page img').attr('src', th.attr('rel'));
@@ -349,6 +364,7 @@ function selectPage(event) {
 }
 
 function selectAfterDelete(li) {
+    $('#page').attr('minsize','');
     $('#page').attr("class", '');
     var cl = li.attr('class');
     $('#page').attr("class", cl);
@@ -369,6 +385,11 @@ function selectAfterDelete(li) {
             break;
         case 'contents-view':
             $('#page').html($('#template-contents').html());
+            break;
+        case 'custom-view':
+            $('#page').html($('#template-custom').html());
+            $('.custom-container').html($(li.attr('rel')).html());
+            $('#page').attr('minsize',$(li.attr('rel')).attr('minsize'));
             break;
         default:
             $('#page').html($('#template-page').html());
@@ -1275,4 +1296,50 @@ function setTitle(){
     }
     $.fancybox.close();
     return false;
+}
+
+
+function initSlide() {
+    $('.hover-area').hover(function(){
+        $('.hover-area').hide(0);
+        $(this).show(0);
+        $(this).parent().append('<div class="black-hover"></div>');
+        var l = (parseInt($(this).css('left').split('px')[0]) + 3)+'px';
+        var t = (parseInt($(this).css('top').split('px')[0]) + 3)+'px';
+        $(this).css({
+            'background': 'url('+$(this).parents('.interactive').find('img').attr('src')+') -'+l+ ' -' + t
+        });
+    },function(){
+        $('.hover-area').show(0);
+        $('.black-hover').remove();
+        $(this).css({
+            'background': 'url(images/interactive-blue.png)'
+        });
+    });
+
+
+    this.interactiveInfo = function () {
+        /* CONFIG */
+        xOffset = -13;
+        yOffset = -33;
+        $(".hover-area").hover(function (e) {
+                this.t = $(this).find('.info').html();
+                $("body").append("<div id='interactive-popup'>" + this.t + "</div>");
+                $("#interactive-popup")
+                    .css("top", (e.pageY - xOffset) + "px")
+                    .css("left", (e.pageX + yOffset) + "px")
+                    .fadeIn("fast");
+            },
+            function () {
+                $("#interactive-popup").remove();
+            });
+        $(".hover-area").mousemove(function (e) {
+            $("#interactive-popup")
+                .css("top", (e.pageY - xOffset) + "px")
+                .css("left", (e.pageX + yOffset) + "px");
+        });
+    };
+
+    interactiveInfo();
+
 }
