@@ -1298,6 +1298,32 @@ function setTitle(){
     return false;
 }
 
+var intervalHover;
+
+this.interactiveInfo = function () {
+    /* CONFIG */
+    xOffset = -13;
+    yOffset = -33;
+    $(".hover-area").hover(function (e) {
+            this.t = $(this).find('.info').html();
+            $("body").append("<div id='interactive-popup'>" + this.t + "</div>");
+            $("#interactive-popup")
+                .css("top", (e.pageY - xOffset) + "px")
+                .css("left", (e.pageX + yOffset) + "px");
+            intervalHover = setTimeout(function(){
+                $("#interactive-popup").fadeIn(600);
+            }, 500);
+        },
+        function () {
+            $("#interactive-popup").remove();
+            clearTimeout(intervalHover);
+        });
+    $(".hover-area").mousemove(function (e) {
+        $("#interactive-popup")
+            .css("top", (e.pageY - xOffset) + "px")
+            .css("left", (e.pageX + yOffset) + "px");
+    });
+};
 
 function initSlide() {
     $('.hover-area').hover(function(){
@@ -1316,32 +1342,7 @@ function initSlide() {
             'background': 'url(images/interactive-blue.png)'
         });
     });
-    var intervalHover;
 
-    this.interactiveInfo = function () {
-        /* CONFIG */
-        xOffset = -13;
-        yOffset = -33;
-        $(".hover-area").hover(function (e) {
-                this.t = $(this).find('.info').html();
-                $("body").append("<div id='interactive-popup'>" + this.t + "</div>");
-                $("#interactive-popup")
-                    .css("top", (e.pageY - xOffset) + "px")
-                    .css("left", (e.pageX + yOffset) + "px");
-                    intervalHover = setTimeout(function(){
-                        $("#interactive-popup").fadeIn(600);
-                    }, 500);
-            },
-            function () {
-                $("#interactive-popup").remove();
-                clearTimeout(intervalHover);
-            });
-        $(".hover-area").mousemove(function (e) {
-            $("#interactive-popup")
-                .css("top", (e.pageY - xOffset) + "px")
-                .css("left", (e.pageX + yOffset) + "px");
-        });
-    };
 
     interactiveInfo();
 

@@ -1,0 +1,174 @@
+.custom-page {
+    padding: 30px 40px;
+}
+
+.custom-page .head-page {
+    color: #b6b6b6;
+    font-size: 11px;
+    overflow: auto;
+    font-weight: bold;
+    font-family: Helvetica, Arial, sans-serif;
+    border-bottom: 1px solid #b6b6b6;
+    padding-bottom: 6px;
+    margin-bottom: 20px;
+}
+
+.custom-page .head-page.bolder {
+    color: #000;
+    border-bottom: 3px solid #000;
+    font-size: 20px;
+}
+
+.custom-page .head-page .num {
+    float: right;
+    color: #000;
+}
+
+.custom-page img {
+    width: auto !important;
+    height: auto !important;
+}
+
+.custom-page .custom-content {
+    line-height:18px;
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+.custom-page .center-custom-content {
+    margin: 11% auto 0;
+    width: 50%;
+}
+
+.custom-page .center-custom-content li {
+    margin-bottom: 8px;
+}
+
+.custom-page .custom-content p {
+    line-height:18px;
+    margin-bottom: 5px;
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+#work-area .custom-page .custom-content h2 {
+    color: #6f6f6f;
+    font-size: 16px;
+    line-height: 22px;
+    margin-bottom: 16px;
+    font-weight: bold;
+}
+
+#work-area .custom-page .custom-content ul  {
+    margin-left: 22px;
+    margin-bottom: 19px;
+}
+
+#work-area .custom-page .custom-content ul li {
+    padding-left: 15px;
+    background: url("../images/li_square.jpg") no-repeat left 8px;
+}
+
+.custom-content .interact-arr {
+    float: right;
+    border:1px dashed #88c7d3;
+    padding: 20px 15px;
+    border-radius: 3px;
+    background: #e6fbff;
+    position: relative;
+    width: 175px;
+    margin: 0 0 30px 40px;
+    font-style: oblique;
+    font-family: Helvetica, Arial, sans-serif;
+    color: #175f7d;
+    line-height: 18px;
+}
+
+.custom-content .interact-arr i {
+    position: absolute;
+    left: 17px;
+    top:-10px;
+    background: url("../images/interactive-arr.png") no-repeat;
+    width: 21px;
+    height: 25px;
+
+}
+
+
+.interactive {
+    margin: 32px;
+    box-shadow: 0 0 32px #a3a3a3;
+    position: relative;
+}
+
+.interactive img {
+    display: block;
+}
+
+.interactive.center {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.interactive .hover-area {
+    position: absolute;
+    z-index: 10;
+    background: url("../images/interactive-blue.png");
+    border:2px dashed #007db7;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.interactive .hover-area .info {
+    display: none;
+}
+
+.interactive .hover-area:hover {
+    border-color: transparent;
+}
+
+#interactive-popup {
+    position:absolute;
+    border:1px solid #cee4aa;
+    background:#f7ffea;
+    padding:20px 25px 0;
+    display:none;
+    border-radius: 3px;
+    max-width: 400px;
+    z-index: 999999999999;
+    color: #3c580f;
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 12px;
+    box-shadow: 0 0 6px #a9a9a9;
+}
+
+#interactive-popup p {
+    line-height: 18px;
+    margin-bottom: 20px;
+}
+
+.interactive .black-hover {
+    position: absolute;
+    border-radius: 4px;
+    width: 100%;
+    height: 100%;
+    z-index: 5;
+    top:0;
+    left: 0;
+    background: url("../images/interactive-black.png");
+}
+
+.column-41 {
+    width: 41%;
+}
+
+.column-52 {
+    width: 52%;
+}
+
+.column-47 {
+    width: 47%;
+}
+
+#work-area .custom-page .custom-content p, #work-area .custom-page .custom-content img {
+    margin-bottom: 15px;
+    display: block;
+}
