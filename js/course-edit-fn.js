@@ -1339,15 +1339,49 @@ function initSlide() {
         });
             th.addClass('active');
             th.fadeIn(200);
-        }, 500);
+        }, 300);
     },function(){
+        var th = $(this);
         clearTimeout(intervalHover);
-        $('.hover-area').show(0);
+        setTimeout(function(){
+            $('.hover-area').show(0);
         $('.black-hover').remove();
-        $(this).css({
+            th.css({
             'background': 'url(images/interactive-blue.png)'
         });
-        $(this).removeClass('active')
+            th.removeClass('active');
+    }, 300);
+    });
+
+
+    interactiveInfo();
+
+}
+
+function initSlideCircles() {
+    $('#page .hover-area.red-circle').each(function(){
+        var h = parseInt($(this).css('width').split('px')[0]);
+        $(this).find('.border-red').height(h-12);
+        var l = (parseInt($(this).css('left').split('px')[0]) + 8)+'px';
+        var t = (parseInt($(this).css('top').split('px')[0]) + 8)+'px';
+        $(this).find('.border-red').css({
+                'background': 'url('+$(this).parents('.interactive').find('img').attr('src')+') -'+l+ ' -' + t
+            });
+    });
+    $('#page .hover-area.red-circle').hover(function(){
+        var th = $(this);
+        intervalHover = setTimeout(function(){
+            $('.hover-area').hide(0);
+            th.show(0);
+            th.parent().append('<div class="black-hover"></div>');
+        }, 300);
+    },function(){
+        clearTimeout(intervalHover);
+
+        setTimeout(function(){
+            $('.hover-area').show(0);
+            $('.black-hover').remove();
+        }, 300);
     });
 
 
