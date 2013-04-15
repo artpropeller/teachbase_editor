@@ -1327,20 +1327,27 @@ this.interactiveInfo = function () {
 
 function initSlide() {
     $('.hover-area').hover(function(){
+        var th = $(this);
+        intervalHover = setTimeout(function(){
         $('.hover-area').hide(0);
-        $(this).show(0);
-        $(this).parent().append('<div class="black-hover"></div>');
-        var l = (parseInt($(this).css('left').split('px')[0]) + 2)+'px';
-        var t = (parseInt($(this).css('top').split('px')[0]) + 2)+'px';
-        $(this).css({
-            'background': 'url('+$(this).parents('.interactive').find('img').attr('src')+') -'+l+ ' -' + t
+
+            th.parent().append('<div class="black-hover"></div>');
+        var l = (parseInt(th.css('left').split('px')[0]) + 2)+'px';
+        var t = (parseInt(th.css('top').split('px')[0]) + 2)+'px';
+            th.css({
+            'background': 'url('+th.parents('.interactive').find('img').attr('src')+') -'+l+ ' -' + t
         });
+            th.addClass('active');
+            th.fadeIn(200);
+        }, 500);
     },function(){
+        clearTimeout(intervalHover);
         $('.hover-area').show(0);
         $('.black-hover').remove();
         $(this).css({
             'background': 'url(images/interactive-blue.png)'
         });
+        $(this).removeClass('active')
     });
 
 

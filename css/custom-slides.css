@@ -121,7 +121,7 @@
     display: none;
 }
 
-.interactive .hover-area:hover {
+.interactive .hover-area.active {
     border-color: transparent;
 }
 
