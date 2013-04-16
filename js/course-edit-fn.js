@@ -1325,33 +1325,44 @@ this.interactiveInfo = function () {
     });
 };
 
+var _counter = 0;
+var _seconds = 0;
+
 function initSlide() {
+
     $('.hover-area').hover(function(){
         var th = $(this);
-        intervalHover = setTimeout(function(){
-        $('.hover-area').hide(0);
+        _counter = setInterval(function(){showCurrent(th);}, 100);
 
-            th.parent().append('<div class="black-hover"></div>');
-        var l = (parseInt(th.css('left').split('px')[0]) + 2)+'px';
-        var t = (parseInt(th.css('top').split('px')[0]) + 2)+'px';
-            th.css({
-            'background': 'url('+th.parents('.interactive').find('img').attr('src')+') -'+l+ ' -' + t
-        });
-            th.addClass('active');
-            th.fadeIn(200);
-        }, 300);
     },function(){
         var th = $(this);
-        clearTimeout(intervalHover);
-        setTimeout(function(){
+        clearInterval(_counter);
+        _seconds = 0;
             $('.hover-area').show(0);
         $('.black-hover').remove();
             th.css({
             'background': 'url(images/interactive-blue.png)'
         });
             th.removeClass('active');
-    }, 300);
     });
+
+    function showCurrent(th) {
+        _seconds++;
+
+        if(_seconds == 5) {
+            $('.hover-area').hide(0);
+
+            th.parent().append('<div class="black-hover"></div>');
+            var l = (parseInt(th.css('left').split('px')[0]) + 2)+'px';
+            var t = (parseInt(th.css('top').split('px')[0]) + 2)+'px';
+            th.css({
+                'background': 'url('+th.parents('.interactive').find('img').attr('src')+') -'+l+ ' -' + t
+            });
+            th.addClass('active');
+            th.fadeIn(200);
+        }
+
+    }
 
 
     interactiveInfo();
