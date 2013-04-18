@@ -92,3 +92,35 @@
 .e-step-1,.e-step-2,.e-step-3,.e-step-4,.e-step-5,.e-step-6,.e-step-7,.e-step-8,.e-step-9,.e-step-10,.e-step-11 {
     display: none;
 }
+
+.begin-page .excel-cover {
+    background: url("../images/excel-logo.png") no-repeat left;
+    padding: 100px 0 0 220px;
+    min-height: 175px;
+}
+
+#page .begin-page .excel-cover .name {
+    text-transform: none;
+    font-size: 41px;
+    line-height: 50px;
+    margin-bottom: 10px;
+    padding-left: 0;
+}
+
+#page .begin-page .excel-cover .author {
+    font-size: 24px;
+    font-weight: bold;
+    line-height: 30px;
+    margin-bottom: 25px;
+    padding-left: 0;
+}
+
+#page .begin-page .excel-cover .time {
+    font-size: 14px;
+    margin-top: 20px;
+}
+
+#page .begin-page img {
+    width: auto;
+    height: auto;
+}
