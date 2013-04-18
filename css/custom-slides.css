@@ -97,6 +97,7 @@
     margin: 32px;
     box-shadow: 0 0 32px #a3a3a3;
     position: relative;
+    border-radius: 6px;
 }
 
 .interactive img {
@@ -129,6 +130,10 @@
     overflow:hidden;
 }
 
+.interactive .hover-area.red-circle.square {
+    border-radius: 30px;
+}
+
 .interactive .hover-area.red-circle .red {
     background: #fd0000;
     position: absolute;
@@ -138,6 +143,10 @@
     border-radius: 50%;
 }
 
+.interactive .hover-area.red-circle.square .red {
+    border-radius: 30px;
+}
+
 .interactive .hover-area.red-circle .border-red {
     border:2px solid #fff;
     border-radius: 50%;
@@ -145,6 +154,10 @@
     position: relative;
     box-shadow: 0 -1px 2px #610303, 0 1px 2px #fff;
     margin: 4px;
+}
+
+.interactive .hover-area.red-circle.square .border-red {
+    border-radius: 30px;
 }
 
 .interactive .hover-area.active {

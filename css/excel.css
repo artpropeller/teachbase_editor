@@ -1,0 +1,94 @@
+.hover-invisible {
+    position: absolute;
+    visibility: hidden;
+    z-index: 5;
+    cursor: pointer;
+}
+
+.invisibles {
+    position: absolute;
+    visibility: hidden;
+    z-index: 2;
+    overflow:hidden ;
+    border-radius: 6px;
+}
+
+.interactive-popup {
+    position:absolute;
+    border:1px solid #cee4aa;
+    background:#f7ffea;
+    padding:20px 25px 0;
+    border-radius: 3px;
+    max-width: 400px;
+    z-index: 9;
+    color: #3c580f;
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 12px;
+    box-shadow: 0 0 6px #a9a9a9;
+}
+
+#excel-tooltip {
+    position:absolute;
+    padding:4px 10px 0;
+    min-height: 17px;
+    background: #e4e4f0 url("../images/excel-tooltip.jpg") repeat-x top;
+    border:1px solid #767676;
+    border-radius: 2px;
+    max-width: 400px;
+    line-height: 12px;
+    z-index: 9999999999999;
+    color: #4a4a4a;
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 11px;
+    box-shadow: 2px 2px 3px #9c9c9c;
+}
+
+#excel-tooltip strong {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+}
+
+#excel-tooltip span {
+    display: block;
+    padding-bottom: 4px;
+}
+
+#work-area .custom-page .custom-content .interactive-popup p {
+    line-height: 18px;
+    margin-bottom: 20px;
+}
+
+.custom-content .excel .interact-arr {
+    position: absolute;
+    border:1px dashed #88c7d3;
+    padding: 20px 15px;
+    border-radius: 3px;
+    background: #e6fbff;
+    width: 175px;
+    z-index: 10;
+    margin: 0 0 30px 40px;
+    font-style: oblique;
+    font-family: Helvetica, Arial, sans-serif;
+    color: #175f7d;
+    line-height: 18px;
+}
+
+
+#work-area .custom-page .custom-content .excel .interact-arr img {
+    display: inline;
+    margin: 0 3px;
+    border-radius: 2px;
+    padding: 0;
+}
+
+#work-area .custom-page .custom-content .excel .interactive-popup img {
+    display: inline;
+    margin: 0 3px;
+    border-radius: 2px;
+    padding: 0;
+}
+
+.e-step-1,.e-step-2,.e-step-3,.e-step-4,.e-step-5,.e-step-6,.e-step-7,.e-step-8,.e-step-9,.e-step-10,.e-step-11 {
+    display: none;
+}

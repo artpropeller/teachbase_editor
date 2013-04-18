@@ -54,6 +54,14 @@ $(function () {
             }}
         });
 
+    $('#work-area.noswitch #next').click(function(){
+        nextSlide();
+    });
+
+    $('#work-area.noswitch #prev').click(function(){
+        prevSlide();
+    });
+
 });
 
 function showLoader(){
