@@ -2997,9 +2997,54 @@ ul#listing li .page .overlay a:hover {
     top: 0;
 }
 
+.test-page .deskription-test {
+    font-size: 14px;
+    color: #000;
+    line-height: 20px;
+    padding: 20px 0 35px 90px;
+}
 
+.test-page.viewer .test-head {
+    height: auto;
+    background: none;
+}
 
+#work-area .test-page.viewer ul.characters {
+    width: 300px;
+    margin-left: 90px;
+    font-size: 14px;
+    margin-bottom: 40px;
+    background: url("../images/dashed.png") repeat-x top;
+}
 
+#work-area .test-page.viewer ul.characters li {
+    background: url("../images/dashed.png") repeat-x bottom;
+    padding: 10px 0 10px 3px;
+}
+
+#work-area .test-page .begin-btn {
+    background: url("../images/green_bg_button.jpg") repeat-x top;
+    height: 12px;
+    border-radius: 2px;
+    border: 1px solid #839d22;
+    box-shadow: 0 0 3px #aaa;
+    display: inline-block;
+    padding: 8px 0 10px;
+    color: #fff;
+    font-size: 13px;
+    font-weight: bold;
+    text-shadow: 0 1px 0 #487a15;
+    margin-right: 5px;
+    width: 153px;
+    text-decoration: none;
+    text-align: center;
+    margin-bottom: 5px;
+    margin-left: 90px;
+}
+
+#work-area .test-page .begin-btn:hover {
+    background-position: 0 100%;
+}
 
 
 @media all and (-webkit-min-device-pixel-ratio:10000),not all and (-webkit-min-device-pixel-ratio:0) {
