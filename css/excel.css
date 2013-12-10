@@ -1,7 +1,7 @@
 .hover-invisible {
     position: absolute;
-    visibility: hidden;
-    z-index: 5;
+    display:none;
+    z-index: 15;
     cursor: pointer;
 }
 

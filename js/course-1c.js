@@ -55,7 +55,6 @@ function initSlideExcel_1() {
             'background': 'url(' + $(this).parents('.interactive').find('img').attr('src') + ') -' + l + ' -' + t
         });}
         else {
-            console.log($(this).attr('bg'));
             $(this).find('.border-red').css({
                 'background': 'url(' + $($(this).attr('bg')).find('img').attr('src') + ') -' + l + ' -' + t
             });
@@ -63,9 +62,12 @@ function initSlideExcel_1() {
     });
     $('#page .hover-area.red-circle').hover(function () {
         var th = $(this);
-        th.hide(0);
-        var invis = $(th.attr('rel'));
-        invis.css('visibility', 'visible');
+        console.log(th.attr('rel'));
+        var invis = $(th.attr('rel')).show();
+
+
+        invis.show(0);
+//        invis.css({'visibility':'visible'});
         invis.click(function(){
             $(this).remove();
             th.remove();
@@ -73,9 +75,10 @@ function initSlideExcel_1() {
         });
         invis.hover(function () {
         }, function () {
-            $(this).css('visibility', 'hidden');
-            th.show(0);
+            $(this).hide(0);
+            th.fadeIn(1);
         });
+        th.fadeOut(1);
 
     }, function () {
 
@@ -124,7 +127,6 @@ function removeSymbols(input) {
 
 function removeSymbols2(input) {
     var value = input.value;
-    console.log(value[9]);
     if (parseFloat(value[9])) {
         $(input).removeClass('err').attr('readonly', 'readonly');
         $('#after-input-2').fadeIn(300).addClass('.e-step-8');
