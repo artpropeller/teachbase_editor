@@ -99,6 +99,12 @@
     min-height: 175px;
 }
 
+.begin-page .excel-cover.incity {
+    background: url("../images/incity_logo.png") no-repeat left;
+    /*padding: 100px 0 0 220px;*/
+    /*min-height: 175px;*/
+}
+
 #page .begin-page .excel-cover .name {
     text-transform: none;
     font-size: 41px;
@@ -123,4 +129,38 @@
 #page .begin-page img {
     width: auto;
     height: auto;
+}
+
+
+.interactive-input {
+    position: absolute;
+    display: none;
+    z-index: 7;
+}
+
+.interactive-input input {
+    height: 15px;
+    border:1px solid #b2ada1;
+    padding: 0 3px;
+    font-size: 12px;
+    color: #687876;
+    width: 71px;
+    text-align: right;
+    position: relative;
+}
+
+.interactive-input input.err {
+    border-color: red;
+    border-width: 2px;
+    margin: -1px 0 0 -1px;
+}
+
+.interactive-input #iteract-2 {
+    text-align: left;
+    font-size: 11px;
+    width: 65px;
+}
+
+.interactive-input #iteract-2.err {
+    width: 64px;
 }

@@ -1,0 +1,822 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta http-equiv="Content-Type" content="text/html; Charset=utf-8"/>
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.9.2/themes/base/jquery-ui.css"/>
+    <link type="text/css" href="js/jquery.jscrollpane/jquery.jscrollpane.css" rel="stylesheet"/>
+    <link type="text/css" href="js/fancybox/jquery.fancybox.css" rel="stylesheet"/>
+    <link type="text/css" href="css/style.css" rel="stylesheet"/>
+    <link type="text/css" href="css/course-editor.css" rel="stylesheet"/>
+    <link type="text/css" href="css/custom-slides.css" rel="stylesheet"/>
+    <link type="text/css" href="css/excel.css" rel="stylesheet"/>
+    <!--[if IE 8]>
+    <link type="text/css" href="css/course-editor-ie.css" rel="stylesheet"/>
+    <![endif]-->
+    <script type='text/javascript' src="http://code.jquery.com/jquery-1.8.3.js"></script>
+    <script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
+    <script src='js/jquery.jscrollpane.min.js'></script>
+    <script src='js/jquery.mousewheel-3.0.6.pack.js'></script>
+    <script src='js/fancybox/jquery.fancybox.pack.js'></script>
+    <script type='text/javascript' src="js/course-edit-fn.js"></script>
+    <script type='text/javascript' src="js/jquery.maskedinput.js"></script>
+    <script type='text/javascript' src="js/course-1c.js"></script>
+    <title>Index</title>
+</head>
+<body>
+
+
+<div class='head'>
+    <a href='#'><img src='images/logotb.png' width="153" height="43" alt='TeachBase' class='logo'/></a>
+    <span class='slogan'>Креативные методики в рекламе</span><!--slogan-->
+    <div class="right">
+        <ul class="buttons-top">
+            <li><a href="#" class="btn mail"></a></li>
+            <li><a href="#" class="btn question"></a></li>
+            <li><a href="#" class="btn exit"></a></li>
+        </ul>
+    </div>
+
+</div>
+<!--head-->
+
+
+<div id="work-area" class="noswitch">
+<div id="loader">
+    <div class="progress">
+        <div class="pbaranim"></div>
+    </div>
+</div>
+<div id="next"></div>
+<div id="prev"></div>
+<div id="pages-panel">
+    <div id="hide-pages" class="active"></div>
+
+    <div class="upload">
+        <div class="choice">
+            <a href="#">Загрузить</a>
+            <span></span>
+            <ul>
+                <li><a class="u-doc" href="#">Документ</a></li>
+                <li><a class="u-video" href="#">Видео</a></li>
+                <li><a class="u-test" href="#choice-test">Тест</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="scroll">
+        <ul id="listing" class="see">
+            <li class="active begin-view" rel="images/big_page.jpg">
+                <div class="num">1</div>
+                <div class="page">
+                    <img src="images/cover-course.jpg" alt="">
+                </div>
+
+            </li>
+
+            <li class="contents-view">
+                <div class="num">2</div>
+                <div class="page">
+                    <img src="images/content-course.jpg" alt="">
+                </div>
+            </li>
+
+
+
+
+
+            <li rel="#slide-6" class="custom-view">
+                <div class="num">3</div>
+                <div class="page">
+                    <img src="images/slide-5-1.jpg" alt="">
+                </div>
+            </li>
+
+
+
+            <li class="video-view">
+                <div class="num">4</div>
+                <div class="page">
+                    <img src="images/video-img.jpg" alt="">
+
+                </div>
+                <div class="attachments">
+                    <div class="attach audio"></div>
+                </div>
+            </li>
+
+            <li class="test-view">
+                <div class="num">5</div>
+                <div class="page">
+                    <img src="images/test_preview.jpg" width="119" height="83" alt="">
+
+                </div>
+
+            </li>
+
+            <li class="end-view">
+                <div class="num">6</div>
+                <div class="page">
+                    <img src="images/end-course.jpg" alt="">
+
+                </div>
+            </li>
+
+
+
+
+
+        </ul>
+    </div>
+
+
+</div>
+
+<div id="toolbar">
+
+    <div class="attachments see">
+
+        <div class="play"><i></i></div>
+
+        <div class="docs doc tooltip ico" alt="asidlyf asldfh alsjdf">
+            <ul>
+                <li><a class="view-doc" href="#">Просмотреть</a></li>
+                <li><a class="down-doc" href="#">Скачать</a></li>
+            </ul>
+            <span></span>
+
+        </div>
+
+        <div class="docs pdf tooltip ico" alt="asidlyf asldfh alsjdf">
+            <ul>
+                <li><a class="view-doc" href="#">Просмотреть</a></li>
+                <li><a class="down-doc" href="#">Скачать</a></li>
+            </ul>
+            <span></span>
+
+        </div>
+
+        <div class="docs ppt tooltip ico">
+            <ul>
+                <li><a class="view-doc" href="#">Просмотреть</a></li>
+                <li><a class="down-doc" href="#">Скачать</a></li>
+            </ul>
+            <span></span>
+
+        </div>
+
+        <div class="docs img tooltip ico">
+            <ul>
+                <li><a class="view-doc" href="#">Просмотреть</a></li>
+                <li><a class="down-doc" href="#">Скачать</a></li>
+            </ul>
+            <span></span>
+
+        </div>
+
+    </div>
+
+    <div class="bottom">
+        <div class="zoomer">
+            <a id="zoom-add" href="#"></a>
+
+            <div id="zoom"></div>
+            <a id="zoom-minus" href="#"></a>
+        </div>
+
+        <div class="buttons">
+            <a href="#" class="width"></a>
+            <a href="#" class="wide"></a>
+        </div>
+
+        <a class="bugger" href="#"></a>
+    </div>
+
+</div>
+<div id="wrapper-page">
+    <div class="scroll">
+        <div id="page" class="begin-view">
+            <div class="corner"></div>
+            <div class="begin-page">
+                <div class="excel-cover incity">
+                    <div class="name">Выплата заработной платы:</div>
+                    <div class="author">основы работы в 1С</div>
+                    <img src="images/logo-eer.png" alt=""/>
+                    <div class="clear"></div>
+                    <div class="time">период завершения: <strong>12.01.13 &ndash; 24.03.12</strong></div>
+                </div>
+
+            </div>
+
+
+        </div>
+    </div>
+</div>
+
+</div>
+
+
+
+<div id="template-delete" style="display: none;">
+    <div class="overlay">
+        <div class="close"></div>
+        Слайд удален
+        <a href="#">Восстановить</a>
+    </div>
+</div>
+
+
+
+<div id="template-page" style="display: none;">
+    <img src="" alt="">
+</div>
+
+
+<div id="template-begin" style="display: none;">
+    <div class="corner"></div>
+    <div class="begin-page">
+
+
+        <div class="excel-cover">
+            <div class="name">Microsoft Excel 2010:</div>
+            <div class="author">основы работы<br>
+            с электронными таблицами</div>
+            <img src="images/logo-eer.png" alt=""/>
+            <div class="clear"></div>
+            <div class="time">период завершения: <strong>12.01.13 &ndash; 24.03.12</strong></div>
+        </div>
+
+
+
+    </div>
+</div>
+
+<div id="template-end" style="display: none;">
+    <div class="end-page">
+        <div class="message">вы завершили курс</div>
+        <div class="clr"></div>
+        <div class="name">Однозначный катарсис</div>
+        <div class="author">Станислав Михайлов</div>
+        <div class="time">дата завершения: <strong>27 сентября</strong></div>
+        <div class="clr"></div>
+        <div class="bottom">
+            Затрачено времени: <strong>00:23:45</strong> <span>|</span> <a href="#">посмотреть результаты</a>
+        </div>
+    </div>
+</div>
+
+
+<div id="template-contents" style="display: none;">
+    <div class="head-contents">
+        Оглавление
+    </div>
+    <div class="full-contents">
+        <ul>
+            <li><a href="#"><span>2</span>Целое число</a></li>
+            <li><a href="#"><span>9</span>Окрестность точки очевидна не для всех</a></li>
+            <li><a href="#"><span>9</span>Окрестность точки очевидна не для всех</a></li>
+            <li><a href="#"><span>14</span>Интеграл от функции комплексной переменной основан</a></li>
+            <li><a href="#"><span>21</span>Критерий сходимости Коши</a></li>
+            <li><a href="#"><span>21</span>Критерий сходимости Коши</a></li>
+            <li><a href="#"><span>23</span>Нечетная функция проецирует сходящийся ряд</a></li>
+            <li><a href="#"><span>35</span>Арифметическая прогрессия</a></li>
+            <li><a href="#"><span>51</span>Интеграл по поверхности осмысленноИнтеграл по поверхности осмысленно
+                упорядочивает предел</a></li>
+            <li><a href="#"><span>54</span>Огибающая семейства поверхностей</a></li>
+            <li><a href="#"><span>65</span>Целое число</a></li>
+            <li><a href="#"><span>123</span>Окрестность точки очевидна не для всех</a></li>
+            <li><a href="#"><span>553</span>Интеграл от функции комплексной переменной</a></li>
+        </ul>
+    </div>
+</div>
+
+<div id="template-custom" style="display: none;">
+    <div class="custom-container"></div>
+</div>
+
+
+
+<div id="slide-5" minsize='800x550' style="display: none;">
+
+    <div class="custom-page">
+        <div class="head-page">
+            <div class="num">3</div>
+            Тема 1. Интерфейс MS Excel 2010: поиск и загрузка шаблона книги
+        </div>
+        <div class="custom-content">
+            <div class="interactive center" style="width: 717px;">
+                <img src="images/interactive-screen.png" alt=""/>
+
+                <div class="hover-area" style="height: 18px; width: 80px; left: 20px; top:0;">
+                    <div class="info">
+                        <p><strong>Лента</strong> — главный элемент пользовательского интерфейса MS Excel 2010.
+                            Она расположена вдоль верхней части окна каждого приложения
+                            (
+                    </div>
+                </div>
+                <div class="hover-area" style="height: 58px; width: 700px; left: 5px; top:35px;">
+                    <div class="info">
+                        <p><strong>Лента</strong> — главный элемент пользовательского интерфейса MS Excel 2010.
+                            Она расположена вдоль верхней части окна каждого приложения
+                            (вместо традиционных) меню и панелей инструментов). С помощью ленты
+                            можно быстро находить необходимые элементы управления: кнопки,
+                            раскрывающиеся списки, счетчики, флажки, и т. п. Элементы управления
+                            объединены в логические группы, собранные на вкладках.</p>
+
+                        <p>Если требуется увеличить рабочую область, ленту можно скрыть (свернуть)</p>
+                    </div>
+                </div>
+                <div class="hover-area" style="height: 13px; width: 700px; left: 5px; top:100px;">
+                    <div class="info">
+                        <p><strong>Лента — главный элемент пользовательского интерфейса MS Excel 2010.
+                            Она расположена вдоль верхней части окна каждого приложения</strong>
+                        </p>
+
+                        <p>Если требуется увеличить рабочую область, ленту можно скрыть (свернуть)</p>
+                    </div>
+                </div>
+                <div class="hover-area" style="height: 13px; width: 145px; left: 50px; top:185px;">
+                    <div class="info">
+                        <p>Если требуется увеличить рабочую область, ленту можно скрыть (свернуть)</p>
+                    </div>
+                </div>
+                <div class="hover-area" style="height: 14px; width: 170px; left: 525px; top:198px;">
+                    <div class="info">
+                        <p><strong>Лента — главный элемент пользовательского интерфейса MS Excel 2010.
+                            Она расположена вдоль верхней части окна каждого приложения</strong>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="interact-arr">
+                <i></i>
+                Наведите курсор мыши
+                на выделенные области окна,
+                чтобы ознакомиться
+                с некоторыми элементами
+                интерфейса и их назначением
+            </div>
+            <p>Дизайн пользовательского интерфейса MS Excel 2010 позволяет:</p>
+            <ul>
+                <li>упростить процедуры поиска и использования всего диапазона возможностей, предоставляемых этим
+                    приложением;
+                </li>
+                <li>предотвратить загромождение рабочей области</li>
+            </ul>
+            <p>Основными элементами интерфейса MS Excel 2010 являются <strong>лента</strong> (с постоянными и
+                контекстными вкладками, а также с предоставлением MS Office Backstage), <strong>панель быстрого доступа,
+                    строка
+                    формул, вкладки навигации между листами книги, строка состояния</strong></p>
+
+        </div>
+    </div>
+    <script type="text/javascript">initSlide();</script>
+
+</div>
+
+<div id="slide-6" minsize='800x545' style="display: none;">
+
+<div class="custom-page">
+<div class="head-page">
+    <div class="num">3</div>
+    Тема 1. Выплата заработной платы
+</div>
+<div class="custom-content">
+<div class="interactive center excel" style="width: 721px; height: 429px">
+<img src="images/1c-step-1.png" width="721" height="429" alt=""/>
+
+<div id="sl-2" class="invisibles i-step-2" style="left:0; top:0">
+    <img src="images/1c-step-2.png" width="721" height="429" alt=""/>
+</div>
+
+<div id="sl-3" class="invisibles i-step-3" style="left:0; top:0">
+    <img src="images/1c-step-3.png" width="721" height="429" alt=""/>
+</div>
+
+<div id="sl-4" class="invisibles i-step-4" style="left:0; top:0">
+    <img src="images/1c-step-4.png" width="721" height="429" alt=""/>
+</div>
+
+<div id="sl-5" class="invisibles  i-step-5" style="left:0; top:0">
+    <img src="images/1c-step-5.png" width="721" height="429" alt=""/>
+</div>
+
+<div id="sl-6" class="invisibles i-step-6" style="left:0; top:0">
+    <img src="images/1c-step-6.png" width="721" height="429" alt=""/>
+</div>
+
+<div id="sl-8" class="invisibles i-step-7" style="left:0; top:0">
+    <img src="images/1c-step-7.png" width="721" height="429" alt=""/>
+</div>
+
+<div id="sl-9" class="invisibles i-step-8" style="left:0; top:0">
+    <img src="images/1c-step-8.png" width="721" height="429" alt=""/>
+</div>
+
+<div id="sl-10" class="invisibles i-step-9" style="left:0; top:0">
+    <img src="images/1c-step-9.png" width="721" height="429" alt=""/>
+</div>
+
+<div id="sl-11" class="invisibles i-step-10" style="left:0; top:0">
+    <img src="images/1c-step-10.png" width="721" height="429" alt=""/>
+</div>
+
+<div id="sl-12" class="invisibles i-step-11" style="left:0; top:0">
+    <img src="images/1c-step-11.png" width="721" height="429" alt=""/>
+</div>
+
+<!--слайд 1-->
+
+<div rel="#invis-1" delay="300"  class="hover-area nopop red-circle square e-step-1" style="height: 30px; width: 74px; left: 150px; top: 20px;">
+    <div class="red"><div class="border-red"></div></div>
+</div>
+
+<div id="invis-1" onclick="setStep(2);" rel="Открыть документы" class="hover-invisible" style="height: 40px; width: 94px; left: 140px; top: 25px;">
+
+</div>
+
+
+<!--<div rel="#invis-first" delay="500" class="hover-area nopop red-circle e-step-1" style="height: 30px; width: 30px; left:114px; top:-1px;">-->
+    <!--<div class="red"><div class="border-red"></div></div>-->
+<!--</div>-->
+
+<!--<div id="invis-first" onclick="setStep(2);" rel="Настройка панели быстрого доступа" class="hover-invisible" style="padding-left:20px; width: 25px; height: 32px; left:101px; top:0; ">-->
+    <!--<img src="images/excel-first-step-invis.png" alt=""/>-->
+<!--</div>-->
+
+<!--<div  delay="2500" style="top:147px; width: 250px; left: 33px;" class="interactive-popup e-step-1">-->
+    <!--<p>Перед Вами раскрыто окно <strong>Книга 3</strong> в приложении Microsoft Excel-->
+        <!--2010 на вкладке <em><strong>Главная</strong></em>. Добавьте новый элемент <strong>Отправить-->
+            <!--по электронной почте</strong> на панель быстрого доступа.</p>-->
+<!--</div>-->
+
+<!--<div  delay="1500" style="top:147px; width: 230px; left: 373px;" class="interactive-popup e-step-1">-->
+    <!--<p>Попробуйте выполнить некоторые действия с элементами-->
+        <!--интерфейса Microsoft Excel 2010, следуя подсказкам.</p>-->
+<!--</div>-->
+
+<!--<div  delay="3500" style="top:297px; width: 280px; left: 323px;" class="interact-arr e-step-1"><i></i>-->
+    <!--Нажмите кнопку <img src="images/excel-first-step-action.jpg" alt=""/>, чтобы раскрыть список<br>-->
+    <!--<strong>Настройка панели быстрого доступа</strong>-->
+<!--</div>-->
+
+<!-- -----------------слайд 2------------------- -->
+
+<!--<div  delay="1000" style="left:370px; width: 300px; top: 110px;" class="interactive-popup e-step-2">-->
+    <!--<p>Раскрылся список Настройка панели быстрого доступа. Обратите внимание,-->
+        <!--что перед пунктами <strong>Сохранить</strong>, <strong>Отменить</strong>, <strong>Вернуть</strong> установлены флажки.-->
+        <!--Данные кнопки панель быстрого доступа содержит по умолчанию.</p>-->
+<!--</div>-->
+
+<!--<div  delay="2000" style="top:260px; width: 280px; left: 340px;" class="interact-arr e-step-2"><i></i>-->
+    <!--Чтобы добавить новый элемент <strong>Отправить-->
+        <!--по электронной почте</strong>, щелкните левой-->
+    <!--кнопкой мыши по соответствующему пункту.-->
+<!--</div>-->
+
+<div rel="#invis-2" delay="500" bg="#sl-2" class="hover-area nopop red-circle square e-step-2" style="height: 26px; width: 180px; left:164px; top:40px;">
+    <div class="red"><div class="border-red"></div></div>
+</div>
+
+<div id="invis-2" onclick="setStep(3);" rel="Финансовая документация" class="hover-invisible" style="height: 26px; width: 180px; left:164px; top:40px;">
+    <!--<img src="images/excel-2-step-invis.jpg" width="243" height="35" alt=""/>-->
+</div>
+
+
+
+<!-- -----------------слайд 3------------------- -->
+
+
+<!--<div  delay="1000" style="left:140px; width: 420px; top: 110px;" class="interactive-popup e-step-3">-->
+    <!--<p style="margin-bottom: 0">Список <strong>Настройка панели быстрого доступа</strong> автоматически закрылся.-->
+        <!--На панели быстрого доступа появилась новая кнопка <img src="images/excel-3-step-action.jpg"/> .</p>-->
+<!--</div>-->
+
+<!--<div  delay="2000" style="top: 220px; width: 330px; left: 156px;" class="interact-arr e-step-3"><i></i>-->
+    <!--Нажмите кнопку <strong>Отправить по электронной-->
+        <!--почте</strong>, чтобы ознакомиться с действием,-->
+    <!--которое она позволяет осуществить.-->
+<!--</div>-->
+
+
+
+<div rel="#invis-3" delay="500" bg="#sl-3" class="hover-area nopop red-circle square e-step-3" style="height: 26px; width: 180px; left:342px; top:81px;">
+    <div class="red"><div class="border-red"></div></div>
+</div>
+
+<div id="invis-3" onclick="setStep(4);" rel="Расходный кассовый ордер" class="hover-invisible" style="left: 342px; top: 84px; height: 25px;">
+    <img src="images/1c-3-step-invis.jpg" width="295" height="25" alt=""/>
+</div>
+
+
+
+
+
+<!-- -----------------слайд 4------------------- -->
+
+<!--<div  delay="1000" style="left:45px; width: 220px; top: 290px;" class="interactive-popup e-step-4">-->
+    <!--<p>Документ подготовлен к отправке, Вам-->
+        <!--предлагается указать адрес получателя.</p>-->
+<!--</div>-->
+
+<!--<div  delay="2000" style="top: 290px; width: 235px; left: 314px;" class="interact-arr e-step-4"><i></i>-->
+    <!--Закройте окно <strong>Книга1</strong> - <strong>Сообщение</strong>,-->
+    <!--нажав соответствующую кнопку.-->
+<!--</div>-->
+
+<div rel="#invis-4" delay="500" bg="#sl-4" class="hover-area nopop red-circle e-step-4" style="height: 27px; width: 27px; left: 69px; top: 110px;">
+    <div class="red"><div class="border-red"></div></div>
+</div>
+
+<div id="invis-4" onclick="setStep(5);" rel="Добавить" class="hover-invisible" style="left: 65px; padding: 10px 5px 5px 10px; top: 106px;">
+    <img src="images/1c-4-step-invis.jpg" width="19" height="19" alt=""/>
+</div>
+
+
+
+<!-- -----------------слайд 5------------------- -->
+
+
+<!--<div  delay="1000" style="left:140px; width: 420px; top: 110px;" class="interactive-popup e-step-5">-->
+    <!--<p>Удалите кнопку <strong>Отправить по электроной почте</strong> с панели быстрого доступа.</p>-->
+<!--</div>-->
+
+<!--<div  delay="2000" style="top: 220px; width: 330px; left: 156px;" class="interact-arr e-step-5"><i></i>-->
+    <!--Для этого раскройте список <strong>Настройка панели-->
+        <!--быстрого доступа</strong>, нажав кнопку <img src="images/excel-first-step-action.jpg" alt=""/>.-->
+<!--</div>-->
+
+
+<div rel="#invis-5" delay="500" bg="#sl-5" class="hover-area nopop red-circle e-step-5" style="height: 30px; width: 30px; left: 563px; top: 163px;">
+    <div class="red"><div class="border-red"></div></div>
+</div>
+
+<div id="invis-5" onclick="setStep(6);" rel="Выбор статьи" class="hover-invisible" style="height: 40px; width: 40px; left: 558px; top: 158px;">
+
+</div>
+
+
+<!-- -----------------слайд 6------------------- -->
+
+
+<!--<div  delay="1000" style="left: 410px; width: 240px; top: 10px;" class="interactive-popup e-step-6">-->
+    <!--<p>Обратите внимание, что перед пунктом <strong>Отправить по электронной-->
+        <!--почте</strong> теперь также установлен фпажок.</p>-->
+<!--</div>-->
+
+<!--<div  delay="3000" style="top: 135px; width: 260px; left: 370px;" class="interact-arr e-step-6"><i></i>-->
+    <!--Чтобы удалить элемент <strong>Отправить по-->
+        <!--электронной почте</strong>, щелкните левой-->
+    <!--кнопкой мыши по соответствующему пункту.-->
+<!--</div>-->
+
+<!--<div  delay="2000" style="left: 410px; width: 240px; top: 260px;" class="interactive-popup e-step-6">-->
+    <!--<p style="margin-bottom: 0;">-->
+        <!--С помощью аналогичных действии можно:</p>-->
+    <!--<ul>-->
+        <!--<li>добавить/удапить любую кнопку на панели быстрого доступа;</li>-->
+        <!--<li>поместить панепь быстрого доступа под пентой.</li>-->
+    <!--</ul>-->
+
+<!--</div>-->
+
+
+<div rel="#invis-6" delay="500" bg="#sl-6" class="hover-area nopop red-circle square e-step-6" style="height: 30px; width: 250px; left: 180px; top: 285px;">
+    <div class="red"><div class="border-red"></div></div>
+</div>
+
+
+
+<div id="invis-6" onclick="setStep(7);" rel="Выдача заработной платы" class="hover-invisible" style="height: 40px; width: 260px; left: 175px; top: 280px;">
+
+</div>
+
+<!-- -----------------слайд 7------------------- -->
+
+<!--<div  delay="1000" style="left:140px; width: 420px; top: 110px;" class="interactive-popup e-step-7">-->
+    <!--<p>Интерфейс Microsoft Excel 2010 позволяет рационально использовать-->
+        <!--рабочую область. Если требуется увеличить рабочую область, ленту-->
+        <!--можно скрыть (свернуть).</p>-->
+<!--</div>-->
+
+<!--<div  delay="2000" style="top: 220px; width: 330px; left: 156px;" class="interact-arr e-step-7"><i></i>-->
+    <!--Чтобы свернуть ленту, нажмите кнопку <img src="images/excel-7-actions.jpg" alt=""/>.-->
+<!--</div>-->
+
+
+<div rel="#invis-7" delay="500"  class="interactive-input e-step-7" style="left: 141px; top: 231px;">
+    <input class="err" type="text" onfocus="$(this).val('');" onkeyup="return removeSymbols(this);" id="iteract-1" value="0.00"/>
+</div>
+
+<div id="invis-7" rel="Печать" onclick="setStep(8);" class="hover-invisible" style="height: 40px; width: 84px; left: 90px; top: 198px;">
+
+</div>
+
+
+<div rel="#invis-7" bg="#sl-8"  id="after-input-1" class="hover-area nopop red-circle square" style="height: 30px; width: 64px; left: 95px; top: 203px;">
+    <div class="red"><div class="border-red"></div></div>
+</div>
+
+
+<!-- -----------------слайд 8------------------- -->
+
+<!--<div  delay="1000" style="left:140px; width: 420px; top: 110px;" class="interactive-popup e-step-8">-->
+    <!--<p>Лента скрыта, остались названия вкладок. Для использования ленты в-->
+        <!--свернутом состоянии нужно щелкнуть по названию необходимой вкладки,-->
+        <!--а затем выбрать параметр или команду, которую следует использовать.</p>-->
+<!--</div>-->
+
+<!--<div  delay="2000" style="top: 260px; width: 250px; left: 176px;" class="interact-arr e-step-8"><i></i>-->
+    <!--Щелчком левой кнопки мыши-->
+    <!--откройте вкладку <strong>Главная</strong>.-->
+<!--</div>-->
+
+
+<div rel="#invis-8" delay="2000" bg="#sl-9"  id="after-input-2" class="hover-area nopop red-circle square" style="height: 30px; width: 90px; left: 395px; top: 370px;">
+    <div class="red"><div class="border-red"></div></div>
+</div>
+
+<div id="invis-8"  onclick="setStep(9);" rel="Провести" class="hover-invisible nopop" style=" width: 90px; padding: 5px; left: 402px; top: 373px;">
+    <img src="images/1c-8-step-invis.jpg" width="65" height="18" alt=""/>
+</div>
+
+<div delay="500" class="interactive-input e-step-8" style="left: 427px; top: 286px;">
+    <input class="err" type="text" onfocus="$(this).val('');" onkeyup="return removeSymbols2(this);" id="iteract-2" />
+    <script>
+        $("#iteract-2").mask("99.99.9999");
+    </script>
+</div>
+
+<!-- -----------------слайд 9------------------- -->
+
+<!--<div  delay="1000" style="left:140px; width: 420px; top: 150px;" class="interactive-popup e-step-9">-->
+    <!--<p>Вкладка <strong>Гпавная</strong> открыта. Обратите внимание, что кнопка <img src="images/excel-7-actions.jpg" alt=""/> изменила свой-->
+        <!--вид. После выбора параметра или команды лента снова будет свернута.</p>-->
+<!--</div>-->
+
+<!--<div  delay="2000" style="top: 280px; width: 250px; left: 176px;" class="interact-arr e-step-9"><i></i>-->
+    <!--Нажмите кнопку <strong>Ж</strong>, чтобы изменить обычный шрифт-->
+    <!--текста в выделенной ячейке таблицы на полужирный.-->
+<!--</div>-->
+
+
+<div rel="#invis-9" delay="500" bg="#sl-10"  class="hover-area nopop red-circle square e-step-9" style="height: 30px; width: 70px; left: 295px; top: 370px;">
+    <div class="red"><div class="border-red"></div></div>
+</div>
+
+<div id="invis-9"  onclick="setStep(10);" rel="Печать" class="hover-invisible nopop" style=" width: 90px; padding: 5px; left: 303px; top: 373px;">
+    <img src="images/1c-9-step-invis.png" width="55" height="18" alt=""/>
+</div>
+
+<!-- -----------------слайд 10------------------- -->
+
+<!--<div  delay="1000" style="top: 180px; width: 250px; left: 176px;" class="interact-arr e-step-10"><i></i>-->
+    <!--Чтобы снова раскрыть ленту, нажмите кнопку <img src="images/excel-10-action.jpg" alt=""/>-->
+<!--</div>-->
+
+
+<!--<div rel="#invis-10" delay="1000" bg="#sl-10" class="hover-area nopop red-circle e-step-10" style="height: 30px; width: 30px; left:598px; top:23px;">-->
+    <!--<div class="red"><div class="border-red"></div></div>-->
+<!--</div>-->
+
+<!--<div id="invis-10" rel="<strong>Развернуть ленту (CTRL+F1)</strong><span>Отображение ленты всегда развернутой,<br>даже после выбора команды</span>" onclick="setStep(11);" class="hover-invisible" style="left:600px; top:25px;">-->
+    <!--<img src="images/excel-11-step-invis.jpg" width="29" height="29" alt=""/>-->
+<!--</div>-->
+
+<!--<div  delay="1000" style="left:140px; width: 420px; top: 150px;" class="interactive-popup e-step-11">-->
+    <!--<p>Лента раскрыта. Вы выполнили предложенные действия с элементами-->
+        <!--интерфейса Microsoft Excel 2010.</p>-->
+<!--</div>-->
+
+<div rel="#invis-10" delay="500" bg="#sl-11"  class="hover-area nopop red-circle square e-step-10" style="height: 30px; width: 70px; left: 526px; top: 145px;">
+    <div class="red"><div class="border-red"></div></div>
+</div>
+
+<div id="invis-10"  onclick="setStep(11);" rel="Печать" class="hover-invisible nopop" style="height: 50px; width: 90px; left: 516px; top: 135px;">
+
+</div>
+
+<!-- -----------------слайд 11------------------- -->
+
+<div rel="#invis-11" delay="500" bg="#sl-12"  class="hover-area nopop red-circle square e-step-11" style="height: 30px; width: 70px; left: 78px; top: 82px;">
+    <div class="red"><div class="border-red"></div></div>
+</div>
+
+<div id="invis-11"  onclick="setStep(12);" rel="Печать" class="hover-invisible nopop" style="height: 50px; width: 90px; left: 68px; top: 72px;">
+
+</div>
+
+
+
+</div>
+
+</div>
+</div>
+<script type="text/javascript">initSlideExcel_1();</script>
+
+</div>
+
+<div id="slide-7" minsize='800x550' style="display: none;">
+
+    <div class="custom-page">
+        <div class="head-page">
+            <div class="num">3</div>
+            Тема 1. Интерфейс MS Excel 2010: поиск и загрузка шаблона книги
+        </div>
+        <div class="custom-content">
+            <div class="interactive center" style="width: 717px;">
+                <img src="images/interactive-screen.png" alt=""/>
+
+
+                <div class="hover-area red-circle" style="height: 70px; width: 70px; left: 5px; top:35px;">
+                    <div class="red">
+                        <div class="border-red">
+                            <div class="info">
+                                <p><strong>Лента — главный элемент пользовательского интерфейса MS Excel 2010.
+                                    Она расположена вдоль верхней части окна каждого приложения</strong>
+                                </p>
+
+                                <p>Если требуется увеличить рабочую область, ленту можно скрыть (свернуть)</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="hover-area red-circle" style="height: 30px; width: 30px; left: 257px; top:35px;">
+                    <div class="red">
+                        <div class="border-red">
+                            <div class="info">
+                                <p>Если требуется увеличить рабочую область, ленту можно скрыть (свернуть)</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="interact-arr">
+                <i></i>
+                Наведите курсор мыши
+                на выделенные области окна,
+                чтобы ознакомиться
+                с некоторыми элементами
+                интерфейса и их назначением
+            </div>
+            <p>Дизайн пользовательского интерфейса MS Excel 2010 позволяет:</p>
+            <ul>
+                <li>упростить процедуры поиска и использования всего диапазона возможностей, предоставляемых этим
+                    приложением;
+                </li>
+                <li>предотвратить загромождение рабочей области</li>
+            </ul>
+            <p>Основными элементами интерфейса MS Excel 2010 являются <strong>лента</strong> (с постоянными и
+                контекстными вкладками, а также с предоставлением MS Office Backstage), <strong>панель быстрого доступа,
+                    строка
+                    формул, вкладки навигации между листами книги, строка состояния</strong></p>
+
+        </div>
+    </div>
+    <script type="text/javascript">initSlideCircles();</script>
+
+</div>
+
+<div id="template-video" style="display: none;">
+    <div class="sizer" style="width: 455px; height: 304px;">
+        <div class="play"></div>
+        <img src="images/video-t.jpg" alt="">
+    </div>
+</div>
+
+<div id="template-test" style="display: none;">
+    <div class="test-page viewer">
+        <div class="test-head">
+            <div class="left">
+                <img src="images/test-ico-big.png" alt="">
+            </div>
+            <div class="right">
+                <div class="info">
+                    <div class="name">Не слишком короткое название теста</div>
+                    <div class="deskription-test">
+                        Ощущение мономерности ритмического движения возникает, как правило,
+                        в условиях темповой стабильности, тем не менее флюгель-горн интенсивен. Асинхронное ритмическое поле вызывает нонаккорд, благодаря быстрой
+                        смене тембров.
+                    </div>
+                    <ul class="characters">
+                        <li>Количество вопросов: <strong>260</strong></li>
+                        <li>Время на выполнение: <strong>не ограничено</strong></li>
+                        <li>Максимальный балл: <strong>400</strong></li>
+                    </ul>
+
+                    <a class="begin-btn" href="#">Пройти тест</a>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+</body>
+</html>
+
+
+
+	
