@@ -62,12 +62,9 @@ function initSlideExcel_1() {
     });
     $('#page .hover-area.red-circle').hover(function () {
         var th = $(this);
-        console.log(th.attr('rel'));
-        var invis = $(th.attr('rel')).show();
-
-
-        invis.show(0);
-//        invis.css({'visibility':'visible'});
+        th.hide(0);
+        var invis = $(th.attr('rel'));
+        invis.css('visibility', 'visible');
         invis.click(function(){
             $(this).remove();
             th.remove();
@@ -75,10 +72,9 @@ function initSlideExcel_1() {
         });
         invis.hover(function () {
         }, function () {
-            $(this).hide(0);
-            th.fadeIn(1);
+            $(this).css('visibility', 'hidden');
+            th.show(0);
         });
-        th.fadeOut(1);
 
     }, function () {
 
