@@ -118,6 +118,9 @@ function removeSymbols(input) {
     if (parseFloat(input.value) > 20000) {
         $(input).removeClass('err').attr('readonly', 'readonly');
         $('#after-input-1').fadeIn(300).addClass('.e-step-7');
+        $('#bef-in-1').fadeOut(300, function(){
+            $('#af-in-1').fadeIn(300);
+        });
     }
 }
 
@@ -126,5 +129,8 @@ function removeSymbols2(input) {
     if (parseFloat(value[9])) {
         $(input).removeClass('err').attr('readonly', 'readonly');
         $('#after-input-2').fadeIn(300).addClass('.e-step-8');
+        $('#bef-in-2').fadeOut(300, function(){
+            $('#af-in-2').fadeIn(300);
+        });
     }
 }
